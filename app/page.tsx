@@ -7,35 +7,41 @@ import { ArrowRight } from "lucide-react";
 import OurExpertise from "@/components/Ourexpertise";
 import { Package, Lightbulb, Frame, Sparkles, CircleDot, Boxes } from 'lucide-react'
 /**
- * LuxuryShowcase - updated, responsive, optimized
+ * LuxuryShowcase - updated, responsive, verified-safe
  * - auto slider (fade)
- * - no hamburger
- * - no download buttons
- * - left/right sidebars collapse on small screens
+ * - no false claims
+ * - no range
+ * - generic, accurate metadata
  */
-/** FIXED + RESPONSIVE LuxuryShowcase **/
+
 function LuxuryShowcase() {
   const [activeImage, setActiveImage] = useState(0);
   const [showMaterials, setShowMaterials] = useState(false);
 
   const product = {
     brand: "AKBAR BRASS PRODUCTS",
-    
-    number: "01",
-    range: "001 - 004",
+    number: "INTERIOR DÉCOR",
     location: "Moradabad, India",
-    style: "ABP-HC",
-    size: "Custom",
-    dimensions: "Customizable",
-    com: "Available",
+
+    /** SAFE RIGHT PANEL VALUES **/
+    style: "Collection-Based",
+    size: "Varies by Product",
+    dimensions: "Provided Upon Inquiry",
+    com: "As Applicable",
+
+    /** SAFE & TRUE DESCRIPTION **/
     description: [
-      "A contemporary showcase of precision-engineered brass and marble products.",
-      "Designed for refined residential and hospitality applications.",
-      "Certificate of Quality Compliance. Year 2025.",
-      "Handcrafted at Akbar Brass Products, Delhi."
+      "A curated presentation of brass, stone, wood, and mixed-material home products.",
+      "Developed within a multi-material manufacturing environment using contemporary techniques and workmanship practices.",
+      "The products highlight attention to material selection, finish quality, and usability suited for interior applications.",
+      "Items may vary by specification, and details are available upon inquiry."
     ],
-    materials: "Solid Brass | Natural Marble | Hand-finished Wooden Elements",
-    images: ["/showroom1.jpeg", "/showroom2.jpeg", "/showroom3.jpeg"]
+
+    /** SAFE MATERIALS **/
+    materials: "Brass | Natural Stone | Wood | Mixed Materials",
+
+    /** ONLY TWO IMAGES WILL SLIDE **/
+    images: ["/showroom1.jpeg", "/showroom2.jpeg"]
   };
 
   // Auto slider
@@ -55,17 +61,13 @@ function LuxuryShowcase() {
           {product.brand}
         </h2>
 
+        {/* RANGE REMOVED — ONLY LOCATION */}
         <div className="hidden md:flex items-center gap-6 text-sm" style={{ color: "#521C0D" }}>
           <span>{product.location}</span>
-          <span className="flex items-center gap-1">
-            {product.range.split(" - ")[0]}
-            <span className="text-xs">⌄</span>
-            {product.range.split(" - ")[1]}
-          </span>
         </div>
       </header>
 
-      {/* FLEX LAYOUT (safe) */}
+      {/* FLEX LAYOUT */}
       <div className="flex flex-col lg:flex-row w-full">
 
         {/* LEFT SIDEBAR */}
@@ -85,26 +87,15 @@ function LuxuryShowcase() {
           <p className="italic mb-1" style={{ color: "#521C0D" }}>
             ii. {product.materials}
           </p>
-
+{/* 
           <p className="italic text-xs mb-2" style={{ color: "rgba(82,28,13,0.7)" }}>
             (Detail)
-          </p>
-
-          {/* <div className="relative w-full aspect-[4/3] bg-white rounded-sm overflow-hidden shadow-lg mb-8">
-  <img
-    src={product.images[activeImage]}
-    
-    className="absolute inset-0 w-full h-full object-cover"
-  />
-</div> */}
-
+          </p> */}
         </aside>
 
         {/* CENTER SLIDER */}
         <main className="lg:w-2/4 p-6 flex justify-center">
           <div className="relative w-full max-w-3xl h-[400px] md:h-[460px] lg:h-[500px] bg-white rounded-md shadow overflow-hidden">
-
-          
 
             {product.images.map((img, i) => (
               <img
@@ -126,12 +117,11 @@ function LuxuryShowcase() {
             <div className="text-5xl font-light" style={{ color: "#521C0D" }}>
               {product.number}
             </div>
-            <div className="italic text-xs" style={{ color: "rgba(82,28,13,0.6)" }}>
+            {/* <div className="italic text-xs" style={{ color: "rgba(82,28,13,0.6)" }}>
               (Scroll)
-            </div>
+            </div> */}
           </div>
 
-        
           <div className="space-y-4 text-sm">
             {[
               ["Style", product.style],
@@ -173,6 +163,7 @@ function LuxuryShowcase() {
     </div>
   );
 }
+
 
 
 /**
@@ -249,7 +240,7 @@ export default function HomePage() {
           <p className="mx-auto mb-8 max-w-3xl text-base leading-relaxed md:text-lg" style={{ color: "rgba(82, 28, 13, 0.8)" }}>
             Akbar Brass Products is a third-generation manufacturing company specialising in metal, marble, wood, glass, and mixed-material home products. Operating from a horizontally integrated 60-acre campus, we maintain in-house testing and globally aligned compliance systems for reliable production.
           </p>
-          <Button size="lg" variant="outline" style={{ borderColor: "#521C0D", color: "#521C0D", borderWidth: "2px" }} className="bg-transparent hover:bg-[#521C0D] hover:text-[#EDE8D0]" asChild>
+          <Button size="lg" variant="outline" style={{ borderColor: "#521C0D", color: "#521C0D", borderWidth: "2px" }} className="bg-transparent hover:text-[#521C0D] hover:bg-[#EDE8D0]" asChild>
             <Link href="/about-akbar/timeline">
               Explore Our Heritage <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
@@ -394,6 +385,47 @@ export default function HomePage() {
           </Button>
         </div>
       </section>
+      <section className="px-6 py-16 md:py-24" style={{ backgroundColor: "#EDE8D0" }}>
+  <div className="mx-auto max-w-7xl">
+    <div className="grid gap-12 md:grid-cols-2 items-center">
+      {/* Left - Text Content */}
+      <div>
+        <h2 className="mb-6 font-serif text-3xl font-bold md:text-4xl" style={{ color: "#521C0D" }}>
+          A Glimpse of Our Artistry: Delhi Fair 10/25
+        </h2>
+        <p className="mb-4 text-base leading-relaxed" style={{ color: "rgba(82, 28, 13, 0.8)" }}>
+          With over 50 years of manufacturing expertise, we've built a reputation for delivering exceptional home décor products to global markets. Our vertically integrated facility combines traditional craftsmanship with modern production techniques.
+        </p>
+        <p className="mb-4 text-base leading-relaxed" style={{ color: "rgba(82, 28, 13, 0.8)" }}>
+          From brass fabrication to marble processing, wood working to multi-material integration, our comprehensive capabilities allow us to bring your vision to life with precision and care.
+        </p>
+        <p className="text-base leading-relaxed" style={{ color: "rgba(82, 28, 13, 0.8)" }}>
+          Every piece that leaves our facility represents our commitment to quality, sustainability, and the artistry of fine home products.
+        </p>
+      </div>
+
+      {/* Right - Two Portrait Images */}
+      <div className="grid grid-cols-2 gap-4">
+        <div className="overflow-hidden" style={{ border: "2px solid #521C0D" }}>
+          <img 
+            src="/f1.jpeg" 
+            alt="Craftsmanship detail" 
+            className="h-full w-full object-cover"
+            style={{ aspectRatio: "3/4" }}
+          />
+        </div>
+        <div className="overflow-hidden mt-8" style={{ border: "2px solid #521C0D" }}>
+          <img 
+            src="f2.jpeg" 
+            alt="Manufacturing process" 
+            className="h-full w-full object-cover"
+            style={{ aspectRatio: "3/4" }}
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Connect */}
       <section className="px-6 py-20 md:py-28 bg-white">

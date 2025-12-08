@@ -254,7 +254,7 @@ export default function PortfolioPage() {
               </Link>
               <Link 
                 href="/contact"
-                className="inline-flex items-center justify-center px-8 py-3 bg-white text-[#521C0D] border-2 border-[#521C0D] hover:bg-[#521C0D] hover:bg-opacity-5 transition-all rounded"
+                className="inline-flex items-center justify-center px-8 py-3 bg-white text-[#521C0D] border-2 border-[#521C0D]  transition-all rounded"
               >
                 Don't have access? Contact us
               </Link>

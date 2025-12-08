@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from "react";
 
 interface ExpertiseItem {
   name: string;
@@ -10,246 +10,135 @@ interface ExpertiseItem {
 }
 
 const OurExpertise: React.FC = () => {
-  const handleVisitSite = (e: React.MouseEvent<HTMLButtonElement>, url: string): void => {
-    e.stopPropagation();
-    window.open(url, "_blank");
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const toggleSection = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
   };
 
   const expertiseData: ExpertiseItem[] = [
     {
       name: "Heritage Brass Collection",
       description:
-        "A showcase of precision-engineered brass products that blend traditional craftsmanship with modern design. Our Heritage Collection represents three generations of manufacturing excellence, featuring hand-finished pieces that meet global compliance standards.",
+        "A curated presentation of brass, stone, wood, and mixed-material home products. Developed within a multi-material manufacturing environment using contemporary techniques and workmanship practices. The products highlight attention to material selection, finish quality, and usability suited for interior applications.",
       services: [
         "Brass Fabrication",
         "Hand Finishing",
-        "Quality Certification",
-        "Custom Design",
-        "Export Ready",
+        "Surface Finishing",
+        "Design Support",
+        "Production Ready",
       ],
-      url: "https://www.akbarbrass.com/",
+      url: "",
     },
     {
       name: "Marble & Stone Processing",
       description:
-        "From quarry to finished product, our marble processing facility delivers precision-cut natural stone with exceptional finish quality. Equipped with advanced CNC machinery and traditional stone-working techniques, we create marble products that meet international standards.",
+        "Precision natural stone processing supported by CNC capabilities, finishing systems and stone-working expertise. Our approach enables consistent quality across interior, décor, and product applications.",
       services: [
-        "Natural Stone Selection",
+        "Natural Stone",
         "CNC Processing",
         "Surface Finishing",
-        "Custom Cutting",
-        "Quality Control",
+        "Cutting",
+        "Material Handling",
       ],
-      url: "https://www.akbarbrass.com/",
+      url: "",
     },
     {
       name: "Multi-Material Integration",
       description:
-        "Our horizontally integrated campus enables seamless multi-material production. From brass and marble to wood and glass, we combine diverse materials into cohesive products. This integrated approach ensures consistent quality and reduced lead times.",
-      services: ["Material Sourcing", "Integrated Manufacturing", "Assembly", "Testing"],
+        "Our integrated production ecosystem enables combining brass, marble, wood, and other materials in unified product applications. This approach provides consistency, structural quality, and reduced lead time.",
+      services: ["Material Sourcing", "Integrated Manufacturing", "Assembly", "Quality Handling"],
       url: "",
     },
     {
       name: "Wood & Mixed Materials",
       description:
-        "Combining hardwoods and engineered wood with metal and stone components, our mixed-material products showcase versatility in design and manufacturing. Each product undergoes rigorous quality checks to ensure structural integrity and aesthetic excellence.",
-      services: [
-        "Hardwood Processing",
-        "Engineered Wood",
-        "Mixed Assembly",
-        "Finishing",
-      ],
-      url: "https://www.akbarbrass.com/",
+        "Combining hardwoods, engineered wood, metal, and stone components into cohesive design products with structural and aesthetic balance. Supported by finishing and assembly workflows.",
+      services: ["Hardwood Processing", "Mixed Assembly", "Surface Work", "Finishing"],
+      url: "",
     },
     {
       name: "Export & Compliance",
       description:
-        "With globally aligned compliance systems and in-house testing facilities, we ensure every product meets international standards. Our export-ready manufacturing process includes documentation, packaging, and logistics support for seamless delivery worldwide.",
-      services: ["Compliance Testing", "Export Documentation", "Quality Assurance"],
-      url: "https://www.akbarbrass.com",
+        "Globally aligned manufacturing support systems for export packaging, documentation, and shipment handling.",
+      services: ["Packaging", "Documentation", "Quality Assurance"],
+      url: "",
     },
   ];
 
   return (
-    <div style={styles.container}>
-      <div style={styles.titleWrapper}>
-        <h2 style={styles.title}>Why Choose Us?</h2>
-        <p style={styles.subtitle}>
+    <div className="w-full bg-[#EDE8D0] text-[#521C0D] font-serif px-4 py-16 md:py-24">
+      
+      {/* SECTION HEADING */}
+      <div className="text-center mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose Us?</h2>
+        <p className="text-base md:text-lg text-[rgba(82,28,13,0.7)]">
           Decades of experience, modern facilities, and commitment to excellence
         </p>
       </div>
 
-      <div style={styles.sections}>
-        {expertiseData.map((section) => (
-          <div 
-            key={section.name} 
-            className="expertise-section"
-            style={styles.section}
+      {/* COLLAPSIBLE SECTIONS */}
+      <div className="max-w-6xl mx-auto flex flex-col gap-4">
+        {expertiseData.map((section, index) => (
+          <div
+            key={section.name}
+            className="bg-[rgba(82,28,13,0.08)] border border-[rgba(82,28,13,0.15)] rounded-lg overflow-hidden transition-all"
           >
-            <div style={styles.sectionHeader}>
-              <h3 style={styles.sectionTitle}>{section.name}</h3>
-            </div>
-
-            <div 
-              className="section-expanded-content"
-              style={styles.expandedContent}
+            {/* HEADER */}
+            <button
+              onClick={() => toggleSection(index)}
+              className="w-full p-5 text-left flex justify-between items-center"
             >
-              <div style={styles.contentLeft}>
-                <p style={styles.description}>{section.description}</p>
-              </div>
-              <div style={styles.contentRight}>
-                <div style={styles.serviceTags}>
-                  {section.services.map((service, index) => (
-                    <span key={index} style={styles.serviceTag}>
+              <h3 className="text-xl md:text-2xl font-bold">{section.name}</h3>
+              <span className="text-2xl font-light">
+                {openIndex === index ? "−" : "+"}
+              </span>
+            </button>
+
+            {/* COLLAPSIBLE CONTENT */}
+            <div
+              className={`transition-all duration-500 overflow-hidden ${
+                openIndex === index ? "max-h-[900px] opacity-100" : "max-h-0 opacity-0"
+              }`}
+            >
+              <div className="px-5 pb-6 mt-2 flex flex-col gap-6">
+
+                {/* DESCRIPTION */}
+                <div className="w-full">
+                  <p className="text-[rgba(82,28,13,0.85)] text-base leading-relaxed">
+                    {section.description}
+                  </p>
+                </div>
+
+                {/* TAGS — STACKED ALWAYS */}
+                <div className="flex flex-wrap gap-3">
+                  {section.services.map((service, i) => (
+                    <span
+                      key={i}
+                      className="
+                        bg-[#fffdf8]
+                        border border-[rgba(82,28,13,0.2)]
+                        rounded-full
+                        px-3 py-1
+                        text-xs md:text-sm
+                        font-medium
+                        shadow-sm
+                        whitespace-nowrap
+                      "
+                    >
                       {service}
                     </span>
                   ))}
                 </div>
               </div>
+
+              <div className="h-4"></div>
             </div>
           </div>
         ))}
       </div>
-
-      <style jsx>{`
-        .expertise-section {
-          transition: all 0.3s ease;
-          cursor: pointer;
-          position: relative;
-        }
-        
-        .expertise-section:hover {
-          background-color: #ffffff !important;
-          color: #000000;
-          border: 2px solid #521C0D;
-          box-shadow: 0 4px 20px rgba(82, 28, 13, 0.15);
-        }
-        
-        .section-expanded-content {
-          max-height: 0;
-          opacity: 0;
-          overflow: hidden;
-          transition: all 0.3s ease;
-        }
-        
-        .expertise-section:hover .section-expanded-content {
-          max-height: 1000px;
-          opacity: 1;
-          padding: 0 24px 24px;
-          transition: all 0.5s ease;
-        }
-
-        @media (max-width: 992px) {
-          .section-expanded-content {
-            flex-direction: column !important;
-          }
-          .expertise-section:hover .section-expanded-content {
-            max-height: 2000px;
-          }
-        }
-
-        @media (max-width: 768px) {
-          .expertise-section:hover .section-expanded-content {
-            max-height: 2500px;
-          }
-        }
-      `}</style>
     </div>
   );
-};
-
-const styles: { [key: string]: React.CSSProperties } = {
-  container: {
-    backgroundColor: '#EDE8D0',
-    color: '#521C0D',
-    width: '100%',
-    padding: '64px 24px',
-    fontFamily: 'serif',
-    maxWidth: '100%',
-    overflow: 'hidden',
-  },
-  titleWrapper: {
-    textAlign: 'center',
-    marginBottom: '48px',
-    maxWidth: '900px',
-    margin: '0 auto 48px',
-  },
-  title: {
-    fontSize: '2.25rem',
-    fontWeight: 700,
-    margin: '0 0 16px 0',
-    color: '#521C0D',
-  },
-  subtitle: {
-    fontSize: '1.125rem',
-    color: 'rgba(82, 28, 13, 0.7)',
-    margin: 0,
-    fontFamily: 'sans-serif',
-  },
-  sections: {
-    maxWidth: '1200px',
-    margin: '0 auto',
-    padding: '0 16px',
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '12px',
-  },
-  section: {
-    borderRadius: '8px',
-    overflow: 'hidden',
-    backgroundColor: 'rgba(82, 28, 13, 0.08)',
-    border: '1px solid rgba(82, 28, 13, 0.1)',
-  },
-  sectionHeader: {
-    padding: '20px 24px',
-  },
-  sectionTitle: {
-    fontSize: '1.5rem',
-    fontWeight: 700,
-    margin: 0,
-    color: '#521C0D',
-  },
-  expandedContent: {
-    padding: '0 24px',
-    display: 'flex',
-    justifyContent: 'space-between',
-    gap: '32px',
-  },
-  contentLeft: {
-    flex: 1,
-    maxWidth: '60%',
-  },
-  description: {
-    fontSize: '0.9375rem',
-    lineHeight: 1.6,
-    marginBottom: '0',
-    color: 'rgba(82, 28, 13, 0.8)',
-    fontFamily: 'sans-serif',
-  },
-  contentRight: {
-    flex: 1,
-    maxWidth: '40%',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'flex-start',
-    alignItems: 'flex-end',
-  },
-  serviceTags: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    gap: '8px',
-    justifyContent: 'flex-end',
-  },
-  serviceTag: {
-    backgroundColor: '#ffffff',
-    color: '#521C0D',
-    padding: '6px 12px',
-    borderRadius: '40px',
-    fontSize: '0.75rem',
-    fontWeight: 500,
-    border: '1px solid rgba(82, 28, 13, 0.2)',
-    fontFamily: 'sans-serif',
-  },
 };
 
 export default OurExpertise;

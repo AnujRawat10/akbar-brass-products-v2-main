@@ -15,8 +15,9 @@ export function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#521C0D] border-b border-[#EDE8D0]/20">
       <div className="container mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
         <Link href="/" className="flex items-center">
-          <img src="/logo.png" alt="Akbar Brass Products" className="h-16 w-auto sm:h-16" />
+          <img src="/logo.png" alt="Akbar Brass Products" className="h-20 w-auto sm:h-24 md:h-28" />
         </Link>
+
 
         <nav className="hidden md:flex items-center gap-6 text-sm uppercase">
           {/* About Akbar Dropdown */}

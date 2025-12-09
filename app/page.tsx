@@ -31,14 +31,14 @@ function LuxuryShowcase() {
 
     /** SAFE & TRUE DESCRIPTION **/
     description: [
-      "A curated presentation of brass, stone, wood, and mixed-material home products.",
+      "A curated presentation of metal, stone, wood, and mixed-material home products.",
       "Developed within a multi-material manufacturing environment using contemporary techniques and workmanship practices.",
       "The products highlight attention to material selection, finish quality, and usability suited for interior applications.",
       "Items may vary by specification, and details are available upon inquiry."
     ],
 
     /** SAFE MATERIALS **/
-    materials: "Brass | Natural Stone | Wood | Mixed Materials",
+    materials: "Metal | Natural Stone | Wood | Mixed Materials",
 
     /** ONLY TWO IMAGES WILL SLIDE **/
     images: ["/showroom1.jpeg", "/showroom2.jpeg"]
@@ -111,53 +111,37 @@ function LuxuryShowcase() {
         </main>
 
         {/* RIGHT SIDEBAR */}
-        <aside className="lg:w-1/4 p-6 border-l border-[#d4cdb5]">
-          
-          <div className="text-right mb-6">
-            <div className="text-5xl font-light" style={{ color: "#521C0D" }}>
-              {product.number}
-            </div>
-            {/* <div className="italic text-xs" style={{ color: "rgba(82,28,13,0.6)" }}>
-              (Scroll)
-            </div> */}
-          </div>
+        {/* RIGHT SIDEBAR — CLEAN, NO QUANTIFIERS */}
+<aside className="lg:w-1/4 p-6 border-l border-[#d4cdb5] flex flex-col justify-between">
 
-          <div className="space-y-4 text-sm">
-            {[
-              ["Style", product.style],
-              ["Size", product.size],
-              ["Dimensions", product.dimensions],
-              ["COM / COL", product.com],
-            ].map(([label, value]) => (
-              <div key={label} className="flex justify-between border-b pb-2 border-[#d4cdb5]">
-                <span className="italic" style={{ color: "rgba(82,28,13,0.7)" }}>{label}</span>
-                <span style={{ color: "#521C0D" }}>{value}</span>
-              </div>
-            ))}
+  {/* Title */}
+  <div className="mb-6 text-right">
+    <div className="text-5xl font-light" style={{ color: "#521C0D" }}>
+      INTERIOR DÉCOR
+    </div>
+  </div>
 
-            <button
-              onClick={() => setShowMaterials(!showMaterials)}
-              className="italic text-left"
-              style={{ color: "rgba(82,28,13,0.7)" }}
-            >
-              Materials
-            </button>
+  {/* Editorial Text */}
+  <div className="space-y-4 mt-6">
+    <p className="leading-relaxed text-sm" style={{ color: "rgba(82,28,13,0.8)" }}>
+      Designed for timeless spaces that balance luxury, craft, and comfort.
+    </p>
+    <p className="leading-relaxed text-sm" style={{ color: "rgba(82,28,13,0.8)" }}>
+      Our work celebrates traditional artistry with modern silhouettes, 
+      offering pieces that elevate residential and commercial interiors alike.
+    </p>
+  </div>
 
-            {showMaterials && (
-              <p className="pl-2" style={{ color: "rgba(82,28,13,0.8)" }}>
-                {product.materials}
-              </p>
-            )}
-          </div>
+  {/* CTA — stronger wording */}
+  <Link
+    href="/about-akbar/approach"
+    className="block mt-10 text-center py-3 rounded-md shadow-md"
+    style={{ backgroundColor: "#521C0D", color: "#EDE8D0" }}
+  >
+    Explore Our Approach
+  </Link>
+</aside>
 
-          <Link
-            href="/about-akbar/approach"
-            className="block mt-8 text-center py-3 rounded-md shadow-md"
-            style={{ backgroundColor: "#521C0D", color: "#EDE8D0" }}
-          >
-            Explore Our Approach
-          </Link>
-        </aside>
 
       </div>
     </div>
@@ -186,11 +170,11 @@ export default function HomePage() {
       collection: "2024 - 2025",
       category: "Furniture",
       dimensions: '48"W x 16"D x 32"H',
-      finish: "Antique Brass",
+      finish: "Antique Metal",
       compliance: "EU & US Standards",
-      materials: "Solid Brass | Marble Top | Hand-finished",
+      materials: "Solid Metal | Marble Top | Hand-finished",
       description: [
-        "A contemporary console table featuring precision-engineered brass framework supporting a natural marble surface. Designed for refined residential and hospitality applications with attention to material integrity and structural stability.",
+        "A contemporary console table featuring precision-engineered metal framework supporting a natural marble surface. Designed for refined residential and hospitality applications with attention to material integrity and structural stability.",
         "",
         "Certificate of Quality Compliance. Year 2025.",
         "Manufactured at Akbar Brass Products, Moradabad.",

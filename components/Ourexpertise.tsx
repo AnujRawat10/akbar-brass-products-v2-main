@@ -20,7 +20,7 @@ const OurExpertise: React.FC = () => {
     {
       name: "Heritage Brass Collection",
       description:
-        "A curated presentation of brass, stone, wood, and mixed-material home products. Developed within a multi-material manufacturing environment using contemporary techniques and workmanship practices. The products highlight attention to material selection, finish quality, and usability suited for interior applications.",
+        "A curated presentation of metal, stone, wood, and mixed-material home products. Developed within a multi-material manufacturing environment using contemporary techniques and workmanship practices. The products highlight attention to material selection, finish quality, and usability suited for interior applications.",
       services: [
         "Brass Fabrication",
         "Hand Finishing",

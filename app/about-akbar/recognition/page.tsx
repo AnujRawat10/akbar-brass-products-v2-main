@@ -7,21 +7,21 @@ export default function RecognitionPage() {
       presentedBy: "Hon'ble Prime Minister of India, Shri Atal Bihari Vajpayee",
       issuedBy: "Ministry of Commerce, Government of India",
       description: "A prestigious national honour awarded in recognition of exceptional export performance, manufacturing excellence, and contribution to India's global trade.",
-      image: "/Awards/Awards1.png"
+      image: "/Awards/1.png"
     },
     {
       title: "Certificate of Merit for Export Performance (1994–95)",
       presentedBy: "Hon'ble President of India, Shri Shankar Dayal Sharma",
       issuedBy: "Government of India",
       description: "A distinguished certificate acknowledging Akbar Brass Products' contribution to India's international export growth and consistent quality across global markets.",
-      image: "/Awards/Awards2.png"
+      image: "/Awards/2.png"
     },
     {
       title: "Trophy for Export Performance in EPNS & Handicrafts",
       presentedBy: "Hon'ble Union Minister for Textiles, Shri Kanshi Ram Rana",
       issuedBy: "Ministry of Textiles, Government of India",
       description: "A sector-specific national award recognising excellence in EPNS and metal handicraft exports, acknowledging product quality, craftsmanship, and reliable delivery.",
-      image: "/Awards/Awards3.png"
+      image: "/Awards/3.png"
     }
   ]
 

@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import OurExpertise from "@/components/Ourexpertise";
 import { Package, Lightbulb, Frame, Sparkles, CircleDot, Boxes } from 'lucide-react'
+import OurPartners from "@/components/OurPartners";
 /**
  * LuxuryShowcase - updated, responsive, verified-safe
  * - auto slider (fade)
@@ -410,6 +411,7 @@ export default function HomePage() {
     </div>
   </div>
 </section>
+<OurPartners />
 
       {/* Connect */}
       <section className="px-6 py-20 md:py-28 bg-white">

@@ -2,185 +2,148 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { Menu, X, ChevronDown } from 'lucide-react'
+import { Menu, X, ChevronDown } from "lucide-react"
 
 export function Header() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false)
-  const [isCapabilitiesDropdownOpen, setIsCapabilitiesDropdownOpen] = useState(false)
-  const [isMobileAboutOpen, setIsMobileAboutOpen] = useState(false)
-  const [isMobileCapabilitiesOpen, setIsMobileCapabilitiesOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isAboutOpen, setIsAboutOpen] = useState(false)
+  const [isCapabilitiesOpen, setIsCapabilitiesOpen] = useState(false)
+
+  const row =
+    "flex items-center justify-between py-5 text-[17px] tracking-wide border-b border-black/20"
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#521C0D] border-b border-[#EDE8D0]/20">
-      <div className="container mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
-        <Link href="/" className="flex items-center">
-          <img src="/logo.png" alt="Akbar Brass Products" className="h-20 w-auto sm:h-18" />
-        </Link>
+    <>
+      {/* ================= HEADER ================= */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#521C0D] border-b border-[#EDE8D0]/20">
+        <div className="container mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
 
-
-        <nav className="hidden md:flex items-center gap-6 text-sm uppercase">
-          {/* About Akbar Dropdown */}
-          <div 
-            className="relative" 
-            onMouseEnter={() => setIsAboutDropdownOpen(true)} 
-            onMouseLeave={() => setIsAboutDropdownOpen(false)}
-          >
-            <span className="text-[#EDE8D0] hover:text-[#EDE8D0]/70 transition-colors flex items-center gap-1 cursor-default">
-              ABOUT AKBAR
-              <ChevronDown className="h-4 w-4" />
-            </span>
-
-            {isAboutDropdownOpen && (
-              <div className="absolute top-full left-0 pt-2">
-                <div className="w-56 bg-[#521C0D] border border-[#EDE8D0]/20 rounded-lg shadow-lg overflow-hidden">
-                  <Link
-                    href="/about-akbar/timeline"
-                    className="block px-4 py-3 text-sm text-[#EDE8D0] hover:bg-[#EDE8D0]/10 transition-colors border-b border-[#EDE8D0]/10"
-                  >
-                    Timeline
-                  </Link>
-                  <Link
-                    href="/about-akbar/approach"
-                    className="block px-4 py-3 text-sm text-[#EDE8D0] hover:bg-[#EDE8D0]/10 transition-colors border-b border-[#EDE8D0]/10"
-                  >
-                    The Akbar Approach
-                  </Link>
-                  <Link
-                    href="/about-akbar/recognition"
-                    className="block px-4 py-3 text-sm text-[#EDE8D0] hover:bg-[#EDE8D0]/10 transition-colors"
-                  >
-                    Our Recognition
-                  </Link>
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* Capabilities Dropdown */}
-          <div 
-            className="relative" 
-            onMouseEnter={() => setIsCapabilitiesDropdownOpen(true)} 
-            onMouseLeave={() => setIsCapabilitiesDropdownOpen(false)}
-          >
-            <span className="text-[#EDE8D0] hover:text-[#EDE8D0]/70 transition-colors flex items-center gap-1 cursor-default">
-              CAPABILITIES
-              <ChevronDown className="h-4 w-4" />
-            </span>
-
-            {isCapabilitiesDropdownOpen && (
-              <div className="absolute top-full left-0 pt-2">
-                <div className="w-56 bg-[#521C0D] border border-[#EDE8D0]/20 rounded-lg shadow-lg overflow-hidden">
-                  <Link
-                    href="/capabilities/materials"
-                    className="block px-4 py-3 text-sm text-[#EDE8D0] hover:bg-[#EDE8D0]/10 transition-colors border-b border-[#EDE8D0]/10"
-                  >
-                    Materials
-                  </Link>
-                  <Link
-                    href="/capabilities/portfolio"
-                    className="block px-4 py-3 text-sm text-[#EDE8D0] hover:bg-[#EDE8D0]/10 transition-colors border-b border-[#EDE8D0]/10"
-                  >
-                    Product Portfolio
-                  </Link>
-                  <Link
-                    href="/capabilities/ethics"
-                    className="block px-4 py-3 text-sm text-[#EDE8D0] hover:bg-[#EDE8D0]/10 transition-colors"
-                  >
-                    Ethics & Compliance
-                  </Link>
-                </div>
-              </div>
-            )}
-          </div>
-
-          <Link href="/sustainability" className="text-[#EDE8D0] hover:text-[#EDE8D0]/70 transition-colors">
-            SUSTAINABILITY
-          </Link>
-          <Link href="/careers" className="text-[#EDE8D0] hover:text-[#EDE8D0]/70 transition-colors">
-            CAREERS
-          </Link>
-          <Link href="/contact" className="text-[#EDE8D0] hover:text-[#EDE8D0]/70 transition-colors">
-            CONTACT US
-          </Link>
-        </nav>
-
-        {/* Mobile Menu Button */}
-        <div className="md:hidden">
+          {/* LEFT: MENU */}
           <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="p-2 text-[#EDE8D0] hover:bg-[#EDE8D0]/10 rounded-lg transition-colors"
-            aria-label="Toggle menu"
+            onClick={() => setIsMenuOpen(true)}
+            className="text-[#EDE8D0]"
+            aria-label="Open menu"
           >
-            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            <Menu className="h-6 w-6" />
           </button>
-        </div>
-      </div>
 
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden border-t border-[#EDE8D0]/20 bg-[#521C0D]/98 backdrop-blur-sm">
-          <nav className="container mx-auto px-4 py-4 flex flex-col gap-3">
-            {/* About Akbar Mobile */}
-            <div className="flex flex-col">
-              <button
-                onClick={() => setIsMobileAboutOpen(!isMobileAboutOpen)}
-                className="text-base text-[#EDE8D0] hover:bg-[#EDE8D0]/10 px-4 py-3 rounded-lg transition-colors flex items-center justify-between"
-              >
-                ABOUT AKBAR
-                <ChevronDown className={`h-5 w-5 transition-transform ${isMobileAboutOpen ? "rotate-180" : ""}`} />
+          {/* CENTER LOGO (DESKTOP ONLY) */}
+          <Link href="/" className="hidden md:block">
+            <img src="/logo.png" alt="Akbar" className="h-14 w-auto mx-auto" />
+          </Link>
+
+          {/* RIGHT: LOGO (MOBILE) + CONTACT (DESKTOP) */}
+          <div className="flex items-center gap-4">
+            <Link href="/" className="md:hidden">
+              <img src="/logo.png" alt="Akbar" className="h-12 w-auto" />
+            </Link>
+
+            <Link
+              href="/contact"
+              className="hidden md:inline-block px-6 py-2 border border-[#EDE8D0] text-[#EDE8D0] text-sm uppercase tracking-wide hover:bg-[#EDE8D0] hover:text-[#521C0D] transition"
+            >
+              Contact Us
+            </Link>
+          </div>
+
+        </div>
+      </header>
+
+      {/* ================= DRAWER ================= */}
+      {isMenuOpen && (
+        <div className="fixed inset-0 z-50">
+
+          {/* Overlay */}
+          <div
+            className="absolute inset-0 bg-black/40"
+            onClick={() => setIsMenuOpen(false)}
+          />
+
+          {/* Drawer */}
+          <div className="absolute left-0 top-0 h-full w-[85%] max-w-sm bg-[#F6F1E1] flex flex-col">
+
+            {/* Drawer Header */}
+            <div className="flex items-center justify-between px-6 h-20 border-b border-black/20">
+              <span className="text-xl font-semibold">Menu</span>
+              <button onClick={() => setIsMenuOpen(false)}>
+                <X className="h-6 w-6" />
               </button>
-              {isMobileAboutOpen && (
-                <div className="ml-4 flex flex-col gap-1 mt-1">
-                  <Link href="/about-akbar/timeline" className="text-sm text-[#EDE8D0] hover:bg-[#EDE8D0]/10 px-4 py-2 rounded-lg transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
+            </div>
+
+            {/* Drawer Content */}
+            <nav className="flex-1 px-6 py-4">
+
+              {/* ABOUT */}
+              <button
+                onClick={() => setIsAboutOpen(!isAboutOpen)}
+                className={`${row} w-full`}
+              >
+                About Akbar
+                <ChevronDown
+                  className={`transition-transform ${isAboutOpen ? "rotate-180" : ""}`}
+                />
+              </button>
+
+              {isAboutOpen && (
+                <div className="pl-4">
+                  <Link href="/about-akbar/timeline" onClick={() => setIsMenuOpen(false)} className={row}>
                     Timeline
                   </Link>
-                  <Link href="/about-akbar/approach" className="text-sm text-[#EDE8D0] hover:bg-[#EDE8D0]/10 px-4 py-2 rounded-lg transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
+                  <Link href="/about-akbar/approach" onClick={() => setIsMenuOpen(false)} className={row}>
                     The Akbar Approach
                   </Link>
-                  <Link href="/about-akbar/recognition" className="text-sm text-[#EDE8D0] hover:bg-[#EDE8D0]/10 px-4 py-2 rounded-lg transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
+                  <Link href="/about-akbar/recognition" onClick={() => setIsMenuOpen(false)} className={row}>
                     Our Recognition
                   </Link>
                 </div>
               )}
-            </div>
 
-            {/* Capabilities Mobile */}
-            <div className="flex flex-col">
+              {/* CAPABILITIES */}
               <button
-                onClick={() => setIsMobileCapabilitiesOpen(!isMobileCapabilitiesOpen)}
-                className="text-base text-[#EDE8D0] hover:bg-[#EDE8D0]/10 px-4 py-3 rounded-lg transition-colors flex items-center justify-between"
+                onClick={() => setIsCapabilitiesOpen(!isCapabilitiesOpen)}
+                className={`${row} w-full`}
               >
-                CAPABILITIES
-                <ChevronDown className={`h-5 w-5 transition-transform ${isMobileCapabilitiesOpen ? "rotate-180" : ""}`} />
+                Capabilities
+                <ChevronDown
+                  className={`transition-transform ${isCapabilitiesOpen ? "rotate-180" : ""}`}
+                />
               </button>
-              {isMobileCapabilitiesOpen && (
-                <div className="ml-4 flex flex-col gap-1 mt-1">
-                  <Link href="/capabilities/materials" className="text-sm text-[#EDE8D0] hover:bg-[#EDE8D0]/10 px-4 py-2 rounded-lg transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
+
+              {isCapabilitiesOpen && (
+                <div className="pl-4">
+                  <Link href="/capabilities/materials" onClick={() => setIsMenuOpen(false)} className={row}>
                     Materials
                   </Link>
-                  <Link href="/capabilities/portfolio" className="text-sm text-[#EDE8D0] hover:bg-[#EDE8D0]/10 px-4 py-2 rounded-lg transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
+                  <Link href="/capabilities/portfolio" onClick={() => setIsMenuOpen(false)} className={row}>
                     Product Portfolio
                   </Link>
-                  <Link href="/capabilities/ethics" className="text-sm text-[#EDE8D0] hover:bg-[#EDE8D0]/10 px-4 py-2 rounded-lg transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
+                  <Link href="/capabilities/ethics" onClick={() => setIsMenuOpen(false)} className={row}>
                     Ethics & Compliance
                   </Link>
                 </div>
               )}
-            </div>
 
-            <Link href="/sustainability" className="text-base text-[#EDE8D0] hover:bg-[#EDE8D0]/10 px-4 py-3 rounded-lg transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
-              SUSTAINABILITY
-            </Link>
-            <Link href="/careers" className="text-base text-[#EDE8D0] hover:bg-[#EDE8D0]/10 px-4 py-3 rounded-lg transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
-              CAREERS
-            </Link>
-            <Link href="/contact" className="text-base text-[#EDE8D0] hover:bg-[#EDE8D0]/10 px-4 py-3 rounded-lg transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
-              CONTACT US
-            </Link>
-          </nav>
+              {/* SIMPLE LINKS */}
+              <Link href="/sustainability" onClick={() => setIsMenuOpen(false)} className={row}>
+                Sustainability
+              </Link>
+
+              <Link href="/careers" onClick={() => setIsMenuOpen(false)} className={row}>
+                Careers
+              </Link>
+
+              <Link
+                href="/contact"
+                onClick={() => setIsMenuOpen(false)}
+                className="flex items-center py-5 text-[17px] tracking-wide"
+              >
+                Contact Us
+              </Link>
+
+            </nav>
+          </div>
         </div>
       )}
-    </header>
+    </>
   )
 }

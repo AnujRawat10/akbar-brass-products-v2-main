@@ -61,6 +61,51 @@ export default function TimelinePage() {
             Built over three generations, our journey reflects a steady evolution from traditional craftsmanship to modern, system-driven manufacturing. Each decade shows how we expanded our material expertise, upgraded our processes, and consolidated our infrastructure to meet the expectations of global markets.
           </p>
         </div>
+        {/* Video Hero Section */}
+<div className="mb-20">
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+    
+    {/* Left Tall Video */}
+    <div className="md:col-span-1 h-[500px]  overflow-hidden">
+      <video
+        src="/videos/1.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="w-full h-full object-cover"
+      />
+    </div>
+
+    {/* Right Two Stacked Videos */}
+    <div className="md:col-span-2 grid grid-rows-2 gap-4 h-[500px]">
+      
+      <div className=" overflow-hidden">
+        <video
+          src="/videos/2.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+      <div className=" overflow-hidden">
+        <video
+          src="/videos/3.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+    </div>
+  </div>
+</div>
+
 
         {/* Timeline */}
         <div className="relative">

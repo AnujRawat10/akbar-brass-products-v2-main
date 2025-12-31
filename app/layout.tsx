@@ -16,7 +16,25 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: "Akbar Brass Products - Curated Home Decor",
   description: "Transform your space with our collection of artisanal brass pieces and timeless designs",
-  
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+    other: [
+      {
+        rel: "icon",
+        url: "/web-app-manifest-192x192.png",
+        sizes: "192x192",
+        type: "image/png",
+      },
+      {
+        rel: "icon",
+        url: "/web-app-manifest-512x512.png",
+        sizes: "16x16",
+        type: "image/png",
+      },
+    ],
+  },
 }
 
 export default function RootLayout({

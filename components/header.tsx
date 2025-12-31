@@ -29,13 +29,15 @@ export function Header() {
 
           {/* CENTER LOGO (DESKTOP ONLY) */}
           <Link href="/" className="hidden md:block">
-            <img src="/logo.png" alt="Akbar" className="h-14 w-auto mx-auto" />
+            <img src="/logo.png" alt="Akbar" className="h-18 md:h-20 w-auto" />
+
           </Link>
 
           {/* RIGHT: LOGO (MOBILE) + CONTACT (DESKTOP) */}
           <div className="flex items-center gap-4">
             <Link href="/" className="md:hidden">
-              <img src="/logo.png" alt="Akbar" className="h-12 w-auto" />
+              <img src="/logo.png" alt="Akbar" className="h-16 w-auto"/>
+
             </Link>
 
             <Link

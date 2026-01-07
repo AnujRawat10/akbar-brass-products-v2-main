@@ -47,7 +47,7 @@ export default function RootLayout({
       <body className="font-sans antialiased">
         <AuthProvider>
           <Header />
-          <main className="pt-20">{children}</main>
+          <main className="">{children}</main>
           <Footer />
         </AuthProvider>
         <Analytics />

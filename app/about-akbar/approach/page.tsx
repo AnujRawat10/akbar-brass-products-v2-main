@@ -48,7 +48,7 @@ export default function ApproachPage() {
   ]
 
   return (
-    <div className="min-h-screen  pb-16" style={{ backgroundColor: '#EDE8D0' }}>
+    <div className="min-h-screen  pb-16" style={{ backgroundColor: '#f0efe2' }}>
 
       {/* ================= HERO ================= */}
       {/* HERO BANNER */}
@@ -100,21 +100,21 @@ export default function ApproachPage() {
               >
                 <div
                   className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-full text-white"
-                  style={{ backgroundColor: '#521C0D' }}
+                  style={{ backgroundColor: '#63403A' }}
                 >
                   <Icon className="h-7 w-7" />
                 </div>
 
                 <h3
                   className="text-xl font-semibold mb-3"
-                  style={{ color: '#521C0D' }}
+                  style={{ color: '#63403A' }}
                 >
                   {principle.title}
                 </h3>
 
                 <p
                   className="leading-relaxed"
-                  style={{ color: '#521C0D' }}
+                  style={{ color: '#63403A' }}
                 >
                   {principle.description}
                 </p>
@@ -139,14 +139,14 @@ export default function ApproachPage() {
           <div>
             <h3
               className="font-serif text-3xl font-bold mb-6"
-              style={{ color: '#521C0D' }}
+              style={{ color: '#63403A' }}
             >
               Built on Structure, Not Chance
             </h3>
 
             <p
               className="text-lg leading-relaxed mb-4"
-              style={{ color: '#521C0D' }}
+              style={{ color: '#63403A' }}
             >
               Our manufacturing environments are designed around flow, discipline,
               and clarity. Every workstation and movement is intentional — reducing
@@ -155,7 +155,7 @@ export default function ApproachPage() {
 
             <p
               className="text-lg leading-relaxed"
-              style={{ color: '#521C0D' }}
+              style={{ color: '#63403A' }}
             >
               This structured approach enables dependable timelines, scalable output,
               and globally compliant quality standards.
@@ -170,7 +170,7 @@ export default function ApproachPage() {
       <div className="container mx-auto px-6">
         <div
           className="text-white py-16 px-8 rounded-lg text-center max-w-4xl mx-auto"
-          style={{ backgroundColor: '#521C0D' }}
+          style={{ backgroundColor: '#63403A' }}
         >
           <h2 className="font-serif text-3xl font-bold mb-8">
             The Essence of Our Approach

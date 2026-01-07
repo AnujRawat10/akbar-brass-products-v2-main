@@ -33,7 +33,7 @@ export function LoginForm() {
     <div className="w-full max-w-md mx-auto">
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="space-y-2">
-          <label htmlFor="email" className="block text-sm font-medium uppercase tracking-wider text-[#521C0D]">
+          <label htmlFor="email" className="block text-sm font-medium uppercase tracking-wider text-[#63403A]">
             Email
           </label>
           <Input
@@ -43,11 +43,11 @@ export function LoginForm() {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="demo@akbarbrass.com"
             required
-            className="w-full border-[#521C0D]/30 bg-white text-[#521C0D] focus:border-[#521C0D] focus:ring-[#521C0D]"
+            className="w-full border-[#63403A]/30 bg-white text-[#63403A] focus:border-[#63403A] focus:ring-[#63403A]"
           />
         </div>
         <div className="space-y-2">
-          <label htmlFor="password" className="block text-sm font-medium uppercase tracking-wider text-[#521C0D]">
+          <label htmlFor="password" className="block text-sm font-medium uppercase tracking-wider text-[#63403A]">
             Password
           </label>
           <Input
@@ -57,19 +57,19 @@ export function LoginForm() {
             onChange={(e) => setPassword(e.target.value)}
             placeholder="demo123"
             required
-            className="w-full border-[#521C0D]/30 bg-white text-[#521C0D] focus:border-[#521C0D] focus:ring-[#521C0D]"
+            className="w-full border-[#63403A]/30 bg-white text-[#63403A] focus:border-[#63403A] focus:ring-[#63403A]"
           />
         </div>
         {error && <p className="text-sm text-red-700 font-mono bg-red-50 p-3 rounded-lg border border-red-200">{error}</p>}
         <Button
           type="submit"
-          className="w-full bg-[#521C0D] hover:bg-[#6B2410] text-[#EDE8D0] font-semibold py-6 text-base transition-all hover:shadow-lg"
+          className="w-full bg-[#63403A] hover:bg-[#6B2410] text-[#f0efe2] font-semibold py-6 text-base transition-all hover:shadow-lg"
         >
           Sign In
         </Button>
       </form>
-      <div className="mt-6 p-4 bg-white border border-[#521C0D]/20 rounded-lg">
-        <p className="text-sm text-[#521C0D]">
+      <div className="mt-6 p-4 bg-white border border-[#63403A]/20 rounded-lg">
+        <p className="text-sm text-[#63403A]">
           <span className="font-semibold">Demo credentials:</span>
           <br />
           Email: demo@akbarbrass.com

@@ -5,8 +5,8 @@
 
 :root {
   /* Primary Colors */
-  --background: oklch(0.93 0.02 75); /* #EDE8D0 - Warm cream */
-  --foreground: oklch(0.25 0.08 25); /* #521C0D - Deep brown/burgundy */
+  --background: oklch(0.93 0.02 75); /* #f0efe2 - Warm cream */
+  --foreground: oklch(0.25 0.08 25); /* #63403A - Deep brown/burgundy */
   
   /* Card & Popover */
   --card: oklch(0.95 0.015 75); /* Lighter cream for cards */
@@ -15,7 +15,7 @@
   --popover-foreground: oklch(0.25 0.08 25);
   
   /* Primary Actions - Deep brown */
-  --primary: oklch(0.25 0.08 25); /* #521C0D */
+  --primary: oklch(0.25 0.08 25); /* #63403A */
   --primary-foreground: oklch(0.93 0.02 75); /* Cream text on brown */
   
   /* Secondary - Medium brown/bronze */

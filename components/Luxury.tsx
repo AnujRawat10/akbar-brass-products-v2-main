@@ -57,7 +57,7 @@ function LuxuryShowcase() {
   const currentProduct = products[activeIndex];
 
   return (
-    <div style={{ width: "100%", backgroundColor: "#EDE8D0", padding: "0" }}>
+    <div style={{ width: "100%", backgroundColor: "#f0efe2", padding: "0" }}>
       <div
         style={{
           display: "grid",
@@ -71,7 +71,7 @@ function LuxuryShowcase() {
         {/* LEFT PANEL - Product List */}
         <div
           style={{
-            backgroundColor: "#EDE8D0",
+            backgroundColor: "#f0efe2",
             padding: "40px 30px",
             borderRight: "1px solid rgba(82, 28, 13, 0.2)",
             overflowY: "auto",
@@ -90,7 +90,7 @@ function LuxuryShowcase() {
                 fontSize: "0.875rem",
                 fontWeight: 700,
                 letterSpacing: "1px",
-                color: "#521C0D",
+                color: "#63403A",
                 margin: "0 0 8px 0",
               }}
             >
@@ -124,7 +124,7 @@ function LuxuryShowcase() {
                       : "transparent",
                   borderLeft:
                     activeIndex === index
-                      ? "3px solid #521C0D"
+                      ? "3px solid #63403A"
                       : "3px solid transparent",
                 }}
                 onMouseEnter={() => setActiveIndex(index)}
@@ -134,7 +134,7 @@ function LuxuryShowcase() {
                   style={{
                     fontSize: "1.125rem",
                     fontWeight: 700,
-                    color: "#521C0D",
+                    color: "#63403A",
                     fontStyle: "italic",
                     flexShrink: 0,
                   }}
@@ -173,7 +173,7 @@ function LuxuryShowcase() {
         {/* CENTER PANEL - Main Image */}
         <div
           style={{
-            backgroundColor: "#EDE8D0",
+            backgroundColor: "#f0efe2",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -197,7 +197,7 @@ function LuxuryShowcase() {
                 width: "100%",
                 height: "100%",
                 objectFit: "cover",
-                border: "2px solid #521C0D",
+                border: "2px solid #63403A",
               }}
             />
           </div>
@@ -206,7 +206,7 @@ function LuxuryShowcase() {
         {/* RIGHT PANEL - Product Details */}
         <div
           style={{
-            backgroundColor: "#EDE8D0",
+            backgroundColor: "#f0efe2",
             padding: "40px 30px",
             borderLeft: "1px solid rgba(82, 28, 13, 0.2)",
             display: "flex",
@@ -218,7 +218,7 @@ function LuxuryShowcase() {
               style={{
                 fontSize: "4rem",
                 fontWeight: 700,
-                color: "#521C0D",
+                color: "#63403A",
                 display: "block",
                 lineHeight: 1,
               }}
@@ -275,7 +275,7 @@ function LuxuryShowcase() {
                 <span
                   style={{
                     fontSize: "0.875rem",
-                    color: "#521C0D",
+                    color: "#63403A",
                     fontWeight: 500,
                   }}
                 >
@@ -290,8 +290,8 @@ function LuxuryShowcase() {
             style={{
               display: "block",
               textAlign: "center",
-              backgroundColor: "#521C0D",
-              color: "#EDE8D0",
+              backgroundColor: "#63403A",
+              color: "#f0efe2",
               border: "none",
               padding: "14px 24px",
               fontSize: "0.875rem",
@@ -326,7 +326,7 @@ function LuxuryShowcase() {
                   transition: "all 0.3s ease",
                   backgroundColor:
                     activeIndex === index
-                      ? "#521C0D"
+                      ? "#63403A"
                       : "rgba(82, 28, 13, 0.3)",
                 }}
                 onClick={() => setActiveIndex(index)}

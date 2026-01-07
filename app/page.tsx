@@ -54,16 +54,16 @@ function LuxuryShowcase() {
   }, []);
 
   return (
-    <div className="w-full bg-[#EDE8D0] font-serif">
+    <div className="w-full bg-[#f0efe2] font-serif">
 
       {/* Header */}
       <header className="border-b border-[#d4cdb5] px-6 py-4 flex justify-between items-center">
-        <h2 className="text-xl tracking-wider" style={{ color: "#521C0D" }}>
+        <h2 className="text-xl tracking-wider" style={{ color: "#63403A" }}>
           {product.brand}
         </h2>
 
         {/* RANGE REMOVED — ONLY LOCATION */}
-        <div className="hidden md:flex items-center gap-6 text-sm" style={{ color: "#521C0D" }}>
+        <div className="hidden md:flex items-center gap-6 text-sm" style={{ color: "#63403A" }}>
           <span>{product.location}</span>
         </div>
       </header>
@@ -73,7 +73,7 @@ function LuxuryShowcase() {
 
         {/* LEFT SIDEBAR */}
         <aside className="lg:w-1/4 p-6 border-r border-[#d4cdb5]">
-          <p className="italic mb-4" style={{ color: "#521C0D" }}>
+          <p className="italic mb-4" style={{ color: "#63403A" }}>
             i.
           </p>
 
@@ -85,7 +85,7 @@ function LuxuryShowcase() {
             ))}
           </div>
 
-          <p className="italic mb-1" style={{ color: "#521C0D" }}>
+          <p className="italic mb-1" style={{ color: "#63403A" }}>
             ii. {product.materials}
           </p>
 {/* 
@@ -117,7 +117,7 @@ function LuxuryShowcase() {
 
   {/* Title */}
   <div className="mb-6 text-right">
-    <div className="text-5xl font-light" style={{ color: "#521C0D" }}>
+    <div className="text-5xl font-light" style={{ color: "#63403A" }}>
       INTERIOR DÉCOR
     </div>
   </div>
@@ -137,7 +137,7 @@ function LuxuryShowcase() {
   <Link
     href="/about-akbar/approach"
     className="block mt-10 text-center py-3 rounded-md shadow-md"
-    style={{ backgroundColor: "#521C0D", color: "#EDE8D0" }}
+    style={{ backgroundColor: "#63403A", color: "#f0efe2" }}
   >
     Explore Our Approach
   </Link>
@@ -194,20 +194,20 @@ export default function HomePage() {
 
         <div className="absolute inset-0" />
 
-        <div className="absolute top-8 right-8 z-20 md:top-12 md:right-12 lg:top-16 lg:right-16">
+        {/* <div className="absolute top-8 right-8 z-20 md:top-12 md:right-12 lg:top-16 lg:right-16">
           <img
             src="/logoonhero.png"
             alt="Akbar Brass Products Logo"
             className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 object-contain opacity-90 hover:opacity-100 transition-opacity"
           />
-        </div>
+        </div> */}
 
         <div className="relative z-10 flex h-full items-center justify-center px-6">
           <div className="text-center max-w-5xl">
-            <h1 className="mb-8 font-serif text-4xl font-normal leading-tight md:text-5xl lg:text-6xl text-balance" style={{ color: "#EDE8D0" }}>
+            <h1 className="mb-8 font-serif text-4xl font-normal leading-tight md:text-5xl lg:text-6xl text-balance" style={{ color: "#f0efe2" }}>
               Integrated Multi-Material Manufacturing for Global Markets
             </h1>
-            <Button size="lg" style={{ backgroundColor: "#EDE8D0", color: "#521C0D" }} className="hover:opacity-90" asChild>
+            <Button size="lg" style={{ backgroundColor: "#f0efe2", color: "#63403A" }} className="hover:opacity-90" asChild>
               <Link href="/capabilities/materials">
                 Explore Our Capabilities <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
@@ -217,128 +217,144 @@ export default function HomePage() {
       </section>
 
       {/* About Section */}
-      <section className="px-6 py-20 md:py-28" style={{ backgroundColor: "#EDE8D0" }}>
+      <section className="px-6 py-20 md:py-28" style={{ backgroundColor: "#f0efe2" }}>
         <div className="mx-auto max-w-4xl text-center">
-          <h2 className="mb-6 font-serif text-3xl font-bold md:text-4xl" style={{ color: "#521C0D" }}>
+          <h2 className="mb-6 font-serif text-3xl font-bold md:text-4xl" style={{ color: "#63403A" }}>
             About Akbar Brass Products
           </h2>
           <p className="mx-auto mb-8 max-w-3xl text-base leading-relaxed md:text-lg" style={{ color: "rgba(82, 28, 13, 0.8)" }}>
             Akbar Brass Products is a third-generation manufacturing company specialising in metal, marble, wood, glass, and mixed-material home products. Operating from a horizontally integrated 60-acre campus, we maintain in-house testing and globally aligned compliance systems for reliable production.
           </p>
-          <Button size="lg" variant="outline" style={{ borderColor: "#521C0D", color: "#521C0D", borderWidth: "2px" }} className="bg-transparent hover:text-[#521C0D] hover:bg-[#EDE8D0]" asChild>
+          <Button size="lg" variant="outline" style={{ borderColor: "#63403A", color: "#63403A", borderWidth: "2px" }} className="bg-transparent hover:text-[#63403A] hover:bg-[#f0efe2]" asChild>
             <Link href="/about-akbar/timeline">
               Explore Our Heritage <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>
         </div>
       </section>
-      <section className="px-6 py-20 md:py-28" style={{ backgroundColor: "#EDE8D0" }}>
-  <div className="mx-auto max-w-7xl">
-    <div className="mb-12 text-center">
-      <h2 className="mb-4 font-serif text-3xl font-bold md:text-4xl" style={{ color: "#521C0D" }}>
+      <section
+  className="relative px-6 py-24 md:py-32 bg-cover bg-center"
+  style={{
+    backgroundImage: "url('/factory-interior.jpg')", // change path if needed
+  }}
+>
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-black/30"></div>
+
+  {/* Content */}
+  <div className="relative z-10 mx-auto max-w-7xl">
+    {/* Heading */}
+    <div className="mb-12 text-center text-white">
+      <h2 className="mb-4 font-serif text-3xl font-bold md:text-4xl">
         What We Do
       </h2>
-      <p className="mx-auto max-w-2xl text-base" style={{ color: "rgba(82, 28, 13, 0.8)" }}>
-        We manufacture multi-material home products across furniture, décor, lighting, kitchen/serveware, outdoor, and seasonal categories — engineered for global markets.
+      <p className="mx-auto max-w-2xl text-base opacity-100">
+        We manufacture multi-material home products across furniture, décor,
+        lighting, kitchen/serveware, outdoor, and seasonal categories —
+        engineered for global markets.
       </p>
     </div>
 
+    {/* Cards */}
     <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-      <div className="p-8 bg-white rounded-lg hover:shadow-xl transition-shadow duration-300" style={{ border: "1px solid rgba(82, 28, 13, 0.1)" }}>
+      {/* METAL */}
+      <div className="p-8 bg-white rounded-lg hover:shadow-xl transition-shadow duration-300 border border-[rgba(82,28,13,0.1)]">
         <div className="mb-6 flex justify-center">
-          <div className="relative">
-            <div className="h-32 w-32 rounded-full bg-gradient-to-br from-gray-100 to-gray-200 shadow-lg overflow-hidden border-4 border-white">
-              <img 
-                src="/home-page/metal1.jpg" 
-                alt="Metal" 
-                className="h-full w-full object-cover"
-              />
-            </div>
-            {/* <div className="absolute -bottom-2 -right-2 h-12 w-12 flex items-center justify-center rounded-full shadow-lg" style={{ backgroundColor: "#521C0D" }}>
-              <Package className="h-6 w-6" style={{ color: "#EDE8D0" }} />
-            </div> */}
+          <div className="h-32 w-32 rounded-full overflow-hidden border-4 border-white shadow-lg">
+            <img
+              src="/home-page/metal1.jpg"
+              alt="Metal"
+              className="h-full w-full object-cover"
+            />
           </div>
         </div>
-        <h3 className="mb-3 font-serif text-2xl font-bold text-center" style={{ color: "#521C0D" }}>Metal</h3>
-        <p className="leading-relaxed text-center" style={{ color: "rgba(82, 28, 13, 0.7)" }}>
+        <h3 className="mb-3 font-serif text-2xl font-bold text-center text-[#63403A]">
+          Metal
+        </h3>
+        <p className="text-center text-[rgba(82,28,13,0.7)]">
           Iron, aluminum, stainless steel, brass
         </p>
       </div>
 
-      <div className="p-8 bg-white rounded-lg hover:shadow-xl transition-shadow duration-300" style={{ border: "1px solid rgba(82, 28, 13, 0.1)" }}>
+      {/* MARBLE */}
+      <div className="p-8 bg-white rounded-lg hover:shadow-xl transition-shadow duration-300 border border-[rgba(82,28,13,0.1)]">
         <div className="mb-6 flex justify-center">
-          <div className="relative">
-            <div className="h-32 w-32 rounded-full bg-gradient-to-br from-gray-100 to-gray-200 shadow-lg overflow-hidden border-4 border-white">
-              <img 
-                src="/home-page/marble.jpg" 
-                alt="Marble" 
-                className="h-full w-full object-cover"
-              />
-            </div>
-            {/* <div className="absolute -bottom-2 -right-2 h-12 w-12 flex items-center justify-center rounded-full shadow-lg" style={{ backgroundColor: "#521C0D" }}>
-              <Sparkles className="h-6 w-6" style={{ color: "#EDE8D0" }} />
-            </div> */}
+          <div className="h-32 w-32 rounded-full overflow-hidden border-4 border-white shadow-lg">
+            <img
+              src="/home-page/marble.jpg"
+              alt="Marble"
+              className="h-full w-full object-cover"
+            />
           </div>
         </div>
-        <h3 className="mb-3 font-serif text-2xl font-bold text-center" style={{ color: "#521C0D" }}>Marble</h3>
-        <p className="leading-relaxed text-center" style={{ color: "rgba(82, 28, 13, 0.7)" }}>
+        <h3 className="mb-3 font-serif text-2xl font-bold text-center text-[#63403A]">
+          Marble
+        </h3>
+        <p className="text-center text-[rgba(82,28,13,0.7)]">
           Natural stone processing & finishing
         </p>
       </div>
 
-      <div className="p-8 bg-white rounded-lg hover:shadow-xl transition-shadow duration-300" style={{ border: "1px solid rgba(82, 28, 13, 0.1)" }}>
+      {/* WOOD */}
+      <div className="p-8 bg-white rounded-lg hover:shadow-xl transition-shadow duration-300 border border-[rgba(82,28,13,0.1)]">
         <div className="mb-6 flex justify-center">
-          <div className="relative">
-            <div className="h-32 w-32 rounded-full bg-gradient-to-br from-gray-100 to-gray-200 shadow-lg overflow-hidden border-4 border-white">
-              <img 
-                src="/home-page/wood.jpg" 
-                alt="Wood" 
-                className="h-full w-full object-cover"
-              />
-            </div>
-            {/* <div className="absolute -bottom-2 -right-2 h-12 w-12 flex items-center justify-center rounded-full shadow-lg" style={{ backgroundColor: "#521C0D" }}>
-              <Frame className="h-6 w-6" style={{ color: "#EDE8D0" }} />
-            </div> */}
+          <div className="h-32 w-32 rounded-full overflow-hidden border-4 border-white shadow-lg">
+            <img
+              src="/home-page/wood.jpg"
+              alt="Wood"
+              className="h-full w-full object-cover"
+            />
           </div>
         </div>
-        <h3 className="mb-3 font-serif text-2xl font-bold text-center" style={{ color: "#521C0D" }}>Wood</h3>
-        <p className="leading-relaxed text-center" style={{ color: "rgba(82, 28, 13, 0.7)" }}>
+        <h3 className="mb-3 font-serif text-2xl font-bold text-center text-[#63403A]">
+          Wood
+        </h3>
+        <p className="text-center text-[rgba(82,28,13,0.7)]">
           Hardwoods & engineered wood
         </p>
       </div>
 
-      <div className="p-8 bg-white rounded-lg hover:shadow-xl transition-shadow duration-300" style={{ border: "1px solid rgba(82, 28, 13, 0.1)" }}>
+      {/* MIXED */}
+      <div className="p-8 bg-white rounded-lg hover:shadow-xl transition-shadow duration-300 border border-[rgba(82,28,13,0.1)]">
         <div className="mb-6 flex justify-center">
-          <div className="relative">
-            <div className="h-32 w-32 rounded-full bg-gradient-to-br from-gray-100 to-gray-200 shadow-lg overflow-hidden border-4 border-white">
-              <img 
-                src="/home-page/metal2.jpg" 
-                alt="Mixed Materials" 
-                className="h-full w-full object-cover"
-              />
-            </div>
-            {/* <div className="absolute -bottom-2 -right-2 h-12 w-12 flex items-center justify-center rounded-full shadow-lg" style={{ backgroundColor: "#521C0D" }}>
-              <Boxes className="h-6 w-6" style={{ color: "#EDE8D0" }} />
-            </div> */}
+          <div className="h-32 w-32 rounded-full overflow-hidden border-4 border-white shadow-lg">
+            <img
+              src="/home-page/metal2.jpg"
+              alt="Mixed Materials"
+              className="h-full w-full object-cover"
+            />
           </div>
         </div>
-        <h3 className="mb-3 font-serif text-2xl font-bold text-center" style={{ color: "#521C0D" }}>Mixed Materials</h3>
-        <p className="leading-relaxed text-center" style={{ color: "rgba(82, 28, 13, 0.7)" }}>
+        <h3 className="mb-3 font-serif text-2xl font-bold text-center text-[#63403A]">
+          Mixed Materials
+        </h3>
+        <p className="text-center text-[rgba(82,28,13,0.7)]">
           Integrated multi-material products
         </p>
       </div>
     </div>
+
+    {/* Know more */}
+    <div className="mt-14 text-center">
+      <a
+        href="/capabilities/materials"
+        className="inline-block text-sm uppercase tracking-wide text-white border-b border-white/70 pb-1 hover:border-white transition"
+      >
+        Know more
+      </a>
+    </div>
   </div>
 </section>
+
 
       {/* Our Expertise (external component) */}
       <OurExpertise />
 
       {/* Luxury Product Showcase Section - contains Why Choose Us + LuxuryShowcase */}
-      <section className="py-20 md:py-28" style={{ backgroundColor: "#EDE8D0" }}>
+      <section className="py-20 md:py-28" style={{ backgroundColor: "#f0efe2" }}>
         <div className="mx-auto max-w-full px-6">
           <div className="mb-12 text-center">
-            <h2 className="mb-4 font-serif text-3xl font-bold md:text-4xl" style={{ color: "#521C0D" }}>
+            <h2 className="mb-4 font-serif text-3xl font-bold md:text-4xl" style={{ color: "#63403A" }}>
               AKBAR BRASS: Production Excellence On Display
             </h2>
             <p
@@ -355,27 +371,46 @@ export default function HomePage() {
       </section>
 
       {/* Sustainability */}
-      <section className="px-6 py-20 md:py-28" style={{ backgroundColor: "#EDE8D0" }}>
-        <div className="mx-auto max-w-4xl text-center">
-          <h2 className="mb-6 font-serif text-3xl font-bold md:text-4xl" style={{ color: "#521C0D" }}>
-            Sustainability
-          </h2>
-          <p className="mx-auto mb-8 max-w-3xl text-base leading-relaxed md:text-lg" style={{ color: "rgba(82, 28, 13, 0.8)" }}>
-            Sustainable manufacturing supported by ETP, STP, RO systems and dust collectors for clean, compliant production across metal and marble units.
-          </p>
-          <Button size="lg" style={{ backgroundColor: "#521C0D", color: "#EDE8D0" }} className="hover:opacity-90 shadow-lg" asChild>
-            <Link href="/sustainability">
-              Explore Our Sustainability <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
-        </div>
-      </section>
-      <section className="px-6 py-16 md:py-24" style={{ backgroundColor: "#EDE8D0" }}>
+      <section
+  className="relative px-6 py-24 md:py-32 bg-center bg-cover"
+  style={{
+    backgroundImage: "url('/placeholder-hero.png')", // ← change path if needed
+  }}
+>
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-black/40"></div>
+
+  {/* Content */}
+  <div className="relative z-10 mx-auto max-w-4xl text-center text-white">
+    <span className="mb-3 block text-xs tracking-[0.3em] uppercase opacity-100">
+      Committed to a Sustainable Future
+    </span>
+
+    <h2 className="mb-6 font-serif text-3xl font-bold md:text-4xl">
+      Sustainability
+    </h2>
+
+    <p className="mx-auto mb-10 max-w-3xl text-base leading-relaxed md:text-lg opacity-100">
+      Sustainable manufacturing supported by ETP, STP, RO systems and dust
+      collectors for clean, compliant production across metal and marble units.
+    </p>
+
+    {/* Know more link */}
+    <Link
+      href="/sustainability"
+      className="inline-block text-sm tracking-wide uppercase border-b border-white/70 pb-1 hover:border-white transition"
+    >
+      Know more
+    </Link>
+  </div>
+</section>
+
+      <section className="px-6 py-16 md:py-24" style={{ backgroundColor: "#f0efe2" }}>
   <div className="mx-auto max-w-7xl">
     <div className="grid gap-12 md:grid-cols-2 items-center">
       {/* Left - Text Content */}
       <div>
-        <h2 className="mb-6 font-serif text-3xl font-bold md:text-4xl" style={{ color: "#521C0D" }}>
+        <h2 className="mb-6 font-serif text-3xl font-bold md:text-4xl" style={{ color: "#63403A" }}>
           A Glimpse of Our Artistry: Delhi Fair 10/25
         </h2>
         <p className="mb-4 text-base leading-relaxed" style={{ color: "rgba(82, 28, 13, 0.8)" }}>
@@ -391,7 +426,7 @@ export default function HomePage() {
 
       {/* Right - Two Portrait Images */}
       <div className="grid grid-cols-2 gap-4">
-        <div className="overflow-hidden" style={{ border: "2px solid #521C0D" }}>
+        <div className="overflow-hidden" style={{ border: "2px solid #63403A" }}>
           <img 
             src="/f1.jpeg" 
             alt="Craftsmanship detail" 
@@ -399,7 +434,7 @@ export default function HomePage() {
             style={{ aspectRatio: "3/4" }}
           />
         </div>
-        <div className="overflow-hidden mt-8" style={{ border: "2px solid #521C0D" }}>
+        <div className="overflow-hidden mt-8" style={{ border: "2px solid #63403A" }}>
           <img 
             src="f2.jpeg" 
             alt="Manufacturing process" 
@@ -416,10 +451,10 @@ export default function HomePage() {
       {/* Connect */}
       <section className="px-6 py-20 md:py-28 bg-white">
         <div className="mx-auto max-w-4xl text-center">
-          <h2 className="mb-8 font-serif text-3xl font-bold md:text-4xl" style={{ color: "#521C0D" }}>
+          <h2 className="mb-8 font-serif text-3xl font-bold md:text-4xl" style={{ color: "#63403A" }}>
             Connect With Us
           </h2>
-          <Button size="lg" variant="outline" style={{ borderColor: "#521C0D", color: "#521C0D", backgroundColor: "#EDE8D0", borderWidth: "2px" }} className="hover:bg-[#521C0D] hover:text-[#EDE8D0]" asChild>
+          <Button size="lg" variant="outline" style={{ borderColor: "#63403A", color: "#63403A", backgroundColor: "#f0efe2", borderWidth: "2px" }} className="hover:bg-[#63403A] hover:text-[#f0efe2]" asChild>
             <Link href="/contact">
               Get In Touch <ArrowRight className="ml-2 h-5 w-5" />
             </Link>

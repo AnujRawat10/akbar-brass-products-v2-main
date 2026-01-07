@@ -55,7 +55,7 @@ export default function OurPartners() {
         font-family: 'Times New Roman', serif;
           font-size: 36px;
           font-weight: 600;
-          color: #521c0d;
+          color: #63403A;
           margin-bottom: 14px;
         }
 
@@ -86,9 +86,9 @@ export default function OurPartners() {
         }
 
         .partner-card img {
-          max-width: 120px;
-          filter: grayscale(100%);
-          opacity: 0.75;
+          max-width: 100px;
+          // filter: grayscale(100%);
+          // opacity: 0.75;
           // transition: 0.3s;
           mix-blend-mode: multiply;
         }

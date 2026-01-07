@@ -28,7 +28,7 @@ export function Footer() {
       </a>
 
       {/* ===== Footer Section ===== */}
-      <footer className="border-t border-[#521C0D]/30 bg-[#EDE8D0] py-16">
+      <footer className="border-t border-[#63403A]/30 bg-[#f0efe2] py-16">
         <div className="container mx-auto px-6">
           <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
             
@@ -37,52 +37,52 @@ export function Footer() {
               <Link href="/" className="mb-4 inline-block">
                 <img src="/logo.png" alt="Akbar Brass Products" className="h-20" />
               </Link>
-              <p className="mb-4 text-sm leading-relaxed text-[#521C0D]/80">
+              <p className="mb-4 text-sm leading-relaxed text-[#63403A]/80">
                 Over five decades of manufacturing excellence.
               </p>
-              <p className="text-sm leading-relaxed text-[#521C0D]/80">
+              <p className="text-sm leading-relaxed text-[#63403A]/80">
                 A trusted partner for metal, marble, wood, and multi-material products — crafted with precision and built for global markets.
               </p>
             </div>
 
             <div>
-              <h3 className="mb-4 font-semibold text-[#521C0D] uppercase text-sm">About</h3>
+              <h3 className="mb-4 font-semibold text-[#63403A] uppercase text-sm">About</h3>
               <ul className="space-y-2 text-sm">
-                <li><Link href="/about-akbar/timeline" className="text-[#521C0D]/80 transition-colors hover:text-[#521C0D]">Timeline</Link></li>
-                <li><Link href="/about-akbar/approach" className="text-[#521C0D]/80 transition-colors hover:text-[#521C0D]">Approach</Link></li>
-                <li><Link href="/about-akbar/recognition" className="text-[#521C0D]/80 transition-colors hover:text-[#521C0D]">Awards</Link></li>
+                <li><Link href="/about-akbar/timeline" className="text-[#63403A]/80 transition-colors hover:text-[#63403A]">Timeline</Link></li>
+                <li><Link href="/about-akbar/approach" className="text-[#63403A]/80 transition-colors hover:text-[#63403A]">Approach</Link></li>
+                <li><Link href="/about-akbar/recognition" className="text-[#63403A]/80 transition-colors hover:text-[#63403A]">Awards</Link></li>
               </ul>
             </div>
 
             <div>
-              <h3 className="mb-4 font-semibold text-[#521C0D] uppercase text-sm">Capabilities</h3>
+              <h3 className="mb-4 font-semibold text-[#63403A] uppercase text-sm">Capabilities</h3>
               <ul className="space-y-2 text-sm">
-                <li><Link href="/capabilities/materials" className="text-[#521C0D]/80 transition-colors hover:text-[#521C0D]">Materials</Link></li>
-                <li><Link href="/capabilities/portfolio" className="text-[#521C0D]/80 transition-colors hover:text-[#521C0D]">Product Portfolio</Link></li>
-                <li><Link href="/capabilities/ethics" className="text-[#521C0D]/80 transition-colors hover:text-[#521C0D]">Ethics & Compliance</Link></li>
-                <li><Link href="/sustainability" className="text-[#521C0D]/80 transition-colors hover:text-[#521C0D]">Sustainability</Link></li>
+                <li><Link href="/capabilities/materials" className="text-[#63403A]/80 transition-colors hover:text-[#63403A]">Materials</Link></li>
+                <li><Link href="/capabilities/portfolio" className="text-[#63403A]/80 transition-colors hover:text-[#63403A]">Product Portfolio</Link></li>
+                <li><Link href="/capabilities/ethics" className="text-[#63403A]/80 transition-colors hover:text-[#63403A]">Ethics & Compliance</Link></li>
+                <li><Link href="/sustainability" className="text-[#63403A]/80 transition-colors hover:text-[#63403A]">Sustainability</Link></li>
               </ul>
             </div>
 
             <div>
-              <h3 className="mb-4 font-semibold text-[#521C0D] uppercase text-sm">Connect</h3>
+              <h3 className="mb-4 font-semibold text-[#63403A] uppercase text-sm">Connect</h3>
               <ul className="space-y-2 text-sm">
-                <li><Link href="/careers" className="text-[#521C0D]/80 transition-colors hover:text-[#521C0D]">Careers</Link></li>
-                <li><Link href="/contact" className="text-[#521C0D]/80 transition-colors hover:text-[#521C0D]">Contact Us</Link></li>
+                <li><Link href="/careers" className="text-[#63403A]/80 transition-colors hover:text-[#63403A]">Careers</Link></li>
+                <li><Link href="/contact" className="text-[#63403A]/80 transition-colors hover:text-[#63403A]">Contact Us</Link></li>
               </ul>
               <div className="mt-6">
-                <p className="text-xs text-[#521C0D]/70 mb-2">Village Dhanupura, Delhi Road<br/>Moradabad - 244001, India</p>
-                <p className="text-xs text-[#521C0D]/70">
-                  <a href="tel:+915912414263" className="hover:text-[#521C0D]">+91-591-2414263</a><br/>
-                  <a href="mailto:info@akbarbrass.com" className="hover:text-[#521C0D]">info@akbarbrass.com</a>
+                <p className="text-xs text-[#63403A]/70 mb-2">Village Dhanupura, Delhi Road<br/>Moradabad - 244001, India</p>
+                <p className="text-xs text-[#63403A]/70">
+                  <a href="tel:+915912414263" className="hover:text-[#63403A]">+91-591-2414263</a><br/>
+                  <a href="mailto:info@akbarbrass.com" className="hover:text-[#63403A]">info@akbarbrass.com</a>
                 </p>
               </div>
             </div>
 
           </div>
 
-          <div className="mt-12 border-t border-[#521C0D]/30 pt-8 text-center">
-            <p className="text-sm text-[#521C0D]/80">
+          <div className="mt-12 border-t border-[#63403A]/30 pt-8 text-center">
+            <p className="text-sm text-[#63403A]/80">
               © 2025 Akbar Brass Products. All rights reserved.
             </p>
           </div>

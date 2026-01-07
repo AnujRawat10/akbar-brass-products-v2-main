@@ -17,57 +17,46 @@ const OurExpertise: React.FC = () => {
   };
 
   const expertiseData: ExpertiseItem[] = [
-    {
-      name: "Heritage Brass Collection",
-      description:
-        "A curated presentation of metal, stone, wood, and mixed-material home products. Developed within a multi-material manufacturing environment using contemporary techniques and workmanship practices. The products highlight attention to material selection, finish quality, and usability suited for interior applications.",
-      services: [
-        "Brass Fabrication",
-        "Hand Finishing",
-        "Surface Finishing",
-        "Design Support",
-        "Production Ready",
-      ],
-      url: "",
-    },
-    {
-      name: "Marble & Stone Processing",
-      description:
-        "Precision natural stone processing supported by CNC capabilities, finishing systems and stone-working expertise. Our approach enables consistent quality across interior, décor, and product applications.",
-      services: [
-        "Natural Stone",
-        "CNC Processing",
-        "Surface Finishing",
-        "Cutting",
-        "Material Handling",
-      ],
-      url: "",
-    },
-    {
-      name: "Multi-Material Integration",
-      description:
-        "Our integrated production ecosystem enables combining brass, marble, wood, and other materials in unified product applications. This approach provides consistency, structural quality, and reduced lead time.",
-      services: ["Material Sourcing", "Integrated Manufacturing", "Assembly", "Quality Handling"],
-      url: "",
-    },
-    {
-      name: "Wood & Mixed Materials",
-      description:
-        "Combining hardwoods, engineered wood, metal, and stone components into cohesive design products with structural and aesthetic balance. Supported by finishing and assembly workflows.",
-      services: ["Hardwood Processing", "Mixed Assembly", "Surface Work", "Finishing"],
-      url: "",
-    },
-    {
-      name: "Export & Compliance",
-      description:
-        "Globally aligned manufacturing support systems for export packaging, documentation, and shipment handling.",
-      services: ["Packaging", "Documentation", "Quality Assurance"],
-      url: "",
-    },
-  ];
+  {
+    name: "Integrated multi-material production",
+    description:
+      "An integrated manufacturing environment enabling the development and production of products across brass, stone, wood, and mixed materials.",
+    services: [],
+    url: "",
+  },
+  {
+    name: "Stable quality and repeatability",
+    description:
+      "Established processes and production controls designed to ensure consistent quality and repeatable outcomes across manufacturing cycles.",
+    services: [],
+    url: "",
+  },
+  {
+    name: "Compliance-ready systems",
+    description:
+      "Manufacturing systems aligned with global compliance, documentation, and quality requirements for international markets.",
+    services: [],
+    url: "",
+  },
+  {
+    name: "In-house testing capabilities",
+    description:
+      "Internal testing, validation, and inspection workflows supporting quality assurance and production reliability.",
+    services: [],
+    url: "",
+  },
+  {
+    name: "Three generations of manufacturing expertise",
+    description:
+      "Decades of accumulated manufacturing knowledge and experience carried forward across three generations of industry involvement.",
+    services: [],
+    url: "",
+  },
+];
+
 
   return (
-    <div className="w-full bg-[#EDE8D0] text-[#521C0D] font-serif px-4 py-16 md:py-24">
+    <div className="w-full bg-[#f0efe2] text-[#63403A] font-serif px-4 py-16 md:py-24">
       
       {/* SECTION HEADING */}
       <div className="text-center mb-12">

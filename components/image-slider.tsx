@@ -74,7 +74,7 @@ export function ImageSlider() {
         variant="ghost"
         size="icon"
         onClick={goToPrevious}
-        className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-[#EDE8D0]/90 hover:bg-[#EDE8D0] text-[#521C0D] shadow-lg rounded-full h-10 w-10 md:h-12 md:w-12"
+        className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-[#f0efe2]/90 hover:bg-[#f0efe2] text-[#63403A] shadow-lg rounded-full h-10 w-10 md:h-12 md:w-12"
       >
         <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
       </Button>
@@ -84,7 +84,7 @@ export function ImageSlider() {
         variant="ghost"
         size="icon"
         onClick={goToNext}
-        className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-[#EDE8D0]/90 hover:bg-[#EDE8D0] text-[#521C0D] shadow-lg rounded-full h-10 w-10 md:h-12 md:w-12"
+        className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-[#f0efe2]/90 hover:bg-[#f0efe2] text-[#63403A] shadow-lg rounded-full h-10 w-10 md:h-12 md:w-12"
       >
         <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
       </Button>
@@ -96,7 +96,7 @@ export function ImageSlider() {
             key={index}
             onClick={() => setCurrentIndex(index)}
             className={`h-2 rounded-full transition-all ${
-              index === currentIndex ? "w-8 bg-[#521C0D]" : "w-2 bg-[#521C0D]/40"
+              index === currentIndex ? "w-8 bg-[#63403A]" : "w-2 bg-[#63403A]/40"
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />

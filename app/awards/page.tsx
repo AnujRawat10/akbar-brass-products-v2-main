@@ -26,9 +26,9 @@ export default function AwardsPage() {
   ]
 
   return (
-    <main className="min-h-screen" style={{ backgroundColor: '#EDE8D0' }}>
+    <main className="min-h-screen" style={{ backgroundColor: '#f0efe2' }}>
       {/* Hero Section */}
-      <section className="py-20 text-white" style={{ backgroundColor: '#521C0D' }}>
+      <section className="py-20 text-white" style={{ backgroundColor: '#63403A' }}>
         <div className="container mx-auto px-6">
           <h1 className="mb-4 font-serif text-5xl font-bold md:text-6xl lg:text-7xl">
             Awards & Recognition
@@ -43,7 +43,7 @@ export default function AwardsPage() {
       <section className="py-20">
         <div className="container mx-auto px-6">
           <div className="mb-12 text-center">
-            <p className="text-lg" style={{ color: '#521C0D' }}>
+            <p className="text-lg" style={{ color: '#63403A' }}>
               Akbar Brass Products has been honored with multiple national awards for our commitment to 
               quality craftsmanship and export excellence.
             </p>
@@ -54,10 +54,10 @@ export default function AwardsPage() {
               <div
                 key={index}
                 className="group bg-white transition-all hover:shadow-lg"
-                style={{ border: '1px solid #521C0D' }}
+                style={{ border: '1px solid #63403A' }}
               >
                 {/* Award Image */}
-                <div className="relative aspect-[4/3] w-full overflow-hidden" style={{ backgroundColor: '#EDE8D0' }}>
+                <div className="relative aspect-[4/3] w-full overflow-hidden" style={{ backgroundColor: '#f0efe2' }}>
                   <Image
                     src={award.image || "/placeholder.svg"}
                     alt={award.title}
@@ -68,25 +68,25 @@ export default function AwardsPage() {
 
                 <div className="p-8">
                   {/* Year Badge */}
-                  <div className="mb-6 inline-block px-4 py-2 text-sm font-semibold text-white" style={{ backgroundColor: '#521C0D' }}>
+                  <div className="mb-6 inline-block px-4 py-2 text-sm font-semibold text-white" style={{ backgroundColor: '#63403A' }}>
                     {award.year}
                   </div>
 
                   {/* Award Title */}
-                  <h3 className="mb-4 font-serif text-2xl font-bold" style={{ color: '#521C0D' }}>
+                  <h3 className="mb-4 font-serif text-2xl font-bold" style={{ color: '#63403A' }}>
                     {award.title}
                   </h3>
 
                   {/* Awarded By */}
-                  <p className="mb-4 text-sm font-medium" style={{ color: '#521C0D' }}>
+                  <p className="mb-4 text-sm font-medium" style={{ color: '#63403A' }}>
                     Awarded by:
                   </p>
-                  <p className="mb-6 text-base" style={{ color: '#521C0D' }}>
+                  <p className="mb-6 text-base" style={{ color: '#63403A' }}>
                     {award.awardedBy}
                   </p>
 
                   {/* Description */}
-                  <p className="text-sm leading-relaxed" style={{ color: '#521C0D', opacity: 0.8 }}>
+                  <p className="text-sm leading-relaxed" style={{ color: '#63403A', opacity: 0.8 }}>
                     {award.description}
                   </p>
                 </div>
@@ -95,15 +95,15 @@ export default function AwardsPage() {
           </div>
 
           {/* Legacy Statement */}
-          <div className="mt-20 bg-white p-8 md:p-12" style={{ borderLeft: '4px solid #521C0D' }}>
-            <h2 className="mb-4 font-serif text-3xl font-bold" style={{ color: '#521C0D' }}>
+          <div className="mt-20 bg-white p-8 md:p-12" style={{ borderLeft: '4px solid #63403A' }}>
+            <h2 className="mb-4 font-serif text-3xl font-bold" style={{ color: '#63403A' }}>
               A Legacy of Excellence
             </h2>
-            <p className="mb-4 text-lg leading-relaxed" style={{ color: '#521C0D' }}>
+            <p className="mb-4 text-lg leading-relaxed" style={{ color: '#63403A' }}>
               These prestigious awards from India's President and Prime Ministers reflect our unwavering 
               commitment to quality, innovation, and excellence in handicraft manufacturing.
             </p>
-            <p className="text-lg leading-relaxed" style={{ color: '#521C0D' }}>
+            <p className="text-lg leading-relaxed" style={{ color: '#63403A' }}>
               With over 50 years of manufacturing legacy, we continue to uphold the standards that earned 
               us recognition from the highest offices in India, serving clients worldwide with the same 
               dedication to craftsmanship and integrity.
@@ -113,7 +113,7 @@ export default function AwardsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 text-white" style={{ backgroundColor: '#521C0D' }}>
+      <section className="py-20 text-white" style={{ backgroundColor: '#63403A' }}>
         <div className="container mx-auto px-6 text-center">
           <h2 className="mb-6 font-serif text-4xl font-bold md:text-5xl">
             Partner with Award-Winning Craftsmanship
@@ -124,7 +124,7 @@ export default function AwardsPage() {
           <a
             href="/contact"
             className="inline-block bg-white px-8 py-4 font-semibold transition-all hover:bg-gray-200"
-            style={{ color: '#521C0D' }}
+            style={{ color: '#63403A' }}
           >
             Contact Us
           </a>

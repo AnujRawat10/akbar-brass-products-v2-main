@@ -15,36 +15,36 @@ export function Header() {
   return (
     <>
       {/* ================= HEADER ================= */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-[#521C0D] border-b border-[#EDE8D0]/20">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-black/40 to-transparent">
         <div className="container mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
 
           {/* LEFT: MENU */}
           <button
             onClick={() => setIsMenuOpen(true)}
-            className="text-[#EDE8D0]"
+            className="text-[#f0efe2]"
             aria-label="Open menu"
           >
             <Menu className="h-6 w-6" />
           </button>
 
           {/* CENTER LOGO (DESKTOP ONLY) */}
-          <Link href="/" className="hidden md:block">
-            <img src="/logo.png" alt="Akbar" className="h-18 md:h-20 w-auto" />
+          <Link href="/" className="hidden md:block ">
+            <img src="/ABP.png" alt="Akbar" className="h-18 md:h-12 w-auto" />
 
           </Link>
 
           {/* RIGHT: LOGO (MOBILE) + CONTACT (DESKTOP) */}
           <div className="flex items-center gap-4">
             <Link href="/" className="md:hidden">
-              <img src="/logo.png" alt="Akbar" className="h-16 w-auto"/>
+              <img src="/ABP.png" alt="Akbar" className="h-12 w-auto"/>
 
             </Link>
 
             <Link
               href="/contact"
-              className="hidden md:inline-block px-6 py-2 border border-[#EDE8D0] text-[#EDE8D0] text-sm uppercase tracking-wide hover:bg-[#EDE8D0] hover:text-[#521C0D] transition"
+              className="hidden md:inline-block px-6 py-2 border border-[#f0efe2] text-[#f0efe2] text-sm uppercase tracking-wide hover:bg-[#f0efe2] hover:text-[#63403A] transition"
             >
-              Contact Us
+              Contact
             </Link>
           </div>
 

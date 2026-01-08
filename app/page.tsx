@@ -5,461 +5,307 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import OurExpertise from "@/components/Ourexpertise";
-import { Package, Lightbulb, Frame, Sparkles, CircleDot, Boxes } from 'lucide-react'
 import OurPartners from "@/components/OurPartners";
-/**
- * LuxuryShowcase - updated, responsive, verified-safe
- * - auto slider (fade)
- * - no false claims
- * - no range
- * - generic, accurate metadata
- */
 
+/* ======================================================
+   LUXURY SHOWCASE – UI REWORKED (LOGIC SAME)
+====================================================== */
 function LuxuryShowcase() {
   const [activeImage, setActiveImage] = useState(0);
-  const [showMaterials, setShowMaterials] = useState(false);
 
   const product = {
     brand: "AKBAR BRASS PRODUCTS",
-    number: "INTERIOR DÉCOR",
+    title: "Interior & Multi-Material Collections",
     location: "Moradabad, India",
-
-    /** SAFE RIGHT PANEL VALUES **/
-    style: "Collection-Based",
-    size: "Varies by Product",
-    dimensions: "Provided Upon Inquiry",
-    com: "As Applicable",
-
-    /** SAFE & TRUE DESCRIPTION **/
-    description: [
-      "A curated presentation of metal, stone, wood, and mixed-material home products.",
-      "Developed within a multi-material manufacturing environment using contemporary techniques and workmanship practices.",
-      "The products highlight attention to material selection, finish quality, and usability suited for interior applications.",
-      "Items may vary by specification, and details are available upon inquiry."
-    ],
-
-    /** SAFE MATERIALS **/
-    materials: "Metal | Natural Stone | Wood | Mixed Materials",
-
-    /** ONLY TWO IMAGES WILL SLIDE **/
-    images: ["/showroom1.jpeg", "/showroom2.jpeg"]
+    materials: ["Metal", "Marble", "Wood", "Mixed Materials"],
+    description:
+      "A refined presentation of multi-material manufacturing capabilities developed for global residential and commercial interiors.",
+    images: ["/showroom1.jpeg", "/showroom2.jpeg"],
   };
 
-  // Auto slider
   useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveImage((prev) => (prev + 1) % product.images.length);
-    }, 3500);
+    const timer = setInterval(
+      () => setActiveImage((p) => (p + 1) % product.images.length),
+      3500
+    );
     return () => clearInterval(timer);
   }, []);
 
   return (
-    <div className="w-full bg-[#f0efe2] font-serif">
+    <section className="bg-[#f0efe2] py-24 font-serif">
+      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
 
-      {/* Header */}
-      <header className="border-b border-[#d4cdb5] px-6 py-4 flex justify-between items-center">
-        <h2 className="text-xl tracking-wider" style={{ color: "#63403A" }}>
-          {product.brand}
-        </h2>
-
-        {/* RANGE REMOVED — ONLY LOCATION */}
-        <div className="hidden md:flex items-center gap-6 text-sm" style={{ color: "#63403A" }}>
-          <span>{product.location}</span>
+        {/* IMAGE */}
+        <div className="relative h-[480px] rounded-lg overflow-hidden shadow-lg bg-white">
+          {product.images.map((img, i) => (
+            <img
+              key={i}
+              src={img}
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
+                activeImage === i ? "opacity-100" : "opacity-0"
+              }`}
+            />
+          ))}
         </div>
-      </header>
 
-      {/* FLEX LAYOUT */}
-      <div className="flex flex-col lg:flex-row w-full">
+        {/* CONTENT */}
+        <div>
+          <span className="block text-sm tracking-widest uppercase text-[#63403A] mb-3">
+            {product.brand}
+          </span>
 
-        {/* LEFT SIDEBAR */}
-        <aside className="lg:w-1/4 p-6 border-r border-[#d4cdb5]">
-          <p className="italic mb-4" style={{ color: "#63403A" }}>
-            i.
+          <h2 className="text-4xl font-light text-[#63403A] mb-6">
+            {product.title}
+          </h2>
+
+          <p className="text-[rgba(82,28,13,0.8)] mb-6 max-w-xl">
+            {product.description}
           </p>
 
-          <div className="space-y-3 mb-6">
-            {product.description.map((p, idx) => (
-              <p key={idx} style={{ color: "rgba(82,28,13,0.8)" }}>
-                {p}
-              </p>
+          {/* MATERIAL TAGS */}
+          <div className="flex flex-wrap gap-3 mb-10">
+            {product.materials.map((m) => (
+              <span
+                key={m}
+                className="px-4 py-1 border border-[#63403A] text-sm text-[#63403A]"
+              >
+                {m}
+              </span>
             ))}
           </div>
 
-          <p className="italic mb-1" style={{ color: "#63403A" }}>
-            ii. {product.materials}
-          </p>
-{/* 
-          <p className="italic text-xs mb-2" style={{ color: "rgba(82,28,13,0.7)" }}>
-            (Detail)
-          </p> */}
-        </aside>
-
-        {/* CENTER SLIDER */}
-        <main className="lg:w-2/4 p-6 flex justify-center">
-          <div className="relative w-full max-w-3xl h-[400px] md:h-[460px] lg:h-[500px] bg-white rounded-md shadow overflow-hidden">
-
-            {product.images.map((img, i) => (
-              <img
-                key={i}
-                src={img}
-                alt=""
-                className={`absolute inset-0 object-cover w-full h-full transition-opacity duration-700 ${
-                  activeImage === i ? "opacity-100" : "opacity-0"
-                }`}
-              />
-            ))}
-          </div>
-        </main>
-
-        {/* RIGHT SIDEBAR */}
-        {/* RIGHT SIDEBAR — CLEAN, NO QUANTIFIERS */}
-<aside className="lg:w-1/4 p-6 border-l border-[#d4cdb5] flex flex-col justify-between">
-
-  {/* Title */}
-  <div className="mb-6 text-right">
-    <div className="text-5xl font-light" style={{ color: "#63403A" }}>
-      INTERIOR DÉCOR
-    </div>
-  </div>
-
-  {/* Editorial Text */}
-  <div className="space-y-4 mt-6">
-    <p className="leading-relaxed text-sm" style={{ color: "rgba(82,28,13,0.8)" }}>
-      Designed for timeless spaces that balance luxury, craft, and comfort.
-    </p>
-    <p className="leading-relaxed text-sm" style={{ color: "rgba(82,28,13,0.8)" }}>
-      Our work celebrates traditional artistry with modern silhouettes, 
-      offering pieces that elevate residential and commercial interiors alike.
-    </p>
-  </div>
-
-  {/* CTA — stronger wording */}
-  <Link
-    href="/about-akbar/approach"
-    className="block mt-10 text-center py-3 rounded-md shadow-md"
-    style={{ backgroundColor: "#63403A", color: "#f0efe2" }}
-  >
-    Explore Our Approach
-  </Link>
-</aside>
-
-
+          <Link
+            href="/capabilities/portfolio"
+            className="inline-block px-8 py-3 bg-[#63403A] text-[#f0efe2] rounded-md shadow hover:opacity-90 transition"
+          >
+            Explore Our Products
+          </Link>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 
-
-
-/**
- * Full Page - HomePage
- * - hero video
- * - about
- * - OurExpertise component (imported)
- * - LuxuryShowcase (embedded)
- * - What We Do, Sustainability, Connect sections preserved
- */
+/* ======================================================
+   HOME PAGE
+====================================================== */
 export default function HomePage() {
-  const [selectedProduct] = useState(null);
-
-  // featuredProducts kept minimal (one sample) to avoid noise
-  const featuredProducts = [
-    {
-      id: 1,
-      number: "01",
-      
-      collection: "2024 - 2025",
-      category: "Furniture",
-      dimensions: '48"W x 16"D x 32"H',
-      finish: "Antique Metal",
-      compliance: "EU & US Standards",
-      materials: "Solid Metal | Marble Top | Hand-finished",
-      description: [
-        "A contemporary console table featuring precision-engineered metal framework supporting a natural marble surface. Designed for refined residential and hospitality applications with attention to material integrity and structural stability.",
-        "",
-        "Certificate of Quality Compliance. Year 2025.",
-        "Manufactured at Akbar Brass Products, Moradabad.",
-      ],
-      images: ["/showroom1.jpeg", "/showroom2.jpeg", "/showroom3.jpeg"],
-    },
-  ];
-
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative h-screen w-full overflow-hidden">
-        <video autoPlay loop muted playsInline className="absolute inset-0 h-full w-full object-cover" poster="/placeholder-hero.png">
+
+      {/* HERO */}
+      <section className="relative h-screen overflow-hidden">
+        <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
           <source src="/videos/final_video_hero.mp4" type="video/mp4" />
         </video>
-
-        <div className="absolute inset-0" />
-
-        {/* <div className="absolute top-8 right-8 z-20 md:top-12 md:right-12 lg:top-16 lg:right-16">
-          <img
-            src="/logoonhero.png"
-            alt="Akbar Brass Products Logo"
-            className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 object-contain opacity-90 hover:opacity-100 transition-opacity"
-          />
-        </div> */}
-
-        <div className="relative z-10 flex h-full items-center justify-center px-6">
-          <div className="text-center max-w-5xl">
-            <h1 className="mb-8 font-serif text-4xl font-normal leading-tight md:text-5xl lg:text-6xl text-balance" style={{ color: "#f0efe2" }}>
+        <div className="relative z-10 h-full flex items-center justify-center px-6 text-center">
+          <div>
+            <h1 className="text-5xl md:text-6xl font-serif text-[#f0efe2] mb-8">
               Integrated Multi-Material Manufacturing for Global Markets
             </h1>
-            <Button size="lg" style={{ backgroundColor: "#f0efe2", color: "#63403A" }} className="hover:opacity-90" asChild>
+            <Button asChild size="lg" className="bg-[#f0efe2] text-[#63403A]">
               <Link href="/capabilities/materials">
-                Explore Our Capabilities <ArrowRight className="ml-2 h-5 w-5" />
+                Explore Capabilities <ArrowRight className="ml-2" />
               </Link>
             </Button>
           </div>
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="px-6 py-20 md:py-28" style={{ backgroundColor: "#f0efe2" }}>
-        <div className="mx-auto max-w-4xl text-center">
-          <h2 className="mb-6 font-serif text-3xl font-bold md:text-4xl" style={{ color: "#63403A" }}>
-            About Akbar Brass Products
-          </h2>
-          <p className="mx-auto mb-8 max-w-3xl text-base leading-relaxed md:text-lg" style={{ color: "rgba(82, 28, 13, 0.8)" }}>
-            Akbar Brass Products is a third-generation manufacturing company specialising in metal, marble, wood, glass, and mixed-material home products. Operating from a horizontally integrated 60-acre campus, we maintain in-house testing and globally aligned compliance systems for reliable production.
-          </p>
-          <Button size="lg" variant="outline" style={{ borderColor: "#63403A", color: "#63403A", borderWidth: "2px" }} className="bg-transparent hover:text-[#63403A] hover:bg-[#f0efe2]" asChild>
-            <Link href="/about-akbar/timeline">
-              Explore Our Heritage <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
-        </div>
+      {/* ABOUT */}
+      <section className="px-6 py-28 bg-[#f0efe2] text-center">
+        <h2 className="text-4xl font-serif text-[#63403A] mb-6">
+          About Akbar Brass Products
+        </h2>
+        <p className="max-w-3xl mx-auto text-[rgba(82,28,13,0.8)] mb-8">
+          A third-generation manufacturing company specializing in metal, marble,
+          wood, glass, and mixed-material home products for global export markets.
+        </p>
+        <Button
+  variant="outline"
+  asChild
+  className="border-[#63403A] text-[#63403A] hover:bg-[#63403A] hover:text-[#f0efe2]"
+>
+  <Link href="/about-akbar/timeline">
+    Explore Our Heritage <ArrowRight className="ml-2" />
+  </Link>
+</Button>
+
       </section>
-      <section
-  className="relative px-6 py-24 md:py-32 bg-cover bg-center"
+
+      {/* WHAT WE DO – JITTER FIXED */}
+     <section
+  className="relative px-6 py-28 bg-[#111] will-change-transform"
   style={{
-    backgroundImage: "url('/factory-interior.jpg')", // change path if needed
+    backgroundImage: "url('/factory-interior.jpg')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
   }}
 >
-  {/* Overlay */}
-  <div className="absolute inset-0 bg-black/30"></div>
+  <div className="absolute inset-0 bg-black/40" />
 
-  {/* Content */}
-  <div className="relative z-10 mx-auto max-w-7xl">
+  <div className="relative z-10 max-w-7xl mx-auto text-white">
+    <h2 className="text-4xl font-serif text-center mb-14">
+      What We Do
+    </h2>
+
+    <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+      {[
+        { t: "Metal", img: "/home-page/metal1.jpg" },
+        { t: "Marble", img: "/home-page/marble.jpg" },
+        { t: "Wood", img: "/home-page/wood.jpg" },
+        { t: "Mixed Materials", img: "/home-page/metal2.jpg" },
+      ].map((item) => (
+        <div
+          key={item.t}
+          className="bg-white text-[#63403A] rounded-md overflow-hidden shadow hover:-translate-y-1 transition-transform"
+        >
+          <img
+            src={item.img}
+            className="h-36 w-full object-cover"
+            alt={item.t}
+          />
+          <div className="p-4 text-center">
+            <h3 className="text-lg font-serif mb-1">{item.t}</h3>
+            <p className="text-xs text-[rgba(82,28,13,0.7)]">
+              Export-grade processing & finishing
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+
+      {/* <OurExpertise /> */}
+      <section className="relative px-6 py-28 bg-[#f0efe2] will-change-transform">
+  <div className="mx-auto max-w-6xl">
+
     {/* Heading */}
-    <div className="mb-12 text-center text-white">
-      <h2 className="mb-4 font-serif text-3xl font-bold md:text-4xl">
-        What We Do
+    <div className="mb-16 text-center">
+      <h2 className="mb-4 font-serif text-4xl text-[#63403A]">
+        Why Choose Us?
       </h2>
-      <p className="mx-auto max-w-2xl text-base opacity-100">
-        We manufacture multi-material home products across furniture, décor,
-        lighting, kitchen/serveware, outdoor, and seasonal categories —
-        engineered for global markets.
+      <p className="mx-auto max-w-2xl text-[rgba(82,28,13,0.8)]">
+        A manufacturing partner built for consistency, scale, and long-term collaboration.
       </p>
     </div>
 
-    {/* Cards */}
-    <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-      {/* METAL */}
-      <div className="p-8 bg-white rounded-lg hover:shadow-xl transition-shadow duration-300 border border-[rgba(82,28,13,0.1)]">
-        <div className="mb-6 flex justify-center">
-          <div className="h-32 w-32 rounded-full overflow-hidden border-4 border-white shadow-lg">
-            <img
-              src="/home-page/metal1.jpg"
-              alt="Metal"
-              className="h-full w-full object-cover"
-            />
-          </div>
-        </div>
-        <h3 className="mb-3 font-serif text-2xl font-bold text-center text-[#63403A]">
-          Metal
+    {/* Points */}
+    <div className="grid gap-12 md:grid-cols-2">
+
+      <div className="border-l-2 border-[#63403A] pl-6">
+        <h3 className="font-serif text-xl text-[#63403A] mb-2">
+          Integrated multi-material production
         </h3>
-        <p className="text-center text-[rgba(82,28,13,0.7)]">
-          Iron, aluminum, stainless steel, brass
+        <p className="text-sm text-[rgba(82,28,13,0.8)]">
+          In-house metal fabrication, marble processing, wood working,
+          finishing, testing, and assembly ensure tighter quality control
+          and predictable lead times.
         </p>
       </div>
 
-      {/* MARBLE */}
-      <div className="p-8 bg-white rounded-lg hover:shadow-xl transition-shadow duration-300 border border-[rgba(82,28,13,0.1)]">
-        <div className="mb-6 flex justify-center">
-          <div className="h-32 w-32 rounded-full overflow-hidden border-4 border-white shadow-lg">
-            <img
-              src="/home-page/marble.jpg"
-              alt="Marble"
-              className="h-full w-full object-cover"
-            />
-          </div>
-        </div>
-        <h3 className="mb-3 font-serif text-2xl font-bold text-center text-[#63403A]">
-          Marble
+      <div className="border-l-2 border-[#63403A] pl-6">
+        <h3 className="font-serif text-xl text-[#63403A] mb-2">
+          Stable quality and repeatability
         </h3>
-        <p className="text-center text-[rgba(82,28,13,0.7)]">
-          Natural stone processing & finishing
+        <p className="text-sm text-[rgba(82,28,13,0.8)]">
+          Decades of experience combining metal, stone, wood, and glass
+          into structurally sound, production-ready designs.
         </p>
       </div>
 
-      {/* WOOD */}
-      <div className="p-8 bg-white rounded-lg hover:shadow-xl transition-shadow duration-300 border border-[rgba(82,28,13,0.1)]">
-        <div className="mb-6 flex justify-center">
-          <div className="h-32 w-32 rounded-full overflow-hidden border-4 border-white shadow-lg">
-            <img
-              src="/home-page/wood.jpg"
-              alt="Wood"
-              className="h-full w-full object-cover"
-            />
-          </div>
-        </div>
-        <h3 className="mb-3 font-serif text-2xl font-bold text-center text-[#63403A]">
-          Wood
+      <div className="border-l-2 border-[#63403A] pl-6">
+        <h3 className="font-serif text-xl text-[#63403A] mb-2">
+          In-house testing capabilities
         </h3>
-        <p className="text-center text-[rgba(82,28,13,0.7)]">
-          Hardwoods & engineered wood
+        <p className="text-sm text-[rgba(82,28,13,0.8)]">
+          Processes aligned with EU and US compliance standards,
+          supported by in-house testing and documentation systems.
         </p>
       </div>
 
-      {/* MIXED */}
-      <div className="p-8 bg-white rounded-lg hover:shadow-xl transition-shadow duration-300 border border-[rgba(82,28,13,0.1)]">
-        <div className="mb-6 flex justify-center">
-          <div className="h-32 w-32 rounded-full overflow-hidden border-4 border-white shadow-lg">
-            <img
-              src="/home-page/metal2.jpg"
-              alt="Mixed Materials"
-              className="h-full w-full object-cover"
-            />
-          </div>
-        </div>
-        <h3 className="mb-3 font-serif text-2xl font-bold text-center text-[#63403A]">
-          Mixed Materials
+      <div className="border-l-2 border-[#63403A] pl-6">
+        <h3 className="font-serif text-xl text-[#63403A] mb-2">
+          Three generations of manufacturing expertise
         </h3>
-        <p className="text-center text-[rgba(82,28,13,0.7)]">
-          Integrated multi-material products
+        <p className="text-sm text-[rgba(82,28,13,0.8)]">
+          We work as an extension of our clients’ supply chain —
+          focusing on repeatability, cost stability, and scalable growth.
         </p>
       </div>
     </div>
 
-    {/* Know more */}
-    <div className="mt-14 text-center">
-      <a
-        href="/capabilities/materials"
-        className="inline-block text-sm uppercase tracking-wide text-white border-b border-white/70 pb-1 hover:border-white transition"
+    {/* CTA */}
+    <div className="mt-16 text-center">
+      <Link
+        href="/about-akbar/approach"
+        className="inline-block px-10 py-3 border border-[#63403A] text-[#63403A] uppercase text-sm tracking-wide hover:bg-[#63403A] hover:text-[#f0efe2] transition"
       >
-        Know more
-      </a>
+        Know More
+      </Link>
     </div>
+
   </div>
 </section>
 
 
-      {/* Our Expertise (external component) */}
-      <OurExpertise />
+      <LuxuryShowcase />
 
-      {/* Luxury Product Showcase Section - contains Why Choose Us + LuxuryShowcase */}
-      <section className="py-20 md:py-28" style={{ backgroundColor: "#f0efe2" }}>
-        <div className="mx-auto max-w-full px-6">
-          <div className="mb-12 text-center">
-            <h2 className="mb-4 font-serif text-3xl font-bold md:text-4xl" style={{ color: "#63403A" }}>
-              AKBAR BRASS: Production Excellence On Display
-            </h2>
-            <p
-              className="mx-auto max-w-2xl text-base md:text-lg leading-relaxed px-4 md:px-0"
-              style={{ color: "rgba(82, 28, 13, 0.8)" }}
-            >
-              We bring together multi-material production capabilities, consistently stable quality, compliance-ready systems, in-house testing expertise, and the strength of three generations of craftsmanship.
-            </p>
-          </div>
-
-          {/* Luxury showcase component */}
-          <LuxuryShowcase />
+      {/* SUSTAINABILITY – KEPT */}
+      <section
+        className="relative px-6 py-32 bg-cover bg-center"
+        style={{ backgroundImage: "url('/placeholder-hero.png')" }}
+      >
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative z-10 max-w-4xl mx-auto text-center text-white">
+          <span className="tracking-widest text-xs uppercase block mb-4">
+            Committed to a Sustainable Future
+          </span>
+          <h2 className="text-4xl font-serif mb-6">Sustainability</h2>
+          <p className="mb-10 text-lg">
+            Sustainable manufacturing supported by ETP, STP, RO systems and dust
+            collectors across all production units.
+          </p>
+          <Link href="/sustainability" className="border-b pb-1">
+            Know more
+          </Link>
         </div>
       </section>
 
-      {/* Sustainability */}
-      <section
-  className="relative px-6 py-24 md:py-32 bg-center bg-cover"
-  style={{
-    backgroundImage: "url('/placeholder-hero.png')", // ← change path if needed
-  }}
->
-  {/* Overlay */}
-  <div className="absolute inset-0 bg-black/40"></div>
+      {/* DELHI FAIR – KEPT */}
+      <section className="px-6 py-24 bg-[#f0efe2]">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="text-4xl font-serif text-[#63403A] mb-6">
+              A Glimpse of Our Artistry: Delhi Fair 10/25
+            </h2>
+            <p className="text-[rgba(82,28,13,0.8)] mb-4">
+              Showcasing our latest collections and manufacturing innovations
+              developed for global buyers.
+            </p>
+          </div>
 
-  {/* Content */}
-  <div className="relative z-10 mx-auto max-w-4xl text-center text-white">
-    <span className="mb-3 block text-xs tracking-[0.3em] uppercase opacity-100">
-      Committed to a Sustainable Future
-    </span>
+          <div className="grid grid-cols-2 gap-4">
+            <img src="/f1.jpeg" className="object-cover aspect-[3/4]" />
+            <img src="/f2.jpeg" className="object-cover aspect-[3/4] mt-8" />
+          </div>
+        </div>
+      </section>
 
-    <h2 className="mb-6 font-serif text-3xl font-bold md:text-4xl">
-      Sustainability
-    </h2>
+      <OurPartners />
 
-    <p className="mx-auto mb-10 max-w-3xl text-base leading-relaxed md:text-lg opacity-100">
-      Sustainable manufacturing supported by ETP, STP, RO systems and dust
-      collectors for clean, compliant production across metal and marble units.
-    </p>
-
-    {/* Know more link */}
-    <Link
-      href="/sustainability"
-      className="inline-block text-sm tracking-wide uppercase border-b border-white/70 pb-1 hover:border-white transition"
-    >
-      Know more
-    </Link>
-  </div>
-</section>
-
-      <section className="px-6 py-16 md:py-24" style={{ backgroundColor: "#f0efe2" }}>
-  <div className="mx-auto max-w-7xl">
-    <div className="grid gap-12 md:grid-cols-2 items-center">
-      {/* Left - Text Content */}
-      <div>
-        <h2 className="mb-6 font-serif text-3xl font-bold md:text-4xl" style={{ color: "#63403A" }}>
-          A Glimpse of Our Artistry: Delhi Fair 10/25
+      {/* CONNECT */}
+      <section className="px-6 py-28 bg-white text-center">
+        <h2 className="text-4xl font-serif text-[#63403A] mb-8">
+          Connect With Us
         </h2>
-        <p className="mb-4 text-base leading-relaxed" style={{ color: "rgba(82, 28, 13, 0.8)" }}>
-          With over 50 years of manufacturing expertise, we've built a reputation for delivering exceptional home décor products to global markets. Our vertically integrated facility combines traditional craftsmanship with modern production techniques.
-        </p>
-        <p className="mb-4 text-base leading-relaxed" style={{ color: "rgba(82, 28, 13, 0.8)" }}>
-          From brass fabrication to marble processing, wood working to multi-material integration, our comprehensive capabilities allow us to bring your vision to life with precision and care.
-        </p>
-        <p className="text-base leading-relaxed" style={{ color: "rgba(82, 28, 13, 0.8)" }}>
-          Every piece that leaves our facility represents our commitment to quality, sustainability, and the artistry of fine home products.
-        </p>
-      </div>
-
-      {/* Right - Two Portrait Images */}
-      <div className="grid grid-cols-2 gap-4">
-        <div className="overflow-hidden" style={{ border: "2px solid #63403A" }}>
-          <img 
-            src="/f1.jpeg" 
-            alt="Craftsmanship detail" 
-            className="h-full w-full object-cover"
-            style={{ aspectRatio: "3/4" }}
-          />
-        </div>
-        <div className="overflow-hidden mt-8" style={{ border: "2px solid #63403A" }}>
-          <img 
-            src="f2.jpeg" 
-            alt="Manufacturing process" 
-            className="h-full w-full object-cover"
-            style={{ aspectRatio: "3/4" }}
-          />
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<OurPartners />
-
-      {/* Connect */}
-      <section className="px-6 py-20 md:py-28 bg-white">
-        <div className="mx-auto max-w-4xl text-center">
-          <h2 className="mb-8 font-serif text-3xl font-bold md:text-4xl" style={{ color: "#63403A" }}>
-            Connect With Us
-          </h2>
-          <Button size="lg" variant="outline" style={{ borderColor: "#63403A", color: "#63403A", backgroundColor: "#f0efe2", borderWidth: "2px" }} className="hover:bg-[#63403A] hover:text-[#f0efe2]" asChild>
-            <Link href="/contact">
-              Get In Touch <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
-        </div>
+        <Button asChild size="lg" variant="outline">
+          <Link href="/contact">
+            Get In Touch <ArrowRight className="ml-2" />
+          </Link>
+        </Button>
       </section>
     </div>
   );

@@ -44,16 +44,24 @@ export function Header() {
           </button>
 
           {/* CENTER : LOGO */}
-          <Link
-            href="/"
-            className="absolute left-1/2 -translate-x-1/2"
-          >
-            <img
-              src="/ABP.png"
-              alt="Akbar"
-              className="h-10 md:h-12 w-auto transition-transform hover:scale-105"
-            />
-          </Link>
+        <Link
+  href="/"
+  className="
+    absolute right-4 
+    md:left-1/2 md:right-auto 
+    md:-translate-x-1/2
+  "
+>
+  <img
+    src={scrolled ? "/ABP.png" : "/logowhite1.png"}
+    alt="Akbar Brass Products"
+    className={`w-auto transition-all duration-300 hover:scale-105 ${
+      scrolled ? "h-10 md:h-12" : "h-12 md:h-14"
+    }`}
+  />
+</Link>
+
+
 
           {/* RIGHT : CONTACT */}
           <div className="ml-auto z-10">

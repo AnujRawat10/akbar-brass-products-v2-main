@@ -7,7 +7,7 @@ export default function TimelinePage() {
       title: "Establishment of Akbar Brass Products",
       description:
         "Akbar Brass Products was established in 1974, when Haji Abdul Qayyum entrusted the responsibility of leading the company to his son Akbar Qayyum, marking the beginning of organised, export-focused manufacturing for the family.",
-      image: "/timeline/1974.jpg",
+      image: "/akbar-board.png",
     },
     {
       year: "1980s",
@@ -20,14 +20,14 @@ export default function TimelinePage() {
       title: "Strengthening Metal Manufacturing",
       description:
         "In-house capabilities in fabrication, polishing, plating, welding, and hand-finishing were enhanced to increase stability, finish consistency, and production control.",
-      image: "/timeline/1990s.jpg",
+      image: "/metal.png",
     },
     {
       year: "2000",
       title: "Wood Unit Established",
       description:
         "A dedicated wood unit was set up to manufacture wooden furniture and decorative articles, expanding the company's material capability into multi-material production.",
-      image: "/timeline/2000.jpg",
+      image: "/wood.png",
     },
     {
       year: "2012",
@@ -40,14 +40,14 @@ export default function TimelinePage() {
       title: "New Metal Furniture Unit Developed",
       description:
         "A specialised metal furniture production block was set up to support larger capacity, improved workflows, and better coordination across divisions.",
-      image: "/timeline/2018.jpg",
+      // image: "/timeline/2018.jpg",
     },
     {
       year: "2021",
       title: "Marble Furniture & Décor Unit Constructed",
       description:
         "A dedicated marble-processing facility was established, enabling complete in-house capabilities for marble furniture, stone tabletops, and decorative stoneware.",
-      image: "/timeline/2021.jpg",
+      image: "/marble.png",
     },
     {
       year: "2023–2024",
@@ -60,7 +60,7 @@ export default function TimelinePage() {
       title: "Third-Generation Leadership",
       description:
         "The third generation continues to modernise the organisation through engineering-led operations, advanced machinery, enhanced QC practices, and sustainable, global-standard manufacturing.",
-      image: "/timeline/present.jpg",
+      image: "/placeholder-hero.png",
     },
   ]
 

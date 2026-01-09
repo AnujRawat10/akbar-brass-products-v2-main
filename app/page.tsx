@@ -49,7 +49,9 @@ function LuxuryShowcase() {
         </div>
 
         {/* CONTENT */}
-        <div>
+        {/* CONTENT */}
+<div className="text-center lg:text-left flex flex-col items-center lg:items-start">
+
           <span className="block text-sm tracking-widest uppercase text-[#63403A] mb-3">
             {product.brand}
           </span>
@@ -63,7 +65,7 @@ function LuxuryShowcase() {
           </p>
 
           {/* MATERIAL TAGS */}
-          <div className="flex flex-wrap gap-3 mb-10">
+          <div className="flex flex-wrap gap-3 mb-10 justify-center lg:justify-start">
             {product.materials.map((m) => (
               <span
                 key={m}
@@ -146,7 +148,7 @@ export default function HomePage() {
 
   <div className="relative z-10 max-w-7xl mx-auto text-white">
     <h2 className="text-4xl font-serif text-center mb-14">
-      What We Do
+      What We Do?
     </h2>
 
     <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">

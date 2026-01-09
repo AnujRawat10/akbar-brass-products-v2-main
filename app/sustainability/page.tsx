@@ -9,10 +9,10 @@ export default function SustainabilityPage() {
       
    <main >
         {/* Hero Section */}
-        <section className="bg-[#63403A] text-white py-16">
-          <div className="container mx-auto px-4">
+        <section className="bg-[#f0efe1] text-[#63403A] pt-28 pb-16">
+          <div className="container mx-auto px-4 text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Sustainability</h1>
-            <p className="text-xl text-white opacity-90 max-w-4xl">
+            <p className="text-xl text-[#63403A] opacity-90 ">
               At Akbar Brass Products, sustainability is built into our manufacturing systems, resource management, and workplace practices. Our approach focuses on three key pillars: Environment, Community, and Wellbeing—ensuring responsible production and long-term operational reliability.
             </p>
           </div>

@@ -10,10 +10,10 @@ export default function PortfolioPage() {
       
      <main >
         {/* Hero Section */}
-        <section className="bg-[#63403A] text-white py-16">
-          <div className="container mx-auto px-4">
+        <section className="bg-[#f0efe1] text-[#63403A] pt-28 pb-16">
+          <div className="container mx-auto px-4 text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Product Portfolio</h1>
-            <p className="text-xl text-white opacity-90 max-w-4xl">
+            <p className="text-xl text-[#63403A] opacity-90 ">
               At Akbar Brass Products, our portfolio is built on multi-material manufacturing and engineered product development. We design and produce collections across Furniture, Home Décor, Serveware & Barware, Lighting, Outdoor, Seasonal, and Pet Accessories—combining metal, marble, wood, glass, and mixed materials with stable, export-ready constructions.
             </p>
           </div>

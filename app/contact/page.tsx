@@ -31,29 +31,46 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="min-h-screen pt-32 pb-20" style={{ backgroundColor: '#f0efe2' }}>
-      <div className="text-white py-16 px-6" style={{ backgroundColor: '#63403A' }}>
+    <div className="min-h-screen pt-15 " style={{ backgroundColor: '#f0efe2' }}>
+      <div className="text-[#63403A] py-16 px-6" style={{ backgroundColor: '#f0efe2' }}>
         <div className="mx-auto max-w-6xl text-center">
-          <h1 className="mb-4 font-serif text-4xl md:text-5xl font-bold">Get In Touch</h1>
-          <p className="text-lg" style={{ color: 'rgba(255, 255, 255, 0.9)' }}>We'd love to hear from you. Let's start a conversation.</p>
+          <h1 className=" font-serif text-4xl md:text-5xl font-bold">Get In Touch</h1>
+          <p className="text-lg" style={{ color: '#63403A' }}>We'd love to hear from you. Let's start a conversation.</p>
         </div>
       </div>
 
-      <div className="mx-auto max-w-6xl px-6 py-16">
+      <div className="mx-auto max-w-6xl px-6">
         <div className="grid gap-12 lg:grid-cols-2">
           <div>
             <h2 className="mb-6 font-serif text-3xl font-bold" style={{ color: '#63403A' }}>Send us a message</h2>
             
             {isSubmitted ? (
-              <div className="py-12 text-center bg-white rounded-lg">
-                <div className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full" style={{ backgroundColor: '#63403A' }}>
-                  <svg className="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <h3 className="mb-2 font-serif text-xl" style={{ color: '#63403A' }}>Thank you for reaching out!</h3>
-                <p style={{ color: '#63403A', opacity: 0.8 }}>We'll get back to you as soon as possible.</p>
-              </div>
+              <div className="py-12 text-center bg-white rounded-lg abp-success">
+  <div className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full bg-[#63403A]">
+    <svg
+      className="h-8 w-8 text-white"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M5 13l4 4L19 7"
+      />
+    </svg>
+  </div>
+
+  <h3 className="mb-2 font-serif text-xl text-[#63403A]">
+    Thank you for reaching out!
+  </h3>
+
+  <p className="text-[#63403A]/80">
+    We'll get back to you as soon as possible.
+  </p>
+</div>
+
             ) : (
               <div className="space-y-6">
                 <div className="grid gap-6 md:grid-cols-2">
@@ -200,7 +217,7 @@ export default function ContactPage() {
                 href="https://maps.app.goo.gl/gxsG5MYLJ3R1TAKi8"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block w-full text-center text-white hover:opacity-90 py-3 rounded-lg"
+                className="block w-full text-center text-white hover:opacity-90 py-3 rounded-lg mb-2"
                 style={{ backgroundColor: '#63403A' }}
               >
                 Get Directions

@@ -70,10 +70,10 @@ export default function CareersPage() {
       
         <main >
         {/* Hero Section */}
-        <section className="bg-[#63403A] text-white py-16">
-          <div className="container mx-auto px-4">
+        <section className="bg-[#f0efe1] text-[#63403A] pt-28 pb-16">
+          <div className="container mx-auto px-4 text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Careers</h1>
-            <p className="text-xl text-white opacity-90 max-w-4xl">
+            <p className="text-xl text-[#63403A] opacity-90 ">
               At Akbar Brass Products, we offer opportunities for skilled and motivated individuals to join our manufacturing, engineering, QC, and administrative teams. We look for people who are disciplined, reliable, and committed to long-term growth.
             </p>
           </div>

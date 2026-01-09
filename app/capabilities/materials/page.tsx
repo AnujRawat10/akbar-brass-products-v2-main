@@ -9,10 +9,10 @@ export default function MaterialsPage() {
       
       <main >
         {/* Hero Section */}
-        <section className="bg-[#63403A] text-white py-16">
-          <div className="container mx-auto px-4">
+        <section className="bg-[#f0efe1] text-[#63403A] pt-28 pb-16">
+          <div className="container mx-auto px-4 text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Materials & Finishes</h1>
-            <p className="text-xl text-white opacity-90 max-w-4xl">
+            <p className="text-xl text-[#63403A] opacity-90">
               Our manufacturing strength comes from our ability to work seamlessly across multiple materials. With dedicated units for metal, marble, wood, and mixed-material integration, we deliver precision-engineered products built for global markets.
             </p>
           </div>

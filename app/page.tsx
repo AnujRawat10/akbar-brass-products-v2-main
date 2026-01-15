@@ -102,9 +102,12 @@ export default function HomePage() {
         </video>
         <div className="relative z-10 h-full flex items-center justify-center px-6 text-center">
           <div>
-            <h1 className="text-5xl md:text-6xl font-serif text-[#f0efe2] mb-8">
-              Integrated Multi-Material Manufacturing for Global Markets
-            </h1>
+            <h1 className="text-5xl md:text-6xl font-serif text-[#f0efe2] mb-8 leading-tight max-w-[1200px] mx-auto">
+  Integrated Multi-Material Manufacturing
+  <br />
+  for Global Markets
+</h1>
+
             <Button asChild size="lg" className="bg-[#f0efe2] text-[#63403A]">
               <Link href="/capabilities/materials">
                 Explore Capabilities <ArrowRight className="ml-2" />
@@ -181,15 +184,15 @@ export default function HomePage() {
 
 
       {/* <OurExpertise /> */}
-      <section className="relative px-6 py-28 bg-[#f0efe2] will-change-transform">
+      <section className="relative px-6 py-28 bg-[#f0efe2] will-change-transform"  style={{backgroundColor:"#AE7250"}}>
   <div className="mx-auto max-w-6xl">
 
     {/* Heading */}
     <div className="mb-16 text-center">
-      <h2 className="mb-4 font-serif text-4xl text-[#63403A]">
+      <h2 className="mb-4 font-serif text-4xl text-[#ffffff]">
         Why Choose Us?
       </h2>
-      <p className="mx-auto max-w-2xl text-[rgba(82,28,13,0.8)]">
+      <p className="mx-auto max-w-2xl text-[#ffffff]">
         A manufacturing partner built for consistency, scale, and long-term collaboration.
       </p>
     </div>
@@ -198,10 +201,10 @@ export default function HomePage() {
     <div className="grid gap-12 md:grid-cols-2">
 
       <div className="border-l-2 border-[#63403A] pl-6">
-        <h3 className="font-serif text-xl text-[#63403A] mb-2">
+        <h3 className="font-serif text-xl text-[#ffffff] mb-2">
           Integrated multi-material production
         </h3>
-        <p className="text-sm text-[rgba(82,28,13,0.8)]">
+        <p className="text-sm text-[#ffffff]">
           In-house metal fabrication, marble processing, wood working,
           finishing, testing, and assembly ensure tighter quality control
           and predictable lead times.
@@ -209,30 +212,30 @@ export default function HomePage() {
       </div>
 
       <div className="border-l-2 border-[#63403A] pl-6">
-        <h3 className="font-serif text-xl text-[#63403A] mb-2">
+        <h3 className="font-serif text-xl text-[#ffffff] mb-2">
           Stable quality and repeatability
         </h3>
-        <p className="text-sm text-[rgba(82,28,13,0.8)]">
+        <p className="text-sm text-[#ffffff]">
           Decades of experience combining metal, stone, wood, and glass
           into structurally sound, production-ready designs.
         </p>
       </div>
 
       <div className="border-l-2 border-[#63403A] pl-6">
-        <h3 className="font-serif text-xl text-[#63403A] mb-2">
+        <h3 className="font-serif text-xl text-[#ffffff] mb-2">
           In-house testing capabilities
         </h3>
-        <p className="text-sm text-[rgba(82,28,13,0.8)]">
+        <p className="text-sm text-[#ffffff]">
           Processes aligned with EU and US compliance standards,
           supported by in-house testing and documentation systems.
         </p>
       </div>
 
       <div className="border-l-2 border-[#63403A] pl-6">
-        <h3 className="font-serif text-xl text-[#63403A] mb-2">
+        <h3 className="font-serif text-xl text-[#ffffff] mb-2">
           Three generations of manufacturing expertise
         </h3>
-        <p className="text-sm text-[rgba(82,28,13,0.8)]">
+        <p className="text-sm text-[#ffffff]">
           We work as an extension of our clients’ supply chain —
           focusing on repeatability, cost stability, and scalable growth.
         </p>
@@ -251,12 +254,7 @@ export default function HomePage() {
 
   </div>
 </section>
-
-
-      <LuxuryShowcase />
-
-      {/* SUSTAINABILITY – KEPT */}
-      <section
+<section
         className="relative px-6 py-32 bg-cover bg-center"
         style={{ backgroundImage: "url('/placeholder-hero.png')" }}
       >
@@ -275,6 +273,12 @@ export default function HomePage() {
           </Link>
         </div>
       </section>
+
+
+      <LuxuryShowcase />
+
+      {/* SUSTAINABILITY – KEPT */}
+      
 
       {/* DELHI FAIR – KEPT */}
       <section className="px-6 py-24 bg-[#f0efe2]">

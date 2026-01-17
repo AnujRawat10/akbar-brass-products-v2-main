@@ -1,10 +1,11 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Montserrat } from 'next/font/google'
+import { Montserrat } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { AuthProvider } from "@/components/auth-provider"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+
 import "./globals.css"
 
 const montserrat = Montserrat({

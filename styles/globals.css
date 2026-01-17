@@ -1,121 +1,127 @@
-@import 'tailwindcss';
-@import 'tw-animate-css';
+@import "tailwindcss";
+@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Primary Colors */
-  --background: oklch(0.93 0.02 75); /* #f0efe2 - Warm cream */
-  --foreground: oklch(0.25 0.08 25); /* #63403A - Deep brown/burgundy */
-  
-  /* Card & Popover */
-  --card: oklch(0.95 0.015 75); /* Lighter cream for cards */
-  --card-foreground: oklch(0.25 0.08 25);
-  --popover: oklch(0.95 0.015 75);
-  --popover-foreground: oklch(0.25 0.08 25);
-  
-  /* Primary Actions - Deep brown */
-  --primary: oklch(0.25 0.08 25); /* #63403A */
-  --primary-foreground: oklch(0.93 0.02 75); /* Cream text on brown */
-  
-  /* Secondary - Medium brown/bronze */
-  --secondary: oklch(0.55 0.06 45); /* Warm bronze tone */
-  --secondary-foreground: oklch(0.95 0.015 75);
-  
-  /* Muted - Subtle earth tones */
-  --muted: oklch(0.85 0.02 65); /* Muted beige */
-  --muted-foreground: oklch(0.45 0.06 35); /* Medium earth brown */
-  
-  /* Accent - Metallic bronze/copper */
-  --accent: oklch(0.65 0.08 50); /* Bronze/copper accent */
-  --accent-foreground: oklch(0.95 0.015 75);
-  
-  /* Destructive - Rust/iron red */
-  --destructive: oklch(0.50 0.15 35); /* Rust red */
-  --destructive-foreground: oklch(0.95 0.015 75);
-  
-  /* Borders & Inputs */
-  --border: oklch(0.75 0.03 60); /* Subtle warm border */
-  --input: oklch(0.88 0.02 70); /* Light input background */
-  --ring: oklch(0.55 0.06 45); /* Focus ring - bronze */
-  
-  /* Charts - Earth tones, metallics, wood, stone */
-  --chart-1: oklch(0.55 0.08 45); /* Bronze/copper */
-  --chart-2: oklch(0.45 0.06 220); /* Steel blue-gray */
-  --chart-3: oklch(0.50 0.05 80); /* Wood brown */
-  --chart-4: oklch(0.60 0.04 150); /* Stone gray-green */
-  --chart-5: oklch(0.40 0.08 30); /* Dark iron */
-  
+  /* ================= BRAND PALETTE ================= */
+
+  /* Core Brand Colors */
+  --cloud-cream: 60 27% 91%; /* #f0efe2 */
+  --cannoli-cream: 60 27% 91%; /* #f0efe2 */
+  --travertine: 30 27% 70%; /* #C4AE9F */
+  --hazel-caramel: 23 37% 50%; /* #AE7250 */
+  --fudgesickle-brown: 11 26% 31%; /* #63403A */
+
+  /* Accent Colors */
+  --sage-green-tea: 72 8% 57%; /* #9A9D85 */
+  --olive-green: 72 39% 22%; /* #485023 */
+  --mustard-yellow: 37 47% 51%; /* #BF8B45 */
+
+  /* Neutral */
+  --black-6c: 210 100% 6%;
+
+  /* ================= SEMANTIC TOKENS ================= */
+
+  --background: var(--cloud-cream);
+  --foreground: var(--fudgesickle-brown);
+
+  --card: var(--cannoli-cream);
+  --card-foreground: var(--fudgesickle-brown);
+
+  --popover: var(--travertine);
+  --popover-foreground: var(--fudgesickle-brown);
+
+  --primary: var(--mustard-yellow);
+  --primary-foreground: var(--fudgesickle-brown);
+
+  --secondary: var(--hazel-caramel);
+  --secondary-foreground: 60 27% 91%;
+
+  --muted: var(--sage-green-tea);
+  --muted-foreground: var(--fudgesickle-brown);
+
+  --accent: var(--olive-green);
+  --accent-foreground: 60 27% 91%;
+
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 60 27% 91%;
+
+  --border: 30 27% 80%;
+  --input: 60 27% 88%;
+  --ring: var(--mustard-yellow);
+
+  /* Charts */
+  --chart-1: var(--mustard-yellow);
+  --chart-2: var(--olive-green);
+  --chart-3: var(--sage-green-tea);
+  --chart-4: var(--hazel-caramel);
+  --chart-5: var(--fudgesickle-brown);
+  --chart-6: var(--travertine);
+  --chart-7: var(--cloud-cream);
+  --chart-8: var(--cannoli-cream);
+  --chart-9: var(--black-6c);
+
   --radius: 0.625rem;
-  
+
   /* Sidebar */
-  --sidebar: oklch(0.90 0.02 70); /* Slightly darker cream */
-  --sidebar-foreground: oklch(0.25 0.08 25);
-  --sidebar-primary: oklch(0.25 0.08 25);
-  --sidebar-primary-foreground: oklch(0.93 0.02 75);
-  --sidebar-accent: oklch(0.85 0.02 65);
-  --sidebar-accent-foreground: oklch(0.25 0.08 25);
-  --sidebar-border: oklch(0.75 0.03 60);
-  --sidebar-ring: oklch(0.55 0.06 45);
+  --sidebar: var(--travertine);
+  --sidebar-foreground: var(--fudgesickle-brown);
+  --sidebar-primary: var(--olive-green);
+  --sidebar-primary-foreground: 60 27% 91%;
+  --sidebar-accent: var(--mustard-yellow);
+  --sidebar-accent-foreground: var(--fudgesickle-brown);
+  --sidebar-border: 30 27% 60%;
+  --sidebar-ring: var(--olive-green);
 }
+
+/* ================= DARK MODE ================= */
 
 .dark {
-  /* Dark mode - Inverted with warm industrial tones */
-  --background: oklch(0.18 0.04 25); /* Dark brown/charcoal */
-  --foreground: oklch(0.93 0.02 75); /* Cream text */
-  
-  /* Card & Popover */
-  --card: oklch(0.22 0.04 30);
-  --card-foreground: oklch(0.93 0.02 75);
-  --popover: oklch(0.22 0.04 30);
-  --popover-foreground: oklch(0.93 0.02 75);
-  
-  /* Primary - Cream/light for dark mode */
-  --primary: oklch(0.88 0.02 70);
-  --primary-foreground: oklch(0.20 0.06 25);
-  
-  /* Secondary - Warm mid-tone */
-  --secondary: oklch(0.35 0.05 40);
-  --secondary-foreground: oklch(0.93 0.02 75);
-  
-  /* Muted */
-  --muted: oklch(0.30 0.04 35);
-  --muted-foreground: oklch(0.65 0.03 60);
-  
-  /* Accent - Bright bronze */
-  --accent: oklch(0.60 0.08 50);
-  --accent-foreground: oklch(0.95 0.015 75);
-  
-  /* Destructive - Bright rust */
-  --destructive: oklch(0.55 0.15 35);
-  --destructive-foreground: oklch(0.95 0.015 75);
-  
-  /* Borders & Inputs */
-  --border: oklch(0.35 0.04 35);
-  --input: oklch(0.28 0.04 30);
-  --ring: oklch(0.60 0.08 50);
-  
-  /* Charts - Dark mode variants */
-  --chart-1: oklch(0.65 0.10 50); /* Bright bronze */
-  --chart-2: oklch(0.55 0.08 220); /* Steel blue */
-  --chart-3: oklch(0.60 0.06 80); /* Warm wood */
-  --chart-4: oklch(0.50 0.06 150); /* Stone green */
-  --chart-5: oklch(0.70 0.10 40); /* Copper */
-  
-  /* Sidebar */
-  --sidebar: oklch(0.20 0.05 28);
-  --sidebar-foreground: oklch(0.93 0.02 75);
-  --sidebar-primary: oklch(0.88 0.02 70);
-  --sidebar-primary-foreground: oklch(0.20 0.06 25);
-  --sidebar-accent: oklch(0.30 0.04 35);
-  --sidebar-accent-foreground: oklch(0.93 0.02 75);
-  --sidebar-border: oklch(0.35 0.04 35);
-  --sidebar-ring: oklch(0.60 0.08 50);
+  --background: var(--black-6c);
+  --foreground: var(--cloud-cream);
+
+  --card: var(--fudgesickle-brown);
+  --card-foreground: var(--cloud-cream);
+
+  --popover: var(--fudgesickle-brown);
+  --popover-foreground: var(--cloud-cream);
+
+  --primary: var(--mustard-yellow);
+  --primary-foreground: var(--black-6c);
+
+  --secondary: var(--hazel-caramel);
+  --secondary-foreground: var(--cloud-cream);
+
+  --muted: var(--sage-green-tea);
+  --muted-foreground: var(--cloud-cream);
+
+  --accent: var(--olive-green);
+  --accent-foreground: var(--cloud-cream);
+
+  --destructive: 0 62% 50%;
+  --destructive-foreground: var(--cloud-cream);
+
+  --border: 11 26% 25%;
+  --input: 11 26% 25%;
+  --ring: var(--mustard-yellow);
+
+  --sidebar: var(--fudgesickle-brown);
+  --sidebar-foreground: var(--cloud-cream);
+  --sidebar-primary: var(--mustard-yellow);
+  --sidebar-primary-foreground: var(--black-6c);
+  --sidebar-accent: var(--olive-green);
+  --sidebar-accent-foreground: var(--cloud-cream);
+  --sidebar-border: 11 26% 25%;
+  --sidebar-ring: var(--mustard-yellow);
 }
 
+/* ================= TAILWIND THEME ================= */
+
 @theme inline {
-  --font-sans: 'Geist', 'Geist Fallback';
-  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --font-sans: "Montserrat", sans-serif;
+  --font-mono: "Geist Mono", "Geist Mono Fallback";
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -135,30 +141,67 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
 }
+
+/* ================= BASE ================= */
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* ================= CARD UTILITIES ================= */
+
+.card-sage { background-color: #9a9d85; }
+.card-olive { background-color: #485023; }
+.card-mustard { background-color: #bf8b45; }
+.card-caramel { background-color: #ae7250; }
+.card-brown { background-color: #63403a; }
+.card-travertine { background-color: #c4ae9f; }
+.card-cream { background-color: #f0efe2; }
+
+/* ================= RESPONSIVE CONTAINERS ================= */
+
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1800px;
+  }
+
+  body {
+    font-size: 1.0625rem; /* 17px */
+  }
+}
+
+@media (min-width: 2560px) {
+  .container {
+    max-width: 2200px;
+  }
+
+  body {
+    font-size: 1.125rem; /* 18px */
+  }
+}
+
+@media (min-width: 3840px) {
+  .container {
+    max-width: 3200px;
+  }
+
+  body {
+    font-size: 1.1875rem; /* 19px */
   }
 }

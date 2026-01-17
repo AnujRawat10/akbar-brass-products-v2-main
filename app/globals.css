@@ -4,79 +4,124 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: 42 15% 95%;
-  --foreground: 30 8% 20%;
-  --card: 0 0% 100%;
-  --card-foreground: 30 8% 20%;
-  --popover: 0 0% 100%;
-  --popover-foreground: 30 8% 20%;
-  --primary: 30 8% 20%;
-  --primary-foreground: 42 15% 95%;
-  --secondary: 35 20% 85%;
-  --secondary-foreground: 30 8% 20%;
-  --muted: 35 15% 90%;
-  --muted-foreground: 30 8% 45%;
-  --accent: 25 35% 70%;
-  --accent-foreground: 30 8% 20%;
-  --destructive: 0 84% 60%;
-  --destructive-foreground: 0 0% 98%;
-  --border: 35 15% 88%;
-  --input: 35 15% 85%;
-  --ring: 30 8% 20%;
-  --radius: 0.5rem;
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  /* ================= BRAND PALETTE ================= */
+
+  /* Core Brand Colors */
+  --cloud-cream: 60 27% 91%; /* #f0efe2 */
+  --cannoli-cream: 60 27% 91%; /* #f0efe2 */
+  --travertine: 30 27% 70%; /* #C4AE9F */
+  --hazel-caramel: 23 37% 50%; /* #AE7250 */
+  --fudgesickle-brown: 11 26% 31%; /* #63403A */
+
+  /* Accent Colors */
+  --sage-green-tea: 72 8% 57%; /* #9A9D85 */
+  --olive-green: 72 39% 22%; /* #485023 */
+  --mustard-yellow: 37 47% 51%; /* #BF8B45 */
+
+  /* Neutral */
+  --black-6c: 210 100% 6%;
+
+  /* ================= SEMANTIC TOKENS ================= */
+
+  --background: var(--cloud-cream);
+  --foreground: var(--fudgesickle-brown);
+
+  --card: var(--cannoli-cream);
+  --card-foreground: var(--fudgesickle-brown);
+
+  --popover: var(--travertine);
+  --popover-foreground: var(--fudgesickle-brown);
+
+  --primary: var(--mustard-yellow);
+  --primary-foreground: var(--fudgesickle-brown);
+
+  --secondary: var(--hazel-caramel);
+  --secondary-foreground: 60 27% 91%;
+
+  --muted: var(--sage-green-tea);
+  --muted-foreground: var(--fudgesickle-brown);
+
+  --accent: var(--olive-green);
+  --accent-foreground: 60 27% 91%;
+
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 60 27% 91%;
+
+  --border: 30 27% 80%;
+  --input: 60 27% 88%;
+  --ring: var(--mustard-yellow);
+
+  /* Charts */
+  --chart-1: var(--mustard-yellow);
+  --chart-2: var(--olive-green);
+  --chart-3: var(--sage-green-tea);
+  --chart-4: var(--hazel-caramel);
+  --chart-5: var(--fudgesickle-brown);
+  --chart-6: var(--travertine);
+  --chart-7: var(--cloud-cream);
+  --chart-8: var(--cannoli-cream);
+  --chart-9: var(--black-6c);
+
+  --radius: 0.625rem;
+
+  /* Sidebar */
+  --sidebar: var(--travertine);
+  --sidebar-foreground: var(--fudgesickle-brown);
+  --sidebar-primary: var(--olive-green);
+  --sidebar-primary-foreground: 60 27% 91%;
+  --sidebar-accent: var(--mustard-yellow);
+  --sidebar-accent-foreground: var(--fudgesickle-brown);
+  --sidebar-border: 30 27% 60%;
+  --sidebar-ring: var(--olive-green);
 }
+
+/* ================= DARK MODE ================= */
 
 .dark {
-  --background: 30 8% 12%;
-  --foreground: 42 15% 95%;
-  --card: 30 8% 15%;
-  --card-foreground: 42 15% 95%;
-  --popover: 30 8% 15%;
-  --popover-foreground: 42 15% 95%;
-  --primary: 42 15% 95%;
-  --primary-foreground: 30 8% 20%;
-  --secondary: 30 8% 20%;
-  --secondary-foreground: 42 15% 95%;
-  --muted: 30 8% 25%;
-  --muted-foreground: 42 15% 70%;
-  --accent: 25 35% 50%;
-  --accent-foreground: 42 15% 95%;
+  --background: var(--black-6c);
+  --foreground: var(--cloud-cream);
+
+  --card: var(--fudgesickle-brown);
+  --card-foreground: var(--cloud-cream);
+
+  --popover: var(--fudgesickle-brown);
+  --popover-foreground: var(--cloud-cream);
+
+  --primary: var(--mustard-yellow);
+  --primary-foreground: var(--black-6c);
+
+  --secondary: var(--hazel-caramel);
+  --secondary-foreground: var(--cloud-cream);
+
+  --muted: var(--sage-green-tea);
+  --muted-foreground: var(--cloud-cream);
+
+  --accent: var(--olive-green);
+  --accent-foreground: var(--cloud-cream);
+
   --destructive: 0 62% 50%;
-  --destructive-foreground: 42 15% 95%;
-  --border: 30 8% 25%;
-  --input: 30 8% 25%;
-  --ring: 42 15% 70%;
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.269 0 0);
-  --sidebar-ring: oklch(0.439 0 0);
+  --destructive-foreground: var(--cloud-cream);
+
+  --border: 11 26% 25%;
+  --input: 11 26% 25%;
+  --ring: var(--mustard-yellow);
+
+  --sidebar: var(--fudgesickle-brown);
+  --sidebar-foreground: var(--cloud-cream);
+  --sidebar-primary: var(--mustard-yellow);
+  --sidebar-primary-foreground: var(--black-6c);
+  --sidebar-accent: var(--olive-green);
+  --sidebar-accent-foreground: var(--cloud-cream);
+  --sidebar-border: 11 26% 25%;
+  --sidebar-ring: var(--mustard-yellow);
 }
 
+/* ================= TAILWIND THEME ================= */
+
 @theme inline {
-  /* optional: --font-sans, --font-serif, --font-mono if they are applied in the layout.tsx */
-  --font-sans: 'Montserrat', 'Montserrat Fallback'; /* Added Montserrat as the global sans font */
+  --font-sans: "Montserrat", sans-serif;
+  --font-mono: "Geist Mono", "Geist Mono Fallback";
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -96,45 +141,67 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
 }
+
+/* ================= BASE ================= */
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
 
-  /* Added custom bounce animation for cart button */
-  @keyframes gentle-bounce {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* ================= CARD UTILITIES ================= */
+
+.card-sage { background-color: #9a9d85; }
+.card-olive { background-color: #485023; }
+.card-mustard { background-color: #bf8b45; }
+.card-caramel { background-color: #ae7250; }
+.card-brown { background-color: #63403a; }
+.card-travertine { background-color: #c4ae9f; }
+.card-cream { background-color: #f0efe2; }
+
+/* ================= RESPONSIVE CONTAINERS ================= */
+
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1800px;
   }
 
-  .animate-bounce {
-    animation: gentle-bounce 2s ease-in-out infinite;
+  body {
+    font-size: 1.0625rem; /* 17px */
+  }
+}
+
+@media (min-width: 2560px) {
+  .container {
+    max-width: 2200px;
+  }
+
+  body {
+    font-size: 1.125rem; /* 18px */
+  }
+}
+
+@media (min-width: 3840px) {
+  .container {
+    max-width: 3200px;
+  }
+
+  body {
+    font-size: 1.1875rem; /* 19px */
   }
 }

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react"
 import Link from "next/link"
 import { Menu, X, ChevronDown } from "lucide-react"
+import gsap from "gsap"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -10,110 +11,97 @@ export function Header() {
   const [isCapabilitiesOpen, setIsCapabilitiesOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
-  /* ================= SCROLL EFFECT ================= */
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener("scroll", onScroll)
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
 
+  useEffect(() => {
+    if (isMenuOpen) {
+      const menuItems = document.querySelectorAll(".menu-item")
+      gsap.from(menuItems, {
+        x: -50,
+        opacity: 0,
+        stagger: 0.08,
+        duration: 0.5,
+        ease: "power2.out",
+      })
+    }
+  }, [isMenuOpen])
+
   const row =
-    "flex items-center justify-between py-5 text-[17px] tracking-wide border-b border-black/20"
+    "menu-item flex items-center justify-between py-4 lg:py-5 xl:py-6 2xl:py-7 text-base lg:text-lg xl:text-xl 2xl:text-2xl tracking-wide border-b border-black/20 hover:bg-[#63403A]/5 transition-colors px-2"
 
   return (
     <>
-      {/* ================= HEADER ================= */}
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? "bg-white shadow-md"
-            : "bg-gradient-to-b from-black/2 0 to-transparent"
+          scrolled ? "bg-white shadow-lg" : "bg-gradient-to-b from-black/30 to-transparent"
         }`}
       >
-        <div className="relative h-20 container mx-auto px-4 sm:px-6 flex items-center justify-between">
-  
-  {/* LEFT : MENU */}
-  <button
-    onClick={() => setIsMenuOpen(true)}
-    aria-label="Open menu"
-    className={`z-10 transition-colors duration-300 ${
-      scrolled ? "text-black" : "text-white"
+        <div className="relative h-20 lg:h-24 xl:h-28 2xl:h-32 container mx-auto px-4 sm:px-6 lg:px-12 flex items-center">
+          {/* LEFT : MENU */}
+          <button
+            onClick={() => setIsMenuOpen(true)}
+            aria-label="Open menu"
+            className={`z-10 transition-colors hover:scale-110 duration-200 ${scrolled ? "text-black" : "text-[#f0efe2]"}`}
+          >
+            <Menu className="h-7 w-7 lg:h-8 lg:w-8 xl:h-9 xl:w-9" />
+          </button>
+
+          {/* CENTER : LOGO */}
+          <Link href="/" className="absolute right-4 md:left-1/2 md:right-auto md:-translate-x-1/2">
+            <img
+              src={scrolled ? "/ABP.png" : "/logowhite1.png"}
+              alt="Akbar Brass Products"
+              className={`w-auto transition-all duration-300 hover:scale-105 ${
+      scrolled ? "h-10 md:h-12" : "h-12 md:h-14"
     }`}
-  >
-    <Menu className="h-6 w-6" />
-  </button>
+            />
+          </Link>
 
-  {/* CENTER : LOGO */}
-  <Link
-    href="/"
-    className="absolute left-1/2 -translate-x-1/2"
-  >
-    <img
-      src={scrolled ? "/ABP.png" : "/logowhite1.png"}
-      alt="Akbar Brass Products"
-      className={`w-auto transition-all duration-300 ${
-        scrolled ? "h-10 md:h-12" : "h-12 md:h-14"
-      }`}
-    />
-  </Link>
-
-  {/* RIGHT : CONTACT */}
-  <Link
-    href="/contact"
-    className={`z-10 px-4 md:px-6 py-2 border text-xs md:text-sm uppercase tracking-wide transition-all duration-300 ${
-      scrolled
-        ? "border-black text-black hover:bg-black hover:text-white"
-        : "border-white text-white hover:bg-white hover:text-[#63403A]"
-    }`}
-  >
-    Contact
-  </Link>
-
-</div>
-
-      
+          {/* RIGHT : CONTACT */}
+          <div className="ml-auto z-10">
+            <Link
+              href="/contact"
+              className={`hidden md:inline-block px-6 lg:px-8 xl:px-10 py-2 lg:py-3 xl:py-4 border-2 text-sm lg:text-base xl:text-lg uppercase tracking-wide transition-all duration-300 ${
+                scrolled
+                  ? "border-[#63403A] text-[#63403A] hover:bg-[#63403A] hover:text-white"
+                  : "border-[#f0efe2] text-[#f0efe2] hover:bg-[#f0efe2] hover:text-[#63403A]"
+              }`}
+            >
+              Contact
+            </Link>
+          </div>
+        </div>
       </header>
 
-      {/* ================= DRAWER ================= */}
+      {/* DRAWER */}
       <div
         className={`fixed inset-0 z-50 transition-opacity duration-300 ${
           isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >
-        {/* Overlay */}
-        <div
-          className="absolute inset-0 bg-black/40"
-          onClick={() => setIsMenuOpen(false)}
-        />
+        <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={() => setIsMenuOpen(false)} />
 
-        {/* Drawer */}
         <div
-          className={`absolute left-0 top-0 h-full w-[85%] max-w-sm bg-[#F6F1E1] transform transition-transform duration-300 ${
+          className={`absolute left-0 top-0 h-full w-[85%] max-w-md xl:max-w-lg 2xl:max-w-xl bg-gradient-to-br from-[#f0efe2] to-[#C4AE9F] transform transition-transform duration-300 ${
             isMenuOpen ? "translate-x-0" : "-translate-x-full"
           }`}
         >
-          {/* Drawer Header */}
-          <div className="flex items-center justify-between px-6 h-20 border-b border-black/20">
-            <span className="text-xl font-semibold">Menu</span>
-            <button onClick={() => setIsMenuOpen(false)}>
-              <X className="h-6 w-6 transition-transform hover:rotate-90" />
+          <div className="flex items-center justify-between px-6 lg:px-8 xl:px-10 h-20 lg:h-24 xl:h-28 2xl:h-32 border-b border-[#63403A]/20">
+            <span className="text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-semibold text-[#63403A]">Menu</span>
+            <button onClick={() => setIsMenuOpen(false)} className="hover:rotate-90 transition-transform duration-300">
+              <X className="h-7 w-7 lg:h-8 lg:w-8 xl:h-9 xl:w-9 text-[#63403A]" />
             </button>
           </div>
 
-          {/* Drawer Content */}
-          <nav className="flex-1 px-6 py-4 overflow-y-auto">
-
+          <nav className="flex-1 px-6 lg:px-8 xl:px-10 py-6 overflow-y-auto">
             {/* ABOUT */}
-            <button
-              onClick={() => setIsAboutOpen(!isAboutOpen)}
-              className={`${row} w-full`}
-            >
+            <button onClick={() => setIsAboutOpen(!isAboutOpen)} className={`${row} w-full`}>
               About Akbar
-              <ChevronDown
-                className={`transition-transform duration-300 ${
-                  isAboutOpen ? "rotate-180" : ""
-                }`}
-              />
+              <ChevronDown className={`transition-transform duration-300 ${isAboutOpen ? "rotate-180" : ""}`} />
             </button>
 
             <div
@@ -121,7 +109,7 @@ export function Header() {
                 isAboutOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
               }`}
             >
-              <div className="pl-4">
+              <div className="pl-4 lg:pl-6 xl:pl-8">
                 <Link href="/about-akbar/timeline" onClick={() => setIsMenuOpen(false)} className={row}>
                   Timeline
                 </Link>
@@ -135,16 +123,9 @@ export function Header() {
             </div>
 
             {/* CAPABILITIES */}
-            <button
-              onClick={() => setIsCapabilitiesOpen(!isCapabilitiesOpen)}
-              className={`${row} w-full`}
-            >
+            <button onClick={() => setIsCapabilitiesOpen(!isCapabilitiesOpen)} className={`${row} w-full`}>
               Capabilities
-              <ChevronDown
-                className={`transition-transform duration-300 ${
-                  isCapabilitiesOpen ? "rotate-180" : ""
-                }`}
-              />
+              <ChevronDown className={`transition-transform duration-300 ${isCapabilitiesOpen ? "rotate-180" : ""}`} />
             </button>
 
             <div
@@ -152,7 +133,7 @@ export function Header() {
                 isCapabilitiesOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
               }`}
             >
-              <div className="pl-4">
+              <div className="pl-4 lg:pl-6 xl:pl-8">
                 <Link href="/capabilities/materials" onClick={() => setIsMenuOpen(false)} className={row}>
                   Materials
                 </Link>
@@ -165,7 +146,6 @@ export function Header() {
               </div>
             </div>
 
-            {/* LINKS */}
             <Link href="/sustainability" onClick={() => setIsMenuOpen(false)} className={row}>
               Sustainability
             </Link>
@@ -177,11 +157,10 @@ export function Header() {
             <Link
               href="/contact"
               onClick={() => setIsMenuOpen(false)}
-              className="flex items-center py-5 text-[17px] tracking-wide"
+              className="menu-item flex items-center py-4 lg:py-5 xl:py-6 2xl:py-7 text-base lg:text-lg xl:text-xl 2xl:text-2xl tracking-wide px-2 hover:bg-[#63403A]/5 transition-colors"
             >
               Contact Us
             </Link>
-
           </nav>
         </div>
       </div>

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Volume2, VolumeX } from "lucide-react"
 import gsap from "gsap"
 import SplitText from "gsap/SplitText"
 
@@ -10,7 +10,10 @@ gsap.registerPlugin(SplitText)
 
 export default function Hero() {
   const headingRef = useRef<HTMLHeadingElement | null>(null)
+  const videoRef = useRef<HTMLVideoElement | null>(null)
+
   const [scrollY, setScrollY] = useState(0)
+  const [muted, setMuted] = useState(true)
 
   /* Parallax scroll */
   useEffect(() => {
@@ -48,9 +51,10 @@ export default function Hero() {
 
       {/* Background video */}
       <video
+        ref={videoRef}
         autoPlay
         loop
-        muted
+        muted={muted}
         playsInline
         className="absolute inset-0 w-full h-full object-cover"
         style={{ transform: `scale(${1 + scrollY * 0.00008})` }}
@@ -60,6 +64,30 @@ export default function Hero() {
 
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/60" />
+
+      {/* MUTE / UNMUTE BUTTON */}
+      <button
+        onClick={() => {
+          if (!videoRef.current) return
+          videoRef.current.muted = !muted
+          setMuted(!muted)
+        }}
+        aria-label="Toggle sound"
+        className="
+          absolute bottom-6 right-6 z-20
+          bg-black/60 backdrop-blur
+          text-white
+          p-3 rounded-full
+          hover:bg-black/80
+          transition-all duration-300
+        "
+      >
+        {muted ? (
+          <VolumeX className="w-5 h-5" />
+        ) : (
+          <Volume2 className="w-5 h-5" />
+        )}
+      </button>
 
       {/* CONTENT */}
       <div className="relative z-10 flex items-center justify-center h-full px-6 text-center">
@@ -73,65 +101,64 @@ export default function Hero() {
           </div>
 
           {/* HERO TITLE */}
-         <h1
-  ref={headingRef}
-  className="
-    font-serif
-    text-white
-    opacity-0
-    leading-[1.12]
-    whitespace-nowrap
-  "
-  style={{
-    wordBreak: "keep-all",
-    overflowWrap: "normal",
-    hyphens: "none",
-  }}
->
-  {/* LINE 1 */}
-  <span
-    className="
-      block
-      text-[24px]
-      sm:text-[28px]
-      md:text-6xl
-      xl:text-7xl
-    "
-  >
-    Integrated Multi-Material
-  </span>
+          <h1
+            ref={headingRef}
+            className="
+              font-serif
+              text-white
+              opacity-0
+              leading-[1.12]
+              whitespace-nowrap
+            "
+            style={{
+              wordBreak: "keep-all",
+              overflowWrap: "normal",
+              hyphens: "none",
+            }}
+          >
+            {/* LINE 1 */}
+            <span
+              className="
+                block
+                text-[24px]
+                sm:text-[28px]
+                md:text-6xl
+                xl:text-7xl
+              "
+            >
+              Integrated Multi-Material
+            </span>
 
-  {/* LINE 2 */}
-  <span
-    className="
-      block
-      mt-2
-      text-[#BF8B45]
-      text-[24px]
-      sm:text-[28px]
-      md:text-6xl
-      xl:text-7xl
-    "
-  >
-    Manufacturing Excellence
-  </span>
+            {/* LINE 2 */}
+            <span
+              className="
+                block
+                mt-2
+                text-[#BF8B45]
+                text-[24px]
+                sm:text-[28px]
+                md:text-6xl
+                xl:text-7xl
+              "
+            >
+              Manufacturing Excellence
+            </span>
 
-  {/* LINE 3 */}
-  <span
-    className="
-      block
-      mt-3
-      text-white/90
-      text-[17px]
-      sm:text-[19px]
-      md:text-3xl
-      xl:text-4xl
-    "
-  >
-    for Global Markets
-  </span>
-</h1>
-
+            {/* LINE 3 */}
+            <span
+              className="
+                block
+                mt-3
+                text-white/90
+                text-[17px]
+                sm:text-[19px]
+                md:text-3xl
+                xl:text-4xl
+              "
+            >
+              for Global Markets
+            </span>
+          </h1>
 
           {/* Subtext */}
           <p className="text-white/80 text-lg md:text-xl mt-8 max-w-3xl mx-auto">

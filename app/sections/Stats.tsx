@@ -4,32 +4,60 @@ import { useEffect, useRef, useState } from "react"
 
 export default function Stats() {
   const ref = useRef<HTMLDivElement | null>(null)
-  const [visible, setVisible] = useState(false)
-  const [count, setCount] = useState({ y: 0, p: 0, c: 0, g: 0 })
+  const [started, setStarted] = useState(false)
+
+  const [count, setCount] = useState({
+    y: 0,
+    p: 0,
+    c: 0,
+    g: 0,
+  })
+
+  const targets = {
+    y: 50,
+    p: 10000,
+    c: 25,
+    g: 500,
+  }
 
   useEffect(() => {
-    const obs = new IntersectionObserver(([e]) => {
-      if (e.isIntersecting && !visible) {
-        setVisible(true)
-        animate()
-      }
-    })
-    if (ref.current) obs.observe(ref.current)
-    return () => obs.disconnect()
-  }, [visible])
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !started) {
+          setStarted(true)
+          animate()
+        }
+      },
+      { threshold: 0.4 }
+    )
+
+    if (ref.current) observer.observe(ref.current)
+    return () => observer.disconnect()
+  }, [started])
 
   const animate = () => {
-    let i = 0
-    const t = setInterval(() => {
-      i++
+    const duration = 3800 // 👈 slower = visible after loader
+    const start = performance.now()
+
+    const tick = (now: number) => {
+      const progress = Math.min((now - start) / duration, 1)
+
+      // easeOutCubic
+      const eased = 1 - Math.pow(1 - progress, 3)
+
       setCount({
-        y: Math.floor(50 * i / 60),
-        p: Math.floor(10000 * i / 60),
-        c: Math.floor(25 * i / 60),
-        g: Math.floor(500 * i / 60)
+        y: Math.floor(targets.y * eased),
+        p: Math.floor(targets.p * eased),
+        c: Math.floor(targets.c * eased),
+        g: Math.floor(targets.g * eased),
       })
-      if (i === 60) clearInterval(t)
-    }, 30)
+
+      if (progress < 1) {
+        requestAnimationFrame(tick)
+      }
+    }
+
+    requestAnimationFrame(tick)
   }
 
   return (
@@ -39,14 +67,14 @@ export default function Stats() {
           [count.y, "Years"],
           [count.p, "Products"],
           [count.c, "Countries"],
-          [count.g, "Clients"]
-        ].map(([v, l], i) => (
+          [count.g, "Clients"],
+        ].map(([value, label], i) => (
           <div key={i}>
             <div className="text-4xl md:text-5xl text-[#BF8B45] font-serif">
-              {v}+
+              {value}+
             </div>
             <div className="text-xs tracking-widest uppercase text-white/60 mt-2">
-              {l}
+              {label}
             </div>
           </div>
         ))}

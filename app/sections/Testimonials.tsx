@@ -13,7 +13,7 @@ export default function Testimonials() {
   const [i, setI] = useState(0)
 
   useEffect(() => {
-    const t = setInterval(() => setI(p => (p + 1) % data.length), 5000)
+    const t = setInterval(() => setI(p => (p + 1) % data.length), 1500)
     return () => clearInterval(t)
   }, [])
 

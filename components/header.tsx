@@ -74,33 +74,35 @@ export function Header() {
 <div className="flex justify-end items-center gap-2">
 
   {/* Mobile icon */}
-  <Link
-    href="/contact"
-    className={`
-      sm:hidden
-      p-2 rounded-full border transition-all
-      ${scrolled
-        ? "border-[#63403A] text-[#63403A]"
-        : "border-[#f0efe2] text-[#f0efe2]"
-      }
-    `}
-    aria-label="Contact"
+ <Link
+  href="/contact"
+  className={`
+    sm:hidden
+    p-2.5 rounded-full border transition-all
+    ${scrolled
+      ? "border-[#63403A] text-[#63403A]"
+      : "border-[#f0efe2] text-[#f0efe2]"
+    }
+  `}
+  aria-label="Contact"
+>
+  <svg
+    width="22"
+    height="22"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.7"
+    strokeLinecap="round"
+    strokeLinejoin="round"
   >
-    {/* simple mail icon svg */}
-    <svg
-      width="22"
-      height="22"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.8"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M4 4h16v16H4z" />
-      <path d="M22 6l-10 7L2 6" />
-    </svg>
-  </Link>
+    {/* message bubble */}
+    <path d="M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z" />
+    {/* phone curve */}
+    <path d="M10.5 9.5c.5 1 1.5 2 2.5 2.5" />
+  </svg>
+</Link>
+
 
   {/* Desktop button */}
   <Link

@@ -5,215 +5,213 @@ import { CheckCircle } from "lucide-react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger)
-}
+gsap.registerPlugin(ScrollTrigger)
+
+const moodColors = [
+  { bg: "#F0EFE2", card: "#FFFFFF", text: "#63403A" },
+  { bg: "#EFE6DA", card: "#C4AE9F", text: "#63403A" },
+  { bg: "#E8DDCF", card: "#C19A6B", text: "#3E2A1F" },
+  { bg: "#E2D1C0", card: "#AE7250", text: "#FFFFFF" },
+  { bg: "#D6CEC2", card: "#9A9D85", text: "#1F1F1F" },
+  { bg: "#CFD4C2", card: "#485023", text: "#F0EFE2" },
+  { bg: "#EADFCC", card: "#BF8B45", text: "#2A1A10" },
+  { bg: "#EEE6DA", card: "#63403A", text: "#F0EFE2" },
+  { bg: "#F5F2EC", card: "#FFFFFF", text: "#63403A" },
+]
 
 export default function TimelinePage() {
-  const heroRef = useRef<HTMLElement>(null)
+  const heroRef = useRef<HTMLDivElement>(null)
   const timelineRef = useRef<HTMLDivElement>(null)
 
-  const cardColors = [
-    "#f0efe2",
-    "#C4AE9F",
-    "#C19A6B",
-    "#AE7250",
-    "#63403A",
-    "#9A9D85",
-    "#485023",
-    "#BF8B45",
-  ]
-
   useEffect(() => {
-    /* ================= HERO ================= */
-    if (heroRef.current) {
-      gsap.fromTo(
-        heroRef.current.children,
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          stagger: 0.2,
-          duration: 1,
-          ease: "power3.out",
-        }
-      )
-    }
-
-    /* ================= TIMELINE ITEMS ================= */
-    if (timelineRef.current) {
-      const items = timelineRef.current.querySelectorAll(".timeline-item")
-
-      items.forEach((item, index) => {
+    const ctx = gsap.context(() => {
+      if (heroRef.current) {
         gsap.fromTo(
-          item,
-          {
-            opacity: 0,
-            x: index % 2 === 0 ? -100 : 100,
-          },
+          heroRef.current.children,
+          { opacity: 0, y: 30 },
           {
             opacity: 1,
-            x: 0,
-            duration: 0.8,
-            ease: "power2.out",
-            scrollTrigger: {
-              trigger: item,
-              start: "top 85%",
-              once: true, // 🔒 prevents fade-back
-            },
+            y: 0,
+            duration: 1,
+            stagger: 0.15,
+            ease: "power3.out",
+            immediateRender: false,
           }
         )
-      })
-    }
+      }
+
+      if (timelineRef.current) {
+        const items = timelineRef.current.querySelectorAll(".timeline-item")
+
+        items.forEach((item) => {
+          gsap.fromTo(
+            item,
+            { opacity: 0, y: 40 },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.9,
+              ease: "power2.out",
+              immediateRender: false,
+              scrollTrigger: {
+                trigger: item,
+                start: "top 85%",
+                once: true,
+              },
+            }
+          )
+        })
+      }
+    })
+
+    return () => ctx.revert()
   }, [])
 
   const milestones = [
     {
       year: "1974",
-      title: "Establishment of Akbar Brass Products",
+      title: "Foundation of Akbar Brass Products",
       description:
-        "Akbar Brass Products was established in 1974, when Haji Abdul Qayyum entrusted the responsibility of leading the company to his son Akbar Qayyum.",
+        "Established under the leadership of Akbar Qayyum, laying the foundation of craftsmanship-driven manufacturing.",
       image: "/akbar-board.png",
     },
     {
       year: "1980s",
-      title: "Expansion into Global Markets",
+      title: "Entry into Global Export Markets",
       description:
-        "The company began supplying to the USA, Europe, the UK, and Australia, establishing long-term relationships.",
+        "Expanded exports to the USA, Europe, UK and Australia, forming long-standing partnerships.",
     },
     {
       year: "1990s",
       title: "Strengthening Metal Manufacturing",
       description:
-        "In-house capabilities in fabrication, polishing, plating, welding, and hand-finishing were enhanced.",
+        "Advanced fabrication, polishing, plating, and finishing capabilities were established.",
       image: "/metal.png",
     },
     {
       year: "2000",
-      title: "Wood Unit Established",
+      title: "Wood Manufacturing Unit",
       description:
-        "A dedicated wood unit was set up to manufacture wooden furniture and decorative articles.",
+        "A dedicated wood facility was added to support furniture and décor production.",
       image: "/wood.png",
     },
     {
       year: "2012",
-      title: "Introduction of Metal Furniture Manufacturing",
+      title: "Metal Furniture Production",
       description:
-        "Metal furniture production was introduced, enabling stronger mixed-material construction.",
+        "Expanded into structural metal furniture manufacturing for mixed-material products.",
     },
     {
       year: "2018",
-      title: "New Metal Furniture Unit Developed",
+      title: "Dedicated Metal Furniture Facility",
       description:
-        "A specialised metal furniture production block was set up to support larger capacity.",
+        "A specialised unit was built to support increased export volumes.",
     },
     {
       year: "2021",
-      title: "Marble Furniture & Décor Unit Constructed",
+      title: "Marble & Stone Unit",
       description:
-        "A dedicated marble-processing facility was established for stone furniture and décor.",
+        "Introduced stone processing capabilities for marble furniture and décor.",
       image: "/marble.png",
     },
     {
       year: "2023–2024",
-      title: "Integrated Factory & System Upgrades",
+      title: "Integrated Manufacturing Campus",
       description:
-        "A unified manufacturing campus was developed with ERP-driven processes and structured inspections.",
+        "Unified systems, ERP integration, and structured quality inspection processes.",
     },
     {
       year: "Present",
-      title: "Third-Generation Leadership",
+      title: "Third Generation Leadership",
       description:
-        "The third generation continues to modernise the organisation through engineering-led operations.",
+        "Engineering-led growth with modern manufacturing systems and global outlook.",
       image: "/placeholder-hero.png",
     },
   ]
 
   return (
-    <div className="min-h-screen pt-24 pb-16" style={{ backgroundColor: "#f0efe2" }}>
-      <div className="container mx-auto px-6 max-w-5xl">
-        {/* ================= HERO ================= */}
-        <section ref={heroRef} className="mb-16 text-center">
-          <h1
-            className="mb-6 font-serif text-4xl font-bold md:text-5xl xl:text-7xl"
-            style={{ color: "#63403A" }}
-          >
-            Timeline
+    <div
+      className="pt-28 pb-24 transition-colors duration-700"
+      style={{ backgroundColor: moodColors[0].bg }}
+    >
+      <div className="max-w-5xl mx-auto px-6">
+
+        {/* HERO */}
+        <section ref={heroRef} className="text-center mb-20">
+          <h1 className="font-serif text-4xl md:text-5xl xl:text-7xl text-[#63403A] mb-6">
+            Our Journey
           </h1>
-          <p
-            className="mx-auto max-w-3xl text-lg md:text-xl xl:text-2xl leading-relaxed"
-            style={{ color: "#63403A" }}
-          >
-            Built over three generations, our journey reflects a steady evolution
-            from craftsmanship to system-driven manufacturing.
+          <p className="max-w-3xl mx-auto text-lg md:text-xl text-[#63403A]/80 leading-relaxed">
+            A legacy shaped over generations — evolving from traditional
+            craftsmanship into structured global manufacturing.
           </p>
         </section>
 
-        {/* ================= TIMELINE ================= */}
+        {/* TIMELINE */}
         <div ref={timelineRef} className="relative">
-          {/* Vertical Line */}
-          <div
-            className="absolute left-8 top-0 bottom-0 w-0.5 md:left-1/2"
-            style={{ backgroundColor: "#63403A", opacity: 0.3 }}
-          />
 
-          <div className="space-y-16 xl:space-y-24">
-            {milestones.map((milestone, index) => {
-              const bgColor = cardColors[index % cardColors.length]
-              const isLight = ["#f0efe2", "#C4AE9F", "#C19A6B", "#9A9D85", "#BF8B45"].includes(bgColor)
-              const textColor = isLight ? "#63403A" : "#f0efe2"
+          <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-[#63403A]/30" />
+
+          <div className="space-y-20">
+            {milestones.map((m, i) => {
+              const mood = moodColors[i]
 
               return (
                 <div
-                  key={index}
-                  className="timeline-item relative flex items-start md:justify-between opacity-100"
+                  key={i}
+                  className="timeline-item relative flex items-start md:justify-between"
                 >
-                  {/* ICON */}
+                  {/* DOT */}
                   <div
-                    className="absolute left-0 flex h-16 w-16 md:h-20 md:w-20 items-center justify-center rounded-full text-white md:left-1/2 md:-translate-x-1/2 z-10 shadow-lg"
-                    style={{ backgroundColor: "#63403A" }}
+                    className="absolute left-0 md:left-1/2 md:-translate-x-1/2 z-10 w-14 h-14 rounded-full flex items-center justify-center shadow-lg"
+                    style={{ backgroundColor: mood.card }}
                   >
-                    <CheckCircle className="h-8 w-8 md:h-10 md:w-10" />
+                    <CheckCircle style={{ color: mood.text }} />
                   </div>
 
-                  {/* TEXT CARD */}
+                  {/* CARD */}
                   <div
-                    className={`ml-24 md:ml-0 md:w-[calc(50%-4rem)] ${
-                      index % 2 === 0 ? "md:text-right md:pr-8" : "md:ml-auto md:pl-8"
+                    className={`ml-20 md:ml-0 md:w-[45%] ${
+                      i % 2 === 0
+                        ? "md:text-right md:pr-10"
+                        : "md:ml-auto md:pl-10"
                     }`}
                   >
                     <div
-                      className="p-6 xl:p-10 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105"
-                      style={{ backgroundColor: bgColor }}
+                      className="rounded-lg p-8 shadow-md border border-black/5 transition-colors duration-700"
+                      style={{
+                        backgroundColor: mood.card,
+                        color: mood.text,
+                      }}
                     >
-                      <div className="text-2xl xl:text-5xl font-bold mb-4" style={{ color: textColor }}>
-                        {milestone.year}
+                      <div className="text-2xl font-semibold mb-2">
+                        {m.year}
                       </div>
-                      <h3 className="text-xl xl:text-4xl font-semibold mb-4" style={{ color: textColor }}>
-                        {milestone.title}
+
+                      <h3 className="font-serif text-xl md:text-2xl mb-4">
+                        {m.title}
                       </h3>
-                      <p className="xl:text-2xl leading-relaxed" style={{ color: textColor }}>
-                        {milestone.description}
+
+                      <p className="opacity-80 leading-relaxed">
+                        {m.description}
                       </p>
                     </div>
                   </div>
 
-                  {/* FLOATING IMAGE */}
-                  {milestone.image && (
+                  {/* IMAGE */}
+                  {m.image && (
                     <div
                       className={`
-                        hidden md:block absolute top-1/2 -translate-y-1/2
-                        w-[320px] h-[220px] lg:w-[400px] lg:h-[280px] xl:w-[480px] xl:h-[320px]
-                        rounded-lg overflow-hidden shadow-xl border border-[#63403A]/20
-                        hover:scale-105 transition-transform duration-300
-                        ${index % 2 === 0 ? "right-0 mr-16" : "left-0 ml-16"}
+                        hidden lg:block absolute top-1/2 -translate-y-1/2
+                        w-[340px] h-[220px] overflow-hidden rounded-lg shadow-lg
+                        border border-black/10
+                        ${i % 2 === 0 ? "right-0" : "left-0"}
                       `}
                     >
                       <img
-                        src={milestone.image}
-                        alt={milestone.title}
+                        src={m.image}
+                        alt={m.title}
                         className="w-full h-full object-cover"
-                        loading="lazy"
                       />
                     </div>
                   )}

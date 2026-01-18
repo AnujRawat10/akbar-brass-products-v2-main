@@ -19,7 +19,7 @@ export default function OurPartners() {
         <div className="partners-container">
 
           {/* Heading */}
-          <h2 className="partners-title">Our Trusted Partners</h2>
+          <h2 className="partners-title">Our Compliances</h2>
 
           <p className="partners-subtitle">
             Collaborating with global organisations and certification bodies

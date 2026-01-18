@@ -1,187 +1,144 @@
 import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { Factory, Hammer, Trees, Layers } from 'lucide-react'
+import { Factory, Trees, Layers } from "lucide-react"
 
 export default function MaterialsPage() {
   return (
-    <div className="min-h-screen bg-[#f0efe2]">
+    <div className="min-h-screen bg-[#F0EFE2]">
       <Header />
-      
-      <main >
-        {/* Hero Section */}
-        <section className="bg-[#f0efe1] text-[#63403A] pt-28 pb-16">
-          <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Materials & Finishes</h1>
-            <p className="text-xl text-[#63403A] opacity-90">
-              Our manufacturing strength comes from our ability to work seamlessly across multiple materials. With dedicated units for metal, marble, wood, and mixed-material integration, we deliver precision-engineered products built for global markets.
+
+      <main>
+
+        {/* ================= HERO ================= */}
+        <section className="bg-[#EFE8D6] text-[#63403A] pt-24 sm:pt-28 pb-16 sm:pb-20">
+          <div className="container mx-auto px-4 sm:px-6 text-center max-w-6xl">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold mb-5">
+              Materials & Finishes
+            </h1>
+            <p className="text-base sm:text-lg md:text-xl text-[#63403A]/80 max-w-4xl mx-auto leading-relaxed">
+              Our manufacturing strength comes from our ability to work seamlessly
+              across multiple materials — engineered for global markets.
             </p>
           </div>
         </section>
 
-        {/* Metal Section */}
-        <section className="py-16 border-b border-[#63403A] border-opacity-20">
-          <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
-                <div className="flex items-center gap-3 mb-6">
-                  <Factory className="w-10 h-10 text-[#63403A]" />
-                  <h2 className="text-3xl font-bold text-[#63403A]">Metal</h2>
-                </div>
-                <p className="text-[#63403A] opacity-80 mb-6">
-                  With more than five decades of metalworking experience, our metal division combines traditional craftsmanship with advanced fabrication techniques.
-                </p>
-                <div className="mb-6">
-                  <h3 className="font-semibold text-[#63403A] mb-3">Capabilities include:</h3>
-                  <ul className="list-disc list-inside text-[#63403A] opacity-80 space-y-2">
-                    <li>Sheet, wire, and tube fabrication</li>
-                    <li>Metal cutting, bending, forming</li>
-                    <li>MIG / TIG welding</li>
-                    <li>Sand casting</li>
-                    <li>Sheet spinning</li>
-                    <li>Machining and grinding</li>
-                    <li>Polishing and buffing</li>
-                    <li>Plating and powder coating</li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-[#63403A] mb-3">Materials processed:</h3>
-                  <p className="text-[#63403A] opacity-80">Iron, aluminium, stainless steel, and brass.</p>
-                </div>
+        {/* ================= METAL ================= */}
+        <section className="py-16 sm:py-20 bg-[#111820] text-[#F0EFE2]">
+          <div className="container mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-10 lg:gap-16 items-center max-w-7xl">
+
+            <div>
+              <div className="flex items-center gap-3 mb-5">
+                <Factory className="w-8 h-8 sm:w-10 sm:h-10 text-[#BF8B45]" />
+                <h2 className="text-2xl sm:text-3xl font-bold">Metal</h2>
               </div>
-              <div className="h-96 bg-gray-200 rounded-lg">
-                <img 
-                  src="/materials/metal.png"
-                  alt="Metal fabrication" 
-                  className="w-full h-full object-cover rounded-lg"
-                />
-              </div>
+
+              <p className="opacity-80 mb-5 text-sm sm:text-base leading-relaxed">
+                With over five decades of metalworking expertise, our metal
+                division blends traditional skill with advanced industrial systems.
+              </p>
+
+              <ul className="list-disc list-inside opacity-80 space-y-2 text-sm sm:text-base">
+                <li>Sheet, wire and tube fabrication</li>
+                <li>MIG / TIG welding</li>
+                <li>Sand casting and spinning</li>
+                <li>Machining, polishing and plating</li>
+                <li>Powder coating and custom patinas</li>
+              </ul>
+
+              <p className="mt-5 opacity-80 text-sm sm:text-base">
+                Materials: Iron, aluminium, stainless steel, brass.
+              </p>
+            </div>
+
+            <div className="h-64 sm:h-80 lg:h-96 rounded-lg overflow-hidden border border-white/10">
+              <img
+                src="/materials/metal.png"
+                className="w-full h-full object-cover"
+                alt="Metal"
+              />
             </div>
           </div>
         </section>
 
-        {/* Marble & Stone Section */}
-        <section className="py-16 bg-white border-b border-[#63403A] border-opacity-20">
-          <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="h-96 bg-gray-200 rounded-lg order-2 md:order-1">
-                <img 
-                  src="/materials/marble.png"
-                  alt="Marble processing" 
-                  className="w-full h-full object-cover rounded-lg"
-                />
+        {/* ================= MARBLE ================= */}
+        <section className="py-16 sm:py-20 bg-[#9A9D85]/40 text-[#63403A]">
+          <div className="container mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-10 lg:gap-16 items-center max-w-7xl">
+
+            <div className="order-2 md:order-1 h-64 sm:h-80 lg:h-96 rounded-lg overflow-hidden border border-[#63403A]/20">
+              <img
+                src="/materials/marble.png"
+                className="w-full h-full object-cover"
+                alt="Marble"
+              />
+            </div>
+
+            <div className="order-1 md:order-2">
+              <div className="flex items-center gap-3 mb-5">
+                <Layers className="w-8 h-8 sm:w-10 sm:h-10 text-[#BF8B45]" />
+                <h2 className="text-2xl sm:text-3xl font-bold">
+                  Marble & Stone
+                </h2>
               </div>
-              <div className="order-1 md:order-2">
-                <div className="flex items-center gap-3 mb-6">
-                  <Layers className="w-10 h-10 text-[#63403A]" />
-                  <h2 className="text-3xl font-bold text-[#63403A]">Marble & Stone</h2>
-                </div>
-                <p className="text-[#63403A] opacity-80 mb-6">
-                  Our in-house stone unit processes a wide range of marbles and natural stones for tabletops, furniture components, and decorative accessories.
-                </p>
-                <div>
-                  <h3 className="font-semibold text-[#63403A] mb-3">Capabilities include:</h3>
-                  <ul className="list-disc list-inside text-[#63403A] opacity-80 space-y-2">
-                    <li>Block cutting and slab cutting</li>
-                    <li>Shaping and profiling</li>
-                    <li>Edge finishing</li>
-                    <li>Engraving and drilling</li>
-                    <li>Polished, honed, and textured surface options</li>
-                  </ul>
-                </div>
-              </div>
+
+              <p className="opacity-80 mb-5 text-sm sm:text-base leading-relaxed">
+                Our stone unit processes natural marble and stone for premium
+                furniture and décor applications.
+              </p>
+
+              <ul className="list-disc list-inside opacity-80 space-y-2 text-sm sm:text-base">
+                <li>Block and slab cutting</li>
+                <li>Shaping and profiling</li>
+                <li>Edge finishing</li>
+                <li>Polished, honed and textured surfaces</li>
+              </ul>
             </div>
           </div>
         </section>
 
-        {/* Wood Section */}
-        <section className="py-16 border-b border-[#63403A] border-opacity-20">
-          <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
-                <div className="flex items-center gap-3 mb-6">
-                  <Trees className="w-10 h-10 text-[#63403A]" />
-                  <h2 className="text-3xl font-bold text-[#63403A]">Wood</h2>
-                </div>
-                <p className="text-[#63403A] opacity-80 mb-6">
-                  We work with both indigenous and imported hardwoods and veneers to support multi-material product development.
-                </p>
-                <div>
-                  <h3 className="font-semibold text-[#63403A] mb-3">Capabilities include:</h3>
-                  <ul className="list-disc list-inside text-[#63403A] opacity-80 space-y-2">
-                    <li>Seasoning and moisture control</li>
-                    <li>Cutting, shaping, sanding, and profiling</li>
-                    <li>Joinery and structural preparation</li>
-                    <li>Wood components engineered for compatibility with metal and stone products</li>
-                  </ul>
-                </div>
+        {/* ================= WOOD ================= */}
+        <section className="py-16 sm:py-20 bg-[#63403A] text-[#F0EFE2]">
+          <div className="container mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-10 lg:gap-16 items-center max-w-7xl">
+
+            <div>
+              <div className="flex items-center gap-3 mb-5">
+                <Trees className="w-8 h-8 sm:w-10 sm:h-10 text-[#BF8B45]" />
+                <h2 className="text-2xl sm:text-3xl font-bold">Wood</h2>
               </div>
-              <div className="h-96 bg-gray-200 rounded-lg">
-                <img 
-                  src="/materials/wood.png"
-                  alt="Wood processing" 
-                  className="w-full h-full object-cover rounded-lg"
-                />
-              </div>
+
+              <p className="opacity-85 mb-5 text-sm sm:text-base leading-relaxed">
+                We work with seasoned hardwoods and veneers, engineered to
+                integrate seamlessly with metal and stone structures.
+              </p>
+
+              <ul className="list-disc list-inside opacity-85 space-y-2 text-sm sm:text-base">
+                <li>Moisture-controlled seasoning</li>
+                <li>Precision cutting and profiling</li>
+                <li>Joinery and structural preparation</li>
+                <li>Multi-material compatibility</li>
+              </ul>
+            </div>
+
+            <div className="h-64 sm:h-80 lg:h-96 rounded-lg overflow-hidden border border-white/10">
+              <img
+                src="/materials/wood.png"
+                className="w-full h-full object-cover"
+                alt="Wood"
+              />
             </div>
           </div>
         </section>
 
-        {/* Finishes Section */}
-        <section className="py-16 bg-white">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-[#63403A] mb-8">Finishes</h2>
-            <p className="text-[#63403A] opacity-80 mb-12 max-w-3xl">
-              Our in-house finishing systems allow us to achieve consistent colours, textures, and tones across multiple materials.
-            </p>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              {/* Metal Finishes */}
-              <div className="bg-white p-6 rounded-lg border border-[#63403A] border-opacity-20">
-                <h3 className="text-xl font-semibold text-[#63403A] mb-4">Metal Finishes</h3>
-                <ul className="text-[#63403A] opacity-80 space-y-2">
-                  <li>• Electroplated (brass, nickel, copper, zinc, antique tones)</li>
-                  <li>• Hand-applied finishes (brushed, hammered, polished)</li>
-                  <li>• Powder coating (matte, gloss, textured, outdoor-grade)</li>
-                  <li>• Custom patinas and applied colour finishes</li>
-                  <li>• Enamel finishes</li>
-                </ul>
-              </div>
-
-              {/* Stone Finishes */}
-              <div className="bg-white p-6 rounded-lg border border-[#63403A] border-opacity-20">
-                <h3 className="text-xl font-semibold text-[#63403A] mb-4">Stone Finishes</h3>
-                <ul className="text-[#63403A] opacity-80 space-y-2">
-                  <li>• Polished</li>
-                  <li>• Honed</li>
-                  <li>• Leathered</li>
-                  <li>• Textured surfaces for premium designs</li>
-                </ul>
-              </div>
-
-              {/* Wood Finishes */}
-              <div className="bg-white p-6 rounded-lg border border-[#63403A] border-opacity-20">
-                <h3 className="text-xl font-semibold text-[#63403A] mb-4">Wood Finishes</h3>
-                <ul className="text-[#63403A] opacity-80 space-y-2">
-                  <li>• Natural stains</li>
-                  <li>• PU coatings</li>
-                  <li>• Matt and semi-gloss finishes</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Closing Statement */}
-        <section className="py-16 bg-[#63403A] text-white">
-          <div className="container mx-auto px-4 text-center">
-            <p className="text-xl max-w-4xl mx-auto">
-              Our multi-material expertise enables us to create engineered, globally competitive products that combine precision, structure, and refined aesthetics — forming the foundation of everything we manufacture at Akbar Brass Products.
+        {/* ================= CLOSING ================= */}
+        <section className="py-16 sm:py-20 bg-[#485023] text-[#F0EFE2]">
+          <div className="container mx-auto px-4 sm:px-6 text-center max-w-6xl">
+            <p className="text-base sm:text-lg md:text-xl leading-relaxed mx-auto">
+              Our multi-material manufacturing capabilities allow us to deliver
+              structurally sound, aesthetically refined products engineered for
+              global export markets.
             </p>
           </div>
         </section>
+
       </main>
-
-      {/* <Footer /> */}
     </div>
   )
 }

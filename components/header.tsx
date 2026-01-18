@@ -36,46 +36,57 @@ export function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled ? "bg-white shadow-lg" : "bg-gradient-to-b from-black/30 to-transparent"
+  className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+    scrolled
+      ? "bg-white shadow-lg"
+      : "bg-gradient-to-b from-black/30 to-transparent"
+  }`}
+>
+  <div className="h-20 lg:h-24 xl:h-28 2xl:h-32 px-4 sm:px-6 lg:px-12 grid grid-cols-3 items-center">
+
+    {/* LEFT — MENU */}
+    <div className="flex items-center justify-start">
+      <button
+        onClick={() => setIsMenuOpen(true)}
+        aria-label="Open menu"
+        className={`transition-transform duration-200 hover:scale-110 ${
+          scrolled ? "text-black" : "text-[#f0efe2]"
         }`}
       >
-        <div className="relative h-20 lg:h-24 xl:h-28 2xl:h-32 container mx-auto px-4 sm:px-6 lg:px-12 flex items-center">
-          {/* LEFT : MENU */}
-          <button
-            onClick={() => setIsMenuOpen(true)}
-            aria-label="Open menu"
-            className={`z-10 transition-colors hover:scale-110 duration-200 ${scrolled ? "text-black" : "text-[#f0efe2]"}`}
-          >
-            <Menu className="h-7 w-7 lg:h-8 lg:w-8 xl:h-9 xl:w-9" />
-          </button>
+        <Menu className="h-7 w-7 lg:h-8 lg:w-8 xl:h-9 xl:w-9" />
+      </button>
+    </div>
 
-          {/* CENTER : LOGO */}
-          <Link href="/" className="absolute right-4 md:left-1/2 md:right-auto md:-translate-x-1/2">
-            <img
-              src={scrolled ? "/ABP.png" : "/logowhite1.png"}
-              alt="Akbar Brass Products"
-              className={`w-auto transition-all duration-300 hover:scale-105 ${
-      scrolled ? "h-10 md:h-12" : "h-12 md:h-14"
-    }`}
-            />
-          </Link>
+    {/* CENTER — LOGO */}
+    <div className="flex justify-center">
+      <Link href="/">
+        <img
+          src={scrolled ? "/ABP.png" : "/logowhite1.png"}
+          alt="Akbar Brass Products"
+          className={`transition-all duration-300 hover:scale-105 ${
+            scrolled ? "h-10 md:h-12" : "h-12 md:h-14"
+          }`}
+        />
+      </Link>
+    </div>
 
-          {/* RIGHT : CONTACT */}
-          <div className="ml-auto z-10">
-            <Link
-              href="/contact"
-              className={`hidden md:inline-block px-6 lg:px-8 xl:px-10 py-2 lg:py-3 xl:py-4 border-2 text-sm lg:text-base xl:text-lg uppercase tracking-wide transition-all duration-300 ${
-                scrolled
-                  ? "border-[#63403A] text-[#63403A] hover:bg-[#63403A] hover:text-white"
-                  : "border-[#f0efe2] text-[#f0efe2] hover:bg-[#f0efe2] hover:text-[#63403A]"
-              }`}
-            >
-              Contact
-            </Link>
-          </div>
-        </div>
-      </header>
+    {/* RIGHT — CONTACT */}
+    <div className="flex justify-end">
+      <Link
+        href="/contact"
+        className={`px-4 sm:px-5 py-2 text-xs sm:text-sm uppercase tracking-wider border transition-all duration-300 ${
+          scrolled
+            ? "border-[#63403A] text-[#63403A] hover:bg-[#63403A] hover:text-white"
+            : "border-[#f0efe2] text-[#f0efe2] hover:bg-[#f0efe2] hover:text-[#63403A]"
+        }`}
+      >
+        Contact
+      </Link>
+    </div>
+
+  </div>
+</header>
+
 
       {/* DRAWER */}
       <div

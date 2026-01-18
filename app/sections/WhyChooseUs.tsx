@@ -26,9 +26,9 @@ export default function WhyChooseUs() {
       icon: <CheckCircle2 className="w-8 h-8" />,
       title: "Global Compliance",
       desc: "Manufacturing aligned with international testing and certification standards.",
-      bg: "#485023",
+      bg: "#9A9D85",
       iconColor: "#F0EFE2",
-      hoverTitle: "#BF8B45",
+      hoverTitle: "#FFFFFFF",
       text: "#F0EFE2",
     },
     {

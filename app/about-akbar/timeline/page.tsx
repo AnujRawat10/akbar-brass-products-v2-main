@@ -101,7 +101,7 @@ const milestones = [
     title: "Metal Furniture Production",
     description:
       "Expanded into structural metal furniture manufacturing for mixed-material products.",
-    image: "/newblock.jpeg",
+    image: "/metal.png",
   },
   {
     year: "2018",
@@ -122,7 +122,7 @@ const milestones = [
     title: "Integrated Manufacturing Campus",
     description:
       "Unified systems, ERP integration, and structured quality inspection processes.",
-    image: "/placeholder-hero.png",
+    image: "/newblock.jpeg",
   },
   {
     year: "Present",

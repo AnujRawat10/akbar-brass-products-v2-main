@@ -12,7 +12,7 @@ export default function About() {
             multi-material production for global brands.
           </p>
         </div>
-        <img src="/f1.jpeg" className="w-full max-h-[500px] object-cover" />
+        <img src="/droneshot.png" className="w-full max-h-[500px] object-cover" />
       </div>
     </section>
   )

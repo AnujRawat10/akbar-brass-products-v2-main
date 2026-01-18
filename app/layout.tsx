@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/next"
 import { AuthProvider } from "@/components/auth-provider"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import Preloader from "@/components/Preloader"
 
 import "./globals.css"
 
@@ -16,41 +17,28 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: "Akbar Brass Products - Curated Home Decor",
-  description: "Transform your space with our collection of artisanal brass pieces and timeless designs",
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
-    other: [
-      {
-        rel: "icon",
-        url: "/web-app-manifest-192x192.png",
-        sizes: "192x192",
-        type: "image/png",
-      },
-      {
-        rel: "icon",
-        url: "/web-app-manifest-512x512.png",
-        sizes: "16x16",
-        type: "image/png",
-      },
-    ],
-  },
+  description:
+    "Transform your space with our collection of artisanal brass pieces and timeless designs",
 }
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
   return (
     <html lang="en" className={montserrat.variable}>
       <body className="font-sans antialiased">
+
+        {/* PRELOADER */}
+        <Preloader />
+
         <AuthProvider>
           <Header />
-          <main className="">{children}</main>
+          <main>{children}</main>
           <Footer />
         </AuthProvider>
+
         <Analytics />
       </body>
     </html>

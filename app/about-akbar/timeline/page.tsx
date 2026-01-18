@@ -67,67 +67,72 @@ export default function TimelinePage() {
     return () => ctx.revert()
   }, [])
 
-  const milestones = [
-    {
-      year: "1974",
-      title: "Foundation of Akbar Brass Products",
-      description:
-        "Established under the leadership of Akbar Qayyum, laying the foundation of craftsmanship-driven manufacturing.",
-      image: "/akbar-board.png",
-    },
-    {
-      year: "1980s",
-      title: "Entry into Global Export Markets",
-      description:
-        "Expanded exports to the USA, Europe, UK and Australia, forming long-standing partnerships.",
-    },
-    {
-      year: "1990s",
-      title: "Strengthening Metal Manufacturing",
-      description:
-        "Advanced fabrication, polishing, plating, and finishing capabilities were established.",
-      image: "/metal.png",
-    },
-    {
-      year: "2000",
-      title: "Wood Manufacturing Unit",
-      description:
-        "A dedicated wood facility was added to support furniture and décor production.",
-      image: "/wood.png",
-    },
-    {
-      year: "2012",
-      title: "Metal Furniture Production",
-      description:
-        "Expanded into structural metal furniture manufacturing for mixed-material products.",
-    },
-    {
-      year: "2018",
-      title: "Dedicated Metal Furniture Facility",
-      description:
-        "A specialised unit was built to support increased export volumes.",
-    },
-    {
-      year: "2021",
-      title: "Marble & Stone Unit",
-      description:
-        "Introduced stone processing capabilities for marble furniture and décor.",
-      image: "/marble.png",
-    },
-    {
-      year: "2023–2024",
-      title: "Integrated Manufacturing Campus",
-      description:
-        "Unified systems, ERP integration, and structured quality inspection processes.",
-    },
-    {
-      year: "Present",
-      title: "Third Generation Leadership",
-      description:
-        "Engineering-led growth with modern manufacturing systems and global outlook.",
-      image: "/placeholder-hero.png",
-    },
-  ]
+const milestones = [
+  {
+    year: "1974",
+    title: "Foundation of Akbar Brass Products",
+    description:
+      "Established under the leadership of Akbar Qayyum, laying the foundation of craftsmanship-driven manufacturing.",
+    image: "/akbar-campus.png",
+  },
+  {
+    year: "1980s",
+    title: "Entry into Global Export Markets",
+    description:
+      "Expanded exports to the USA, Europe, UK and Australia, forming long-standing partnerships.",
+    image: "/global.jpeg",
+  },
+  {
+    year: "1990s",
+    title: "Strengthening Metal Manufacturing",
+    description:
+      "Advanced fabrication, polishing, plating, and finishing capabilities were established.",
+    image: "/metal.png",
+  },
+  {
+    year: "2000",
+    title: "Wood Manufacturing Unit",
+    description:
+      "A dedicated wood facility was added to support furniture and décor production.",
+    image: "/legacy-unit.png",
+  },
+  {
+    year: "2012",
+    title: "Metal Furniture Production",
+    description:
+      "Expanded into structural metal furniture manufacturing for mixed-material products.",
+    image: "/newblock.jpeg",
+  },
+  {
+    year: "2018",
+    title: "Dedicated Metal Furniture Facility",
+    description:
+      "A specialised unit was built to support increased export volumes.",
+    image: "/metalfacility.jpeg",
+  },
+  {
+    year: "2021",
+    title: "Marble & Stone Unit",
+    description:
+      "Introduced stone processing capabilities for marble furniture and décor.",
+    image: "/marble.png",
+  },
+  {
+    year: "2023–2024",
+    title: "Integrated Manufacturing Campus",
+    description:
+      "Unified systems, ERP integration, and structured quality inspection processes.",
+    image: "/placeholder-hero.png",
+  },
+  {
+    year: "Present",
+    title: "Third Generation Leadership",
+    description:
+      "Engineering-led growth with modern manufacturing systems and global outlook.",
+    image: "/team.jpeg",
+  },
+]
+
 
   return (
     <div

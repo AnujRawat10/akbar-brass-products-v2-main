@@ -68,7 +68,7 @@ export default function Hero() {
           {/* Since */}
           <div className="mb-6">
             <span className="text-[#BF8B45] tracking-[0.35em] uppercase text-sm">
-              Since 1975
+              Since 1974
             </span>
           </div>
 

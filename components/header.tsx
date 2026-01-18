@@ -71,19 +71,55 @@ export function Header() {
     </div>
 
     {/* RIGHT — CONTACT */}
-    <div className="flex justify-end">
-      <Link
-        href="/contact"
-        className={`px-4 sm:px-5 py-2 text-xs sm:text-sm uppercase tracking-wider border transition-all duration-300 ${
-          scrolled
-            ? "border-[#63403A] text-[#63403A] hover:bg-[#63403A] hover:text-white"
-            : "border-[#f0efe2] text-[#f0efe2] hover:bg-[#f0efe2] hover:text-[#63403A]"
-        }`}
-      >
-        Contact
-      </Link>
-    </div>
+<div className="flex justify-end items-center gap-2">
 
+  {/* Mobile icon */}
+  <Link
+    href="/contact"
+    className={`
+      sm:hidden
+      p-2 rounded-full border transition-all
+      ${scrolled
+        ? "border-[#63403A] text-[#63403A]"
+        : "border-[#f0efe2] text-[#f0efe2]"
+      }
+    `}
+    aria-label="Contact"
+  >
+    {/* simple mail icon svg */}
+    <svg
+      width="22"
+      height="22"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M4 4h16v16H4z" />
+      <path d="M22 6l-10 7L2 6" />
+    </svg>
+  </Link>
+
+  {/* Desktop button */}
+  <Link
+    href="/contact"
+    className={`
+      hidden sm:inline-flex
+      px-4 sm:px-5 py-2
+      text-xs sm:text-sm
+      uppercase tracking-wider
+      border transition-all duration-300
+      ${scrolled
+        ? "border-[#63403A] text-[#63403A] hover:bg-[#63403A] hover:text-white"
+        : "border-[#f0efe2] text-[#f0efe2] hover:bg-[#f0efe2] hover:text-[#63403A]"
+      }
+    `}
+  >
+    Contact
+  </Link>
+</div>
   </div>
 </header>
 

@@ -80,7 +80,7 @@ export default function Hero() {
     text-white
     opacity-0
     leading-[1.12]
-    break-normal
+    whitespace-nowrap
   "
   style={{
     wordBreak: "keep-all",
@@ -89,39 +89,45 @@ export default function Hero() {
   }}
 >
   {/* LINE 1 */}
-  <span className="
-    block
-    text-[26px]
-    sm:text-[30px]
-    md:text-6xl
-    xl:text-7xl
-  ">
+  <span
+    className="
+      block
+      text-[24px]
+      sm:text-[28px]
+      md:text-6xl
+      xl:text-7xl
+    "
+  >
     Integrated Multi-Material
   </span>
 
   {/* LINE 2 */}
-  <span className="
-    block
-    mt-2
-    text-[#BF8B45]
-    text-[26px]
-    sm:text-[30px]
-    md:text-6xl
-    xl:text-7xl
-  ">
+  <span
+    className="
+      block
+      mt-2
+      text-[#BF8B45]
+      text-[24px]
+      sm:text-[28px]
+      md:text-6xl
+      xl:text-7xl
+    "
+  >
     Manufacturing Excellence
   </span>
 
   {/* LINE 3 */}
-  <span className="
-    block
-    mt-3
-    text-white/90
-    text-[18px]
-    sm:text-[20px]
-    md:text-3xl
-    xl:text-4xl
-  ">
+  <span
+    className="
+      block
+      mt-3
+      text-white/90
+      text-[17px]
+      sm:text-[19px]
+      md:text-3xl
+      xl:text-4xl
+    "
+  >
     for Global Markets
   </span>
 </h1>

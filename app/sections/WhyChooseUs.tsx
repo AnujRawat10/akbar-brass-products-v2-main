@@ -1,6 +1,6 @@
 "use client"
-
-import { Sparkles, Award, Users, CheckCircle2 } from "lucide-react"
+import Link from "next/link"
+import { Sparkles, Award, CheckCircle2, Users } from "lucide-react"
 
 export default function WhyChooseUs() {
   const items = [
@@ -28,7 +28,7 @@ export default function WhyChooseUs() {
       desc: "Manufacturing aligned with international testing and certification standards.",
       bg: "#9A9D85",
       iconColor: "#F0EFE2",
-      hoverTitle: "#FFFFFFF",
+      hoverTitle: "#FFFFFF",
       text: "#F0EFE2",
     },
     {
@@ -44,9 +44,7 @@ export default function WhyChooseUs() {
 
   return (
     <section className="min-h-screen md:min-h-screen flex items-center bg-[#DCD5C9] px-6 py-16">
-      <div className="max-w-6xl mx-auto">
-
-        {/* Heading */}
+      <div className="max-w-6xl mx-auto w-full">
         <div className="text-center mb-20">
           <h2 className="font-serif text-4xl md:text-5xl mb-4 text-[#63403A]">
             Why Choose Us?
@@ -54,56 +52,45 @@ export default function WhyChooseUs() {
           <div className="w-24 h-[1px] bg-[#BF8B45] mx-auto" />
         </div>
 
-        {/* Cards */}
-        <div className="grid md:grid-cols-2 gap-10">
-
+        <div className="grid md:grid-cols-2 gap-10 mb-12">
           {items.map((item, idx) => (
             <div
               key={idx}
-              className="
-                group relative p-12
-                border border-black/5
-                overflow-hidden
-                transition-all duration-700
-                hover:-translate-y-2
-                hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.25)]
-              "
+              className="group relative p-12 border border-black/5 overflow-hidden transition-all duration-700 hover:-translate-y-2 hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.25)]"
               style={{ backgroundColor: item.bg }}
             >
-              {/* soft accent glow */}
               <div className="absolute inset-0 bg-gradient-to-br from-[#BF8B45]/10 to-transparent opacity-0 group-hover:opacity-100 transition duration-700" />
-
-              {/* icon */}
               <div
                 className="relative z-10 mb-6 transition-transform duration-700 group-hover:scale-110"
                 style={{ color: item.iconColor }}
               >
                 {item.icon}
               </div>
-
-              {/* title */}
               <h3
                 className="relative z-10 font-serif text-2xl mb-4 transition-colors duration-500"
                 style={{ color: item.text }}
               >
-                <span className="group-hover:text-[var(--hover)]" style={{ ["--hover" as any]: item.hoverTitle }}>
+                <span className="group-hover:text-[var(--hover)]" style={{ "--hover": item.hoverTitle } as React.CSSProperties}>
                   {item.title}
                 </span>
               </h3>
-
-              {/* description */}
               <p
                 className="relative z-10 leading-relaxed"
                 style={{ color: item.text, opacity: 0.85 }}
               >
                 {item.desc}
               </p>
-
-              {/* underline */}
               <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-[#BF8B45] group-hover:w-full transition-all duration-700" />
             </div>
           ))}
+        </div>
 
+        <div className="text-center">
+          <Link href="/capabilities">
+            <button className="px-10 py-4 bg-[#63403A] text-white hover:bg-[#BF8B45] transition-all duration-300 uppercase tracking-wider font-semibold text-sm">
+              View Our Capabilities
+            </button>
+          </Link>
         </div>
       </div>
     </section>

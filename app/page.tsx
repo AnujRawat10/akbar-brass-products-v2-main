@@ -15,11 +15,11 @@ export default function Page() {
   return (
     <>
       <Hero />
-      <Stats />
+      {/* <Stats /> */}
       <About />
       <WhatWeDo />
       <WhyChooseUs />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <Sustainability />
       <DelhiFair />
       <Compliance />

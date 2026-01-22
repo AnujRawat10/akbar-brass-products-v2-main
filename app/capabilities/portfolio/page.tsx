@@ -7,6 +7,8 @@ import {
   Lightbulb,
   TreesIcon,
   Gift,
+  Recycle,
+  Droplet
 } from "lucide-react"
 import Link from "next/link"
 
@@ -81,8 +83,11 @@ export default function PortfolioPage() {
                 <li>Candle holders & lanterns</li>
                 <li>Vases & planters</li>
                 <li>Sculptures & décor objects</li>
+                <li>Frames, clocks & desktop accessories</li>
                 <li>Wall décor & accessories</li>
               </ul>
+              <p className="mt-6 opacity-80">
+Each piece is manufactured with repeatable finishing and controlled workmanship.              </p>
             </div>
           </div>
         </section>
@@ -99,14 +104,14 @@ export default function PortfolioPage() {
               </div>
 
               <p className="opacity-85 mb-6">
-                We produce metal, stone, and mixed-material serveware for global markets.
-              </p>
+We produce metal, stone, and mixed-material serveware for global markets, focusing on finish accuracy, food-safe coatings, and stable constructions.</p>
 
               <ul className="list-disc list-inside opacity-85 space-y-2">
                 <li>Trays, bowls & platters</li>
                 <li>Bar tools & bar sets</li>
-                <li>Cake stands</li>
-                <li>Tabletop accessories</li>
+                <li>Cake stands & tiered stands</li>
+                <li>Cheese boards, servers & utensils</li>
+                <li>Storage products & tabletop accessories</li>
               </ul>
             </div>
 
@@ -130,11 +135,65 @@ export default function PortfolioPage() {
               </div>
 
               <p className="opacity-90">
-                Lighting products engineered with export-grade electrical compliance.
+Our lighting products combine metal fabrication, clean finishing, and electrical safety requirements.
               </p>
-            </div>
+              <ul className="list-disc list-inside opacity-85 space-y-2">
+                <li>Table lamps</li>
+                <li>Floor lamps</li>
+                <li>Pendant lights</li>
+                <li>Wall lights</li>
+                <li>Task lighting</li>
+              </ul>
+              <p className="mt-6 opacity-85">
+All lighting products can be developed with UL, CUL, and CE compliance, based on buyer requirements.</p>            </div>
           </div>
         </section>
+
+        
+        <section className="py-16 bg-[#9A9D85] text-[#63403A]">
+          <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="flex items-center gap-3 mb-6">
+                <Droplet className="w-10 h-10 text-[#BF8B45]" />
+                <h2 className="text-3xl font-bold">OUTDOOR & GARDEN</h2>
+                </div>
+                <p className="opacity-90">
+Outdoor products are developed using weather-resistant processes and durable material combinations.              </p>
+              <ul className="list-disc list-inside opacity-85 space-y-2">
+                <li>Outdoor furniture</li>
+                <li>Garden planters</li>
+                <li>Fire pits & garden accessories</li>
+                <li>Bird feeders, bird baths, hose holders</li>
+              </ul>
+              <p className="mt-6 opacity-85">
+Finishes are engineered for outdoor endurance.
+</p>
+</div>
+          </div>
+        </section>
+         <section className="py-16 bg-[#BF8B45] text-[#63403A] border-b border-[#63403A]/20">
+          <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+            <div className="h-96 rounded-lg overflow-hidden order-2 md:order-1 border border-[#63403A]/20">
+              <img src="/produtcsImages/37.jpg" className="w-full h-full object-cover" />
+            </div>
+
+            <div className="order-1 md:order-2">
+              <div className="flex items-center gap-3 mb-6">
+                <Gift className="w-10 h-10" />
+                <h2 className="text-3xl font-bold">FESTIVE & SEASONAL</h2>
+              </div>
+
+              <p className="opacity-90">
+We produce multi-material seasonal ranges for international holiday and occasion programs, crafted in metal, wood, stone, and mixed materials.              </p>
+        
+              <p className="mt-6 opacity-85">
+Key Programs:
+Christmas · Halloween · Easter · St. Patrick’s Day · Mother’s Day / Father’s Day · Valentine’s Day
+Designed with precise forming, finishing, and hand-detailing capability.</p>          
+</div>
+          </div>
+        </section>
+            
 
         {/* CTA */}
         <section className="py-20 bg-[#485023] text-[#F0EFE2]">

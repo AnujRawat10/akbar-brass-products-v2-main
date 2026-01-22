@@ -70,65 +70,65 @@ export default function TimelinePage() {
 const milestones = [
   {
     year: "1974",
-    title: "Foundation of Akbar Brass Products",
+    title: "Establishment of Akbar Brass Products",
     description:
-      "Established under the leadership of Akbar Qayyum, laying the foundation of craftsmanship-driven manufacturing.",
+      "Akbar Brass Products was established in 1974, when Haji Abdul Qayyum entrusted the responsibility of leading the company to his son Akbar Qayyum, marking the beginning of organised, export-focused manufacturing for the family.",
     image: "/akbar-campus.png",
   },
   {
     year: "1980s",
-    title: "Entry into Global Export Markets",
+    title: "Expansion into Global Markets",
     description:
-      "Expanded exports to the USA, Europe, UK and Australia, forming long-standing partnerships.",
+      "The company began supplying to the USA, Europe, the UK, and Australia, establishing long-term relationships built on consistent quality and dependable delivery.",
     image: "/global.jpeg",
   },
   {
     year: "1990s",
     title: "Strengthening Metal Manufacturing",
     description:
-      "Advanced fabrication, polishing, plating, and finishing capabilities were established.",
-    image: "/metal.png",
+      "In-house capabilities in fabrication, polishing, plating, welding, and hand-finishing were enhanced to increase stability, finish consistency, and production control.",
+    image: "/1990.jpeg",
   },
   {
     year: "2000",
-    title: "Wood Manufacturing Unit",
+    title: "Wood Unit Established",
     description:
-      "A dedicated wood facility was added to support furniture and décor production.",
+      "A dedicated wood unit was set up to manufacture wooden furniture and decorative articles, expanding the company’s material capability into multi-material production.",
     image: "/legacy-unit.png",
   },
   {
     year: "2012",
-    title: "Metal Furniture Production",
+    title: "Introduction of Metal Furniture Manufacturing",
     description:
-      "Expanded into structural metal furniture manufacturing for mixed-material products.",
+      "Metal furniture production was introduced, enabling stronger mixed-material construction and broadening the product offering to meet evolving global demand.",
     image: "/metal.png",
   },
   {
     year: "2018",
-    title: "Dedicated Metal Furniture Facility",
+    title: "New Metal Furniture Unit Developed",
     description:
-      "A specialised unit was built to support increased export volumes.",
+      "A specialised metal furniture production block was set up to support larger capacity, improved workflows, and better coordination across divisions.",
     image: "/metalfacility.jpeg",
   },
   {
     year: "2021",
-    title: "Marble & Stone Unit",
+    title: "Marble Furniture & Décor Unit Constructed",
     description:
-      "Introduced stone processing capabilities for marble furniture and décor.",
+      "A dedicated marble-processing facility was established, enabling complete in-house capabilities for marble furniture, stone tabletops, and decorative stoneware.",
     image: "/marble.png",
   },
   {
     year: "2023–2024",
-    title: "Integrated Manufacturing Campus",
+    title: "Integrated Factory & System Upgrades",
     description:
-      "Unified systems, ERP integration, and structured quality inspection processes.",
+      "A unified, horizontally integrated manufacturing campus was developed, bringing fabrication, marble processing, woodworking, finishing, assembly, testing, and export packing into one coordinated workflow.ERP-driven processes, structured inspections, and compliance systems were strengthened to align with global retail expectations.",
     image: "/newblock.jpeg",
   },
   {
     year: "Present",
     title: "Third Generation Leadership",
     description:
-      "Engineering-led growth with modern manufacturing systems and global outlook.",
+      "The third generation continues to modernise the organisation through engineering-led operations, advanced machinery, enhanced QC practices, and sustainable, global-standard manufacturing.",
     image: "/team.jpeg",
   },
 ]
@@ -147,8 +147,7 @@ const milestones = [
             Our Journey
           </h1>
           <p className="max-w-3xl mx-auto text-lg md:text-xl text-[#63403A]/80 leading-relaxed">
-            A legacy shaped over generations — evolving from traditional
-            craftsmanship into structured global manufacturing.
+            Built over three generations, our journey reflects a steady evolution from traditional craftsmanship to modern, system-driven manufacturing. Each decade shows how we expanded our material expertise, upgraded our processes, and consolidated our infrastructure to meet the expectations of global markets.
           </p>
         </section>
 

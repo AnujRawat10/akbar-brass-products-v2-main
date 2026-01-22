@@ -4,30 +4,32 @@ export default function WhatWeDo() {
   const materials = [
     {
       title: "Metal",
-      image: "/home-page/metal1.jpg"
+      image: "/home-page/metal1.jpeg"
     },
     {
       title: "Marble",
-      image: "/home-page/marble.jpg"
+      image: "/home-page/marble.jpeg"
     },
     {
       title: "Wood",
-      image: "/home-page/wood.jpg"
+      image: "/home-page/wood.jpeg"
     },
     {
       title: "Mixed Materials",
-      image: "/home-page/metal2.jpg"
+      image: "/home-page/metal2.jpeg"
     }
   ]
 
   return (
-    <section className="py-28 bg-black text-white px-6">
+    <section className="min-h-screen md:min-h-screen flex items-center bg-black text-white px-6 py-16">
       <div className="max-w-6xl mx-auto">
 
         {/* Heading */}
         <h2 className="font-serif text-4xl md:text-5xl text-center mb-16">
           What We Do?
         </h2>
+        <p className="text-center text-white/80 mb-12 max-w-3xl mx-auto">
+We manufacture multi-material home products across furniture, décor, lighting, kitchen/serveware, outdoor, and seasonal categories — engineered for global markets.        </p>
 
         {/* Grid */}
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">

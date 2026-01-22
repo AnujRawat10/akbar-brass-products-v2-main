@@ -2,7 +2,7 @@ export default function Compliance() {
   const logos = ["/partners/1.png", "/partners/2.png", "/partners/3.png", "/partners/4.jpeg"]
 
   return (
-    <section className="py-28 bg-[#9A9D85] px-6">
+    <section className="min-h-screen md:min-h-screen flex items-center bg-[#9A9D85] px-6 py-16">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="font-serif text-4xl md:text-5xl mb-12">
           Our Compliances

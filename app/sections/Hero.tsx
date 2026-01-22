@@ -161,9 +161,9 @@ export default function Hero() {
           </h1>
 
           {/* Subtext */}
-          <p className="text-white/80 text-lg md:text-xl mt-8 max-w-3xl mx-auto">
+          {/* <p className="text-white/80 text-lg md:text-xl mt-8 max-w-3xl mx-auto">
             Three generations of craftsmanship. One commitment to excellence.
-          </p>
+          </p> */}
 
           {/* CTA */}
           <div className="mt-12 flex justify-center">

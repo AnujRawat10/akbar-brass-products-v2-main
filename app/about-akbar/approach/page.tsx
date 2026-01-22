@@ -12,31 +12,31 @@ export default function ApproachPage() {
       icon: Wrench,
       title: "Systems That Build Consistency",
       description:
-        "Our horizontally integrated workflow — spanning metal fabrication, marble processing, woodworking, finishing, assembly, testing, and export packing — ensures uniform quality across all batches.",
+        "Our horizontally integrated workflow — spanning metal fabrication, marble processing, woodworking, finishing, assembly, testing, and export packing — ensures uniform quality across all batches. Structured SOPs, documented checkpoints, and clear responsibility frameworks support every step.",
     },
     {
       icon: Lightbulb,
       title: "Purpose-Driven Innovation",
       description:
-        "Innovation at Akbar is practical and measurable. We adopt new machinery, refine processes, and enhance finishes only when it improves efficiency, durability, or production accuracy.",
+        "Innovation at Akbar is practical and measurable. We adopt new machinery, refine processes, and enhance finishes only when it improves efficiency, durability, or production accuracy. Every upgrade must deliver real value to manufacturing outcomes.",
     },
     {
       icon: Users,
       title: "Skilled People, Strong Manufacturing",
       description:
-        "Our teams include trained artisans, technicians, engineers, and specialists working within defined systems. Continuous skill development and structured supervision support reliable production.",
+        "Our teams include trained artisans, technicians, engineers, and specialists working within defined systems. Continuous skill development, safe working conditions, and methodical supervision support reliable, steady production.",
     },
     {
       icon: Layers,
       title: "Multi-Material Expertise",
       description:
-        "We work across metal, marble, wood, glass, stone, and mixed materials. Disciplined fabrication and precise finishing allow seamless material integration.",
+        "We work across metal, marble, wood, glass, stone, and mixed materials. Controlled fabrication, precise machining, and disciplined finishing allow us to integrate materials seamlessly and produce globally compliant, structurally reliable products.",
     },
     {
       icon: Handshake,
       title: "Partnership-Oriented Working Style",
       description:
-        "Our philosophy is structured, transparent, and solution-focused — enabling long-term partnerships built on reliability and trust.",
+        "Our working philosophy is structured, transparent, and solution-focused. Reliable communication, realistic timelines, and consistent execution form the foundation of long-term relationships with international buyers.",
     },
   ]
 

@@ -1,152 +1,247 @@
-import { Shield, Award, CheckCircle, FileCheck } from "lucide-react"
+import { Shield, FileCheck, Lock, CheckCircle2, Beaker, Package, Award } from "lucide-react"
 
-export default function EthicsPage() {
+export default function EthicsPageRedesigned() {
   return (
     <div className="min-h-screen bg-[#F0EFE2]">
+      
+      {/* ================= HERO SECTION ================= */}
+      <section className="relative py-32 md:py-40 bg-gradient-to-br from-[#63403A] to-[#485023] text-white px-6 overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-[#BF8B45] rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#9A9D85] rounded-full blur-3xl" />
+        </div>
+        
+        <div className="max-w-5xl mx-auto text-center relative z-10">
+          <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl mb-8 font-bold">
+            Ethics & Compliance
+          </h1>
+          <div className="w-32 h-[3px] bg-[#BF8B45] mx-auto mb-10" />
+          <p className="text-xl md:text-2xl leading-relaxed text-white/90 max-w-4xl mx-auto">
+            At Akbar Brass Products, quality is a disciplined, system-driven approach that guides every stage of our manufacturing process. Our workflows, inspections, and compliance practices are aligned with global retail requirements to ensure consistency, safety, and long-term performance.
+          </p>
+        </div>
+      </section>
 
-      {/* ===== TOP SPACER (HEADER BREATHING ZONE) ===== */}
-      <div className="h-24 md:h-32 lg:h-40" />
-
-      {/* ================= CERTIFICATIONS ================= */}
-      {/* ================= CERTIFICATIONS ================= */}
-<section className="px-6 py-28 bg-[#EFE8D6]">
-  <div className="mx-auto max-w-7xl">
-
-    {/* HEADING */}
-    <div className="mb-20 text-center">
-      <h2 className="mb-5 font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-[#63403A]">
-        Certifications
-      </h2>
-
-      <p className="text-base md:text-lg text-[#63403A]/75 max-w-3xl mx-auto leading-relaxed">
-        Maintaining globally recognised standards for ethical manufacturing,
-        quality systems, and export compliance.
-      </p>
-    </div>
-
-    {/* LOGOS */}
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-x-12 gap-y-16 items-center justify-items-center">
-
-      <img
-        src="/partners/1.png"
-        alt="SEDEX Certification"
-        className="h-14 md:h-18 lg:h-20 object-contain mix-blend-multiply"
-      />
-
-      <img
-        src="/partners/2.png"
-        alt="UL Certification"
-        className="h-14 md:h-18 lg:h-20 object-contain mix-blend-multiply"
-      />
-
-      <img
-        src="/partners/3.png"
-        alt="CE Certification"
-        className="h-14 md:h-18 lg:h-20 object-contain mix-blend-multiply"
-      />
-
-      <img
-        src="/partners/4.jpeg"
-        alt="ISO Certification"
-        className="h-14 md:h-18 lg:h-20 object-contain mix-blend-multiply"
-      />
-
-    </div>
-  </div>
-</section>
-
-
-      {/* ================= COMMITMENTS ================= */}
-      <section className="px-6 py-24 md:py-28 bg-[#F0EFE2]">
-        <div className="mx-auto max-w-7xl">
-
-          <div className="mb-20 text-center">
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-[#63403A]">
-              Our Commitments
+      {/* ================= QUALITY MANAGEMENT ================= */}
+      <section className="py-28 bg-[#F0EFE2] px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-20">
+            <h2 className="font-serif text-4xl md:text-5xl mb-6 text-[#63403A] font-bold">
+              Quality Management
             </h2>
+            <div className="w-24 h-[2px] bg-[#BF8B45] mx-auto" />
           </div>
 
-          <div className="grid gap-10 md:grid-cols-2">
-
-            {[
-              {
-                title: "Ethical Manufacturing",
-                points: [
-                  "Fair wages and working conditions",
-                  "Safe and healthy work environment",
-                  "No child or forced labor",
-                  "Regular audits and compliance checks",
-                  "Employee training and development",
-                ],
-              },
-              {
-                title: "Environmental Responsibility",
-                points: [
-                  "Water treatment and recycling systems",
-                  "Dust collection and air quality control",
-                  "Recycled metal usage in production",
-                  "Energy-efficient manufacturing processes",
-                  "Waste reduction initiatives",
-                ],
-              },
-              {
-                title: "Quality Assurance",
-                points: [
-                  "8 quality check points during production",
-                  "2.5 AQL inspection standards",
-                  "In-house quality assurance team",
-                  "Third-party inspection available",
-                  "Full traceability of materials",
-                ],
-              },
-              {
-                title: "Customer Excellence",
-                points: [
-                  "80% repeat customer rate",
-                  "Spotless delivery record",
-                  "Transparent communication",
-                  "Custom development capabilities",
-                  "Long-term partnership focus",
-                ],
-              },
-            ].map((box, i) => (
-              <div
-                key={i}
-                className="p-8 md:p-10 bg-white rounded-xl border border-[#9A9D85]/40"
-              >
-                <h3 className="mb-6 font-serif text-2xl font-bold text-[#63403A]">
-                  {box.title}
-                </h3>
-
-                <ul className="space-y-3 text-[#63403A]/80 leading-relaxed">
-                  {box.points.map((p) => (
-                    <li key={p}>• {p}</li>
-                  ))}
-                </ul>
+          <div className="grid md:grid-cols-3 gap-10">
+            {/* Multi-Stage QC System */}
+            <div className="group bg-white p-10 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 border border-[#9A9D85]/20">
+              <div className="w-16 h-16 bg-[#485023] rounded-full flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[#BF8B45] transition-all duration-500">
+                <CheckCircle2 className="w-8 h-8 text-white" />
               </div>
-            ))}
+              <h3 className="font-serif text-2xl mb-4 text-[#63403A] font-bold">
+                Multi-Stage QC System
+              </h3>
+              <p className="text-[#63403A]/75 leading-relaxed mb-4">
+                Each product passes through a structured quality pathway starting with construction checks at the first inline stage, followed by midline assessments for finishing, alignment, and functional accuracy.
+              </p>
+              <p className="text-[#63403A]/75 leading-relaxed">
+                Every piece then undergoes 100% final inspection before packing, ensuring consistency across all production batches.
+              </p>
+              <div className="h-[2px] w-0 bg-[#BF8B45] group-hover:w-full transition-all duration-500 mt-6" />
+            </div>
+
+            {/* Product Testing */}
+            <div className="group bg-white p-10 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 border border-[#9A9D85]/20">
+              <div className="w-16 h-16 bg-[#485023] rounded-full flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[#BF8B45] transition-all duration-500">
+                <Beaker className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="font-serif text-2xl mb-4 text-[#63403A] font-bold">
+                Product Testing
+              </h3>
+              <p className="text-[#63403A]/75 leading-relaxed mb-4">
+                Our dedicated testing lab enables us to verify materials, finishes, construction, and performance in line with global retail expectations.
+              </p>
+              <p className="text-[#63403A]/75 leading-relaxed">
+                The lab supports pre-production validation, in-process checks, and final approvals, ensuring export-quality reliability and consistent standards across every shipment.
+              </p>
+              <div className="h-[2px] w-0 bg-[#BF8B45] group-hover:w-full transition-all duration-500 mt-6" />
+            </div>
+
+            {/* Packaging Standards */}
+            <div className="group bg-white p-10 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 border border-[#9A9D85]/20">
+              <div className="w-16 h-16 bg-[#485023] rounded-full flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[#BF8B45] transition-all duration-500">
+                <Package className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="font-serif text-2xl mb-4 text-[#63403A] font-bold">
+                Packaging Standards
+              </h3>
+              <p className="text-[#63403A]/75 leading-relaxed mb-4">
+                To guarantee secure and damage-free delivery, our packaging undergoes carton bursting strength assessments, controlled drop testing, and packaging evaluations aligned with ISTA standards.
+              </p>
+              <p className="text-[#63403A]/75 leading-relaxed">
+                These procedures ensure that every shipment is protected, compliant, and ready for international logistics.
+              </p>
+              <div className="h-[2px] w-0 bg-[#BF8B45] group-hover:w-full transition-all duration-500 mt-6" />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ================= GLOBAL COMPLIANCE ================= */}
-      <section className="px-6 py-28 bg-[#485023] text-[#F0EFE2]">
-        <div className="mx-auto max-w-4xl text-center">
+      {/* ================= COMPLIANCE & AUDITS ================= */}
+      <section className="py-28 bg-white px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-20">
+            <h2 className="font-serif text-4xl md:text-5xl mb-6 text-[#63403A] font-bold">
+              Compliance & Audits
+            </h2>
+            <div className="w-24 h-[2px] bg-[#BF8B45] mx-auto" />
+          </div>
 
-          <h2 className="mb-8 font-serif text-3xl md:text-4xl lg:text-5xl font-bold">
-            Global Compliance
-          </h2>
+          <div className="grid md:grid-cols-3 gap-12">
+            {/* SEDEX */}
+            <div className="text-center">
+              <div className="w-20 h-20 bg-gradient-to-br from-[#63403A] to-[#485023] rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl">
+                <Shield className="w-10 h-10 text-white" />
+              </div>
+              <h3 className="font-serif text-2xl mb-4 text-[#63403A] font-bold">
+                SEDEX – Social Compliance
+              </h3>
+              <p className="text-[#63403A]/70 leading-relaxed">
+                We maintain SEDEX-aligned systems covering safe working environments, ethical manufacturing practices, and responsible sourcing.
+              </p>
+            </div>
 
-          <p className="text-base md:text-lg leading-relaxed mb-8 text-[#F0EFE2]/90">
-            Our factory is audited and approved for production for major American
-            retailers and international markets. We maintain compliance with all
-            applicable regulations across USA, Europe, and global regions.
+            {/* Technical Audits */}
+            <div className="text-center">
+              <div className="w-20 h-20 bg-gradient-to-br from-[#63403A] to-[#485023] rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl">
+                <FileCheck className="w-10 h-10 text-white" />
+              </div>
+              <h3 className="font-serif text-2xl mb-4 text-[#63403A] font-bold">
+                Technical Audits
+              </h3>
+              <p className="text-[#63403A]/70 leading-relaxed">
+                Our facility is regularly audited by global retailers and accredited testing agencies. These audits verify process controls, material and finish compliance, electrical and mechanical performance, and packing integrity in line with international benchmarks.
+              </p>
+            </div>
+
+            {/* C-TPAT */}
+            <div className="text-center">
+              <div className="w-20 h-20 bg-gradient-to-br from-[#63403A] to-[#485023] rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl">
+                <Lock className="w-10 h-10 text-white" />
+              </div>
+              <h3 className="font-serif text-2xl mb-4 text-[#63403A] font-bold">
+                C-TPAT–Aligned Security Practices
+              </h3>
+              <p className="text-[#63403A]/70 leading-relaxed">
+                We follow controlled-access protocols, secure packing procedures, and documented shipment handling processes aligned with C-TPAT expectations, ensuring safe and transparent movement of goods.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================= CERTIFICATIONS ================= */}
+      <section className="py-28 bg-[#EFE8D6] px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-20">
+            <h2 className="font-serif text-4xl md:text-5xl mb-6 text-[#63403A] font-bold">
+              Certifications
+            </h2>
+            <div className="w-24 h-[2px] bg-[#BF8B45] mx-auto mb-8" />
+            <p className="text-lg text-[#63403A]/75 max-w-3xl mx-auto leading-relaxed">
+              We support international markets with globally recognized product and process certifications, including:
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* ISO 9001:2015 */}
+            <div className="group bg-white p-8 rounded-lg border border-[#9A9D85]/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-500">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-[#485023] rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-[#BF8B45] transition-colors">
+                  <Award className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="font-serif text-xl mb-2 text-[#63403A] font-bold">
+                    ISO 9001:2015
+                  </h3>
+                  <p className="text-[#63403A]/70 leading-relaxed">
+                    Quality Management System
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* UL / CUL */}
+            <div className="group bg-white p-8 rounded-lg border border-[#9A9D85]/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-500">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-[#485023] rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-[#BF8B45] transition-colors">
+                  <CheckCircle2 className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="font-serif text-xl mb-2 text-[#63403A] font-bold">
+                    UL / CUL Compliant
+                  </h3>
+                  <p className="text-[#63403A]/70 leading-relaxed">
+                    Lighting assemblies for North America
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* CE */}
+            <div className="group bg-white p-8 rounded-lg border border-[#9A9D85]/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-500">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-[#485023] rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-[#BF8B45] transition-colors">
+                  <Shield className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="font-serif text-xl mb-2 text-[#63403A] font-bold">
+                    CE Compliant
+                  </h3>
+                  <p className="text-[#63403A]/70 leading-relaxed">
+                    Electrical products for Europe
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* SOPs */}
+            <div className="group bg-white p-8 rounded-lg border border-[#9A9D85]/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-500">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-[#485023] rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-[#BF8B45] transition-colors">
+                  <FileCheck className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="font-serif text-xl mb-2 text-[#63403A] font-bold">
+                    Standardized SOPs
+                  </h3>
+                  <p className="text-[#63403A]/70 leading-relaxed">
+                    Compliance documentation across all departments
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================= CLOSING STATEMENT ================= */}
+      <section className="py-28 bg-[#485023] text-white px-6 relative overflow-hidden">
+        {/* Background pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-10 left-10 w-64 h-64 border border-white rounded-full" />
+          <div className="absolute bottom-10 right-10 w-80 h-80 border border-white rounded-full" />
+        </div>
+
+        <div className="max-w-5xl mx-auto text-center relative z-10">
+          <div className="w-20 h-[2px] bg-[#BF8B45] mx-auto mb-10" />
+          <p className="text-2xl md:text-3xl font-serif leading-relaxed text-white/95 mb-12">
+            Our quality and compliance systems ensure that every product leaving our factory is built with precision, tested for durability, packed for global transit, and backed by internationally aligned safety and ethical standards.
           </p>
-
-          <p className="text-base md:text-lg leading-relaxed text-[#F0EFE2]/90">
-            Regular audits ensure we continue to meet and exceed industry standards
-            for safety, quality, and ethical manufacturing practices.
-          </p>
+          <button className="px-12 py-4 bg-white text-[#485023] hover:bg-[#BF8B45] hover:text-white transition-all duration-300 uppercase tracking-wider font-semibold text-sm">
+            View Our Certifications
+          </button>
         </div>
       </section>
 

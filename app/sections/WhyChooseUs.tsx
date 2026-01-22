@@ -43,7 +43,7 @@ export default function WhyChooseUs() {
   ]
 
   return (
-    <section className="py-28 bg-[#DCD5C9] px-6">
+    <section className="min-h-screen md:min-h-screen flex items-center bg-[#DCD5C9] px-6 py-16">
       <div className="max-w-6xl mx-auto">
 
         {/* Heading */}

@@ -36,95 +36,95 @@ export function Header() {
   return (
     <>
       <header
-  className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-    scrolled
-      ? "bg-white shadow-lg"
-      : "bg-gradient-to-b from-black/30 to-transparent"
-  }`}
->
-  <div className="h-20 lg:h-24 xl:h-28 2xl:h-32 px-4 sm:px-6 lg:px-12 grid grid-cols-3 items-center">
-
-    {/* LEFT — MENU */}
-    <div className="flex items-center justify-start">
-      <button
-        onClick={() => setIsMenuOpen(true)}
-        aria-label="Open menu"
-        className={`transition-transform duration-200 hover:scale-110 ${
-          scrolled ? "text-black" : "text-[#f0efe2]"
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          scrolled
+            ? "bg-white/95 backdrop-blur-md shadow-sm"
+            : "bg-gradient-to-b from-black/20 to-transparent"
         }`}
       >
-        <Menu className="h-7 w-7 lg:h-8 lg:w-8 xl:h-9 xl:w-9" />
-      </button>
-    </div>
+        <div className="h-16 sm:h-18 md:h-20 lg:h-22 px-4 sm:px-6 lg:px-12 grid grid-cols-3 items-center">
 
-    {/* CENTER — LOGO */}
-    <div className="flex justify-center">
-      <Link href="/">
-        <img
-          src={scrolled ? "/ABP.png" : "/logowhite1.png"}
-          alt="Akbar Brass Products"
-          className={`transition-all duration-300 hover:scale-105 ${
-            scrolled ? "h-10 md:h-12" : "h-12 md:h-14"
-          }`}
-        />
-      </Link>
-    </div>
+          {/* LEFT — MENU */}
+          <div className="flex items-center justify-start">
+            <button
+              onClick={() => setIsMenuOpen(true)}
+              aria-label="Open menu"
+              className={`transition-transform duration-200 hover:scale-110 ${
+                scrolled ? "text-black" : "text-[#f0efe2]"
+              }`}
+            >
+              <Menu className="h-6 w-6 lg:h-7 lg:w-7" />
+            </button>
+          </div>
 
-    {/* RIGHT — CONTACT */}
-<div className="flex justify-end items-center gap-2">
+          {/* CENTER — LOGO */}
+          <div className="flex justify-center">
+            <Link href="/">
+              <img
+                src={scrolled ? "/logo black text.png" : "/logo white text.png"}
+                alt="Akbar Brass Products"
+                className={`transition-all duration-300 hover:scale-105 ${
+                  scrolled 
+                    ? "h-11 sm:h-12 md:h-14 lg:h-16" 
+                    : "h-12 sm:h-14 md:h-16 lg:h-18"
+                }`}
+              />
+            </Link>
+          </div>
 
-  {/* Mobile icon */}
- <Link
-  href="/contact"
-  className={`
-    sm:hidden
-    p-2.5 rounded-full border transition-all
-    ${scrolled
-      ? "border-[#63403A] text-[#63403A]"
-      : "border-[#f0efe2] text-[#f0efe2]"
-    }
-  `}
-  aria-label="Contact"
->
-  <svg
-    width="22"
-    height="22"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.7"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    {/* message bubble */}
-    <path d="M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z" />
-    {/* phone curve */}
-    <path d="M10.5 9.5c.5 1 1.5 2 2.5 2.5" />
-  </svg>
-</Link>
+          {/* RIGHT — CONTACT */}
+          <div className="flex justify-end items-center gap-2">
 
+            {/* Mobile icon */}
+            <Link
+              href="/contact"
+              className={`
+                sm:hidden
+                p-2.5 rounded-full border transition-all
+                ${scrolled
+                  ? "border-[#63403A] text-[#63403A] hover:bg-[#63403A] hover:text-white"
+                  : "border-[#f0efe2] text-[#f0efe2] hover:bg-[#f0efe2]/20"
+                }
+              `}
+              aria-label="Contact"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.7"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                {/* message bubble */}
+                <path d="M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z" />
+                {/* phone curve */}
+                <path d="M10.5 9.5c.5 1 1.5 2 2.5 2.5" />
+              </svg>
+            </Link>
 
-  {/* Desktop button */}
-  <Link
-    href="/contact"
-    className={`
-      hidden sm:inline-flex
-      px-4 sm:px-5 py-2
-      text-xs sm:text-sm
-      uppercase tracking-wider
-      border transition-all duration-300
-      ${scrolled
-        ? "border-[#63403A] text-[#63403A] hover:bg-[#63403A] hover:text-white"
-        : "border-[#f0efe2] text-[#f0efe2] hover:bg-[#f0efe2] hover:text-[#63403A]"
-      }
-    `}
-  >
-    Contact
-  </Link>
-</div>
-  </div>
-</header>
-
+            {/* Desktop button */}
+            <Link
+              href="/contact"
+              className={`
+                hidden sm:inline-flex
+                px-4 sm:px-5 py-2
+                text-xs sm:text-sm
+                uppercase tracking-wider
+                border transition-all duration-300
+                ${scrolled
+                  ? "border-[#63403A] text-[#63403A] hover:bg-[#63403A] hover:text-white"
+                  : "border-[#f0efe2] text-[#f0efe2] hover:bg-[#f0efe2] hover:text-[#63403A]"
+                }
+              `}
+            >
+              Contact
+            </Link>
+          </div>
+        </div>
+      </header>
 
       {/* DRAWER */}
       <div
@@ -139,10 +139,10 @@ export function Header() {
             isMenuOpen ? "translate-x-0" : "-translate-x-full"
           }`}
         >
-          <div className="flex items-center justify-between px-6 lg:px-8 xl:px-10 h-20 lg:h-24 xl:h-28 2xl:h-32 border-b border-[#63403A]/20">
-            <span className="text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-semibold text-[#63403A]">Menu</span>
+          <div className="flex items-center justify-between px-6 lg:px-8 xl:px-10 h-16 sm:h-18 md:h-20 lg:h-22 border-b border-[#63403A]/20">
+            <span className="text-xl lg:text-2xl xl:text-3xl font-semibold text-[#63403A]">Menu</span>
             <button onClick={() => setIsMenuOpen(false)} className="hover:rotate-90 transition-transform duration-300">
-              <X className="h-7 w-7 lg:h-8 lg:w-8 xl:h-9 xl:w-9 text-[#63403A]" />
+              <X className="h-6 w-6 lg:h-7 lg:w-7 text-[#63403A]" />
             </button>
           </div>
 

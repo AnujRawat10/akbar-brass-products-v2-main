@@ -1,6 +1,6 @@
 import { Header } from "@/components/header"
 import { Factory, Trees, Layers, Shield, Sparkles, CheckCircle2, Award } from "lucide-react"
-
+import MaterialExcellenceSection from "@/components/MaterialExcellenceSection"
 export default function MaterialsPage() {
   const features = [
     {
@@ -158,44 +158,7 @@ Our controlled processes ensure clean constructions, accurate proportions, and r
         </section>
 
         {/* ================= MATERIAL EXCELLENCE ================= */}
-        <section className="py-28 bg-[#485023] text-white px-6">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
-              <div>
-                <h2 className="font-serif text-4xl md:text-5xl mb-6">
-                  Material Excellence
-                </h2>
-                <div className="w-24 h-[2px] bg-[#BF8B45] mb-8" />
-                <p className="text-white/90 text-lg leading-relaxed mb-6">
-                  Our integrated manufacturing approach combines traditional craftsmanship with modern finishing technology, enabling us to deliver consistent, export-grade quality across all material categories.
-                </p>
-                <p className="text-white/75 leading-relaxed">
-                  From raw material selection to final finish application, every stage is monitored through our quality management system to ensure products meet international standards for durability, safety, and aesthetic excellence.
-                </p>
-              </div>
-              
-              <div className="grid grid-cols-2 gap-6">
-                {features.map((feature, idx) => (
-                  <div
-                    key={idx}
-                    className="group p-8 bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/15 hover:-translate-y-2 transition-all duration-500"
-                  >
-                    <div className="text-[#BF8B45] mb-4 transition-transform duration-500 group-hover:scale-110">
-                      {feature.icon}
-                    </div>
-                    <h3 className="font-serif text-xl mb-3 text-white">
-                      {feature.title}
-                    </h3>
-                    <p className="text-white/70 text-sm leading-relaxed">
-                      {feature.desc}
-                    </p>
-                    <div className="h-[2px] w-0 bg-[#BF8B45] group-hover:w-full transition-all duration-500 mt-4" />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
+        <MaterialExcellenceSection />
       </main>
     </div>
   )

@@ -148,12 +148,10 @@ export default function Hero() {
             <span
               className="
                 block
-                mt-3
-                text-white/90
-                text-[17px]
-                sm:text-[19px]
-                md:text-3xl
-                xl:text-4xl
+                text-[24px]
+                sm:text-[28px]
+                md:text-6xl
+                xl:text-7xl
               "
             >
               for Global Markets

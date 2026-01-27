@@ -155,18 +155,36 @@ export default function EthicsPageRedesigned() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {/* ISO 9001:2015 */}
+            {/* SEDEX */}
             <div className="group bg-white p-8 rounded-lg border border-[#9A9D85]/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-500">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-[#485023] rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-[#BF8B45] transition-colors">
-                  <Award className="w-6 h-6 text-white" />
+                <div className="w-20 h-20 flex items-center justify-center flex-shrink-0">
+                  <img src="/partners/1.png" alt="SEDEX Logo" className="w-full h-full object-contain" />
+                </div>
+                
+                <div>
+                  <h3 className="font-serif text-xl mb-2 text-[#63403A] font-bold">
+                    SEDEX
+                  </h3>
+                  <p className="text-[#63403A]/70 leading-relaxed">
+                    Social Compliance
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* C-TPAT */}
+            <div className="group bg-white p-8 rounded-lg border border-[#9A9D85]/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-500">
+              <div className="flex items-start gap-4">
+                <div className="w-20 h-20 flex items-center justify-center flex-shrink-0">
+                  <img src="/partners/2.png" alt="C-TPAT Logo" className="w-full h-full object-contain" />
                 </div>
                 <div>
                   <h3 className="font-serif text-xl mb-2 text-[#63403A] font-bold">
-                    ISO 9001:2015
+                    C-TPAT
                   </h3>
                   <p className="text-[#63403A]/70 leading-relaxed">
-                    Quality Management System
+                    Supply Chain Security
                   </p>
                 </div>
               </div>
@@ -175,8 +193,8 @@ export default function EthicsPageRedesigned() {
             {/* UL / CUL */}
             <div className="group bg-white p-8 rounded-lg border border-[#9A9D85]/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-500">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-[#485023] rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-[#BF8B45] transition-colors">
-                  <CheckCircle2 className="w-6 h-6 text-white" />
+                <div className="w-20 h-20 flex items-center justify-center flex-shrink-0">
+                  <img src="/partners/3.png" alt="UL Listed Logo" className="w-full h-full object-contain" />
                 </div>
                 <div>
                   <h3 className="font-serif text-xl mb-2 text-[#63403A] font-bold">
@@ -189,11 +207,45 @@ export default function EthicsPageRedesigned() {
               </div>
             </div>
 
-            {/* CE */}
+            {/* BIS */}
             <div className="group bg-white p-8 rounded-lg border border-[#9A9D85]/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-500">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-[#485023] rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-[#BF8B45] transition-colors">
-                  <Shield className="w-6 h-6 text-white" />
+                <div className="w-20 h-20 flex items-center justify-center flex-shrink-0">
+                  <img src="/partners/4.jpeg" alt="Bureau of Indian Standards Logo" className="w-full h-full object-contain" />
+                </div>
+                <div>
+                  <h3 className="font-serif text-xl mb-2 text-[#63403A] font-bold">
+                    BIS Certified
+                  </h3>
+                  <p className="text-[#63403A]/70 leading-relaxed">
+                    Bureau of Indian Standards
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* ISO 9001:2015
+            <div className="group bg-white p-8 rounded-lg border border-[#9A9D85]/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-500">
+              <div className="flex items-start gap-4">
+                <div className="w-20 h-20 bg-[#485023] rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-[#BF8B45] transition-colors">
+                  <Award className="w-10 h-10 text-white" />
+                </div>
+                <div>
+                  <h3 className="font-serif text-xl mb-2 text-[#63403A] font-bold">
+                    ISO 9001:2015
+                  </h3>
+                  <p className="text-[#63403A]/70 leading-relaxed">
+                    Quality Management System
+                  </p>
+                </div>
+              </div>
+            </div>
+
+
+            <div className="group bg-white p-8 rounded-lg border border-[#9A9D85]/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-500">
+              <div className="flex items-start gap-4">
+                <div className="w-20 h-20 bg-[#003399] rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span className="text-white text-3xl font-bold">CE</span>
                 </div>
                 <div>
                   <h3 className="font-serif text-xl mb-2 text-[#63403A] font-bold">
@@ -206,11 +258,11 @@ export default function EthicsPageRedesigned() {
               </div>
             </div>
 
-            {/* SOPs */}
-            <div className="group bg-white p-8 rounded-lg border border-[#9A9D85]/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-500">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-[#485023] rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-[#BF8B45] transition-colors">
-                  <FileCheck className="w-6 h-6 text-white" />
+       
+            <div className="group bg-white p-8 rounded-lg border border-[#9A9D85]/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-500 md:col-span-2">
+              <div className="flex items-start gap-4 justify-center">
+                <div className="w-20 h-20 bg-[#485023] rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-[#BF8B45] transition-colors">
+                  <FileCheck className="w-10 h-10 text-white" />
                 </div>
                 <div>
                   <h3 className="font-serif text-xl mb-2 text-[#63403A] font-bold">
@@ -221,7 +273,7 @@ export default function EthicsPageRedesigned() {
                   </p>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
@@ -239,9 +291,6 @@ export default function EthicsPageRedesigned() {
           <p className="text-2xl md:text-3xl font-serif leading-relaxed text-white/95 mb-12">
             Our quality and compliance systems ensure that every product leaving our factory is built with precision, tested for durability, packed for global transit, and backed by internationally aligned safety and ethical standards.
           </p>
-          <button className="px-12 py-4 bg-white text-[#485023] hover:bg-[#BF8B45] hover:text-white transition-all duration-300 uppercase tracking-wider font-semibold text-sm">
-            View Our Certifications
-          </button>
         </div>
       </section>
 

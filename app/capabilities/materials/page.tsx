@@ -26,7 +26,7 @@ export default function MaterialsPage() {
   ]
   return (
     <div className="min-h-screen bg-[#F0EFE2]">
-      <Header />
+ 
       <main>
 
         {/* ================= HERO ================= */}

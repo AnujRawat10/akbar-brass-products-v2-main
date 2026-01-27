@@ -166,11 +166,14 @@ export default function Hero() {
           {/* CTA */}
           <div className="mt-12 flex justify-center">
             <Link href="/capabilities/materials">
-              <button className="group px-10 py-4 bg-white text-black hover:bg-[#BF8B45] transition-all duration-300 uppercase tracking-wider flex items-center gap-3">
-                Explore Capabilities
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
-            </Link>
+          <button className="group relative px-12 py-4 bg-white text-black overflow-hidden transition-all duration-500 uppercase tracking-wider font-medium text-sm md:text-base shadow-2xl hover:shadow-[#BF8B45]/50 transform hover:scale-105">
+            {/* Button hover effect */}
+            <span className="absolute inset-0 bg-[#BF8B45] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+            <span className="relative z-10 group-hover:text-white transition-colors duration-500">
+              OUR CAPABILITIES
+            </span>
+          </button>
+        </Link>
           </div>
 
         </div>

@@ -35,7 +35,7 @@ ABOUT AKBAR          </h2>
           {/* Video 2 - Brass work (top middle) */}
           <div className="col-span-4 row-span-1 overflow-hidden">
             <video 
-              src="/videos/2.mp4" 
+              src="/videos/C1126.webm" 
               className="w-full h-full object-cover"
               autoPlay
               loop
@@ -73,7 +73,7 @@ ABOUT AKBAR          </h2>
           {/* Video 5 - Factory floor (left, spans 2 columns) */}
           <div className="col-span-3 row-span-1 overflow-hidden">
             <video 
-              src="/videos/1.mp4" 
+              src="/videos/C0958.webm" 
               className="w-full h-full object-cover"
               autoPlay
               loop
@@ -85,7 +85,7 @@ ABOUT AKBAR          </h2>
           {/* Video 6 - Building exterior large (right, spans remaining space) */}
           <div className="col-span-9 row-span-1 overflow-hidden">
             <video 
-              src="/videos/2.mp4" 
+              src="/videos/C1001.webm" 
               className="w-full h-full object-cover"
               autoPlay
               loop

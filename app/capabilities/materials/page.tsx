@@ -56,7 +56,7 @@ export default function MaterialsPage() {
       <section className="py-16 px-6" style={{ backgroundColor: "#C87550" }}>
         <div className="max-w-4xl mx-auto">
           <p className="text-center text-lg md:text-xl text-white leading-relaxed">
-            Our manufacturing strength comes from our ability to work seamlessly across multiple materials. With dedicated units for metal, marble, wood, and mixed-material integration, we deliver precision-engineered products built for global markets. Each material is processed in-house using controlled methods, modern machinery, and disciplined craftsmanship to ensure accuracy, consistency, and durability.
+            Our manufacturing strength comes from our ability to work seamlessly across multiple materials.With dedicated units for metal, marble, wood, and mixed-material integration, we deliver precision-engineered products built for global markets.Each material is processed in-house using controlled methods, modern machinery, and disciplined craftsmanship to ensure accuracy, consistency, and durability.
           </p>
         </div>
       </section>

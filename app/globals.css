@@ -155,12 +155,17 @@
     @apply border-border outline-ring/50;
   }
 
-  body {
-    @apply bg-background text-foreground;
-  }
-
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
   }
 }
 
@@ -179,6 +184,7 @@
 @media (min-width: 1920px) {
   .container {
     max-width: 1800px;
+    
   }
 
   body {

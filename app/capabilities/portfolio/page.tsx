@@ -24,7 +24,7 @@ export default function PortfolioPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src="/finishes.JPG"
+            src="/product.png"
             alt="Our Capabilities"
             className="w-full h-full object-cover"
           />

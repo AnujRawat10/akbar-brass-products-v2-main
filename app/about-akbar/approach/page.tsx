@@ -50,35 +50,39 @@ export default function ApproachPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-[#f0efe2] pb-24">
+   <div className="min-h-screen">
+      {/* HERO SECTION */}
+      <section className="relative h-[400px] md:h-[500px] flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img
+            src="/capabilities.png"
+            alt="Our Capabilities"
+            className="w-full h-full object-cover"
+          />
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-black/40" />
+        </div>
 
-      {/* HERO */}
-      <section className="relative w-full h-[75vh] min-h-[520px] overflow-hidden">
-        <video
-          src="/videos/5.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-
-        <div className="absolute inset-0 bg-black/45" />
-
-        <div className="relative z-10 h-full flex items-center">
-          <div className="container mx-auto px-6 max-w-4xl text-center">
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold text-white mb-6">
-              The Akbar Approach
-            </h1>
-
-            <p className="text-lg md:text-xl leading-relaxed text-white/90">
-              Disciplined manufacturing, engineering-led systems, and long-term
-              reliability. We combine material expertise with integrated production
-              to deliver export-ready quality for global markets.
-            </p>
-          </div>
+        {/* Hero Content */}
+        <div className="relative z-10 text-center px-6">
+          <h1 className="font-serif text-4xl md:text-5xl xl:text-6xl text-white mb-0 tracking-[0.2em] uppercase">
+            Capabilities
+          </h1>
         </div>
       </section>
+
+      {/* DESCRIPTION SECTION */}
+      <section className="py-16 px-6" style={{ backgroundColor: "#C87550" }}>
+        <div className="max-w-4xl mx-auto">
+          <p className="text-center text-lg md:text-xl text-white leading-relaxed">
+            Comprehensive manufacturing infrastructure built to deliver export-ready quality 
+            at scale. Our integrated systems, advanced machinery, and skilled teams enable 
+            us to handle complex, multi-material production with precision and reliability.
+          </p>
+        </div>
+      </section>
+
 
       {/* PRINCIPLES */}
       <section className="container mx-auto px-6 pt-28">

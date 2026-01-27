@@ -5,21 +5,32 @@ export default function EthicsPageRedesigned() {
     <div className="min-h-screen bg-[#F0EFE2]">
       
       {/* ================= HERO SECTION ================= */}
-      <section className="relative py-32 md:py-40 bg-gradient-to-br from-[#63403A] to-[#485023] text-white px-6 overflow-hidden">
-        {/* Background decorative elements */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-[#BF8B45] rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#9A9D85] rounded-full blur-3xl" />
+      <section className="relative h-[400px] md:h-[500px] flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img
+            src="/team.jpeg"
+            alt="Our Capabilities"
+            className="w-full h-full object-cover"
+          />
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-black/40" />
         </div>
-        
-        <div className="max-w-5xl mx-auto text-center relative z-10">
-          <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl mb-8 font-bold">
-            Ethics & Compliance
+
+        {/* Hero Content */}
+        <div className="relative z-10 text-center px-6">
+          <h1 className="font-serif text-4xl md:text-5xl xl:text-6xl text-white mb-0 tracking-[0.2em] uppercase">
+            ETHICS & COMPLIANCE
           </h1>
-          <div className="w-32 h-[3px] bg-[#BF8B45] mx-auto mb-10" />
-          <p className="text-xl md:text-2xl leading-relaxed text-white/90 max-w-4xl mx-auto">
-            At Akbar Brass Products, quality is a disciplined, system-driven approach that guides every stage of our manufacturing process. Our workflows, inspections, and compliance practices are aligned with global retail requirements to ensure consistency, safety, and long-term performance.
-          </p>
+        </div>
+      </section>
+
+      {/* DESCRIPTION SECTION */}
+      <section className="py-16 px-6" style={{ backgroundColor: "#C87550" }}>
+        <div className="max-w-4xl mx-auto">
+          <p className="text-center text-lg md:text-xl text-white leading-relaxed">
+At Akbar Brass Products, quality is a disciplined, system-driven approach that guides every stage of our manufacturing process. Our workflows, inspections, and compliance practices are aligned with global retail requirements to ensure consistency, safety, and long-term performance.
+</p>
         </div>
       </section>
 
@@ -161,7 +172,6 @@ export default function EthicsPageRedesigned() {
                 <div className="w-20 h-20 flex items-center justify-center flex-shrink-0">
                   <img src="/partners/1.png" alt="SEDEX Logo" className="w-full h-full object-contain" />
                 </div>
-                
                 <div>
                   <h3 className="font-serif text-xl mb-2 text-[#63403A] font-bold">
                     SEDEX

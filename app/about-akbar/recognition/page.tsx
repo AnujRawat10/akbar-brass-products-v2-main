@@ -29,35 +29,37 @@ export default function RecognitionPage() {
   ]
 
   return (
-    <div className="min-h-screen pt-24 pb-16" style={{ backgroundColor: "#f0efe2" }}>
-      <div className="container mx-auto px-6">
-        {/* Hero */}
-        <div className="mb-16 text-center max-w-4xl mx-auto">
-          <div className="flex justify-center mb-6">
-            <div
-              className="inline-flex h-20 w-20 items-center justify-center rounded-full text-white"
-              style={{ backgroundColor: "#63403A" }}
-            >
-              <Trophy className="h-10 w-10" />
-            </div>
-          </div>
+    <div className="min-h-screen">
+      {/* HERO SECTION */}
+      <section className="relative h-[400px] md:h-[500px] flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img
+            src="/recognition.png"
+            alt="Our Capabilities"
+            className="w-full h-full object-cover"
+          />
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-black/40" />
+        </div>
 
-          <h1 className="mb-6 font-serif text-4xl font-bold md:text-5xl" style={{ color: "#63403A" }}>
+        {/* Hero Content */}
+        <div className="relative z-10 text-center px-6">
+          <h1 className="font-serif text-4xl md:text-5xl xl:text-6xl text-white mb-0 tracking-[0.2em] uppercase">
             Our Recognition
           </h1>
+        </div>
+      </section>
 
-          <p className="text-lg leading-relaxed" style={{ color: "#63403A" }}>
-            Celebrating Seven National Awards for Excellence in Export Performance
-          </p>
-
-          <p className="mt-4 text-base leading-relaxed" style={{ color: "#63403A", opacity: 0.8 }}>
-            Akbar Brass Products has been recognised with seven national awards for outstanding export performance —
-            including honours presented by the Prime Minister of India, the President of India, and the Union Minister
-            for Textiles. These recognitions reflect the manufacturing excellence, craftsmanship, and reliability that
-            continue to define our evolution into a multi-material furniture and home products manufacturer across
-            global markets.
+      {/* DESCRIPTION SECTION */}
+      <section className="py-16 px-6" style={{ backgroundColor: "#C87550" }}>
+        <div className="max-w-4xl mx-auto">
+          <p className="text-center text-lg md:text-xl text-white leading-relaxed">
+           Akbar Brass Products has been recognised with seven national awards for outstanding export performance — including honours presented by the Prime Minister of India, the President of India, and the Union Minister for Textiles. These recognitions reflect the manufacturing excellence, craftsmanship, and reliability that continue to define our evolution into a multi-material furniture and home products manufacturer across global markets.
           </p>
         </div>
+      </section>
+      <div className="py-24" style={{ backgroundColor: "#F5F1E6" }}>
 
         {/* Awards Grid */}
         <div className="grid gap-12 max-w-5xl mx-auto mb-16">

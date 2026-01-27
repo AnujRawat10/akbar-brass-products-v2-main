@@ -67,161 +67,185 @@ export default function TimelinePage() {
     return () => ctx.revert()
   }, [])
 
-const milestones = [
-  {
-    year: "1974",
-    title: "Establishment of Akbar Brass Products",
-    description:
-      "Akbar Brass Products was established in 1974, when Haji Abdul Qayyum entrusted the responsibility of leading the company to his son Akbar Qayyum, marking the beginning of organised, export-focused manufacturing for the family.",
-    image: "/akbar-campus.png",
-  },
-  {
-    year: "1980s",
-    title: "Expansion into Global Markets",
-    description:
-      "The company began supplying to the USA, Europe, the UK, and Australia, establishing long-term relationships built on consistent quality and dependable delivery.",
-    image: "/global.jpeg",
-  },
-  {
-    year: "1990s",
-    title: "Strengthening Metal Manufacturing",
-    description:
-      "In-house capabilities in fabrication, polishing, plating, welding, and hand-finishing were enhanced to increase stability, finish consistency, and production control.",
-    image: "/1990.jpeg",
-  },
-  {
-    year: "2000",
-    title: "Wood Unit Established",
-    description:
-      "A dedicated wood unit was set up to manufacture wooden furniture and decorative articles, expanding the company’s material capability into multi-material production.",
-    image: "/legacy-unit.png",
-  },
-  {
-    year: "2012",
-    title: "Introduction of Metal Furniture Manufacturing",
-    description:
-      "Metal furniture production was introduced, enabling stronger mixed-material construction and broadening the product offering to meet evolving global demand.",
-    image: "/metal.png",
-  },
-  {
-    year: "2018",
-    title: "New Metal Furniture Unit Developed",
-    description:
-      "A specialised metal furniture production block was set up to support larger capacity, improved workflows, and better coordination across divisions.",
-    image: "/metalfacility.jpeg",
-  },
-  {
-    year: "2021",
-    title: "Marble Furniture & Décor Unit Constructed",
-    description:
-      "A dedicated marble-processing facility was established, enabling complete in-house capabilities for marble furniture, stone tabletops, and decorative stoneware.",
-    image: "/marble.png",
-  },
-  {
-    year: "2023–2024",
-    title: "Integrated Factory & System Upgrades",
-    description:
-      "A unified, horizontally integrated manufacturing campus was developed, bringing fabrication, marble processing, woodworking, finishing, assembly, testing, and export packing into one coordinated workflow.ERP-driven processes, structured inspections, and compliance systems were strengthened to align with global retail expectations.",
-    image: "/newblock.jpeg",
-  },
-  {
-    year: "Present",
-    title: "Third Generation Leadership",
-    description:
-      "The third generation continues to modernise the organisation through engineering-led operations, advanced machinery, enhanced QC practices, and sustainable, global-standard manufacturing.",
-    image: "/team.jpeg",
-  },
-]
-
+  const milestones = [
+    {
+      year: "1974",
+      title: "Establishment of Akbar Brass Products",
+      description:
+        "Akbar Brass Products was established in 1974, when Haji Abdul Qayyum entrusted the responsibility of leading the company to his son Akbar Qayyum, marking the beginning of organised, export-focused manufacturing for the family.",
+      image: "/akbar-campus.png",
+    },
+    {
+      year: "1980s",
+      title: "Expansion into Global Markets",
+      description:
+        "The company began supplying to the USA, Europe, the UK, and Australia, establishing long-term relationships built on consistent quality and dependable delivery.",
+      image: "/global.jpeg",
+    },
+    {
+      year: "1990s",
+      title: "Strengthening Metal Manufacturing",
+      description:
+        "In-house capabilities in fabrication, polishing, plating, welding, and hand-finishing were enhanced to increase stability, finish consistency, and production control.",
+      image: "/1990.jpeg",
+    },
+    {
+      year: "2000",
+      title: "Wood Unit Established",
+      description:
+        "A dedicated wood unit was set up to manufacture wooden furniture and decorative articles, expanding the company's material capability into multi-material production.",
+      image: "/legacy-unit.png",
+    },
+    {
+      year: "2012",
+      title: "Introduction of Metal Furniture Manufacturing",
+      description:
+        "Metal furniture production was introduced, enabling stronger mixed-material construction and broadening the product offering to meet evolving global demand.",
+      image: "/metal.png",
+    },
+    {
+      year: "2018",
+      title: "New Metal Furniture Unit Developed",
+      description:
+        "A specialised metal furniture production block was set up to support larger capacity, improved workflows, and better coordination across divisions.",
+      image: "/metalfacility.jpeg",
+    },
+    {
+      year: "2021",
+      title: "Marble Furniture & Décor Unit Constructed",
+      description:
+        "A dedicated marble-processing facility was established, enabling complete in-house capabilities for marble furniture, stone tabletops, and decorative stoneware.",
+      image: "/marble.png",
+    },
+    {
+      year: "2023–2024",
+      title: "Integrated Factory & System Upgrades",
+      description:
+        "A unified, horizontally integrated manufacturing campus was developed, bringing fabrication, marble processing, woodworking, finishing, assembly, testing, and export packing into one coordinated workflow. ERP-driven processes, structured inspections, and compliance systems were strengthened to align with global retail expectations.",
+      image: "/newblock.jpeg",
+    },
+    {
+      year: "Present",
+      title: "Third Generation Leadership",
+      description:
+        "The third generation continues to modernise the organisation through engineering-led operations, advanced machinery, enhanced QC practices, and sustainable, global-standard manufacturing.",
+      image: "/team.jpeg",
+    },
+  ]
 
   return (
-    <div
-      className="pt-28 pb-24 transition-colors duration-700"
-      style={{ backgroundColor: moodColors[0].bg }}
-    >
-      <div className="max-w-5xl mx-auto px-6">
+    <div className="transition-colors duration-700">
+      {/* HERO SECTION */}
+      <section className="relative h-[400px] md:h-[500px] flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img
+            src="/1990.jpeg"
+            alt="Our Journey"
+            className="w-full h-full object-cover"
+          />
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-black/40" />
+        </div>
 
-        {/* HERO */}
-        <section ref={heroRef} className="text-center mb-20">
-          <h1 className="font-serif text-4xl md:text-5xl xl:text-7xl text-[#63403A] mb-6">
-            Our Journey
+        {/* Hero Content */}
+        <div ref={heroRef} className="relative z-10 text-center px-6">
+          <h1 className="font-serif text-4xl md:text-5xl xl:text-6xl text-white mb-0 tracking-[0.2em] uppercase">
+            Our Timeline
           </h1>
-          <p className="max-w-3xl mx-auto text-lg md:text-xl text-[#63403A]/80 leading-relaxed">
-            Built over three generations, our journey reflects a steady evolution from traditional craftsmanship to modern, system-driven manufacturing. Each decade shows how we expanded our material expertise, upgraded our processes, and consolidated our infrastructure to meet the expectations of global markets.
+        </div>
+      </section>
+
+      {/* DESCRIPTION SECTION */}
+      <section className="py-16 px-6" style={{ backgroundColor: "#C87550" }}>
+        <div className="max-w-4xl mx-auto">
+          <p className="text-center text-lg md:text-xl text-white leading-relaxed">
+            Built over three generations, our journey reflects a steady evolution from traditional 
+            craftsmanship to modern, system-driven manufacturing. Each decade shows how we expanded 
+            our material expertise, upgraded our processes, and consolidated our infrastructure to 
+            meet the expectations of global markets—crafted with passion, preserved with care, and 
+            destined for timeless excellence.
           </p>
-        </section>
+        </div>
+      </section>
 
-        {/* TIMELINE */}
-        <div ref={timelineRef} className="relative">
+      {/* TIMELINE SECTION */}
+      <div
+        className="py-24 transition-colors duration-700"
+        style={{ backgroundColor: moodColors[0].bg }}
+      >
+        <div className="max-w-5xl mx-auto px-6">
+          <div ref={timelineRef} className="relative">
+            {/* Timeline Line */}
+            <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-[#63403A]/30" />
 
-          <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-[#63403A]/30" />
+            <div className="space-y-20">
+              {milestones.map((m, i) => {
+                const mood = moodColors[i]
 
-          <div className="space-y-20">
-            {milestones.map((m, i) => {
-              const mood = moodColors[i]
-
-              return (
-                <div
-                  key={i}
-                  className="timeline-item relative flex items-start md:justify-between"
-                >
-                  {/* DOT */}
+                return (
                   <div
-                    className="absolute left-0 md:left-1/2 md:-translate-x-1/2 z-10 w-14 h-14 rounded-full flex items-center justify-center shadow-lg"
-                    style={{ backgroundColor: mood.card }}
+                    key={i}
+                    className="timeline-item relative flex items-start md:justify-between"
                   >
-                    <CheckCircle style={{ color: mood.text }} />
-                  </div>
-
-                  {/* CARD */}
-                  <div
-                    className={`ml-20 md:ml-0 md:w-[45%] ${
-                      i % 2 === 0
-                        ? "md:text-right md:pr-10"
-                        : "md:ml-auto md:pl-10"
-                    }`}
-                  >
+                    {/* DOT */}
                     <div
-                      className="rounded-lg p-8 shadow-md border border-black/5 transition-colors duration-700"
-                      style={{
-                        backgroundColor: mood.card,
-                        color: mood.text,
-                      }}
+                      className="absolute left-0 md:left-1/2 md:-translate-x-1/2 z-10 w-14 h-14 rounded-full flex items-center justify-center shadow-lg"
+                      style={{ backgroundColor: mood.card }}
                     >
-                      <div className="text-2xl font-semibold mb-2">
-                        {m.year}
+                      <CheckCircle style={{ color: mood.text }} />
+                    </div>
+
+                    {/* CARD */}
+                    <div
+                      className={`ml-20 md:ml-0 md:w-[45%] ${
+                        i % 2 === 0
+                          ? "md:text-right md:pr-10"
+                          : "md:ml-auto md:pl-10"
+                      }`}
+                    >
+                      <div
+                        className="rounded-lg p-8 shadow-md border border-black/5 transition-colors duration-700"
+                        style={{
+                          backgroundColor: mood.card,
+                          color: mood.text,
+                        }}
+                      >
+                        <div className="text-2xl font-semibold mb-2">
+                          {m.year}
+                        </div>
+
+                        <h3 className="font-serif text-xl md:text-2xl mb-4">
+                          {m.title}
+                        </h3>
+
+                        <p className="opacity-80 leading-relaxed">
+                          {m.description}
+                        </p>
                       </div>
-
-                      <h3 className="font-serif text-xl md:text-2xl mb-4">
-                        {m.title}
-                      </h3>
-
-                      <p className="opacity-80 leading-relaxed">
-                        {m.description}
-                      </p>
                     </div>
+
+                    {/* IMAGE */}
+                    {m.image && (
+                      <div
+                        className={`
+                          hidden lg:block absolute top-1/2 -translate-y-1/2
+                          w-[340px] h-[220px] overflow-hidden rounded-lg shadow-lg
+                          border border-black/10
+                          ${i % 2 === 0 ? "right-0" : "left-0"}
+                        `}
+                      >
+                        <img
+                          src={m.image}
+                          alt={m.title}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    )}
                   </div>
-
-                  {/* IMAGE */}
-                  {m.image && (
-                    <div
-                      className={`
-                        hidden lg:block absolute top-1/2 -translate-y-1/2
-                        w-[340px] h-[220px] overflow-hidden rounded-lg shadow-lg
-                        border border-black/10
-                        ${i % 2 === 0 ? "right-0" : "left-0"}
-                      `}
-                    >
-                      <img
-                        src={m.image}
-                        alt={m.title}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  )}
-                </div>
-              )
-            })}
+                )
+              })}
+            </div>
           </div>
         </div>
       </div>

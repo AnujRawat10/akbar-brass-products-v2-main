@@ -15,21 +15,38 @@ import Link from "next/link"
 export default function PortfolioPage() {
   return (
     <div className="min-h-screen bg-[#F0EFE2]">
-      <Header />
+      
 
       <main>
 
-        {/* HERO */}
-        <section className="bg-[#EFE8D6] text-[#63403A] pt-28 pb-16">
-          <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Product Portfolio
-            </h1>
-            <p className="text-xl text-[#63403A]/85">
-              At Akbar Brass Products, our portfolio is built on multi-material manufacturing and engineered product development. We design and produce collections across Furniture, Home Décor, Serveware & Barware, Lighting, Outdoor, Seasonal, and Pet Accessories—combining metal, marble, wood, glass, and mixed materials with stable, export-ready constructions.
-            </p>
-          </div>
-        </section>
+         {/* HERO SECTION */}
+      <section className="relative h-[400px] md:h-[500px] flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img
+            src="/finishes.JPG"
+            alt="Our Capabilities"
+            className="w-full h-full object-cover"
+          />
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-black/40" />
+        </div>
+
+        {/* Hero Content */}
+        <div className="relative z-10 text-center px-6">
+          <h1 className="font-serif text-4xl md:text-5xl xl:text-6xl text-white mb-0 tracking-[0.2em] uppercase">
+            PRODUCT PORTFOLIO
+          </h1>
+        </div>
+      </section>
+
+      {/* DESCRIPTION SECTION */}
+      <section className="py-16 px-6" style={{ backgroundColor: "#C87550" }}>
+        <div className="max-w-4xl mx-auto">
+          <p className="text-center text-lg md:text-xl text-white leading-relaxed">
+At Akbar Brass Products, our portfolio is built on multi-material manufacturing and engineered product development.We design and produce collections across Furniture, Home Décor, Serveware & Barware, Lighting, Outdoor, Seasonal, and Pet Accessories—combining metal, marble, wood, glass, and mixed materials with stable, export-ready constructions.          </p>
+        </div>
+      </section>
 
         {/* FURNITURE — METAL MOOD */}
         <section className="py-16 bg-[#111] text-[#F0EFE2] border-b border-white/10">

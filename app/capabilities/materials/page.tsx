@@ -30,16 +30,36 @@ export default function MaterialsPage() {
       <main>
 
         {/* ================= HERO ================= */}
-        <section className="bg-[#EFE8D6] text-[#63403A] pt-24 sm:pt-28 pb-16 sm:pb-20">
-          <div className="container mx-auto px-4 sm:px-6 text-center max-w-6xl">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold mb-5">
-              Materials & Finishes
-            </h1>
-            <p className="text-base sm:text-lg md:text-xl text-[#63403A]/80 max-w-4xl mx-auto leading-relaxed">
-              Our manufacturing strength comes from our ability to work seamlessly across multiple materials.With dedicated units for metal, marble, wood, and mixed-material integration, we deliver precision-engineered products built for global markets.Each material is processed in-house using controlled methods, modern machinery, and disciplined craftsmanship to ensure accuracy, consistency, and durability.
-            </p>
-          </div>
-        </section>
+     
+      {/* HERO SECTION */}
+      <section className="relative h-[400px] md:h-[500px] flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img
+            src="/finishes.JPG"
+            alt="Our Capabilities"
+            className="w-full h-full object-cover"
+          />
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-black/40" />
+        </div>
+
+        {/* Hero Content */}
+        <div className="relative z-10 text-center px-6">
+          <h1 className="font-serif text-4xl md:text-5xl xl:text-6xl text-white mb-0 tracking-[0.2em] uppercase">
+            MATERIALS & FINISHES
+          </h1>
+        </div>
+      </section>
+
+      {/* DESCRIPTION SECTION */}
+      <section className="py-16 px-6" style={{ backgroundColor: "#C87550" }}>
+        <div className="max-w-4xl mx-auto">
+          <p className="text-center text-lg md:text-xl text-white leading-relaxed">
+            Our manufacturing strength comes from our ability to work seamlessly across multiple materials. With dedicated units for metal, marble, wood, and mixed-material integration, we deliver precision-engineered products built for global markets. Each material is processed in-house using controlled methods, modern machinery, and disciplined craftsmanship to ensure accuracy, consistency, and durability.
+          </p>
+        </div>
+      </section>
 
         {/* ================= METAL ================= */}
         <section className="py-16 sm:py-20 bg-[#111820] text-[#F0EFE2]">

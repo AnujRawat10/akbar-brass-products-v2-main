@@ -90,10 +90,14 @@ export default function Sustainability() {
           {/* CTA Button */}
           <div className="text-center">
             <Link href="/sustainability">
-              <button className="px-12 py-4 bg-white text-[#485023] hover:bg-[#BF8B45] hover:text-white transition-all duration-300 uppercase tracking-wider font-semibold text-sm shadow-xl hover:shadow-2xl hover:scale-105">
-                Learn More
-              </button>
-            </Link>
+          <button className="group relative px-12 py-4 bg-white text-black overflow-hidden transition-all duration-500 uppercase tracking-wider font-medium text-sm md:text-base shadow-2xl hover:shadow-[#BF8B45]/50 transform hover:scale-105">
+            {/* Button hover effect */}
+            <span className="absolute inset-0 bg-[#BF8B45] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+            <span className="relative z-10 group-hover:text-white transition-colors duration-500">
+              OUR SUSTAINABILITY
+            </span>
+          </button>
+        </Link>
           </div>
         </div>
       </div>

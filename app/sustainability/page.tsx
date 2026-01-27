@@ -95,21 +95,34 @@ export default function SustainabilityPage() {
   return (
     <div className="min-h-screen bg-[#f0efe2]">
       <main>
-        <section
-          ref={heroRef}
-          className="bg-gradient-to-br from-[#9A9D85] to-[#485023] text-white pt-32 pb-20 lg:pt-40 xl:pt-48 2xl:pt-56 lg:pb-28 xl:pb-36 2xl:pb-44"
-        >
-          <div className="container mx-auto px-6 lg:px-12 xl:px-16 text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold mb-8 lg:mb-12 text-balance">
-              Sustainability
-            </h1>
-            <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl max-w-5xl mx-auto leading-relaxed text-white/90">
-              At Akbar Brass Products, sustainability is built into our manufacturing systems, resource management, and
-              workplace practices. Our approach focuses on three key pillars: Environment, Community, and
-              Wellbeing—ensuring responsible production and long-term operational reliability.
-            </p>
-          </div>
-        </section>
+       <section className="relative h-[400px] md:h-[500px] flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img
+            src="/sus.png"
+            alt="Our Capabilities"
+            className="w-full h-full object-cover"
+          />
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-black/40" />
+        </div>
+
+        {/* Hero Content */}
+        <div className="relative z-10 text-center px-6">
+          <h1 className="font-serif text-4xl md:text-5xl xl:text-6xl text-white mb-0 tracking-[0.2em] uppercase">
+            SUSTAINABILITY
+          </h1>
+        </div>
+      </section>
+
+      {/* DESCRIPTION SECTION */}
+      <section className="py-16 px-6" style={{ backgroundColor: "#485023" }}>
+        <div className="max-w-4xl mx-auto">
+          <p className="text-center text-lg md:text-xl text-white leading-relaxed">
+At Akbar Brass Products, sustainability is built into our manufacturing systems, resource management, and workplace practices.Our approach focuses on three key pillars: Environment, Community, and Wellbeing—ensuring responsible production and long-term operational reliability.
+</p>
+        </div>
+      </section>
 
         <section ref={environmentRef} className="py-20 lg:py-28 xl:py-36 2xl:py-44 bg-[#9A9D85]">
           <div className="container mx-auto px-6 lg:px-12 xl:px-16">

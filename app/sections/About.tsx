@@ -5,20 +5,22 @@ import Link from "next/link"
 // About.tsx - WITH IMAGE GRID LAYOUT
 // ============================================
 export default function About() {
+
   return (
-    <section className="min-h-screen bg-[#B8764F] py-20">
-      <div className="w-full">
-        {/* Header Section */}
-        <div className="text-center mb-16 px-6">
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-white mb-8 uppercase tracking-wide">
-ABOUT AKBAR          </h2>
+    <section className="min-h-screen bg-[#B8764F] py-12 flex flex-col justify-center">
+      {/* Header Section */}
+      <div className="text-center mb-8 px-6">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-white mb-6 tracking-wide">
+About Akbar Brass Products</h2>
           <p className="text-white/90 text-base md:text-lg leading-relaxed max-w-5xl mx-auto">
-            Akbar Brass Products is a multi-material manufacturing company specialising in metal, marble, wood, and mixed-material home products. Operating from a horizontally integrated production campus, we combine modern systems with disciplined processes, 
+            Akbar Brass Products is a multi-material manufacturing company specialising in metal, marble, wood, and mixed-material home products. Operating from a horizontally integrated production campus, we combine modern systems with disciplined processes,
           </p>
         </div>
+      </div>
 
-        {/* Video Grid - Exact reference layout */}
-        <div className="grid grid-cols-12 gap-0 mb-16 w-full h-[55vh] min-h-[500px]">
+      {/* Video Grid - Full Width */}
+      <div className="grid grid-cols-12 gap-0 mb-8 w-full h-[40vh] min-h-[400px]">
           {/* Top Row */}
           {/* Video 1 - Building (tall, left side, spans 2 rows) */}
           <div className="col-span-4 row-span-2 overflow-hidden">
@@ -95,21 +97,22 @@ ABOUT AKBAR          </h2>
           </div>
         </div>
 
-        {/* Bottom Text Section */}
-        <div className="text-center px-6">
-          <p className="text-white text-2xl md:text-3xl lg:text-4xl font-serif leading-relaxed max-w-5xl mx-auto mb-12">
+      {/* Bottom Text Section */}
+      <div className="text-center px-6">
+        <div className="max-w-6xl mx-auto">
+          <p className="text-white/90 text-base md:text-lg leading-relaxed max-w-5xl mx-auto mb-8">
 in-house testing, and globally aligned compliance to deliver stable, export-ready quality.
           </p>
-          
+
           <Link href="/about-akbar/timeline">
-          <button className="group relative px-12 py-4 bg-white text-black overflow-hidden transition-all duration-500 uppercase tracking-wider font-medium text-sm md:text-base shadow-2xl hover:shadow-[#BF8B45]/50 transform hover:scale-105">
-            {/* Button hover effect */}
-            <span className="absolute inset-0 bg-[#BF8B45] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-            <span className="relative z-10 group-hover:text-white transition-colors duration-500">
-              EXPLORE CAPABILITIES
-            </span>
-          </button>
-        </Link>
+            <button className="group relative px-12 py-4 bg-white text-black overflow-hidden transition-all duration-500 uppercase tracking-wider font-medium text-sm md:text-base shadow-2xl hover:shadow-[#BF8B45]/50 transform hover:scale-105">
+              {/* Button hover effect */}
+              <span className="absolute inset-0 bg-[#BF8B45] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+              <span className="relative z-10 group-hover:text-white transition-colors duration-500">
+                Explore Our Heritage 
+              </span>
+            </button>
+          </Link>
         </div>
       </div>
     </section>

@@ -1,6 +1,77 @@
+"use client"
+
+import { useEffect, useRef } from "react"
 import { Shield, FileCheck, Lock, CheckCircle2, Beaker, Package, Award } from "lucide-react"
+import gsap from "gsap"
 
 export default function EthicsPageRedesigned() {
+  const heroTitleRef = useRef<HTMLHeadingElement>(null)
+  const descTextRef = useRef<HTMLParagraphElement>(null)
+  const qualityTitleRef = useRef<HTMLHeadingElement>(null)
+  const qualityCardsRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    /* Hero title animation */
+    if (heroTitleRef.current) {
+      gsap.fromTo(
+        heroTitleRef.current,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          ease: "power3.out",
+        }
+      )
+    }
+
+    /* Description text animation */
+    if (descTextRef.current) {
+      gsap.fromTo(
+        descTextRef.current,
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.5,
+          delay: 0.2,
+          ease: "power3.out",
+        }
+      )
+    }
+
+    /* Quality section title animation */
+    if (qualityTitleRef.current) {
+      gsap.fromTo(
+        qualityTitleRef.current,
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.5,
+          delay: 0.4,
+          ease: "power3.out",
+        }
+      )
+    }
+
+    /* Quality cards stagger animation */
+    if (qualityCardsRef.current) {
+      const cards = qualityCardsRef.current.children
+      gsap.fromTo(
+        cards,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.5,
+          stagger: 0.15,
+          delay: 0.6,
+          ease: "power2.out",
+        }
+      )
+    }
+  }, [])
   return (
     <div className="min-h-screen bg-[#F0EFE2]">
       
@@ -19,7 +90,7 @@ export default function EthicsPageRedesigned() {
 
         {/* Hero Content */}
         <div className="relative z-10 text-center px-6">
-          <h1 className="font-serif text-4xl md:text-5xl xl:text-6xl text-white mb-0 tracking-[0.2em] uppercase">
+          <h1 ref={heroTitleRef} className="font-serif text-4xl md:text-5xl xl:text-6xl text-white mb-0 tracking-[0.2em] uppercase">
             ETHICS & COMPLIANCE
           </h1>
         </div>
@@ -28,7 +99,7 @@ export default function EthicsPageRedesigned() {
       {/* DESCRIPTION SECTION */}
       <section className="py-16 px-6" style={{ backgroundColor: "#C87550" }}>
         <div className="max-w-4xl mx-auto">
-          <p className="text-center text-lg md:text-xl text-white leading-relaxed">
+          <p ref={descTextRef} className="text-center text-lg md:text-xl text-white leading-relaxed">
 At Akbar Brass Products, quality is a disciplined, system-driven approach that guides every stage of our manufacturing process. Our workflows, inspections, and compliance practices are aligned with global retail requirements to ensure consistency, safety, and long-term performance.
 </p>
         </div>
@@ -37,63 +108,96 @@ At Akbar Brass Products, quality is a disciplined, system-driven approach that g
       {/* ================= QUALITY MANAGEMENT ================= */}
       <section className="py-28 bg-[#F0EFE2] px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
+          <div ref={qualityTitleRef} className="text-center mb-20">
             <h2 className="font-serif text-4xl md:text-5xl mb-6 text-[#63403A] font-bold">
               Quality Management
             </h2>
             <div className="w-24 h-[2px] bg-[#BF8B45] mx-auto" />
           </div>
 
-          <div className="grid md:grid-cols-3 gap-10">
+          <div ref={qualityCardsRef} className="grid md:grid-cols-3 gap-10">
             {/* Multi-Stage QC System */}
-            <div className="group bg-white p-10 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 border border-[#9A9D85]/20">
-              <div className="w-16 h-16 bg-[#485023] rounded-full flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[#BF8B45] transition-all duration-500">
-                <CheckCircle2 className="w-8 h-8 text-white" />
+            <div className="group bg-white rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 border border-[#9A9D85]/20 overflow-hidden">
+              {/* Image */}
+              <div className="h-56 overflow-hidden">
+                <img
+                  src="/quality.jpeg"
+                  alt="Multi-Stage QC System"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
               </div>
-              <h3 className="font-serif text-2xl mb-4 text-[#63403A] font-bold">
-                Multi-Stage QC System
-              </h3>
-              <p className="text-[#63403A]/75 leading-relaxed mb-4">
-                Each product passes through a structured quality pathway starting with construction checks at the first inline stage, followed by midline assessments for finishing, alignment, and functional accuracy.
-              </p>
-              <p className="text-[#63403A]/75 leading-relaxed">
-                Every piece then undergoes 100% final inspection before packing, ensuring consistency across all production batches.
-              </p>
-              <div className="h-[2px] w-0 bg-[#BF8B45] group-hover:w-full transition-all duration-500 mt-6" />
+
+              <div className="p-10">
+                <div className="w-16 h-16 bg-[#485023] rounded-full flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[#BF8B45] transition-all duration-500">
+                  <CheckCircle2 className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="font-serif text-2xl mb-4 text-[#63403A] font-bold">
+                  Multi-Stage QC System
+                </h3>
+                <p className="text-[#63403A]/75 leading-relaxed mb-4">
+                  Each product passes through a structured quality pathway starting with construction checks at the first inline stage, followed by midline assessments for finishing, alignment, and functional accuracy.
+                </p>
+                <p className="text-[#63403A]/75 leading-relaxed">
+                  Every piece then undergoes 100% final inspection before packing, ensuring consistency across all production batches.
+                </p>
+                <div className="h-[2px] w-0 bg-[#BF8B45] group-hover:w-full transition-all duration-500 mt-6" />
+              </div>
             </div>
 
             {/* Product Testing */}
-            <div className="group bg-white p-10 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 border border-[#9A9D85]/20">
-              <div className="w-16 h-16 bg-[#485023] rounded-full flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[#BF8B45] transition-all duration-500">
-                <Beaker className="w-8 h-8 text-white" />
+            <div className="group bg-white rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 border border-[#9A9D85]/20 overflow-hidden">
+              {/* Image */}
+              <div className="h-56 overflow-hidden">
+                <img
+                  src="/qualitymanagement.jpeg"
+                  alt="Product Testing"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
               </div>
-              <h3 className="font-serif text-2xl mb-4 text-[#63403A] font-bold">
-                Product Testing
-              </h3>
-              <p className="text-[#63403A]/75 leading-relaxed mb-4">
-                Our dedicated testing lab enables us to verify materials, finishes, construction, and performance in line with global retail expectations.
-              </p>
-              <p className="text-[#63403A]/75 leading-relaxed">
-                The lab supports pre-production validation, in-process checks, and final approvals, ensuring export-quality reliability and consistent standards across every shipment.
-              </p>
-              <div className="h-[2px] w-0 bg-[#BF8B45] group-hover:w-full transition-all duration-500 mt-6" />
+
+              <div className="p-10">
+                <div className="w-16 h-16 bg-[#485023] rounded-full flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[#BF8B45] transition-all duration-500">
+                  <Beaker className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="font-serif text-2xl mb-4 text-[#63403A] font-bold">
+                  Product Testing
+                </h3>
+                <p className="text-[#63403A]/75 leading-relaxed mb-4">
+                  Our dedicated testing lab enables us to verify materials, finishes, construction, and performance in line with global retail expectations.
+                </p>
+                <p className="text-[#63403A]/75 leading-relaxed">
+                  The lab supports pre-production validation, in-process checks, and final approvals, ensuring export-quality reliability and consistent standards across every shipment.
+                </p>
+                <div className="h-[2px] w-0 bg-[#BF8B45] group-hover:w-full transition-all duration-500 mt-6" />
+              </div>
             </div>
 
             {/* Packaging Standards */}
-            <div className="group bg-white p-10 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 border border-[#9A9D85]/20">
-              <div className="w-16 h-16 bg-[#485023] rounded-full flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[#BF8B45] transition-all duration-500">
-                <Package className="w-8 h-8 text-white" />
+            <div className="group bg-white rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 border border-[#9A9D85]/20 overflow-hidden">
+              {/* Image */}
+              <div className="h-56 overflow-hidden">
+                <img
+                  src="/compliance.jpeg"
+                  alt="Packaging Standards"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
               </div>
-              <h3 className="font-serif text-2xl mb-4 text-[#63403A] font-bold">
-                Packaging Standards
-              </h3>
-              <p className="text-[#63403A]/75 leading-relaxed mb-4">
-                To guarantee secure and damage-free delivery, our packaging undergoes carton bursting strength assessments, controlled drop testing, and packaging evaluations aligned with ISTA standards.
-              </p>
-              <p className="text-[#63403A]/75 leading-relaxed">
-                These procedures ensure that every shipment is protected, compliant, and ready for international logistics.
-              </p>
-              <div className="h-[2px] w-0 bg-[#BF8B45] group-hover:w-full transition-all duration-500 mt-6" />
+
+              <div className="p-10">
+                <div className="w-16 h-16 bg-[#485023] rounded-full flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[#BF8B45] transition-all duration-500">
+                  <Package className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="font-serif text-2xl mb-4 text-[#63403A] font-bold">
+                  Packaging Standards
+                </h3>
+                <p className="text-[#63403A]/75 leading-relaxed mb-4">
+                  To guarantee secure and damage-free delivery, our packaging undergoes carton bursting strength assessments, controlled drop testing, and packaging evaluations aligned with ISTA standards.
+                </p>
+                <p className="text-[#63403A]/75 leading-relaxed">
+                  These procedures ensure that every shipment is protected, compliant, and ready for international logistics.
+                </p>
+                <div className="h-[2px] w-0 bg-[#BF8B45] group-hover:w-full transition-all duration-500 mt-6" />
+              </div>
             </div>
           </div>
         </div>

@@ -23,7 +23,7 @@ export default function Page() {
       <Sustainability />
       <DelhiFair />
       <Compliance />
-      <FinalCTA />
+      {/* <FinalCTA /> */}
     </>
   )
 }

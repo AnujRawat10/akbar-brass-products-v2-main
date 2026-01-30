@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import { CheckCircle } from "lucide-react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
@@ -22,6 +22,15 @@ const moodColors = [
 export default function TimelinePage() {
   const heroRef = useRef<HTMLDivElement>(null)
   const timelineRef = useRef<HTMLDivElement>(null)
+  const [activePeriod, setActivePeriod] = useState(0)
+
+  const periods = [
+    { label: "1974-1980s", startIdx: 0, endIdx: 1 },
+    { label: "1990s-2000", startIdx: 2, endIdx: 3 },
+    { label: "2012-2018", startIdx: 4, endIdx: 5 },
+    { label: "2021-2024", startIdx: 6, endIdx: 7 },
+    { label: "Present", startIdx: 8, endIdx: 8 },
+  ]
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -140,7 +149,7 @@ export default function TimelinePage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src="/1990.jpeg"
+            src="/Complete Campus.png"
             alt="Our Journey"
             className="w-full h-full object-cover"
           />
@@ -160,18 +169,95 @@ export default function TimelinePage() {
       <section className="py-16 px-6" style={{ backgroundColor: "#C87550" }}>
         <div className="max-w-4xl mx-auto">
           <p className="text-center text-lg md:text-xl text-white leading-relaxed">
-            Built over three generations, our journey reflects a steady evolution from traditional 
-            craftsmanship to modern, system-driven manufacturing. Each decade shows how we expanded 
-            our material expertise, upgraded our processes, and consolidated our infrastructure to 
-            meet the expectations of global markets—crafted with passion, preserved with care, and 
+            Built over three generations, our journey reflects a steady evolution from traditional
+            craftsmanship to modern, system-driven manufacturing. Each decade shows how we expanded
+            our material expertise, upgraded our processes, and consolidated our infrastructure to
+            meet the expectations of global markets—crafted with passion, preserved with care, and
             destined for timeless excellence.
           </p>
         </div>
       </section>
 
-      {/* TIMELINE SECTION */}
+      {/* MOBILE HORIZONTAL TIMELINE - Only visible on mobile */}
+      <section className="md:hidden py-12 px-6 bg-[#F0EFE2]">
+        <div className="max-w-6xl mx-auto">
+          {/* Current Period Display */}
+          <div className="mb-12">
+            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6">
+              <h2 className="font-serif text-5xl sm:text-6xl font-bold text-[#63403A]">
+                {periods[activePeriod].label}
+              </h2>
+              <div className="flex-1 max-w-md">
+                <h3 className="font-serif text-2xl font-bold text-[#63403A] mb-3">
+                  Built on trust.
+                </h3>
+                <p className="text-[#63403A]/80 leading-relaxed">
+                  Built over three generations, our journey reflects a steady evolution from traditional
+                  craftsmanship to modern, system-driven manufacturing. Each decade shows how we expanded
+                  our material expertise, upgraded our processes, and consolidated our infrastructure to
+                  meet the expectations of global markets.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Horizontal Timeline Navigation */}
+          <div className="space-y-4">
+            <div className="flex items-center justify-between">
+              {periods.map((period, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setActivePeriod(idx)}
+                  className={`text-sm sm:text-base font-medium transition-colors ${
+                    activePeriod === idx ? "text-[#63403A]" : "text-[#63403A]/50"
+                  }`}
+                >
+                  {period.label}
+                </button>
+              ))}
+            </div>
+
+            {/* Progress Bar */}
+            <div className="relative h-1 bg-[#63403A]/20 rounded-full overflow-hidden">
+              <div
+                className="absolute h-full bg-[#BF8B45] transition-all duration-500 rounded-full"
+                style={{ width: `${((activePeriod + 1) / periods.length) * 100}%` }}
+              />
+            </div>
+          </div>
+
+          {/* Milestone Cards for Selected Period */}
+          <div className="mt-12 space-y-6">
+            {milestones
+              .filter((_, idx) => idx >= periods[activePeriod].startIdx && idx <= periods[activePeriod].endIdx)
+              .map((milestone, idx) => (
+                <div
+                  key={idx}
+                  className="bg-white rounded-lg p-6 shadow-md border border-[#63403A]/10"
+                >
+                  <div className="text-xl font-bold text-[#BF8B45] mb-2">{milestone.year}</div>
+                  <h4 className="font-serif text-lg font-semibold text-[#63403A] mb-3">
+                    {milestone.title}
+                  </h4>
+                  <p className="text-[#63403A]/80 leading-relaxed mb-4">{milestone.description}</p>
+                  {milestone.image && (
+                    <div className="rounded-lg overflow-hidden">
+                      <img
+                        src={milestone.image}
+                        alt={milestone.title}
+                        className="w-full h-48 object-cover"
+                      />
+                    </div>
+                  )}
+                </div>
+              ))}
+          </div>
+        </div>
+      </section>
+
+      {/* TIMELINE SECTION - Hidden on mobile, visible on desktop */}
       <div
-        className="py-24 transition-colors duration-700"
+        className="hidden md:block py-24 transition-colors duration-700"
         style={{ backgroundColor: moodColors[0].bg }}
       >
         <div className="max-w-5xl mx-auto px-6">
@@ -238,7 +324,7 @@ export default function TimelinePage() {
                         <img
                           src={m.image}
                           alt={m.title}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-cover "
                         />
                       </div>
                     )}

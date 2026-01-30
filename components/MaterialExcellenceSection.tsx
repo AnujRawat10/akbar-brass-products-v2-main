@@ -13,6 +13,7 @@ interface Feature {
 
 function MaterialExcellenceSection() {
   const [expandedCard, setExpandedCard] = useState<number | null>(null);
+  const [clickedCard, setClickedCard] = useState<number | null>(null);
 
   const features: Feature[] = [
     {
@@ -48,19 +49,31 @@ function MaterialExcellenceSection() {
   return (
     <section className="py-20 sm:py-28 bg-[#485023] text-white px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
-        {/* Header Section */}
-        <div className="mb-16">
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl mb-6 text-white">
-            Material Excellence
-          </h2>
-          <div className="w-24 h-[2px] bg-[#BF8B45] mb-8" />
-          <div className="max-w-3xl">
-            <p className="text-white/90 text-base sm:text-lg leading-relaxed mb-6">
-              Our integrated manufacturing approach combines traditional craftsmanship with modern finishing technology, enabling us to deliver consistent, export-grade quality across all material categories.
-            </p>
-            <p className="text-white/75 text-sm sm:text-base leading-relaxed">
-              From raw material selection to final finish application, every stage is monitored through our quality management system to ensure products meet international standards for durability, safety, and aesthetic excellence.
-            </p>
+        {/* Header Section with Image */}
+        <div className="mb-16 grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
+          {/* Left: Text Content */}
+          <div>
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl mb-6 text-white">
+              Material Excellence
+            </h2>
+            <div className="w-24 h-[2px] bg-[#BF8B45] mb-8" />
+            <div>
+              <p className="text-white/90 text-base sm:text-lg leading-relaxed mb-6">
+                Our integrated manufacturing approach combines traditional craftsmanship with modern finishing technology, enabling us to deliver consistent, export-grade quality across all material categories.
+              </p>
+              <p className="text-white/75 text-sm sm:text-base leading-relaxed">
+                From raw material selection to final finish application, every stage is monitored through our quality management system to ensure products meet international standards for durability, safety, and aesthetic excellence.
+              </p>
+            </div>
+          </div>
+
+          {/* Right: Image */}
+          <div className="h-64 sm:h-80 lg:h-96 rounded-2xl overflow-hidden border-2 border-white/20 shadow-2xl">
+            <img
+              src="/excellence.jpeg"
+              alt="Material Excellence"
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+            />
           </div>
         </div>
 
@@ -75,15 +88,31 @@ function MaterialExcellenceSection() {
                 cursor-pointer
                 relative
                 transition-all duration-500 ease-in-out
-                ${expandedCard === feature.id 
-                  ? 'flex-[2] md:flex-[2]' 
+                ${(expandedCard === feature.id || clickedCard === feature.id)
+                  ? 'flex-[2] md:flex-[2]'
                   : 'flex-1'
                 }
-                ${expandedCard === null ? 'hover:bg-white/15' : ''}
+                ${expandedCard === null && clickedCard === null ? 'hover:bg-white/15' : ''}
                 overflow-hidden
               `}
-              onMouseEnter={() => setExpandedCard(feature.id)}
-              onMouseLeave={() => setExpandedCard(null)}
+              onClick={() => {
+                // Close the currently open card if clicking on the same card, otherwise open the new one
+                setClickedCard(clickedCard === feature.id ? null : feature.id);
+                // Reset hover state when clicking
+                setExpandedCard(null);
+              }}
+              onMouseEnter={() => {
+                // Only allow hover if no card is clicked/locked
+                if (clickedCard === null) {
+                  setExpandedCard(feature.id);
+                }
+              }}
+              onMouseLeave={() => {
+                // Only clear hover if no card is clicked/locked
+                if (clickedCard === null) {
+                  setExpandedCard(null);
+                }
+              }}
             >
               <div className="flex flex-col h-full justify-between">
                 {/* Header */}
@@ -91,16 +120,16 @@ function MaterialExcellenceSection() {
                   <span className={`
                     block text-sm sm:text-base font-semibold mb-4
                     transition-colors duration-400
-                    ${expandedCard === feature.id ? 'text-[#BF8B45]' : 'text-white/60'}
+                    ${(expandedCard === feature.id || clickedCard === feature.id) ? 'text-[#BF8B45]' : 'text-white/60'}
                   `}>
                     {feature.number}
                   </span>
-                  
+
                   {/* Icon */}
                   <div className={`
                     mb-6 transition-all duration-500
-                    ${expandedCard === feature.id 
-                      ? 'text-[#BF8B45] scale-110' 
+                    ${(expandedCard === feature.id || clickedCard === feature.id)
+                      ? 'text-[#BF8B45] scale-110'
                       : 'text-white/80'
                     }
                   `}>
@@ -111,8 +140,8 @@ function MaterialExcellenceSection() {
                   <h3 className={`
                     font-serif font-semibold leading-tight mb-4
                     transition-all duration-400
-                    ${expandedCard === feature.id 
-                      ? 'text-2xl sm:text-3xl lg:text-4xl text-white' 
+                    ${(expandedCard === feature.id || clickedCard === feature.id)
+                      ? 'text-2xl sm:text-3xl lg:text-4xl text-white'
                       : 'text-xl sm:text-2xl text-white'
                     }
                   `}>
@@ -120,8 +149,8 @@ function MaterialExcellenceSection() {
                   </h3>
 
                   {/* Description */}
-                  {expandedCard === feature.id && (
-                    <p 
+                  {(expandedCard === feature.id || clickedCard === feature.id) && (
+                    <p
                       className="text-white/90 text-sm sm:text-base leading-relaxed mb-6 animate-fadeInUp"
                       style={{
                         animation: 'fadeInUp 0.5s ease forwards 0.2s',
@@ -134,31 +163,31 @@ function MaterialExcellenceSection() {
                   )}
 
                   {/* Animated underline */}
-                  <div 
+                  <div
                     className={`
                       h-[2px] bg-[#BF8B45] transition-all duration-500
-                      ${expandedCard === feature.id ? 'w-full' : 'w-0'}
-                    `} 
+                      ${(expandedCard === feature.id || clickedCard === feature.id) ? 'w-full' : 'w-0'}
+                    `}
                   />
                 </div>
 
                 {/* Toggle Button */}
-                <button 
+                <button
                   className={`
                     w-12 h-12 mt-8
                     flex items-center justify-center
                     text-3xl font-light
                     transition-all duration-300
                     self-start
-                    ${expandedCard === feature.id 
-                      ? 'text-white rotate-180' 
+                    ${(expandedCard === feature.id || clickedCard === feature.id)
+                      ? 'text-white rotate-180'
                       : 'text-white/80'
                     }
                     hover:scale-110
                   `}
-                  aria-label={expandedCard === feature.id ? 'Collapse' : 'Expand'}
+                  aria-label={(expandedCard === feature.id || clickedCard === feature.id) ? 'Collapse' : 'Expand'}
                 >
-                  {expandedCard === feature.id ? '−' : '+'}
+                  {(expandedCard === feature.id || clickedCard === feature.id) ? '−' : '+'}
                 </button>
               </div>
             </div>

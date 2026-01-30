@@ -6,39 +6,43 @@ export default function WhyChooseUs() {
   const items = [
     {
       icon: <Sparkles className="w-8 h-8" />,
-      title: "Integrated Manufacturing",
+      title: "Integrated multi-material production",
       desc: "Complete in-house production across metal, marble, wood and mixed materials.",
       bg: "#FFFFFF",
       iconColor: "#BF8B45",
       hoverTitle: "#AE7250",
       text: "#63403A",
+      image: "/variety.jpeg",
     },
     {
       icon: <Award className="w-8 h-8" />,
-      title: "Consistent Quality",
+      title: "Stable quality and repeatability",
       desc: "Repeatable processes built for export-grade quality and long-term reliability.",
       bg: "#EFE8D6",
       iconColor: "#63403A",
       hoverTitle: "#AE7250",
       text: "#63403A",
+      image: "/precision.png",
     },
     {
       icon: <CheckCircle2 className="w-8 h-8" />,
-      title: "Global Compliance",
+      title: "Compliance-ready systems",
       desc: "Manufacturing aligned with international testing and certification standards.",
       bg: "#9A9D85",
       iconColor: "#F0EFE2",
       hoverTitle: "#FFFFFF",
       text: "#F0EFE2",
+      image: "/compliance.jpeg",
     },
     {
       icon: <Users className="w-8 h-8" />,
-      title: "Three Generations of Expertise",
+      title: "Generations of manufacturing expertise",
       desc: "50+ years of craftsmanship evolving with modern engineering practices.",
       bg: "#63403A",
       iconColor: "#BF8B45",
       hoverTitle: "#EFE8D6",
       text: "#F0EFE2",
+      image: "/quality.jpeg",
     },
   ]
 
@@ -56,26 +60,39 @@ export default function WhyChooseUs() {
           {items.map((item, idx) => (
             <div
               key={idx}
-              className="group relative p-12 border border-black/5 overflow-hidden transition-all duration-700 hover:-translate-y-2 hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.25)]"
+              className="group relative p-6 sm:p-8 md:p-10 lg:p-12 border border-black/5 overflow-hidden transition-all duration-700 hover:-translate-y-2 hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.25)]"
               style={{ backgroundColor: item.bg }}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-[#BF8B45]/10 to-transparent opacity-0 group-hover:opacity-100 transition duration-700" />
+              {/* Background Image on Hover - More Visible */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover"
+                />
+                {/* Lighter gradient for better image visibility */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/30" />
+              </div>
+
+              {/* Subtle gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#BF8B45]/5 to-transparent opacity-0 group-hover:opacity-100 transition duration-700" />
+
               <div
-                className="relative z-10 mb-6 transition-transform duration-700 group-hover:scale-110"
+                className="relative z-10 mb-6 transition-all duration-700 group-hover:scale-110 group-hover:text-white"
                 style={{ color: item.iconColor }}
               >
                 {item.icon}
               </div>
               <h3
-                className="relative z-10 font-serif text-2xl mb-4 transition-colors duration-500"
+                className="relative z-10 font-serif text-2xl mb-4 transition-colors duration-500 group-hover:text-white"
                 style={{ color: item.text }}
               >
-                <span className="group-hover:text-[var(--hover)]" style={{ "--hover": item.hoverTitle } as React.CSSProperties}>
+                <span className="group-hover:text-white" style={{ "--hover": item.hoverTitle } as React.CSSProperties}>
                   {item.title}
                 </span>
               </h3>
               <p
-                className="relative z-10 leading-relaxed"
+                className="relative z-10 leading-relaxed transition-colors duration-500 group-hover:text-white/95"
                 style={{ color: item.text, opacity: 0.85 }}
               >
                 {item.desc}

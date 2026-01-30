@@ -11,6 +11,7 @@ gsap.registerPlugin(SplitText)
 export default function Hero() {
   const headingRef = useRef<HTMLHeadingElement | null>(null)
   const videoRef = useRef<HTMLVideoElement | null>(null)
+  const audioRef = useRef<HTMLAudioElement | null>(null)
 
   const [scrollY, setScrollY] = useState(0)
   const [muted, setMuted] = useState(true)
@@ -59,8 +60,19 @@ export default function Hero() {
         className="absolute inset-0 w-full h-full object-cover"
         style={{ transform: `scale(${1 + scrollY * 0.00008})` }}
       >
-        <source src="/videos/final_video_hero.mp4" type="video/mp4" />
+        <source src="/videos/final_video_hero.webm" type="video/webm" />
       </video>
+
+      {/* Background Music */}
+      <audio
+        ref={audioRef}
+        autoPlay
+        loop
+        muted={muted}
+        className="hidden"
+      >
+        <source src="/337_short2_light-years_0036.mp3" type="audio/mpeg" />
+      </audio>
 
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/60" />
@@ -68,13 +80,17 @@ export default function Hero() {
       {/* MUTE / UNMUTE BUTTON */}
       <button
         onClick={() => {
-          if (!videoRef.current) return
-          videoRef.current.muted = !muted
+          if (videoRef.current) {
+            videoRef.current.muted = !muted
+          }
+          if (audioRef.current) {
+            audioRef.current.muted = !muted
+          }
           setMuted(!muted)
         }}
         aria-label="Toggle sound"
         className="
-          absolute bottom-6 right-6 z-20
+          absolute bottom-6 left-6 z-20
           bg-black/60 backdrop-blur
           text-white
           p-3 rounded-full
@@ -108,7 +124,7 @@ export default function Hero() {
               text-white
               opacity-0
               leading-[1.12]
-              whitespace-nowrap
+              md:whitespace-nowrap
             "
             style={{
               wordBreak: "keep-all",
@@ -170,7 +186,7 @@ export default function Hero() {
             {/* Button hover effect */}
             <span className="absolute inset-0 bg-[#BF8B45] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
             <span className="relative z-10 group-hover:text-white transition-colors duration-500">
-              OUR CAPABILITIES
+              Explore Our Capabilities 
             </span>
           </button>
         </Link>

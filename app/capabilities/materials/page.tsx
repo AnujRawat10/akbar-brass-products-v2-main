@@ -1,7 +1,94 @@
+"use client"
+
+import { useEffect, useRef } from "react"
 import { Header } from "@/components/header"
 import { Factory, Trees, Layers, Shield, Sparkles, CheckCircle2, Award } from "lucide-react"
 import MaterialExcellenceSection from "@/components/MaterialExcellenceSection"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger)
+}
+
 export default function MaterialsPage() {
+  const heroTitleRef = useRef<HTMLHeadingElement>(null)
+  const descTextRef = useRef<HTMLParagraphElement>(null)
+  const metalSectionRef = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    /* Hero title animation */
+    if (heroTitleRef.current) {
+      gsap.fromTo(
+        heroTitleRef.current,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1.2,
+          ease: "power3.out",
+        }
+      )
+    }
+
+    /* Description text animation */
+    if (descTextRef.current) {
+      gsap.fromTo(
+        descTextRef.current,
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          delay: 0.3,
+          ease: "power3.out",
+        }
+      )
+    }
+
+    /* Material sections animation */
+    if (metalSectionRef.current) {
+      const sections = document.querySelectorAll('.material-section')
+      sections.forEach((section) => {
+        const content = section.querySelector('.material-content')
+        const image = section.querySelector('.material-image')
+
+        if (content && image) {
+          gsap.fromTo(
+            content,
+            { opacity: 0, x: -50 },
+            {
+              opacity: 1,
+              x: 0,
+              duration: 1,
+              ease: "power3.out",
+              scrollTrigger: {
+                trigger: section,
+                start: "top center+=100",
+                once: true,
+              },
+            }
+          )
+
+          gsap.fromTo(
+            image,
+            { opacity: 0, x: 50 },
+            {
+              opacity: 1,
+              x: 0,
+              duration: 1,
+              ease: "power3.out",
+              scrollTrigger: {
+                trigger: section,
+                start: "top center+=100",
+                once: true,
+              },
+            }
+          )
+        }
+      })
+    }
+  }, [])
   const features = [
     {
       icon: <Award className="w-10 h-10" />,
@@ -46,7 +133,7 @@ export default function MaterialsPage() {
 
         {/* Hero Content */}
         <div className="relative z-10 text-center px-6">
-          <h1 className="font-serif text-4xl md:text-5xl xl:text-6xl text-white mb-0 tracking-[0.2em] uppercase">
+          <h1 ref={heroTitleRef} className="font-serif text-4xl md:text-5xl xl:text-6xl text-white mb-0 tracking-[0.2em] uppercase">
             MATERIALS & FINISHES
           </h1>
         </div>
@@ -55,17 +142,17 @@ export default function MaterialsPage() {
       {/* DESCRIPTION SECTION */}
       <section className="py-16 px-6" style={{ backgroundColor: "#C87550" }}>
         <div className="max-w-4xl mx-auto">
-          <p className="text-center text-lg md:text-xl text-white leading-relaxed">
+          <p ref={descTextRef} className="text-center text-lg md:text-xl text-white leading-relaxed">
             Our manufacturing strength comes from our ability to work seamlessly across multiple materials.With dedicated units for metal, marble, wood, and mixed-material integration, we deliver precision-engineered products built for global markets.Each material is processed in-house using controlled methods, modern machinery, and disciplined craftsmanship to ensure accuracy, consistency, and durability.
           </p>
         </div>
       </section>
 
         {/* ================= METAL ================= */}
-        <section className="py-16 sm:py-20 bg-[#111820] text-[#F0EFE2]">
+        <section ref={metalSectionRef} className="material-section py-16 sm:py-20 bg-[#111820] text-[#F0EFE2]">
           <div className="container mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-10 lg:gap-16 items-center max-w-7xl">
 
-            <div>
+            <div className="material-content">
               <div className="flex items-center gap-3 mb-5">
                 <Factory className="w-8 h-8 sm:w-10 sm:h-10 text-[#BF8B45]" />
                 <h2 className="text-2xl sm:text-3xl font-bold">Metal</h2>
@@ -94,7 +181,7 @@ Our controlled processes ensure clean constructions, accurate proportions, and r
               </p>
             </div>
 
-            <div className="h-64 sm:h-80 lg:h-96 rounded-lg overflow-hidden border border-white/10">
+            <div className="material-image h-64 sm:h-80 lg:h-96 rounded-lg overflow-hidden border border-white/10">
               <img
                 src="/materials/metal.png"
                 className="w-full h-full object-cover"
@@ -105,10 +192,10 @@ Our controlled processes ensure clean constructions, accurate proportions, and r
         </section>
 
         {/* ================= MARBLE ================= */}
-        <section className="py-16 sm:py-20 bg-[#9A9D85]/40 text-[#63403A]">
+        <section className="material-section py-16 sm:py-20 bg-[#9A9D85]/40 text-[#63403A]">
           <div className="container mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-10 lg:gap-16 items-center max-w-7xl">
 
-            <div className="order-2 md:order-1 h-64 sm:h-80 lg:h-96 rounded-lg overflow-hidden border border-[#63403A]/20">
+            <div className="material-image order-2 md:order-1 h-64 sm:h-80 lg:h-96 rounded-lg overflow-hidden border border-[#63403A]/20">
               <img
                 src="/materials/marble.png"
                 className="w-full h-full object-cover"
@@ -116,7 +203,7 @@ Our controlled processes ensure clean constructions, accurate proportions, and r
               />
             </div>
 
-            <div className="order-1 md:order-2">
+            <div className="material-content order-1 md:order-2">
               <div className="flex items-center gap-3 mb-5">
                 <Layers className="w-8 h-8 sm:w-10 sm:h-10 text-[#BF8B45]" />
                 <h2 className="text-2xl sm:text-3xl font-bold">
@@ -142,10 +229,10 @@ Our controlled processes ensure clean constructions, accurate proportions, and r
         </section>
 
         {/* ================= WOOD ================= */}
-        <section className="py-16 sm:py-20 bg-[#63403A] text-[#F0EFE2]">
+        <section className="material-section py-16 sm:py-20 bg-[#63403A] text-[#F0EFE2]">
           <div className="container mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-10 lg:gap-16 items-center max-w-7xl">
 
-            <div>
+            <div className="material-content">
               <div className="flex items-center gap-3 mb-5">
                 <Trees className="w-8 h-8 sm:w-10 sm:h-10 text-[#BF8B45]" />
                 <h2 className="text-2xl sm:text-3xl font-bold">Wood</h2>
@@ -164,10 +251,10 @@ Our controlled processes ensure clean constructions, accurate proportions, and r
               <p className="mt-5 opacity-85 text-sm sm:text-base">
                 Wood components are processed to meet export-level requirements for stability, finish, and durability
               </p>
-              
+
             </div>
 
-            <div className="h-64 sm:h-80 lg:h-96 rounded-lg overflow-hidden border border-white/10">
+            <div className="material-image h-64 sm:h-80 lg:h-96 rounded-lg overflow-hidden border border-white/10">
               <img
                 src="/materials/wood.png"
                 className="w-full h-full object-cover"

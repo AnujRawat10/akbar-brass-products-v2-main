@@ -191,8 +191,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="mb-1 font-semibold" style={{ color: '#63403A' }}>Email</h3>
-                    <a href="mailto:info@akbarbrass.com" className="transition-colors hover:opacity-70" style={{ color: '#63403A', opacity: 0.8 }}>
-                      info@akbarbrass.com
+                    <a href="mailto:hello@akbarbrass.com" className="transition-colors hover:opacity-70" style={{ color: '#63403A', opacity: 0.8 }}>
+                      hello@akbarbrass.com
                     </a>
                   </div>
                 </div>

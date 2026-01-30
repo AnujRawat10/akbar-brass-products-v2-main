@@ -2,10 +2,15 @@
 
 import { useEffect, useState } from "react"
 import Link from "next/link"
-import { Menu, X, ChevronDown } from "lucide-react"
+import { Menu, X, ChevronDown, ShoppingBag } from "lucide-react"
 import gsap from "gsap"
 
-export function Header() {
+interface HeaderProps {
+  cartItemCount?: number
+  onCartClick?: () => void
+}
+
+export function Header({ cartItemCount = 0, onCartClick }: HeaderProps = {}) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isAboutOpen, setIsAboutOpen] = useState(false)
   const [isCapabilitiesOpen, setIsCapabilitiesOpen] = useState(false)
@@ -72,10 +77,33 @@ export function Header() {
             </Link>
           </div>
 
-          {/* RIGHT — CONTACT */}
+          {/* RIGHT — CART & CONTACT */}
           <div className="flex justify-end items-center gap-2">
 
-            {/* Mobile icon */}
+            {/* Cart Icon (only show if cartItemCount > 0) */}
+            {cartItemCount > 0 && onCartClick && (
+              <button
+                onClick={onCartClick}
+                className={`
+                  relative
+                  p-2.5 rounded-full border transition-all
+                  ${scrolled
+                    ? "border-[#63403A] text-[#63403A] hover:bg-[#63403A] hover:text-white"
+                    : "border-[#f0efe2] text-[#f0efe2] hover:bg-[#f0efe2]/20"
+                  }
+                `}
+                aria-label="Shopping cart"
+              >
+                <ShoppingBag className="h-5 w-5" />
+                <span className={`absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full text-xs font-bold ${
+                  scrolled ? "bg-[#63403A] text-white" : "bg-[#f0efe2] text-[#63403A]"
+                }`}>
+                  {cartItemCount}
+                </span>
+              </button>
+            )}
+
+            {/* Mobile Contact icon */}
             <Link
               href="/contact"
               className={`

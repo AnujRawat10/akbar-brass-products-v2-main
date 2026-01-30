@@ -127,8 +127,8 @@ export function Footer() {
                 <a href="tel:+915912414263" className="hover:text-[#63403A]">
                   +91-591-2414263
                 </a><br />
-                <a href="mailto:info@akbarbrass.com" className="hover:text-[#63403A]">
-                  info@akbarbrass.com
+                <a href="mailto:hello@akbarbrass.com" className="hover:text-[#63403A]">
+                  hello@akbarbrass.com
                 </a>
               </div>
             </div>

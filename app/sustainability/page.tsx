@@ -145,28 +145,42 @@ At Akbar Brass Products, sustainability is built into our manufacturing systems,
               1. ENVIRONMENT
             </h2>
 
-            <div className="card-item mb-12 bg-white border-2 border-[#9A9D85] rounded-2xl p-10 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="bg-[#9A9D85] p-5 rounded-xl shadow-lg">
-                  <Droplets className="w-10 h-10 text-white" />
+            <div className="card-item mb-12 bg-white border-2 border-[#9A9D85] rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]">
+              <div className="grid md:grid-cols-2 gap-0">
+                {/* Image Section */}
+                <div className="h-[250px] md:h-full overflow-hidden">
+                  <img
+                    src="/sus.png"
+                    alt="Water Resource Management"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <h3 className="text-2xl md:text-3xl font-semibold text-[#63403A]">
-                  Responsible Resource Management
-                </h3>
+
+                {/* Content Section */}
+                <div className="p-6 md:p-10">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="bg-[#9A9D85] p-5 rounded-xl shadow-lg">
+                      <Droplets className="w-10 h-10 text-white" />
+                    </div>
+                    <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold text-[#63403A]">
+                      Responsible Resource Management
+                    </h3>
+                  </div>
+                  <p className="text-[#63403A]/90 text-sm md:text-base lg:text-lg leading-relaxed mb-6">
+                    Our integrated manufacturing campus is equipped with:
+                  </p>
+                  <ul className="list-disc list-inside text-[#63403A]/90 text-sm md:text-base lg:text-lg leading-relaxed space-y-2 ml-4">
+                    <li>Effluent Treatment Plant (ETP)</li>
+                    <li>Sewage Treatment Plant (STP)</li>
+                    <li>Reverse Osmosis (RO) system</li>
+                    <li>Rainwater harvesting infrastructure</li>
+                  </ul>
+                  <p className="text-[#63403A]/90 text-sm md:text-base lg:text-lg leading-relaxed mt-6">
+                    These systems enable water recycling, reduce groundwater usage, and ensure safe, compliant discharge of
+                    treated water.
+                  </p>
+                </div>
               </div>
-              <p className="text-[#63403A]/90 text-base md:text-lg leading-relaxed mb-6">
-                Our integrated manufacturing campus is equipped with:
-              </p>
-              <ul className="list-disc list-inside text-[#63403A]/90 text-base md:text-lg leading-relaxed space-y-2 ml-4">
-                <li>Effluent Treatment Plant (ETP)</li>
-                <li>Sewage Treatment Plant (STP)</li>
-                <li>Reverse Osmosis (RO) system</li>
-                <li>Rainwater harvesting infrastructure</li>
-              </ul>
-              <p className="text-[#63403A]/90 text-base md:text-lg leading-relaxed mt-6">
-                These systems enable water recycling, reduce groundwater usage, and ensure safe, compliant discharge of
-                treated water.
-              </p>
             </div>
 
             <div className="card-item mb-12 bg-[#485023] border-2 border-white rounded-2xl p-10 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]">
@@ -218,26 +232,40 @@ At Akbar Brass Products, sustainability is built into our manufacturing systems,
               2. COMMUNITY
             </h2>
 
-            <div className="card-item mb-12 bg-white border-2 border-[#485023] rounded-2xl p-10 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="bg-[#485023] p-5 rounded-xl shadow-lg">
-                  <Users className="w-10 h-10 text-white" />
+            <div className="card-item mb-12 bg-white border-2 border-[#485023] rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]">
+              <div className="grid md:grid-cols-2 gap-0">
+                {/* Image Section */}
+                <div className="h-[250px] md:h-full overflow-hidden">
+                  <img
+                    src="/excellence.jpeg"
+                    alt="Local Employment & Skill Development"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <h3 className="text-2xl md:text-3xl font-semibold text-[#63403A]">
-                  Local Employment & Skill Development
-                </h3>
+
+                {/* Content Section */}
+                <div className="p-6 md:p-10">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="bg-[#485023] p-5 rounded-xl shadow-lg">
+                      <Users className="w-10 h-10 text-white" />
+                    </div>
+                    <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold text-[#63403A]">
+                      Local Employment & Skill Development
+                    </h3>
+                  </div>
+                  <p className="text-[#63403A]/90 text-sm md:text-base lg:text-lg leading-relaxed mb-6">
+                    We actively support the local workforce by providing:
+                  </p>
+                  <ul className="list-disc list-inside text-[#63403A]/90 text-sm md:text-base lg:text-lg leading-relaxed space-y-2 ml-4">
+                    <li>Employment across metal, marble, wood, finishing, and assembly departments</li>
+                    <li>Skill-building through on-the-job training and structured process exposure</li>
+                    <li>Opportunities for artisans and technicians to grow within specialized trades</li>
+                  </ul>
+                  <p className="text-[#63403A]/90 text-sm md:text-base lg:text-lg leading-relaxed mt-6">
+                    Our operations contribute to the livelihood of numerous families in the region.
+                  </p>
+                </div>
               </div>
-              <p className="text-[#63403A]/90 text-base md:text-lg leading-relaxed mb-6">
-                We actively support the local workforce by providing:
-              </p>
-              <ul className="list-disc list-inside text-[#63403A]/90 text-base md:text-lg leading-relaxed space-y-2 ml-4">
-                <li>Employment across metal, marble, wood, finishing, and assembly departments</li>
-                <li>Skill-building through on-the-job training and structured process exposure</li>
-                <li>Opportunities for artisans and technicians to grow within specialized trades</li>
-              </ul>
-              <p className="text-[#63403A]/90 text-base md:text-lg leading-relaxed mt-6">
-                Our operations contribute to the livelihood of numerous families in the region.
-              </p>
             </div>
 
             <div className="card-item bg-[#AE7250] border-2 border-white rounded-2xl p-10 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]">
@@ -263,24 +291,38 @@ At Akbar Brass Products, sustainability is built into our manufacturing systems,
               3. WELLBEING
             </h2>
 
-            <div className="card-item mb-12 bg-white border-2 border-[#BF8B45] rounded-2xl p-10 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="bg-[#BF8B45] p-5 rounded-xl shadow-lg">
-                  <Heart className="w-10 h-10 text-white" />
+            <div className="card-item mb-12 bg-white border-2 border-[#BF8B45] rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]">
+              <div className="grid md:grid-cols-2 gap-0">
+                {/* Image Section */}
+                <div className="h-[250px] md:h-full overflow-hidden">
+                  <img
+                    src="/team.jpeg"
+                    alt="Safe & Ethical Workplace"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <h3 className="text-2xl md:text-3xl font-semibold text-[#63403A]">
-                  Safe & Ethical Workplace
-                </h3>
+
+                {/* Content Section */}
+                <div className="p-6 md:p-10">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="bg-[#BF8B45] p-5 rounded-xl shadow-lg">
+                      <Heart className="w-10 h-10 text-white" />
+                    </div>
+                    <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold text-[#63403A]">
+                      Safe & Ethical Workplace
+                    </h3>
+                  </div>
+                  <p className="text-[#63403A]/90 text-sm md:text-base lg:text-lg leading-relaxed mb-6">
+                    Our practices are aligned with SEDEX/SMETA principles, emphasising:
+                  </p>
+                  <ul className="list-disc list-inside text-[#63403A]/90 text-sm md:text-base lg:text-lg leading-relaxed space-y-2 ml-4">
+                    <li>Worker safety</li>
+                    <li>Hygienic facilities</li>
+                    <li>Ethical manufacturing standards</li>
+                    <li>Transparent HR and labour practices</li>
+                  </ul>
+                </div>
               </div>
-              <p className="text-[#63403A]/90 text-base md:text-lg leading-relaxed mb-6">
-                Our practices are aligned with SEDEX/SMETA principles, emphasising:
-              </p>
-              <ul className="list-disc list-inside text-[#63403A]/90 text-base md:text-lg leading-relaxed space-y-2 ml-4">
-                <li>Worker safety</li>
-                <li>Hygienic facilities</li>
-                <li>Ethical manufacturing standards</li>
-                <li>Transparent HR and labour practices</li>
-              </ul>
             </div>
 
             <div className="card-item bg-[#63403A] border-2 border-white rounded-2xl p-10 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]">

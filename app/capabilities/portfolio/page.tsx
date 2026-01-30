@@ -74,7 +74,7 @@ At Akbar Brass Products, our portfolio is built on multi-material manufacturing 
             </div>
 
             <div className="h-96 rounded-lg overflow-hidden border border-white/10">
-              <img src="/home-page/metal1.jpg" className="w-full h-full object-cover" />
+              <img src="/home-page/metal1.jpeg" className="w-full h-full object-cover" />
             </div>
           </div>
         </section>
@@ -83,7 +83,7 @@ At Akbar Brass Products, our portfolio is built on multi-material manufacturing 
         <section className="py-16 bg-[#C4AE9F] text-[#63403A] border-b border-[#63403A]/20">
           <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
             <div className="h-96 rounded-lg overflow-hidden order-2 md:order-1 border border-[#63403A]/20">
-              <img src="/home-page/metal.jpg" className="w-full h-full object-cover" />
+              <img src="/home-page/metal1.jpeg" className="w-full h-full object-cover" />
             </div>
 
             <div className="order-1 md:order-2">
@@ -133,7 +133,7 @@ We produce metal, stone, and mixed-material serveware for global markets, focusi
             </div>
 
             <div className="h-96 rounded-lg overflow-hidden border border-[#63403A]/20">
-              <img src="/home-page/marble.jpg" className="w-full h-full object-cover" />
+              <img src="/home-page/marble.jpeg" className="w-full h-full object-cover" />
             </div>
           </div>
         </section>
@@ -142,7 +142,7 @@ We produce metal, stone, and mixed-material serveware for global markets, focusi
         <section className="py-16 bg-[#BF8B45] text-[#63403A] border-b border-[#63403A]/20">
           <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
             <div className="h-96 rounded-lg overflow-hidden order-2 md:order-1 border border-[#63403A]/20">
-              <img src="/home-page/metal2.jpg" className="w-full h-full object-cover" />
+              <img src="/home-page/metal2.jpeg" className="w-full h-full object-cover" />
             </div>
 
             <div className="order-1 md:order-2">
@@ -166,7 +166,7 @@ All lighting products can be developed with UL, CUL, and CE compliance, based o
           </div>
         </section>
 
-        
+
         <section className="py-16 bg-[#9A9D85] text-[#63403A]">
           <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -186,12 +186,16 @@ Outdoor products are developed using weather-resistant processes and durable mat
 Finishes are engineered for outdoor endurance.
 </p>
 </div>
+
+            <div className="h-96 rounded-lg overflow-hidden border border-[#63403A]/20">
+              <img src="/outdoor.jpeg" className="w-full h-full object-cover" />
+            </div>
           </div>
         </section>
          <section className="py-16 bg-[#BF8B45] text-[#63403A] border-b border-[#63403A]/20">
           <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
             <div className="h-96 rounded-lg overflow-hidden order-2 md:order-1 border border-[#63403A]/20">
-              <img src="/produtcsImages/37.jpg" className="w-full h-full object-cover" />
+              <img src="/festive.jpeg" className="w-full h-full object-cover" />
             </div>
 
             <div className="order-1 md:order-2">

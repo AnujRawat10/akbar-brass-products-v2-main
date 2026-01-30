@@ -121,7 +121,7 @@ At Akbar Brass Products, quality is a disciplined, system-driven approach that g
               {/* Image */}
               <div className="h-56 overflow-hidden">
                 <img
-                  src="/quality.jpeg"
+                  src="/qm1.jpeg"
                   alt="Multi-Stage QC System"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
@@ -149,7 +149,7 @@ At Akbar Brass Products, quality is a disciplined, system-driven approach that g
               {/* Image */}
               <div className="h-56 overflow-hidden">
                 <img
-                  src="/qualitymanagement.jpeg"
+                  src="/qm2.jpeg"
                   alt="Product Testing"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
@@ -177,7 +177,7 @@ At Akbar Brass Products, quality is a disciplined, system-driven approach that g
               {/* Image */}
               <div className="h-56 overflow-hidden">
                 <img
-                  src="/compliance.jpeg"
+                  src="/qm3.jpeg"
                   alt="Packaging Standards"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />

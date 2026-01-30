@@ -21,7 +21,7 @@ export default function WhatWeDo() {
   ]
 
   return (
-    <section className="min-h-screen md:min-h-screen flex items-center bg-black text-white px-6 py-16">
+    <section className="h-screen flex items-center bg-black text-white px-6 py-16 overflow-hidden">
       <div className="max-w-6xl mx-auto w-full">
         <h2 className="font-serif text-4xl md:text-5xl text-center mb-8">
           What We Do?

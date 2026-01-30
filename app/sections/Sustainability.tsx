@@ -32,7 +32,7 @@ export default function Sustainability() {
   ]
 
   return (
-    <section className="min-h-screen md:min-h-screen flex items-center justify-center bg-[#485023] text-white px-6 py-8 pb-64 md:pb-72 relative overflow-hidden">
+    <section className="h-screen flex items-center justify-center bg-[#485023] text-white px-6 py-8 pb-64 md:pb-72 relative overflow-hidden">
 
       {/* Background Image with Blend */}
       <div className="absolute inset-0 opacity-30">

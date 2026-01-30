@@ -47,7 +47,7 @@ export default function WhyChooseUs() {
   ]
 
   return (
-    <section className="min-h-screen md:min-h-screen flex items-center bg-[#DCD5C9] px-6 py-16">
+    <section className="h-screen flex items-center bg-[#DCD5C9] px-6 py-16 overflow-hidden">
       <div className="max-w-6xl mx-auto w-full">
         <div className="text-center mb-20">
           <h2 className="font-serif text-4xl md:text-5xl mb-4 text-[#63403A]">

@@ -9,7 +9,7 @@ export default function Compliance() {
   ]
 
   return (
-    <section className="min-h-screen flex items-center bg-[#9A9D85] py-20 md:py-32">
+    <section className="h-screen flex items-center bg-[#9A9D85] py-16 md:py-20 overflow-hidden">
       <div className="w-full px-6 lg:px-12 xl:px-20">
         <div className="max-w-[1400px] mx-auto text-center w-full">
           

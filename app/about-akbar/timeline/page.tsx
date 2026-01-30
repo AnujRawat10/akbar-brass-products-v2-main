@@ -149,7 +149,7 @@ export default function TimelinePage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src="/Complete Campus.png"
+            src="/timeline.jpeg"
             alt="Our Journey"
             className="w-full h-full object-cover"
           />

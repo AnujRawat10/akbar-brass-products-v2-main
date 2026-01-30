@@ -21,20 +21,20 @@ export default function WhatWeDo() {
   ]
 
   return (
-    <section className="h-screen flex items-center bg-black text-white px-6 py-16 overflow-hidden">
+    <section className="h-screen flex items-center bg-black text-white px-6 py-8 overflow-hidden">
       <div className="max-w-6xl mx-auto w-full">
-        <h2 className="font-serif text-4xl md:text-5xl text-center mb-8">
+        <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-center mb-4">
           What We Do?
         </h2>
-        <p className="text-center text-white/80 mb-12 max-w-3xl mx-auto">
+        <p className="text-center text-white/80 text-sm md:text-base mb-8 max-w-3xl mx-auto">
           We manufacture multi-material home products across furniture, décor, lighting, kitchen/serveware, outdoor, and seasonal categories — engineered for global markets.
         </p>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 mb-12">
+        <div className="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-4 mb-8">
           {materials.map((item) => (
             <div
               key={item.title}
-              className="group relative h-[420px] overflow-hidden"
+              className="group relative h-[280px] md:h-[320px] overflow-hidden"
             >
               <img
                 src={item.image}
@@ -42,8 +42,8 @@ export default function WhatWeDo() {
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-all duration-700" />
-              <div className="relative z-10 h-full flex items-end p-8">
-                <h3 className="font-serif text-2xl tracking-wide">
+              <div className="relative z-10 h-full flex items-end p-6">
+                <h3 className="font-serif text-xl md:text-2xl tracking-wide">
                   {item.title}
                 </h3>
               </div>
@@ -54,7 +54,7 @@ export default function WhatWeDo() {
 
         <div className="text-center">
           <Link href="/capabilities/materials">
-          <button className="group relative px-12 py-4 bg-white text-black overflow-hidden transition-all duration-500 uppercase tracking-wider font-medium text-sm md:text-base shadow-2xl hover:shadow-[#BF8B45]/50 transform hover:scale-105">
+          <button className="group relative px-8 md:px-12 py-3 md:py-4 bg-white text-black overflow-hidden transition-all duration-500 uppercase tracking-wider font-medium text-xs md:text-sm shadow-2xl hover:shadow-[#BF8B45]/50 transform hover:scale-105">
             {/* Button hover effect */}
             <span className="absolute inset-0 bg-[#BF8B45] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
             <span className="relative z-10 group-hover:text-white transition-colors duration-500">

@@ -56,49 +56,49 @@ export default function Sustainability() {
           ref={contentRef}
           className="opacity-0 translate-y-10 transition-all duration-1000"
         >
-          <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-[#9A9D85]/30 rounded-full mb-4 backdrop-blur-sm border border-white/20">
-              <Leaf className="w-10 h-10 text-[#BF8B45]" />
+          <div className="text-center mb-6">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-[#9A9D85]/30 rounded-full mb-3 backdrop-blur-sm border border-white/20">
+              <Leaf className="w-8 h-8 text-[#BF8B45]" />
             </div>
 
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl mb-4 font-bold">
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl mb-3 font-bold">
               Sustainability
             </h2>
 
-            <div className="w-24 h-[2px] bg-[#BF8B45] mx-auto mb-6" />
+            <div className="w-20 h-[2px] bg-[#BF8B45] mx-auto mb-4" />
 
-            <p className="max-w-3xl mx-auto mb-8 text-white/90 text-lg md:text-xl leading-relaxed">
+            <p className="max-w-3xl mx-auto mb-6 text-white/90 text-sm md:text-base lg:text-lg leading-relaxed">
               Sustainable manufacturing supported by ETP, STP, RO systems and dust collectors for clean, compliant production across metal and marble units.
             </p>
           </div>
 
           {/* Feature Icons */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8 max-w-4xl mx-auto">
-            <div className="flex flex-col items-center p-6 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 hover:bg-white/10 transition-all duration-300">
-              <Droplet className="w-8 h-8 text-[#BF8B45] mb-3" />
-              <span className="text-sm text-white/80 font-medium">Water Treatment</span>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6 max-w-4xl mx-auto">
+            <div className="flex flex-col items-center p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 hover:bg-white/10 transition-all duration-300">
+              <Droplet className="w-6 h-6 text-[#BF8B45] mb-2" />
+              <span className="text-xs md:text-sm text-white/80 font-medium text-center">Water Treatment</span>
             </div>
-            
-            <div className="flex flex-col items-center p-6 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 hover:bg-white/10 transition-all duration-300">
-              <Recycle className="w-8 h-8 text-[#BF8B45] mb-3" />
-              <span className="text-sm text-white/80 font-medium">Recycling Systems</span>
+
+            <div className="flex flex-col items-center p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 hover:bg-white/10 transition-all duration-300">
+              <Recycle className="w-6 h-6 text-[#BF8B45] mb-2" />
+              <span className="text-xs md:text-sm text-white/80 font-medium text-center">Recycling Systems</span>
             </div>
-            
-            <div className="flex flex-col items-center p-6 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 hover:bg-white/10 transition-all duration-300">
-              <Wind className="w-8 h-8 text-[#BF8B45] mb-3" />
-              <span className="text-sm text-white/80 font-medium">Air Quality Control</span>
+
+            <div className="flex flex-col items-center p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 hover:bg-white/10 transition-all duration-300">
+              <Wind className="w-6 h-6 text-[#BF8B45] mb-2" />
+              <span className="text-xs md:text-sm text-white/80 font-medium text-center">Air Quality Control</span>
             </div>
-            
-            <div className="flex flex-col items-center p-6 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 hover:bg-white/10 transition-all duration-300">
-              <Leaf className="w-8 h-8 text-[#BF8B45] mb-3" />
-              <span className="text-sm text-white/80 font-medium">Clean Production</span>
+
+            <div className="flex flex-col items-center p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 hover:bg-white/10 transition-all duration-300">
+              <Leaf className="w-6 h-6 text-[#BF8B45] mb-2" />
+              <span className="text-xs md:text-sm text-white/80 font-medium text-center">Clean Production</span>
             </div>
           </div>
 
           {/* CTA Button */}
           <div className="text-center mb-12">
             <Link href="/sustainability">
-          <button className="group relative px-12 py-4 bg-white text-black overflow-hidden transition-all duration-500 uppercase tracking-wider font-medium text-sm md:text-base shadow-2xl hover:shadow-[#BF8B45]/50 transform hover:scale-105">
+          <button className="group relative px-8 md:px-12 py-3 md:py-4 bg-white text-black overflow-hidden transition-all duration-500 uppercase tracking-wider font-medium text-xs md:text-sm shadow-2xl hover:shadow-[#BF8B45]/50 transform hover:scale-105">
             {/* Button hover effect */}
             <span className="absolute inset-0 bg-[#BF8B45] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
             <span className="relative z-10 group-hover:text-white transition-colors duration-500">

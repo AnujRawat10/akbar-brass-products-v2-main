@@ -214,8 +214,12 @@
 
 /* ================= SCROLL SNAP (All Screens) ================= */
 
-html:has(.scroll-snap-container) {
+.scroll-snap-container {
+  height: 100vh;
+  height: 100dvh;
+  overflow-y: scroll;
   scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
 }
 
 .scroll-snap-container > section {

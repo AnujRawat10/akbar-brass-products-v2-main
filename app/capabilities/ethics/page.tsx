@@ -177,7 +177,7 @@ At Akbar Brass Products, quality is a disciplined, system-driven approach that g
               {/* Image */}
               <div className="h-56 overflow-hidden">
                 <img
-                  src="/qm3.jpeg"
+                  src="/Pages/3 Capabilities/3 Ethics & Compliance/Screenshot 2026-01-26 at 4.08.43 PM.png"
                   alt="Packaging Standards"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />

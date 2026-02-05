@@ -9,7 +9,7 @@ export default function Compliance() {
   ]
 
   return (
-    <section className="h-screen flex items-center bg-[#9A9D85] py-8 overflow-hidden">
+    <section className="h-screen flex items-center bg-[#9A9D85] py-8 overflow-hidden snap-start">
       <div className="w-full px-6 lg:px-12">
         <div className="max-w-6xl mx-auto text-center w-full">
 

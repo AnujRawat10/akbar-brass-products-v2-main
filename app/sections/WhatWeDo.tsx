@@ -21,20 +21,20 @@ export default function WhatWeDo() {
   ]
 
   return (
-    <section className="h-screen flex items-center bg-black text-white px-6 py-8 overflow-hidden">
+    <section className="min-h-screen md:h-screen flex items-center bg-black text-white px-6 py-12 md:py-8 overflow-hidden snap-start">
       <div className="max-w-6xl mx-auto w-full">
-        <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-center mb-4">
+        <h2 className="font-serif text-2xl md:text-4xl lg:text-5xl text-center mb-3 md:mb-4">
           What We Do?
         </h2>
-        <p className="text-center text-white/80 text-sm md:text-base mb-8 max-w-3xl mx-auto">
+        <p className="text-center text-white/80 text-xs md:text-base mb-6 md:mb-8 max-w-3xl mx-auto">
           We manufacture multi-material home products across furniture, décor, lighting, kitchen/serveware, outdoor, and seasonal categories — engineered for global markets.
         </p>
 
-        <div className="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-4 mb-8">
+        <div className="grid gap-3 md:gap-6 md:grid-cols-2 lg:grid-cols-4 mb-6 md:mb-8">
           {materials.map((item) => (
             <div
               key={item.title}
-              className="group relative h-[280px] md:h-[320px] overflow-hidden"
+              className="group relative h-[200px] md:h-[320px] overflow-hidden"
             >
               <img
                 src={item.image}
@@ -42,8 +42,8 @@ export default function WhatWeDo() {
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-all duration-700" />
-              <div className="relative z-10 h-full flex items-end p-6">
-                <h3 className="font-serif text-xl md:text-2xl tracking-wide">
+              <div className="relative z-10 h-full flex items-end p-4 md:p-6">
+                <h3 className="font-serif text-lg md:text-2xl tracking-wide">
                   {item.title}
                 </h3>
               </div>

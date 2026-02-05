@@ -48,7 +48,7 @@ export default function Hero() {
   }, [])
 
   return (
-    <section className="relative h-[100svh] overflow-hidden">
+    <section className="relative h-[100svh] overflow-hidden snap-start">
 
       {/* Background video */}
       <video

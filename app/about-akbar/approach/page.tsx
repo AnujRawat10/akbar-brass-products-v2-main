@@ -133,28 +133,28 @@ export default function ApproachPage() {
       title: "Precision as a Discipline",
       description:
         "Accuracy guides every stage of production. Each product is built around defined specifications, controlled parameters, and engineered constructions that ensure stability, consistency, and repeatability at scale.",
-      image: "/quality.jpeg"
+      image: "/Pages/2 About Akbar/2 The Akbar Approach/C0995T01.JPG"
     },
     {
       icon: Wrench,
       title: "Systems That Build Consistency",
       description:
         "Our horizontally integrated workflow — spanning metal fabrication, marble processing, woodworking, finishing, assembly, testing, and export packing — ensures uniform quality across all batches. Structured SOPs, documented checkpoints, and clear responsibility frameworks support every step.",
-      image: "/precision.png"
+      image: "/Pages/2 About Akbar/2 The Akbar Approach/Screenshot 2026-01-26 at 5.10.51 PM.png"
     },
     {
       icon: Lightbulb,
       title: "Purpose-Driven Innovation",
       description:
         "Innovation at Akbar is practical and measurable. We adopt new machinery, refine processes, and enhance finishes only when it improves efficiency, durability, or production accuracy. Every upgrade must deliver real value to manufacturing outcomes.",
-      image: "/qualitymanagement.jpeg"
+      image: "/Pages/2 About Akbar/2 The Akbar Approach/C1059T01.JPG"
     },
     {
       icon: Users,
       title: "Skilled People, Strong Manufacturing",
       description:
         "Our teams include trained artisans, technicians, engineers, and specialists working within defined systems. Continuous skill development, safe working conditions, and methodical supervision support reliable, steady production.",
-      image: "/team.jpeg"
+      image: "/Pages/2 About Akbar/2 The Akbar Approach/Screenshot 2026-01-26 at 4.27.19 PM.png"
     },
     {
       icon: Layers,

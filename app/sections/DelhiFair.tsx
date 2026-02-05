@@ -2,7 +2,7 @@
 
 export default function DelhiFair() {
   return (
-    <section className="bg-[#FAF6F2] h-screen flex items-center justify-center text-black text-left py-8 overflow-hidden">
+    <section className="bg-[#FAF6F2] h-screen flex items-center justify-center text-black text-left py-8 overflow-hidden snap-start">
       <div className="w-full px-6 lg:px-12">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 

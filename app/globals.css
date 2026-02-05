@@ -211,3 +211,14 @@
     font-size: 1.1875rem; /* 19px */
   }
 }
+
+/* ================= SCROLL SNAP (All Screens) ================= */
+
+html:has(.scroll-snap-container) {
+  scroll-snap-type: y mandatory;
+}
+
+.scroll-snap-container > section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}

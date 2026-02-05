@@ -14,13 +14,40 @@ export default function Hero() {
   const audioRef = useRef<HTMLAudioElement | null>(null)
 
   const [scrollY, setScrollY] = useState(0)
-  const [muted, setMuted] = useState(true)
+  const [muted, setMuted] = useState(false)
 
   /* Parallax scroll */
   useEffect(() => {
     const onScroll = () => setScrollY(window.scrollY)
     window.addEventListener("scroll", onScroll)
     return () => window.removeEventListener("scroll", onScroll)
+  }, [])
+
+  /* Auto-play audio with sound (handle browser restrictions) */
+  useEffect(() => {
+    const playAudio = async () => {
+      if (audioRef.current) {
+        try {
+          audioRef.current.muted = false
+          await audioRef.current.play()
+          setMuted(false)
+        } catch {
+          // Browser blocked autoplay with sound, keep it muted
+          audioRef.current.muted = true
+          setMuted(true)
+        }
+      }
+      if (videoRef.current) {
+        try {
+          videoRef.current.muted = false
+          await videoRef.current.play()
+        } catch {
+          // Browser blocked, mute the video too
+          videoRef.current.muted = true
+        }
+      }
+    }
+    playAudio()
   }, [])
 
   /* GSAP TEXT ANIMATION */
@@ -55,7 +82,7 @@ export default function Hero() {
         ref={videoRef}
         autoPlay
         loop
-        muted={muted}
+        muted
         playsInline
         className="absolute inset-0 w-full h-full object-cover"
         style={{ transform: `scale(${1 + scrollY * 0.00008})` }}
@@ -68,7 +95,7 @@ export default function Hero() {
         ref={audioRef}
         autoPlay
         loop
-        muted={muted}
+        muted
         className="hidden"
       >
         <source src="/337_short2_light-years_0036.mp3" type="audio/mpeg" />

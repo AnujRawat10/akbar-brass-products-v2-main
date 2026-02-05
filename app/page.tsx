@@ -13,7 +13,7 @@ import FinalCTA from "./sections/FinalCTA"
 
 export default function Page() {
   return (
-    <>
+    <div className="scroll-snap-container">
       <Hero />
       {/* <Stats /> */}
       <About />
@@ -24,6 +24,6 @@ export default function Page() {
       <DelhiFair />
       <Compliance />
       {/* <FinalCTA /> */}
-    </>
+    </div>
   )
 }

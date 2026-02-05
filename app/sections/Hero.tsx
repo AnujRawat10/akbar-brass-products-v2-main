@@ -14,7 +14,7 @@ export default function Hero() {
   const audioRef = useRef<HTMLAudioElement | null>(null)
 
   const [scrollY, setScrollY] = useState(0)
-  const [muted, setMuted] = useState(false)
+  const [muted, setMuted] = useState(true)
 
   /* Parallax scroll */
   useEffect(() => {
@@ -23,31 +23,20 @@ export default function Hero() {
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
 
-  /* Auto-play audio with sound (handle browser restrictions) */
+  /* Try to autoplay background music (handle browser restrictions) */
   useEffect(() => {
-    const playAudio = async () => {
+    const tryPlayMusic = async () => {
       if (audioRef.current) {
         try {
-          audioRef.current.muted = false
           await audioRef.current.play()
           setMuted(false)
         } catch {
-          // Browser blocked autoplay with sound, keep it muted
-          audioRef.current.muted = true
+          // Browser blocked autoplay, user needs to click to enable
           setMuted(true)
         }
       }
-      if (videoRef.current) {
-        try {
-          videoRef.current.muted = false
-          await videoRef.current.play()
-        } catch {
-          // Browser blocked, mute the video too
-          videoRef.current.muted = true
-        }
-      }
     }
-    playAudio()
+    tryPlayMusic()
   }, [])
 
   /* GSAP TEXT ANIMATION */
@@ -93,9 +82,7 @@ export default function Hero() {
       {/* Background Music */}
       <audio
         ref={audioRef}
-        autoPlay
         loop
-        muted
         className="hidden"
       >
         <source src="/337_short2_light-years_0036.mp3" type="audio/mpeg" />
@@ -107,13 +94,17 @@ export default function Hero() {
       {/* MUTE / UNMUTE BUTTON */}
       <button
         onClick={() => {
-          if (videoRef.current) {
-            videoRef.current.muted = !muted
-          }
           if (audioRef.current) {
-            audioRef.current.muted = !muted
+            if (muted) {
+              // Unmute and play
+              audioRef.current.play()
+              setMuted(false)
+            } else {
+              // Mute and pause
+              audioRef.current.pause()
+              setMuted(true)
+            }
           }
-          setMuted(!muted)
         }}
         aria-label="Toggle sound"
         className="

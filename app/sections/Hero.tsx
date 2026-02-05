@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
-import { ArrowRight, Volume2, VolumeX } from "lucide-react"
+// import { Volume2, VolumeX } from "lucide-react"
 import gsap from "gsap"
 import SplitText from "gsap/SplitText"
 
@@ -11,10 +11,10 @@ gsap.registerPlugin(SplitText)
 export default function Hero() {
   const headingRef = useRef<HTMLHeadingElement | null>(null)
   const videoRef = useRef<HTMLVideoElement | null>(null)
-  const audioRef = useRef<HTMLAudioElement | null>(null)
+  // const audioRef = useRef<HTMLAudioElement>(null)
 
   const [scrollY, setScrollY] = useState(0)
-  const [muted, setMuted] = useState(true)
+  // const [isMuted, setIsMuted] = useState(false)
 
   /* Parallax scroll */
   useEffect(() => {
@@ -23,21 +23,17 @@ export default function Hero() {
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
 
-  /* Try to autoplay background music (handle browser restrictions) */
-  useEffect(() => {
-    const tryPlayMusic = async () => {
-      if (audioRef.current) {
-        try {
-          await audioRef.current.play()
-          setMuted(false)
-        } catch {
-          // Browser blocked autoplay, user needs to click to enable
-          setMuted(true)
-        }
-      }
-    }
-    tryPlayMusic()
-  }, [])
+  /* Autoplay music on load */
+  // useEffect(() => {
+  //   const audio = audioRef.current
+  //   if (audio) {
+  //     audio.volume = 0.5
+  //     audio.play().catch(() => {
+  //       // Browser blocked autoplay, will need user interaction
+  //       setIsMuted(true)
+  //     })
+  //   }
+  // }, [])
 
   /* GSAP TEXT ANIMATION */
   useEffect(() => {
@@ -80,48 +76,25 @@ export default function Hero() {
       </video>
 
       {/* Background Music */}
-      <audio
-        ref={audioRef}
-        loop
-        className="hidden"
-      >
-        <source src="/337_short2_light-years_0036.mp3" type="audio/mpeg" />
-      </audio>
+      {/* <audio ref={audioRef} src="/337_short2_light-years_0036.mp3" loop /> */}
 
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/60" />
 
-      {/* MUTE / UNMUTE BUTTON */}
-      <button
+      {/* Audio Toggle Button */}
+      {/* <button
+        type="button"
         onClick={() => {
-          if (audioRef.current) {
-            if (muted) {
-              // Unmute and play
-              audioRef.current.play()
-              setMuted(false)
-            } else {
-              // Mute and pause
-              audioRef.current.pause()
-              setMuted(true)
-            }
+          const audio = audioRef.current
+          if (audio) {
+            audio.muted = !isMuted
+            setIsMuted(!isMuted)
           }
         }}
-        aria-label="Toggle sound"
-        className="
-          absolute bottom-6 left-6 z-20
-          bg-black/60 backdrop-blur
-          text-white
-          p-3 rounded-full
-          hover:bg-black/80
-          transition-all duration-300
-        "
+        className="fixed bottom-6 left-6 z-[9999] bg-black/60 backdrop-blur text-white p-3 rounded-full hover:bg-black/80 transition-all duration-300"
       >
-        {muted ? (
-          <VolumeX className="w-5 h-5" />
-        ) : (
-          <Volume2 className="w-5 h-5" />
-        )}
-      </button>
+        {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
+      </button> */}
 
       {/* CONTENT */}
       <div className="relative z-10 flex items-center justify-center h-full px-6 text-center">
@@ -192,22 +165,17 @@ export default function Hero() {
             </span>
           </h1>
 
-          {/* Subtext */}
-          {/* <p className="text-white/80 text-lg md:text-xl mt-8 max-w-3xl mx-auto">
-            Three generations of craftsmanship. One commitment to excellence.
-          </p> */}
-
           {/* CTA */}
           <div className="mt-12 flex justify-center">
             <Link href="/capabilities/materials">
-          <button className="group relative px-12 py-4 bg-white text-black overflow-hidden transition-all duration-500 uppercase tracking-wider font-medium text-sm md:text-base shadow-2xl hover:shadow-[#BF8B45]/50 transform hover:scale-105">
-            {/* Button hover effect */}
-            <span className="absolute inset-0 bg-[#BF8B45] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-            <span className="relative z-10 group-hover:text-white transition-colors duration-500">
-              Explore Our Capabilities 
-            </span>
-          </button>
-        </Link>
+              <button className="group relative px-12 py-4 bg-white text-black overflow-hidden transition-all duration-500 uppercase tracking-wider font-medium text-sm md:text-base shadow-2xl hover:shadow-[#BF8B45]/50 transform hover:scale-105">
+                {/* Button hover effect */}
+                <span className="absolute inset-0 bg-[#BF8B45] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                <span className="relative z-10 group-hover:text-white transition-colors duration-500">
+                  Explore Our Capabilities
+                </span>
+              </button>
+            </Link>
           </div>
 
         </div>

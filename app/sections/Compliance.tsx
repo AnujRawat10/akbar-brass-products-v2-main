@@ -25,15 +25,15 @@ export default function Compliance() {
           </div>
 
           {/* Logos Grid */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-6 mb-4 sm:mb-6 md:mb-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 mb-4 sm:mb-6 md:mb-8">
             {logos.map((l, i) => (
               <div
                 key={i}
-                className="bg-white p-4 sm:p-5 md:p-8 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group rounded-lg"
+                className="bg-white p-5 sm:p-6 md:p-10 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group rounded-lg"
               >
                 <img
                   src={l}
-                  className="mx-auto h-12 sm:h-14 md:max-h-20 w-auto object-contain group-hover:scale-110 transition-transform duration-500"
+                  className="mx-auto h-16 sm:h-20 md:h-24 lg:h-28 w-auto object-contain group-hover:scale-110 transition-transform duration-500"
                   alt={`Certification ${i+1}`}
                 />
               </div>

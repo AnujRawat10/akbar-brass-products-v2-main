@@ -49,6 +49,7 @@ export default function Preloader() {
             width={280}
             height={140}
             priority
+            style={{ width: 'auto', height: 'auto' }}
           />
         </div>
 

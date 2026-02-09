@@ -47,13 +47,13 @@ export default function WhyChooseUs() {
   ]
 
   return (
-    <section className="h-[100svh] flex items-center bg-[#DCD5C9] px-4 sm:px-6 py-6 md:py-8 overflow-hidden snap-start">
+    <section className="h-[100svh] flex items-center bg-[#DCD5C9] px-4 sm:px-6 pt-20 md:pt-24 pb-6 md:pb-8 overflow-hidden snap-start">
       <div className="max-w-6xl mx-auto w-full">
         <div className="text-center mb-3 sm:mb-4 md:mb-6">
-          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-2 md:mb-3 text-[#63403A]">
+          <h2 className="font-serif mt-4 text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-2 md:mb-3 text-[#63403A]">
             Why Choose Us?
           </h2>
-          <div className="w-16 md:w-24 h-[1px] bg-[#BF8B45] mx-auto" />
+          {/* <div className="w-16 md:w-24 h-[1px] bg-[#BF8B45] mx-auto" /> */}
         </div>
 
         <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-6 mb-3 sm:mb-4 md:mb-6">

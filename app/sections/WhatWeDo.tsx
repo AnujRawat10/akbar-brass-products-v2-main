@@ -21,9 +21,9 @@ export default function WhatWeDo() {
   ]
 
   return (
-    <section className="h-[100svh] flex items-center bg-black text-white px-4 sm:px-6 py-6 md:py-8 overflow-hidden snap-start">
+    <section className="h-[100svh] flex items-center bg-black text-white px-4 sm:px-6 pt-20 md:pt-24 pb-6 md:pb-8 overflow-hidden snap-start">
       <div className="max-w-6xl mx-auto w-full">
-        <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center mb-2 md:mb-4">
+        <h2 className="font-serif mt-4 text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center mb-2 md:mb-4">
           What We Do?
         </h2>
         <p className="text-center text-white/80 text-[11px] sm:text-xs md:text-base mb-4 md:mb-8 max-w-3xl mx-auto px-2">

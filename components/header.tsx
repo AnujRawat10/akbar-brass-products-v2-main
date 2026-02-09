@@ -17,26 +17,55 @@ export function Header({ cartItemCount = 0, onCartClick }: HeaderProps = {}) {
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20)
+    let scrollContainer: Element | null = null
+    let rafId: number | null = null
 
-    // Also listen to scroll-snap-container scroll
-    const scrollContainer = document.querySelector('.scroll-snap-container')
-    const onContainerScroll = () => {
+    const checkScroll = () => {
+      // Try to find the container if not found yet
+      if (!scrollContainer) {
+        scrollContainer = document.querySelector('.scroll-snap-container')
+      }
+
       if (scrollContainer) {
         setScrolled(scrollContainer.scrollTop > 20)
+      } else {
+        setScrolled(window.scrollY > 20)
       }
     }
 
-    window.addEventListener("scroll", onScroll)
-    if (scrollContainer) {
-      scrollContainer.addEventListener("scroll", onContainerScroll)
+    const onScroll = () => {
+      if (rafId) return
+      rafId = requestAnimationFrame(() => {
+        checkScroll()
+        rafId = null
+      })
     }
+
+    // Check scroll position repeatedly until container is found
+    const findContainerAndListen = () => {
+      scrollContainer = document.querySelector('.scroll-snap-container')
+
+      if (scrollContainer) {
+        checkScroll()
+        scrollContainer.addEventListener("scroll", onScroll, { passive: true })
+      } else {
+        // Retry after a short delay if container not found
+        setTimeout(findContainerAndListen, 50)
+      }
+    }
+
+    // Start looking for the container
+    findContainerAndListen()
+
+    // Also listen to window scroll as fallback
+    window.addEventListener("scroll", onScroll, { passive: true })
 
     return () => {
       window.removeEventListener("scroll", onScroll)
       if (scrollContainer) {
-        scrollContainer.removeEventListener("scroll", onContainerScroll)
+        scrollContainer.removeEventListener("scroll", onScroll)
       }
+      if (rafId) cancelAnimationFrame(rafId)
     }
   }, [])
 

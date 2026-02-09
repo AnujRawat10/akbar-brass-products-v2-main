@@ -7,7 +7,7 @@ import Link from "next/link"
 export default function About() {
 
   return (
-    <section className="h-[100svh] bg-[#B8764F] pt-20 sm:pt-6 md:pt-8 pb-4 sm:pb-6 md:pb-8 flex flex-col justify-center overflow-hidden snap-start">
+    <section className="h-[100svh] bg-[#B8764F] pt-20 sm:pt-20 md:pt-24 pb-4 sm:pb-6 md:pb-8 flex flex-col justify-center overflow-hidden snap-start">
       {/* Header Section */}
       <div className="text-center mb-4 md:mb-6 px-6">
         <div className="max-w-6xl mx-auto">

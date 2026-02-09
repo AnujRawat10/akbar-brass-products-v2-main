@@ -10,6 +10,7 @@ import Sustainability from "./sections/Sustainability"
 import DelhiFair from "./sections/DelhiFair"
 import Compliance from "./sections/Compliance"
 import FinalCTA from "./sections/FinalCTA"
+import { Footer } from "@/components/footer"
 
 export default function Page() {
   return (
@@ -24,6 +25,7 @@ export default function Page() {
       <DelhiFair />
       <Compliance />
       {/* <FinalCTA /> */}
+      <Footer />
     </div>
   )
 }

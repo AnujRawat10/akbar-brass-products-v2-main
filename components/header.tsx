@@ -18,8 +18,26 @@ export function Header({ cartItemCount = 0, onCartClick }: HeaderProps = {}) {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
+
+    // Also listen to scroll-snap-container scroll
+    const scrollContainer = document.querySelector('.scroll-snap-container')
+    const onContainerScroll = () => {
+      if (scrollContainer) {
+        setScrolled(scrollContainer.scrollTop > 20)
+      }
+    }
+
     window.addEventListener("scroll", onScroll)
-    return () => window.removeEventListener("scroll", onScroll)
+    if (scrollContainer) {
+      scrollContainer.addEventListener("scroll", onContainerScroll)
+    }
+
+    return () => {
+      window.removeEventListener("scroll", onScroll)
+      if (scrollContainer) {
+        scrollContainer.removeEventListener("scroll", onContainerScroll)
+      }
+    }
   }, [])
 
   useEffect(() => {

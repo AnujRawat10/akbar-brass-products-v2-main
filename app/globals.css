@@ -217,12 +217,33 @@
 .scroll-snap-container {
   height: 100vh;
   height: 100dvh;
-  overflow-y: scroll;
+  overflow-y: auto;
+  overflow-x: hidden;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
 }
 
-.scroll-snap-container > section {
+.scroll-snap-container > section,
+.scroll-snap-container > footer {
   scroll-snap-align: start;
   scroll-snap-stop: always;
+}
+
+/* Footer inside scroll-snap-container should have proper height */
+.scroll-snap-container > footer {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Hide body scrollbar when scroll-snap-container is present */
+body:has(.scroll-snap-container) {
+  overflow: hidden;
+}
+
+/* Hide the layout footer when scroll-snap-container has its own footer */
+main:has(.scroll-snap-container) ~ footer,
+main:has(.scroll-snap-container) ~ a[aria-label="Chat on WhatsApp"] {
+  display: none;
 }

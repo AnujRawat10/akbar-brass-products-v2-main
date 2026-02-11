@@ -147,7 +147,7 @@ export default function ApproachPage() {
       title: "Purpose-Driven Innovation",
       description:
         "Innovation at Akbar is practical and measurable. We adopt new machinery, refine processes, and enhance finishes only when it improves efficiency, durability, or production accuracy. Every upgrade must deliver real value to manufacturing outcomes.",
-      image: "/Pages/2 About Akbar/2 The Akbar Approach/C1059T01.JPG"
+      image: "/WhatsApp Image 2026-02-11 at 18.09.16.jpeg"
     },
     {
       icon: Users,

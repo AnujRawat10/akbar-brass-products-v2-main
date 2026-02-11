@@ -1,6 +1,6 @@
 "use client"
 import { useEffect, useRef } from "react"
-import { Droplets, Wind, Recycle, Users, GraduationCap, Heart } from "lucide-react"
+import { Droplets, Wind, Recycle, Users, GraduationCap, Heart, ClipboardCheck } from "lucide-react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 
@@ -150,7 +150,7 @@ At Akbar Brass Products, sustainability is built into our manufacturing systems,
                 {/* Image Section */}
                 <div className="h-[250px] md:h-full overflow-hidden">
                   <img
-                    src="/sus.png"
+                    src="/WhatsApp Image 2026-02-11 at 18.41.51.jpeg"
                     alt="Water Resource Management"
                     className="w-full h-full object-cover"
                   />
@@ -205,7 +205,7 @@ At Akbar Brass Products, sustainability is built into our manufacturing systems,
               </p>
             </div>
 
-            <div className="card-item bg-white border-2 border-[#9A9D85] rounded-2xl p-10 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]">
+            <div className="card-item mb-12 bg-white border-2 border-[#9A9D85] rounded-2xl p-10 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]">
               <div className="flex items-center gap-4 mb-6">
                 <div className="bg-[#9A9D85] p-5 rounded-xl shadow-lg">
                   <Recycle className="w-10 h-10 text-white" />
@@ -223,6 +223,26 @@ At Akbar Brass Products, sustainability is built into our manufacturing systems,
                 <li>Cutting patterns for metal, marble, and wood are optimized to reduce wastage</li>
               </ul>
             </div>
+
+            <div className="card-item bg-[#485023] border-2 border-white rounded-2xl p-10 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="bg-white/20 p-5 rounded-xl shadow-lg">
+                  <ClipboardCheck className="w-10 h-10 text-white" />
+                </div>
+                <h3 className="text-2xl md:text-3xl font-semibold text-white">
+                  Environmental Audits & Continuous Improvement
+                </h3>
+              </div>
+              <p className="text-white/90 text-base md:text-lg leading-relaxed mb-6">
+                Our manufacturing facility undergoes independent third-party environmental audits against internationally recognised compliance frameworks.
+              </p>
+              <p className="text-white/90 text-base md:text-lg leading-relaxed mb-6">
+                These assessments review environmental management systems, energy and water use, wastewater treatment, emissions, waste handling, chemical management, and emergency preparedness.
+              </p>
+              <p className="text-white/90 text-base md:text-lg leading-relaxed">
+                Insights from audit processes are used internally to strengthen operational controls and support ongoing improvements across our environmental practices.
+              </p>
+            </div>
           </div>
         </section>
 
@@ -237,7 +257,7 @@ At Akbar Brass Products, sustainability is built into our manufacturing systems,
                 {/* Image Section */}
                 <div className="h-[250px] md:h-full overflow-hidden">
                   <img
-                    src="/excellence.jpeg"
+                    src="/WhatsApp Image 2026-02-11 at 18.44.13.jpeg"
                     alt="Local Employment & Skill Development"
                     className="w-full h-full object-cover"
                   />
@@ -296,7 +316,7 @@ At Akbar Brass Products, sustainability is built into our manufacturing systems,
                 {/* Image Section */}
                 <div className="h-[250px] md:h-full overflow-hidden">
                   <img
-                    src="/team.jpeg"
+                    src="/WhatsApp Image 2026-02-11 at 18.41.57.jpeg"
                     alt="Safe & Ethical Workplace"
                     className="w-full h-full object-cover"
                   />

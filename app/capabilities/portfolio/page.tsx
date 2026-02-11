@@ -24,7 +24,7 @@ export default function PortfolioPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src="/product.png"
+            src="/WhatsApp Image 2026-02-11 at 18.30.59.jpeg"
             alt="Our Capabilities"
             className="w-full h-full object-cover"
           />
@@ -83,7 +83,7 @@ At Akbar Brass Products, our portfolio is built on multi-material manufacturing 
         <section className="py-16 bg-[#C4AE9F] text-[#63403A] border-b border-[#63403A]/20">
           <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
             <div className="h-96 rounded-lg overflow-hidden order-2 md:order-1 border border-[#63403A]/20">
-              <img src="/home-page/metal1.jpeg" className="w-full h-full object-cover" />
+              <img src="/WhatsApp Image 2026-02-11 at 18.29.45.jpeg" className="w-full h-full object-cover" />
             </div>
 
             <div className="order-1 md:order-2">

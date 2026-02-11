@@ -80,7 +80,7 @@ export default function EthicsPageRedesigned() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src="/team.jpeg"
+            src="/WhatsApp Image 2026-02-11 at 18.36.38 copy.jpeg"
             alt="Our Capabilities"
             className="w-full h-full object-cover"
           />

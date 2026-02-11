@@ -9,6 +9,7 @@ interface Feature {
   title: string;
   description: string;
   icon: React.ReactNode;
+  image: string;
 }
 
 function MaterialExcellenceSection() {
@@ -21,28 +22,32 @@ function MaterialExcellenceSection() {
       number: '01',
       title: 'Multi-Material Mastery',
       description: 'Expert handling of metal, marble, wood, and composite materials under one roof.',
-      icon: <Award className="w-8 h-8" />
+      icon: <Award className="w-8 h-8" />,
+      image: '/materialexcellence/WhatsApp Image 2026-02-11 at 18.18.41.jpeg'
     },
     {
       id: 2,
       number: '02',
       title: 'Finish Consistency',
       description: 'Standardized finishing processes ensuring uniform quality across production batches.',
-      icon: <CheckCircle2 className="w-8 h-8" />
+      icon: <CheckCircle2 className="w-8 h-8" />,
+      image: '/materialexcellence/WhatsApp Image 2026-02-11 at 18.21.02.jpeg'
     },
     {
       id: 3,
       number: '03',
       title: 'Custom Development',
       description: 'In-house capability to develop and test new material combinations and finish techniques.',
-      icon: <Sparkles className="w-8 h-8" />
+      icon: <Sparkles className="w-8 h-8" />,
+      image: '/materialexcellence/WhatsApp Image 2026-02-11 at 18.21.27.jpeg'
     },
     {
       id: 4,
       number: '04',
       title: 'Durability Testing',
       description: 'Every finish undergoes rigorous testing for adhesion, corrosion resistance, and longevity.',
-      icon: <Shield className="w-8 h-8" />
+      icon: <Shield className="w-8 h-8" />,
+      image: '/materialexcellence/WhatsApp Image 2026-02-11 at 18.21.31.jpeg'
     }
   ];
 
@@ -78,19 +83,18 @@ function MaterialExcellenceSection() {
         </div>
 
         {/* Cards Grid */}
-        <div className="flex flex-col md:flex-row gap-0 min-h-[500px]">
+        <div className="flex flex-col md:flex-row gap-0">
           {features.map((feature) => (
             <div
               key={feature.id}
               className={`
                 bg-white/10 backdrop-blur-sm border border-white/20
-                p-8 sm:p-10 lg:p-12
                 cursor-pointer
                 relative
                 transition-all duration-500 ease-in-out
                 ${(expandedCard === feature.id || clickedCard === feature.id)
-                  ? 'flex-[2] md:flex-[2]'
-                  : 'flex-1'
+                  ? 'flex-[2] md:flex-[2] p-6 sm:p-8 lg:p-10'
+                  : 'flex-1 p-5 sm:p-6 lg:p-8'
                 }
                 ${expandedCard === null && clickedCard === null ? 'hover:bg-white/15' : ''}
                 overflow-hidden
@@ -118,19 +122,18 @@ function MaterialExcellenceSection() {
                 {/* Header */}
                 <div>
                   <span className={`
-                    block text-sm sm:text-base font-semibold mb-4
-                    transition-colors duration-400
-                    ${(expandedCard === feature.id || clickedCard === feature.id) ? 'text-[#BF8B45]' : 'text-white/60'}
+                    block text-sm sm:text-base font-semibold transition-colors duration-400
+                    ${(expandedCard === feature.id || clickedCard === feature.id) ? 'text-[#BF8B45] mb-3' : 'text-white/60 mb-2'}
                   `}>
                     {feature.number}
                   </span>
 
                   {/* Icon */}
                   <div className={`
-                    mb-6 transition-all duration-500
+                    transition-all duration-500
                     ${(expandedCard === feature.id || clickedCard === feature.id)
-                      ? 'text-[#BF8B45] scale-110'
-                      : 'text-white/80'
+                      ? 'text-[#BF8B45] scale-110 mb-4'
+                      : 'text-white/80 mb-3'
                     }
                   `}>
                     {feature.icon}
@@ -138,28 +141,43 @@ function MaterialExcellenceSection() {
 
                   {/* Title */}
                   <h3 className={`
-                    font-serif font-semibold leading-tight mb-4
-                    transition-all duration-400
+                    font-serif font-semibold leading-tight transition-all duration-400
                     ${(expandedCard === feature.id || clickedCard === feature.id)
-                      ? 'text-2xl sm:text-3xl lg:text-4xl text-white'
-                      : 'text-xl sm:text-2xl text-white'
+                      ? 'text-2xl sm:text-3xl lg:text-4xl text-white mb-4'
+                      : 'text-lg sm:text-xl text-white mb-2'
                     }
                   `}>
                     {feature.title}
                   </h3>
 
-                  {/* Description */}
+                  {/* Description & Image */}
                   {(expandedCard === feature.id || clickedCard === feature.id) && (
-                    <p
-                      className="text-white/90 text-sm sm:text-base leading-relaxed mb-6 animate-fadeInUp"
-                      style={{
-                        animation: 'fadeInUp 0.5s ease forwards 0.2s',
-                        opacity: 0,
-                        transform: 'translateY(20px)'
-                      }}
-                    >
-                      {feature.description}
-                    </p>
+                    <>
+                      <p
+                        className="text-white/90 text-sm sm:text-base leading-relaxed mb-4 animate-fadeInUp"
+                        style={{
+                          animation: 'fadeInUp 0.5s ease forwards 0.2s',
+                          opacity: 0,
+                          transform: 'translateY(20px)'
+                        }}
+                      >
+                        {feature.description}
+                      </p>
+                      <div
+                        className="rounded-lg overflow-hidden mb-4 h-32 sm:h-40 lg:h-48"
+                        style={{
+                          animation: 'fadeInUp 0.5s ease forwards 0.35s',
+                          opacity: 0,
+                          transform: 'translateY(20px)'
+                        }}
+                      >
+                        <img
+                          src={feature.image}
+                          alt={feature.title}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    </>
                   )}
 
                   {/* Animated underline */}
@@ -174,9 +192,9 @@ function MaterialExcellenceSection() {
                 {/* Toggle Button */}
                 <button
                   className={`
-                    w-12 h-12 mt-8
+                    w-10 h-10 mt-4
                     flex items-center justify-center
-                    text-3xl font-light
+                    text-2xl font-light
                     transition-all duration-300
                     self-start
                     ${(expandedCard === feature.id || clickedCard === feature.id)

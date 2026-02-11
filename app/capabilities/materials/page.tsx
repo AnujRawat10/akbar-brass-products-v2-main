@@ -183,7 +183,7 @@ Our controlled processes ensure clean constructions, accurate proportions, and r
 
             <div className="material-image h-64 sm:h-80 lg:h-96 rounded-lg overflow-hidden border border-white/10">
               <img
-                src="/materials/metal.png"
+                src="/WhatsApp Image 2026-02-11 at 18.14.40.jpeg"
                 className="w-full h-full object-cover"
                 alt="Metal"
               />
@@ -256,7 +256,7 @@ Our controlled processes ensure clean constructions, accurate proportions, and r
 
             <div className="material-image h-64 sm:h-80 lg:h-96 rounded-lg overflow-hidden border border-white/10">
               <img
-                src="/materials/wood.png"
+                src="/WhatsApp Image 2026-02-11 at 18.17.05.jpeg"
                 className="w-full h-full object-cover"
                 alt="Wood"
               />

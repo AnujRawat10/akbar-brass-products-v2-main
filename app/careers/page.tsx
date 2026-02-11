@@ -6,25 +6,6 @@ import Link from "next/link"
 export default function CareersPage() {
   const jobOpenings = [
     {
-      title: "FINISHING ENGINEER- WOOD FURNITURE",
-      department: "Production",
-      description: [
-        "Develop accurate recipes for color required as per in client's requirement.",
-        "Maintain recipe continuity.",
-        "Train line operator to achieve finish requirement.",
-        "Color lab management.",
-        "Development of new finisher.",
-        "Maintain recipe consistency on lines."
-      ],
-      experience: "5 years experience in similar role in wood finishing",
-      education: "B.Tech/ MSC or equivalent in chemical (pigment  color)",
-      technical: "Knowledge of  TQM/6 Sigma",
-      skills: [
-        "Various Wood surface treatment",
-        "Maintenance of color kitchen/lab"
-      ]
-    },
-    {
       title: "PRODUCTION MANAGER - METAL FURNITURE",
       department: "Production",
       description: [

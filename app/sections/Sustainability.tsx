@@ -32,7 +32,7 @@ export default function Sustainability() {
   ]
 
   return (
-    <section className="h-[100svh] flex items-center justify-center bg-[#485023] text-white px-4 sm:px-6 pt-20 md:pt-24 pb-8 md:pb-64 relative overflow-hidden snap-start">
+    <section className="h-[100svh] flex items-center justify-center bg-[#485023] text-white px-4 sm:px-6 pt-28 sm:pt-24 md:pt-24 pb-8 md:pb-64 relative overflow-hidden snap-start">
 
       {/* Background Image with Blend */}
       <div className="absolute inset-0 opacity-30">
@@ -63,7 +63,7 @@ export default function Sustainability() {
 
             <div className="w-16 md:w-20 h-[2px] bg-[#BF8B45] mx-auto mb-3 md:mb-4" />
 
-            <p className="max-w-3xl mx-auto mb-4 md:mb-6 text-white/90 text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed px-2">
+            <p className="max-w-3xl mx-auto mb-4 md:mb-6 text-white/90 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed px-2">
               Sustainable manufacturing supported by ETP, STP, RO systems and dust collectors for clean, compliant production across metal and marble units.
             </p>
           </div>
@@ -72,29 +72,29 @@ export default function Sustainability() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4 mb-4 md:mb-6 max-w-4xl mx-auto">
             <div className="flex flex-col items-center p-3 md:p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 hover:bg-white/10 transition-all duration-300">
               <Droplet className="w-5 h-5 md:w-6 md:h-6 text-[#BF8B45] mb-1 md:mb-2" />
-              <span className="text-[10px] sm:text-xs md:text-sm text-white/80 font-medium text-center">Water Treatment</span>
+              <span className="text-xs sm:text-sm md:text-base text-white/80 font-medium text-center">Water Treatment</span>
             </div>
 
             <div className="flex flex-col items-center p-3 md:p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 hover:bg-white/10 transition-all duration-300">
               <Recycle className="w-5 h-5 md:w-6 md:h-6 text-[#BF8B45] mb-1 md:mb-2" />
-              <span className="text-[10px] sm:text-xs md:text-sm text-white/80 font-medium text-center">Recycling Systems</span>
+              <span className="text-xs sm:text-sm md:text-base text-white/80 font-medium text-center">Recycling Systems</span>
             </div>
 
             <div className="flex flex-col items-center p-3 md:p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 hover:bg-white/10 transition-all duration-300">
               <Wind className="w-5 h-5 md:w-6 md:h-6 text-[#BF8B45] mb-1 md:mb-2" />
-              <span className="text-[10px] sm:text-xs md:text-sm text-white/80 font-medium text-center">Air Quality Control</span>
+              <span className="text-xs sm:text-sm md:text-base text-white/80 font-medium text-center">Air Quality Control</span>
             </div>
 
             <div className="flex flex-col items-center p-3 md:p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 hover:bg-white/10 transition-all duration-300">
               <Leaf className="w-5 h-5 md:w-6 md:h-6 text-[#BF8B45] mb-1 md:mb-2" />
-              <span className="text-[10px] sm:text-xs md:text-sm text-white/80 font-medium text-center">Clean Production</span>
+              <span className="text-xs sm:text-sm md:text-base text-white/80 font-medium text-center">Clean Production</span>
             </div>
           </div>
 
           {/* CTA Button */}
           <div className="text-center mb-4 md:mb-12">
             <Link href="/sustainability">
-              <button className="group relative px-6 sm:px-8 md:px-12 py-2.5 sm:py-3 md:py-4 bg-white text-black overflow-hidden transition-all duration-500 uppercase tracking-wider font-medium text-[10px] sm:text-xs md:text-sm shadow-2xl hover:shadow-[#BF8B45]/50 transform hover:scale-105">
+              <button className="group relative px-6 sm:px-8 md:px-12 py-2.5 sm:py-3 md:py-4 bg-white text-black overflow-hidden transition-all duration-500 uppercase tracking-wider font-medium text-xs sm:text-sm md:text-base shadow-2xl hover:shadow-[#BF8B45]/50 transform hover:scale-105">
                 {/* Button hover effect */}
                 <span className="absolute inset-0 bg-[#BF8B45] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
                 <span className="relative z-10 group-hover:text-white transition-colors duration-500">

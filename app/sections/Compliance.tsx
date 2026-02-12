@@ -9,7 +9,7 @@ export default function Compliance() {
   ]
 
   return (
-    <section className="h-[100svh] flex items-center bg-[#9A9D85] pt-20 md:pt-24 pb-6 md:pb-8 overflow-hidden snap-start">
+    <section className="h-[100svh] flex items-center bg-[#9A9D85] pt-28 sm:pt-24 md:pt-24 pb-6 md:pb-8 overflow-hidden snap-start">
       <div className="w-full px-4 sm:px-6 lg:px-12">
         <div className="max-w-6xl mx-auto text-center w-full">
 
@@ -19,7 +19,7 @@ export default function Compliance() {
               Our Compliances
             </h2>
             <div className="w-16 md:w-24 h-[2px] bg-white/40 mx-auto mb-2 md:mb-4" />
-            <p className="text-white/90 text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed max-w-3xl mx-auto px-2">
+            <p className="text-white/90 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-3xl mx-auto px-2">
               Certified and audited to meet global manufacturing standards, ensuring quality, safety, and ethical practices across all operations
             </p>
           </div>
@@ -43,7 +43,7 @@ export default function Compliance() {
           {/* CTA Button */}
           <div className="text-center mt-4 sm:mt-6 md:mt-8">
             <Link href="/capabilities/ethics">
-              <button className="group relative px-6 sm:px-8 md:px-12 py-2.5 sm:py-3 md:py-4 bg-white text-black overflow-hidden transition-all duration-500 uppercase tracking-wider font-medium text-[10px] sm:text-xs md:text-sm shadow-2xl hover:shadow-[#BF8B45]/50 transform hover:scale-105">
+              <button className="group relative px-6 sm:px-8 md:px-12 py-2.5 sm:py-3 md:py-4 bg-white text-black overflow-hidden transition-all duration-500 uppercase tracking-wider font-medium text-xs sm:text-sm md:text-base shadow-2xl hover:shadow-[#BF8B45]/50 transform hover:scale-105">
                 {/* Button hover effect */}
                 <span className="absolute inset-0 bg-[#BF8B45] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
                 <span className="relative z-10 group-hover:text-white transition-colors duration-500">

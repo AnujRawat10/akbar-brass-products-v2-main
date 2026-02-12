@@ -47,7 +47,7 @@ export default function WhyChooseUs() {
   ]
 
   return (
-    <section className="h-[100svh] flex items-center bg-[#DCD5C9] px-4 sm:px-6 pt-20 md:pt-24 pb-6 md:pb-8 overflow-hidden snap-start">
+    <section className="h-[100svh] flex items-center bg-[#DCD5C9] px-4 sm:px-6 pt-28 sm:pt-24 md:pt-24 pb-6 md:pb-8 overflow-hidden snap-start">
       <div className="max-w-6xl mx-auto w-full">
         <div className="text-center mb-3 sm:mb-4 md:mb-6">
           <h2 className="font-serif mt-4 text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-2 md:mb-3 text-[#63403A]">
@@ -84,7 +84,7 @@ export default function WhyChooseUs() {
                 {item.icon}
               </div>
               <h3
-                className="relative z-10 font-serif text-sm sm:text-base md:text-xl lg:text-2xl mb-1 sm:mb-2 md:mb-3 transition-colors duration-500 group-hover:text-white leading-tight"
+                className="relative z-10 font-serif text-base sm:text-lg md:text-xl lg:text-2xl mb-1 sm:mb-2 md:mb-3 transition-colors duration-500 group-hover:text-white leading-tight"
                 style={{ color: item.text }}
               >
                 <span className="group-hover:text-white" style={{ "--hover": item.hoverTitle } as React.CSSProperties}>
@@ -92,7 +92,7 @@ export default function WhyChooseUs() {
                 </span>
               </h3>
               <p
-                className="relative z-10 text-[10px] sm:text-xs md:text-sm lg:text-base leading-relaxed transition-colors duration-500 group-hover:text-white/95 line-clamp-2 sm:line-clamp-none"
+                className="relative z-10 text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed transition-colors duration-500 group-hover:text-white/95 line-clamp-2 sm:line-clamp-none"
                 style={{ color: item.text, opacity: 0.85 }}
               >
                 {item.desc}
@@ -104,7 +104,7 @@ export default function WhyChooseUs() {
 
         <div className="text-center">
           <Link href="/about-akbar/approach">
-            <button className="group relative px-6 sm:px-8 md:px-12 py-2.5 sm:py-3 md:py-4 bg-white text-black overflow-hidden transition-all duration-500 uppercase tracking-wider font-medium text-[10px] sm:text-xs md:text-sm shadow-2xl hover:shadow-[#BF8B45]/50 transform hover:scale-105">
+            <button className="group relative px-6 sm:px-8 md:px-12 py-2.5 sm:py-3 md:py-4 bg-white text-black overflow-hidden transition-all duration-500 uppercase tracking-wider font-medium text-xs sm:text-sm md:text-base shadow-2xl hover:shadow-[#BF8B45]/50 transform hover:scale-105">
               {/* Button hover effect */}
               <span className="absolute inset-0 bg-[#BF8B45] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
               <span className="relative z-10 group-hover:text-white transition-colors duration-500">

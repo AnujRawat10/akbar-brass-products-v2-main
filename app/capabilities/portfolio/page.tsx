@@ -44,7 +44,7 @@ export default function PortfolioPage() {
       <section className="py-16 px-6" style={{ backgroundColor: "#C87550" }}>
         <div className="max-w-4xl mx-auto">
           <p className="text-center text-lg md:text-xl text-white leading-relaxed">
-At Akbar Brass Products, our portfolio is built on multi-material manufacturing and engineered product development.We design and produce collections across Furniture, Home Décor, Serveware & Barware, Lighting, Outdoor, Seasonal, and Pet Accessories—combining metal, marble, wood, glass, and mixed materials with stable, export-ready constructions.          </p>
+At Akbar Brass Products, our portfolio is built on multi-material manufacturing and engineered product development. We design and produce collections across Furniture, Home Décor, Serveware & Barware, Lighting, Outdoor, Seasonal and Pet Accessories—combining metal, marble, wood glass and mixed materials with stable, export-ready constructions.          </p>
         </div>
       </section>
 
@@ -69,7 +69,7 @@ At Akbar Brass Products, our portfolio is built on multi-material manufacturing 
               </ul>
 
               <p className="mt-6 opacity-80">
-                Furniture constructions are engineered for stability, weight performance, smooth integration of materials, and global durability standards.
+                Furniture constructions are engineered for stability, weight performance, smooth integration of materials and global durability standards.
               </p>
             </div>
 
@@ -93,7 +93,7 @@ At Akbar Brass Products, our portfolio is built on multi-material manufacturing 
               </div>
 
               <p className="opacity-80 mb-6">
-                Our décor collection includes metal, marble, wood, and mixed-material accessories developed with precision machining and clean finishing.
+                Our décor collection includes metal, marble, wood and mixed-material accessories developed with precision machining and clean finishing.
               </p>
 
               <ul className="list-disc list-inside opacity-80 space-y-2">
@@ -121,7 +121,7 @@ Each piece is manufactured with repeatable finishing and controlled workmanship.
               </div>
 
               <p className="opacity-85 mb-6">
-We produce metal, stone, and mixed-material serveware for global markets, focusing on finish accuracy, food-safe coatings, and stable constructions.</p>
+We produce metal, stone and mixed-material serveware for global markets, focusing on finish accuracy, food-safe coatings and stable constructions.</p>
 
               <ul className="list-disc list-inside opacity-85 space-y-2">
                 <li>Trays, bowls & platters</li>
@@ -152,7 +152,7 @@ We produce metal, stone, and mixed-material serveware for global markets, focusi
               </div>
 
               <p className="opacity-90">
-Our lighting products combine metal fabrication, clean finishing, and electrical safety requirements.
+Our lighting products combine metal fabrication, clean finishing and electrical safety requirements.
               </p>
               <ul className="list-disc list-inside opacity-85 space-y-2">
                 <li>Table lamps</li>
@@ -162,7 +162,7 @@ Our lighting products combine metal fabrication, clean finishing, and electrical
                 <li>Task lighting</li>
               </ul>
               <p className="mt-6 opacity-85">
-All lighting products can be developed with UL, CUL, and CE compliance, based on buyer requirements.</p>            </div>
+All lighting products can be developed with UL, CUL and CE compliance, based on buyer requirements.</p>            </div>
           </div>
         </section>
 
@@ -205,12 +205,12 @@ Finishes are engineered for outdoor endurance.
               </div>
 
               <p className="opacity-90">
-We produce multi-material seasonal ranges for international holiday and occasion programs, crafted in metal, wood, stone, and mixed materials.              </p>
+We produce multi-material seasonal ranges for international holiday and occasion programs, crafted in metal, wood, stone and mixed materials.              </p>
         
               <p className="mt-6 opacity-85">
 Key Programs:
 Christmas · Halloween · Easter · St. Patrick’s Day · Mother’s Day / Father’s Day · Valentine’s Day
-Designed with precise forming, finishing, and hand-detailing capability.</p>          
+Designed with precise forming, finishing and hand-detailing capability.</p>          
 </div>
           </div>
         </section>

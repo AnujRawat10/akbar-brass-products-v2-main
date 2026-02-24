@@ -219,7 +219,7 @@ At Akbar Brass Products, sustainability is built into our manufacturing systems,
               </p>
               <ul className="list-disc list-inside text-[#63403A]/90 text-base md:text-lg leading-relaxed space-y-2 ml-4">
                 <li>Metal scrap is segregated and recycled back into controlled supply chains</li>
-                <li>Wood, stone, and packaging materials are reused or recycled wherever possible</li>
+                <li>Wood, stone and packaging materials are reused or recycled wherever possible</li>
                 <li>Cutting patterns for metal, marble, and wood are optimized to reduce wastage</li>
               </ul>
             </div>
@@ -277,7 +277,7 @@ At Akbar Brass Products, sustainability is built into our manufacturing systems,
                     We actively support the local workforce by providing:
                   </p>
                   <ul className="list-disc list-inside text-[#63403A]/90 text-sm md:text-base lg:text-lg leading-relaxed space-y-2 ml-4">
-                    <li>Employment across metal, marble, wood, finishing, and assembly departments</li>
+                    <li>Employment across metal, marble, wood, finishing and assembly departments</li>
                     <li>Skill-building through on-the-job training and structured process exposure</li>
                     <li>Opportunities for artisans and technicians to grow within specialized trades</li>
                   </ul>

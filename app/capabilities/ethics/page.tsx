@@ -100,7 +100,7 @@ export default function EthicsPageRedesigned() {
       <section className="py-16 px-6" style={{ backgroundColor: "#C87550" }}>
         <div className="max-w-4xl mx-auto">
           <p ref={descTextRef} className="text-center text-lg md:text-xl text-white leading-relaxed">
-At Akbar Brass Products, quality is a disciplined, system-driven approach that guides every stage of our manufacturing process. Our workflows, inspections, and compliance practices are aligned with global retail requirements to ensure consistency, safety, and long-term performance.
+At Akbar Brass Products, quality is a disciplined, system-driven approach that guides every stage of our manufacturing process. Our workflows, inspections, and compliance practices are aligned with global retail requirements to ensure consistency, safety and long-term performance.
 </p>
         </div>
       </section>

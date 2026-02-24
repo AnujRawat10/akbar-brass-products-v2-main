@@ -356,13 +356,13 @@ export default function AboutPage() {
             <Card className="p-6 bg-white border border-gray-200">
               <h3 className="mb-3 font-serif text-xl font-bold text-gray-900">Mirrors</h3>
               <p className="text-sm text-gray-600">
-                Decorative mirrors in metal, wood, and combination finishes with natural product inlay options.
+                Decorative mirrors in metal, wood and combination finishes with natural product inlay options.
               </p>
             </Card>
             <Card className="p-6 bg-white border border-gray-200">
               <h3 className="mb-3 font-serif text-xl font-bold text-gray-900">Candle Holders</h3>
               <p className="text-sm text-gray-600">
-                Made of aluminum, stainless steel, iron, wood, marble, and metal-wood combinations.
+                Made of aluminum, stainless steel, iron, wood marble, and metal-wood combinations.
               </p>
             </Card>
             <Card className="p-6 bg-white border border-gray-200">
@@ -374,7 +374,7 @@ export default function AboutPage() {
             <Card className="p-6 bg-white border border-gray-200">
               <h3 className="mb-3 font-serif text-xl font-bold text-gray-900">Wall Décor</h3>
               <p className="text-sm text-gray-600">
-                Contemporary and antique designs in stainless steel, iron, wood, and MDF combinations.
+                Contemporary and antique designs in stainless steel, iron, wood and MDF combinations.
               </p>
             </Card>
           </div>

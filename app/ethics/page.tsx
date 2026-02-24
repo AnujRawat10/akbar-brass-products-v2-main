@@ -132,7 +132,7 @@ export default function EthicsPage() {
             Our factory is audited and approved for production for major American retailers and international markets. We maintain compliance with all applicable regulations in our target markets including USA, Europe, and rest of world.
           </p>
           <p className="text-gray-700 text-lg leading-relaxed">
-            Regular audits ensure we continue to meet and exceed industry standards for safety, quality, and ethical manufacturing practices.
+            Regular audits ensure we continue to meet and exceed industry standards for safety quality, and ethical manufacturing practices.
           </p>
         </div>
       </section>

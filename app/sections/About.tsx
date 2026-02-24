@@ -14,7 +14,7 @@ export default function About() {
           <h2 className="font-serif text-2xl sm:text-3xl md:text-3xl lg:text-4xl text-white mb-2 md:mb-4 tracking-wide">
 About Akbar Brass Products</h2>
           <p className="text-white/90 text-sm md:text-base lg:text-lg leading-relaxed max-w-5xl mx-auto">
-            Akbar Brass Products is a multi-material manufacturing company specialising in metal, marble, wood, and mixed-material home products. Operating from a horizontally integrated production campus, we combine modern systems with disciplined processes,
+            Akbar Brass Products is a multi-material manufacturing company specialising in metal, marble, wood and mixed-material home products. Operating from a horizontally integrated production campus, we combine modern systems with disciplined processes,
           </p>
         </div>
       </div>

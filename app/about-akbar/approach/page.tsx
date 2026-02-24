@@ -160,7 +160,7 @@ export default function ApproachPage() {
       icon: Layers,
       title: "Multi-Material Expertise",
       description:
-        "We work across metal, marble, wood, glass, stone, and mixed materials. Controlled fabrication, precise machining, and disciplined finishing allow us to integrate materials seamlessly and produce globally compliant, structurally reliable products.",
+        "We work across metal, marble, wood, glass, stone and mixed materials. Controlled fabrication, precise machining, and disciplined finishing allow us to integrate materials seamlessly and produce globally compliant, structurally reliable products.",
       image: "/variety.jpeg"
     },
     {

@@ -108,7 +108,7 @@ export default function MaterialsPage() {
     {
       icon: <Shield className="w-10 h-10" />,
       title: "Durability Testing",
-      desc: "Every finish undergoes rigorous testing for adhesion, corrosion resistance, and longevity."
+      desc: "Every finish undergoes rigorous testing for adhesion, corrosion resistance and longevity."
     }
   ]
   return (
@@ -143,7 +143,7 @@ export default function MaterialsPage() {
       <section className="py-16 px-6" style={{ backgroundColor: "#C87550" }}>
         <div className="max-w-4xl mx-auto">
           <p ref={descTextRef} className="text-center text-lg md:text-xl text-white leading-relaxed">
-            Our manufacturing strength comes from our ability to work seamlessly across multiple materials.With dedicated units for metal, marble, wood, and mixed-material integration, we deliver precision-engineered products built for global markets.Each material is processed in-house using controlled methods, modern machinery, and disciplined craftsmanship to ensure accuracy, consistency, and durability.
+            Our manufacturing strength comes from our ability to work seamlessly across multiple materials. With dedicated units for metal, marble, wood and mixed-material integration, we deliver precision-engineered products built for global markets. Each material is processed in-house using controlled methods, modern machinery and disciplined craftsmanship to ensure accuracy, consistency and durability.
           </p>
         </div>
       </section>
@@ -176,7 +176,7 @@ export default function MaterialsPage() {
               <p className="mt-5 opacity-80 text-sm sm:text-base">
                 Materials processed:
 Iron, aluminium, stainless steel, and brass.
-Our controlled processes ensure clean constructions, accurate proportions, and repeatable finish quality across all product categories.
+Our controlled processes ensure clean constructions, accurate proportions and repeatable finish quality across all product categories.
 
               </p>
             </div>
@@ -212,7 +212,7 @@ Our controlled processes ensure clean constructions, accurate proportions, and r
               </div>
 
               <p className="opacity-80 mb-5 text-sm sm:text-base leading-relaxed">
-                Our in-house stone unit processes a wide range of marbles and natural stones for tabletops, furniture components, and decorative accessories.
+                Our in-house stone unit processes a wide range of marbles and natural stones for tabletops, furniture components and decorative accessories.
               </p>
 
               <ul className="list-disc list-inside opacity-80 space-y-2 text-sm sm:text-base">
@@ -249,7 +249,7 @@ Our controlled processes ensure clean constructions, accurate proportions, and r
                 <li>Wood components engineered for compatibility with metal and stone products</li>
               </ul>
               <p className="mt-5 opacity-85 text-sm sm:text-base">
-                Wood components are processed to meet export-level requirements for stability, finish, and durability
+                Wood components are processed to meet export-level requirements for stability, finish and durability
               </p>
 
             </div>

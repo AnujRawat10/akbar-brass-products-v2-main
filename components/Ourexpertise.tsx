@@ -20,7 +20,7 @@ const OurExpertise: React.FC = () => {
   {
     name: "Integrated multi-material production",
     description:
-      "An integrated manufacturing environment enabling the development and production of products across brass, stone, wood, and mixed materials.",
+      "An integrated manufacturing environment enabling the development and production of products across brass, stone wood, and mixed materials.",
     services: [],
     url: "",
   },

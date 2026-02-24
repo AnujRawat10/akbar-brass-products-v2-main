@@ -20,7 +20,7 @@ export default function Compliance() {
             </h2>
             <div className="w-16 md:w-24 h-[2px] bg-white/40 mx-auto mb-2 md:mb-4" />
             <p className="text-white/90 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-3xl mx-auto px-2">
-              Certified and audited to meet global manufacturing standards, ensuring quality, safety, and ethical practices across all operations
+              Certified and audited to meet global manufacturing standards, ensuring quality, safety and ethical practices across all operations
             </p>
           </div>
 

@@ -45,7 +45,7 @@ function MaterialExcellenceSection() {
       id: 4,
       number: '04',
       title: 'Durability Testing',
-      description: 'Every finish undergoes rigorous testing for adhesion, corrosion resistance, and longevity.',
+      description: 'Every finish undergoes rigorous testing for adhesion, corrosion resistance and longevity.',
       icon: <Shield className="w-8 h-8" />,
       image: '/materialexcellence/WhatsApp Image 2026-02-11 at 18.21.31.jpeg'
     }
@@ -67,7 +67,7 @@ function MaterialExcellenceSection() {
                 Our integrated manufacturing approach combines traditional craftsmanship with modern finishing technology, enabling us to deliver consistent, export-grade quality across all material categories.
               </p>
               <p className="text-white/75 text-sm sm:text-base leading-relaxed">
-                From raw material selection to final finish application, every stage is monitored through our quality management system to ensure products meet international standards for durability, safety, and aesthetic excellence.
+                From raw material selection to final finish application, every stage is monitored through our quality management system to ensure products meet international standards for durability, safety and aesthetic excellence.
               </p>
             </div>
           </div>

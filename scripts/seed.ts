@@ -2,7 +2,7 @@ import { config } from "dotenv"
 import mongoose from "mongoose"
 import bcrypt from "bcryptjs"
 
-config({ path: ".env.local" })
+config({ path: ".env" })
 
 const MONGODB_URI = process.env.MONGODB_URI!
 

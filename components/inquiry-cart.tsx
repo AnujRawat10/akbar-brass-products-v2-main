@@ -13,6 +13,7 @@ export interface InquiryProduct {
   name: string
   price: string
   image: string
+  variantId: string
 }
 
 interface InquiryCartProps {
@@ -29,6 +30,7 @@ export function InquiryCart({ items, onRemove, onClear, isOpen: externalIsOpen, 
   const setIsOpen = onOpenChange || setInternalIsOpen
 
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -52,15 +54,40 @@ export function InquiryCart({ items, onRemove, onClear, isOpen: externalIsOpen, 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setSubmitStatus("idle")
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    try {
+      const response = await fetch("/api/send-inquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+          products: items,
+        }),
+      })
 
-    alert("Inquiry submitted successfully! We'll contact you soon.")
-    setFormData({ name: "", email: "", phone: "", message: "" })
-    onClear()
-    setIsOpen(false)
-    setIsSubmitting(false)
+      if (!response.ok) {
+        const errorData = await response.json()
+        throw new Error(errorData.error || "Failed to submit inquiry")
+      }
+
+      setSubmitStatus("success")
+      setFormData({ name: "", email: "", phone: "", message: "" })
+      onClear()
+
+      setTimeout(() => {
+        setIsOpen(false)
+        setSubmitStatus("idle")
+      }, 2000)
+    } catch (error) {
+      console.error("Inquiry submission failed:", error)
+      setSubmitStatus("error")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   if (items.length === 0) return null
@@ -179,9 +206,19 @@ export function InquiryCart({ items, onRemove, onClear, isOpen: externalIsOpen, 
           </div>
 
           <div className="border-t border-[#63403A]/20 bg-[#D9D4BC] p-4 sm:p-6">
+            {submitStatus === "success" && (
+              <p className="mb-3 text-center text-sm font-medium text-green-700">
+                Order submitted successfully! You'll receive a confirmation from Shopify shortly.
+              </p>
+            )}
+            {submitStatus === "error" && (
+              <p className="mb-3 text-center text-sm font-medium text-red-700">
+                Failed to submit inquiry. Please try again.
+              </p>
+            )}
             <Button
               type="submit"
-              disabled={isSubmitting}
+              disabled={isSubmitting || submitStatus === "success"}
               onClick={handleSubmit}
               className="w-full bg-[#63403A] py-6 text-base font-semibold hover:bg-[#6B2410] text-[#f0efe2]"
             >

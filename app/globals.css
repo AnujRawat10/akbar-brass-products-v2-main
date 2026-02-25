@@ -247,3 +247,12 @@ main:has(.scroll-snap-container) ~ footer,
 main:has(.scroll-snap-container) ~ a[aria-label="Chat on WhatsApp"] {
   display: none;
 }
+
+/* ================= FULLSCREEN PAGES (admin, login) ================= */
+/* Hide site chrome (header, footer, preloader, whatsapp) */
+body.clean-page header:not([data-admin]),
+body.clean-page footer,
+body.clean-page a[aria-label="Chat on WhatsApp"],
+body.clean-page .preloader {
+  display: none !important;
+}

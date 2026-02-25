@@ -1,26 +1,37 @@
-// Simple demo authentication system
 export interface User {
   id: string
   email: string
   name: string
 }
 
-const DEMO_USER = {
-  id: "1",
-  email: "demo@akbarbrass.com",
-  password: "demo123",
-  name: "Demo User",
+export interface LoginResult {
+  role?: "admin" | "user"
+  user?: User
+  admin?: { email: string }
+  error?: string
 }
 
-export function validateCredentials(email: string, password: string): User | null {
-  if (email === DEMO_USER.email && password === DEMO_USER.password) {
-    return {
-      id: DEMO_USER.id,
-      email: DEMO_USER.email,
-      name: DEMO_USER.name,
-    }
+export async function loginWithCredentials(
+  email: string,
+  password: string
+): Promise<LoginResult> {
+  const res = await fetch("/api/auth/login", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email, password }),
+  })
+
+  const data = await res.json()
+
+  if (!res.ok) {
+    return { error: data.error }
   }
-  return null
+
+  return {
+    role: data.role,
+    user: data.user,
+    admin: data.admin,
+  }
 }
 
 export function getStoredUser(): User | null {

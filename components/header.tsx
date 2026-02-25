@@ -127,8 +127,8 @@ export function Header({ cartItemCount = 0, onCartClick }: HeaderProps = {}) {
           {/* RIGHT — CART & CONTACT */}
           <div className="flex justify-end items-center gap-2">
 
-            {/* Cart Icon (only show if cartItemCount > 0) */}
-            {cartItemCount > 0 && onCartClick && (
+            {/* Cart Icon (always visible on product pages) */}
+            {onCartClick && (
               <button
                 onClick={onCartClick}
                 className={`
@@ -142,11 +142,13 @@ export function Header({ cartItemCount = 0, onCartClick }: HeaderProps = {}) {
                 aria-label="Shopping cart"
               >
                 <ShoppingBag className="h-5 w-5" />
-                <span className={`absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full text-xs font-bold ${
-                  scrolled ? "bg-[#63403A] text-white" : "bg-[#f0efe2] text-[#63403A]"
-                }`}>
-                  {cartItemCount}
-                </span>
+                {cartItemCount > 0 && (
+                  <span className={`absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full text-xs font-bold ${
+                    scrolled ? "bg-[#63403A] text-white" : "bg-[#f0efe2] text-[#63403A]"
+                  }`}>
+                    {cartItemCount}
+                  </span>
+                )}
               </button>
             )}
 

@@ -134,7 +134,7 @@ export default function SustainabilityPage() {
       <section className="py-16 px-6" style={{ backgroundColor: "#485023" }}>
         <div className="max-w-4xl mx-auto">
           <p ref={descTextRef} className="text-center text-lg md:text-xl text-white leading-relaxed">
-At Akbar Brass Products, sustainability is built into our manufacturing systems, resource management, and workplace practices.Our approach focuses on three key pillars: Environment, Community, and Wellbeing—ensuring responsible production and long-term operational reliability.
+At Akbar Brass Products, sustainability is built into our manufacturing systems, resource management, and workplace practices. Our approach focuses on three key pillars: Environment, Community, and Wellbeing—ensuring responsible production and long-term operational reliability.
 </p>
         </div>
       </section>

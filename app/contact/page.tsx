@@ -2,7 +2,6 @@
 
 import type React from "react"
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
 import { MapPin, Phone, Mail } from 'lucide-react'
 
 export default function ContactPage() {
@@ -16,6 +15,15 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
+
+    const fullName = [formData.firstName, formData.lastName].filter(Boolean).join(" ")
+    const subject = encodeURIComponent(`Contact Inquiry from ${fullName}`)
+    const body = encodeURIComponent(
+      `Name: ${fullName}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    )
+
+    window.location.href = `mailto:hello@akbarbrass.com?subject=${subject}&body=${body}`
+
     setIsSubmitted(true)
     setTimeout(() => {
       setIsSubmitted(false)
@@ -72,7 +80,7 @@ export default function ContactPage() {
 </div>
 
             ) : (
-              <div className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid gap-6 md:grid-cols-2">
                   <div>
                     <label htmlFor="firstName" className="mb-2 block text-sm font-medium" style={{ color: '#63403A' }}>
@@ -138,14 +146,14 @@ export default function ContactPage() {
                   />
                 </div>
 
-                <button 
-                  onClick={handleSubmit}
-                  className="w-full text-white py-6 text-base font-medium hover:opacity-90 rounded-lg" 
+                <button
+                  type="submit"
+                  className="w-full text-white py-6 text-base font-medium hover:opacity-90 rounded-lg"
                   style={{ backgroundColor: '#63403A' }}
                 >
                   Send Message
                 </button>
-              </div>
+              </form>
             )}
           </div>
 

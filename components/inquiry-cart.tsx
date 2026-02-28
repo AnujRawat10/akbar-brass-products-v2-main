@@ -161,7 +161,7 @@ export function InquiryCart({ items, onRemove, onClear, isOpen: externalIsOpen, 
               ))}
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-4 pb-4">
+            <form id="inquiry-form" onSubmit={handleSubmit} className="space-y-4 pb-4">
               <div>
                 <label className="mb-1.5 block text-sm font-medium text-[#63403A]">Name *</label>
                 <Input
@@ -208,7 +208,7 @@ export function InquiryCart({ items, onRemove, onClear, isOpen: externalIsOpen, 
           <div className="border-t border-[#63403A]/20 bg-[#D9D4BC] p-4 sm:p-6">
             {submitStatus === "success" && (
               <p className="mb-3 text-center text-sm font-medium text-green-700">
-                Order submitted successfully! You'll receive a confirmation from Shopify shortly.
+                Inquiry submitted successfully! You'll receive a confirmation email shortly.
               </p>
             )}
             {submitStatus === "error" && (
@@ -218,8 +218,8 @@ export function InquiryCart({ items, onRemove, onClear, isOpen: externalIsOpen, 
             )}
             <Button
               type="submit"
+              form="inquiry-form"
               disabled={isSubmitting || submitStatus === "success"}
-              onClick={handleSubmit}
               className="w-full bg-[#63403A] py-6 text-base font-semibold hover:bg-[#6B2410] text-[#f0efe2]"
             >
               {isSubmitting ? (

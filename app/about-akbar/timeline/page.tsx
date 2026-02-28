@@ -5,7 +5,9 @@ import { CheckCircle } from "lucide-react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 
-gsap.registerPlugin(ScrollTrigger)
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger)
+}
 
 const moodColors = [
   { bg: "#F0EFE2", card: "#FFFFFF", text: "#63403A" },

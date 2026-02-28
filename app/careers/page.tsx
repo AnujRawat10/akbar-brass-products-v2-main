@@ -47,7 +47,7 @@ export default function CareersPage() {
 
   return (
     <div className="min-h-screen bg-[#f0efe2]">
-      <Header />
+     
       
         <main >
         {/* Hero Section */}

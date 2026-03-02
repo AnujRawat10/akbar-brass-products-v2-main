@@ -22,7 +22,7 @@ export default function WhyChooseUs() {
       iconColor: "#63403A",
       hoverTitle: "#AE7250",
       text: "#63403A",
-      image: "/precision.png",
+      image: "/precision.webp",
     },
     {
       icon: <CheckCircle2 className="w-8 h-8" />,

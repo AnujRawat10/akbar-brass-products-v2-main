@@ -84,7 +84,7 @@ export default function TimelinePage() {
       title: "Establishment of Akbar Brass Products",
       description:
         "Akbar Brass Products was established in 1974, when Haji Abdul Qayyum entrusted the responsibility of leading the company to his son Akbar Qayyum, marking the beginning of organised, export-focused manufacturing for the family.",
-      image: "/akbar-campus.png",
+      image: "/akbar-campus.webp",
     },
     {
       year: "1980s",
@@ -98,21 +98,21 @@ export default function TimelinePage() {
       title: "Strengthening Metal Manufacturing",
       description:
         "In-house capabilities in fabrication, polishing, plating, welding, and hand-finishing were enhanced to increase stability, finish consistency, and production control.",
-      image: "/1990.jpeg",
+      image: "/1990.webp",
     },
     {
       year: "2000",
       title: "Wood Unit Established",
       description:
         "A dedicated wood unit was set up to manufacture wooden furniture and decorative articles, expanding the company's material capability into multi-material production.",
-      image: "/legacy-unit.png",
+      image: "/legacy-unit.webp",
     },
     {
       year: "2012",
       title: "Introduction of Metal Furniture Manufacturing",
       description:
         "Metal furniture production was introduced, enabling stronger mixed-material construction and broadening the product offering to meet evolving global demand.",
-      image: "/metal.png",
+      image: "/metal.webp",
     },
     {
       year: "2018",
@@ -126,7 +126,7 @@ export default function TimelinePage() {
       title: "Marble Furniture & Décor Unit Constructed",
       description:
         "A dedicated marble-processing facility was established, enabling complete in-house capabilities for marble furniture, stone tabletops, and decorative stoneware.",
-      image: "/marble.png",
+      image: "/marble.webp",
     },
     {
       year: "2023–2024",

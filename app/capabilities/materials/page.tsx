@@ -123,7 +123,7 @@ export default function MaterialsPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src="/finishes.JPG"
+            src="/finishes.webp"
             alt="Our Capabilities"
             className="w-full h-full object-cover"
           />
@@ -197,7 +197,7 @@ Our controlled processes ensure clean constructions, accurate proportions and re
 
             <div className="material-image order-2 md:order-1 h-64 sm:h-80 lg:h-96 rounded-lg overflow-hidden border border-[#63403A]/20">
               <img
-                src="/materials/marble.png"
+                src="/materials/marble.webp"
                 className="w-full h-full object-cover"
                 alt="Marble"
               />

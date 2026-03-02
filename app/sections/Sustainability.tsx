@@ -24,9 +24,9 @@ export default function Sustainability() {
   }, [])
 
   const scrollImages = [
-    "/droneshot.png",
-    "/sus.png",
-    "/legacy-unit.png",
+    "/droneshot.webp",
+    "/sus.webp",
+    "/legacy-unit.webp",
     "/compliance.jpeg",
     "/quality.jpeg",
   ]
@@ -37,7 +37,7 @@ export default function Sustainability() {
       {/* Background Image with Blend */}
       <div className="absolute inset-0 opacity-30">
         <img
-          src="/home-page/earth-day-7903523_1920.png"
+          src="/home-page/earth-day-7903523_1920.webp"
           alt="Sustainability background"
           className="w-full h-full object-cover mix-blend-overlay"
         />

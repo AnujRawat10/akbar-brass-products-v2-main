@@ -52,7 +52,7 @@ function LuxuryShowcase() {
   ];
 
   /** only 2 images – alternating **/
-  const images = ["/showroom1.jpeg", "/showroom2.jpeg"];
+  const images = ["/showroom1.webp", "/showroom2.webp"];
 
   const currentProduct = products[activeIndex];
 

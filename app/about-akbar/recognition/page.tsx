@@ -73,7 +73,7 @@ export default function RecognitionPage() {
       issuedBy: "Ministry of Commerce, Government of India",
       description:
         "A prestigious national honour awarded in recognition of exceptional export performance, manufacturing excellence, and contribution to India's global trade.",
-      image: "/Awards/1.png",
+      image: "/Awards/1.webp",
     },
     {
       title: "Certificate of Merit for Export Performance (1994–95)",
@@ -81,7 +81,7 @@ export default function RecognitionPage() {
       issuedBy: "Government of India",
       description:
         "A distinguished certificate acknowledging Akbar Brass Products' contribution to India's international export growth and consistent quality across global markets.",
-      image: "/Awards/2.png",
+      image: "/Awards/2.webp",
     },
     {
       title: "Trophy for Export Performance in EPNS & Handicrafts",
@@ -89,7 +89,7 @@ export default function RecognitionPage() {
       issuedBy: "Ministry of Textiles, Government of India",
       description:
         "A sector-specific national award recognising excellence in EPNS and metal handicraft exports, acknowledging product quality, craftsmanship, and reliable delivery.",
-      image: "/Awards/3.png",
+      image: "/Awards/3.webp",
     },
   ]
 
@@ -100,7 +100,7 @@ export default function RecognitionPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src="/recognition.png"
+            src="/recognition.webp"
             alt="Our Capabilities"
             className="w-full h-full object-cover"
           />
@@ -177,7 +177,7 @@ export default function RecognitionPage() {
         {/* INSERTED IMAGE STRIP (4 IMAGES) */}
         <div className="max-w-7xl mx-auto mb-16 px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            {["/Awards/4.png", "/Awards/5.png", "/Awards/6.png", "/Awards/7.png"].map((img, index) => (
+            {["/Awards/4.webp", "/Awards/5.webp", "/Awards/6.webp", "/Awards/7.webp"].map((img, index) => (
               <div
                 key={index}
                 className="group relative bg-white rounded-3xl overflow-hidden shadow-2xl hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] transition-all duration-500 hover:-translate-y-3"

@@ -1,8 +1,38 @@
-# Node modules
+# ── Dependencies ──
 node_modules/
 jspm_packages/
+.pnp/
+.pnp.js
 
-# Logs
+# ── Environment variables ──
+.env
+.env.local
+.env.development
+.env.production
+.env.development.local
+.env.test.local
+.env.production.local
+.env.*.local
+!.env.example
+
+# ── Next.js build ──
+.next/
+out/
+
+# ── Build / output ──
+dist/
+build/
+public/build/
+.cache/
+.parcel-cache/
+.nuxt/
+.vite/
+.svelte-kit/
+
+# ── Vercel ──
+.vercel
+
+# ── Logs ──
 logs/
 *.log
 npm-debug.log*
@@ -10,41 +40,23 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# Environment files (keep example)
-.env
-.env.local
-.env.*.local
-!.env.example
-
-# Build / output
-dist/
-build/
-out/
-public/build/
-.cache/
-.parcel-cache/
-.next/
-.nuxt/
-.vite/
-.svelte-kit/
-
-# Test coverage
+# ── Test coverage ──
 coverage/
 .nyc_output/
 
-# Runtime files
+# ── Runtime files ──
 pids/
 *.pid
 *.seed
 *.pid.lock
 
-# OS files
+# ── OS files ──
 .DS_Store
 Thumbs.db
 desktop.ini
 ehthumbs.db
 
-# Editors / IDEs
+# ── Editors / IDEs ──
 .vscode/
 .idea/
 *.suo
@@ -52,8 +64,15 @@ ehthumbs.db
 *.njsproj
 *.sln
 
-# Temporary files
+# ── Temporary files ──
 *.swp
 *~
 *.bak
 *.tmp
+
+# ── Debug ──
+.node_repl_history
+
+# ── TypeScript ──
+*.tsbuildinfo
+next-env.d.ts

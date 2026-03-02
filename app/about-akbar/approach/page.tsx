@@ -188,7 +188,7 @@ export default function ApproachPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src="/capabilities.png"
+            src="/capabilities.webp"
             alt="Our Capabilities"
             className="w-full h-full object-cover"
           />
@@ -287,7 +287,7 @@ export default function ApproachPage() {
 
           <div ref={splitImageRef} className="rounded-2xl overflow-hidden shadow-xl">
             <img
-              src="/Complete Campus.png"
+              src="/Complete Campus.webp"
               alt="Complete Manufacturing Campus"
               className="w-full h-full object-cover"
             />

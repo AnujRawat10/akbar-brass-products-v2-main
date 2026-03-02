@@ -7,21 +7,21 @@ export default function AwardsPage() {
       title: "Certificate of Merit for Export Performance",
       awardedBy: "Hon'ble President, Shri Shanker Dayal Sharma",
       description: "Recognized for outstanding export performance in handicrafts for the year 1994-95",
-      image: "/Awards/1.png"
+      image: "/Awards/1.webp"
     },
     {
       year: "1995",
       title: "Trophy for Export Performance in EPNS Handicrafts",
       awardedBy: "Hon'ble Minister for Textile, Shri Kanshi Ram Rana",
       description: "Awarded trophy for exceptional export performance in EPNS handicrafts category",
-      image: "/Awards/2.png"
+      image: "/Awards/2.webp"
     },
     {
       year: "1998",
       title: "Certificate of Merit for Outstanding Export Performance",
       awardedBy: "Hon'ble Prime Minister, Shri Atal Behari Vajpayee",
       description: "Honored for outstanding contribution to India's export industry",
-      image: "/Awards/3.png"
+      image: "/Awards/3.webp"
     }
   ]
 

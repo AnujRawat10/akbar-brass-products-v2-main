@@ -4,19 +4,19 @@ export default function WhatWeDo() {
   const materials = [
     {
       title: "Metal",
-      image: "/home-page/metal1.jpeg"
+      image: "/home-page/metal1.webp"
     },
     {
       title: "Marble",
-      image: "/home-page/marble.jpeg"
+      image: "/home-page/marble.webp"
     },
     {
       title: "Wood",
-      image: "/home-page/wood.jpeg"
+      image: "/home-page/wood.webp"
     },
     {
       title: "Mixed Materials",
-      image: "/home-page/metal2.jpeg"
+      image: "/home-page/metal2.webp"
     }
   ]
 

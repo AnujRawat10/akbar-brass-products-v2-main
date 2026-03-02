@@ -114,7 +114,7 @@ export default function SustainabilityPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src="/sus.png"
+            src="/sus.webp"
             alt="Our Capabilities"
             className="w-full h-full object-cover"
           />

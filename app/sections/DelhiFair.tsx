@@ -37,7 +37,7 @@ export default function DelhiFair() {
             {/* IMAGE BOX */}
             <div className="h-[200px] sm:h-[280px] md:h-[350px] lg:h-[420px] overflow-hidden rounded-lg shadow-2xl">
               <img
-                src="/f2.jpeg"
+                src="/f2.webp"
                 alt="Delhi Fair"
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
               />

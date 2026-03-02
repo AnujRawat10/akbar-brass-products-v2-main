@@ -7,7 +7,7 @@ export default function FinalCTA() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/Complete Campus.png" // Replace with your actual image path
+          src="/Complete Campus.webp"
           alt="Background"
           fill
           className="object-cover scale-105" // Slight scale for parallax effect

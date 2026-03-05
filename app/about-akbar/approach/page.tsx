@@ -182,7 +182,7 @@ export default function ApproachPage() {
   ]
 
   return (
-   <div className="min-h-screen">
+   <div className="min-h-screen" style={{ backgroundColor: "#f0efe2" }}>
       {/* HERO SECTION */}
       <section className="relative h-[400px] md:h-[500px] flex items-center justify-center overflow-hidden">
         {/* Background Image */}

@@ -22,9 +22,10 @@ interface InquiryCartProps {
   onClear: () => void
   isOpen?: boolean
   onOpenChange?: (open: boolean) => void
+  userEmail?: string
 }
 
-export function InquiryCart({ items, onRemove, onClear, isOpen: externalIsOpen, onOpenChange }: InquiryCartProps) {
+export function InquiryCart({ items, onRemove, onClear, isOpen: externalIsOpen, onOpenChange, userEmail }: InquiryCartProps) {
   const [internalIsOpen, setInternalIsOpen] = useState(false)
   const isOpen = externalIsOpen !== undefined ? externalIsOpen : internalIsOpen
   const setIsOpen = onOpenChange || setInternalIsOpen
@@ -33,8 +34,6 @@ export function InquiryCart({ items, onRemove, onClear, isOpen: externalIsOpen, 
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
-    phone: "",
     message: "",
   })
 
@@ -62,8 +61,7 @@ export function InquiryCart({ items, onRemove, onClear, isOpen: externalIsOpen, 
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
+          email: userEmail || "",
           message: formData.message,
           products: items,
         }),
@@ -75,7 +73,7 @@ export function InquiryCart({ items, onRemove, onClear, isOpen: externalIsOpen, 
       }
 
       setSubmitStatus("success")
-      setFormData({ name: "", email: "", phone: "", message: "" })
+      setFormData({ name: "", message: "" })
       onClear()
 
       setTimeout(() => {
@@ -169,26 +167,6 @@ export function InquiryCart({ items, onRemove, onClear, isOpen: externalIsOpen, 
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   placeholder="Your full name"
-                  className="border-[#63403A]/30 bg-white text-[#63403A] focus:border-[#63403A] focus:ring-[#63403A]"
-                />
-              </div>
-              <div>
-                <label className="mb-1.5 block text-sm font-medium text-[#63403A]">Email *</label>
-                <Input
-                  required
-                  type="email"
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  placeholder="your@email.com"
-                  className="border-[#63403A]/30 bg-white text-[#63403A] focus:border-[#63403A] focus:ring-[#63403A]"
-                />
-              </div>
-              <div>
-                <label className="mb-1.5 block text-sm font-medium text-[#63403A]">Phone</label>
-                <Input
-                  value={formData.phone}
-                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  placeholder="+1 (555) 000-0000"
                   className="border-[#63403A]/30 bg-white text-[#63403A] focus:border-[#63403A] focus:ring-[#63403A]"
                 />
               </div>

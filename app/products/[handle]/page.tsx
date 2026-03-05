@@ -12,7 +12,7 @@ import type { ShopifyProduct } from "@/lib/shopify"
 
 export default function ProductPage() {
   const { handle } = useParams<{ handle: string }>()
-  const { isAuthenticated } = useAuth()
+  const { isAuthenticated, user } = useAuth()
   const router = useRouter()
 
   const [product, setProduct] = useState<ShopifyProduct | null>(null)
@@ -232,6 +232,7 @@ export default function ProductPage() {
         onClear={handleClearInquiry}
         isOpen={isCartOpen}
         onOpenChange={setIsCartOpen}
+        userEmail={user?.email}
       />
     </div>
   )

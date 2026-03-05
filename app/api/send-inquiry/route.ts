@@ -12,8 +12,7 @@ interface InquiryProduct {
 interface InquiryRequest {
   name: string
   email: string
-  phone: string
-  message: string
+  message?: string
   products: InquiryProduct[]
 }
 
@@ -51,7 +50,6 @@ export async function POST(request: Request) {
         first_name: firstName,
         last_name: lastName,
         email: body.email,
-        ...(body.phone ? { phone: body.phone } : {}),
       },
       note: body.message || undefined,
     })

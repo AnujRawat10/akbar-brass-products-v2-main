@@ -13,6 +13,8 @@ import {
   X,
   Eye,
   EyeOff,
+  KeyRound,
+  Check,
 } from "lucide-react"
 
 interface UserRecord {
@@ -37,6 +39,14 @@ export default function AdminDashboard() {
   const [showPassword, setShowPassword] = useState(false)
   const [createError, setCreateError] = useState("")
   const [isCreating, setIsCreating] = useState(false)
+
+  // Password change state
+  const [changingPasswordFor, setChangingPasswordFor] = useState<string | null>(null)
+  const [newUserPassword, setNewUserPassword] = useState("")
+  const [showNewPassword, setShowNewPassword] = useState(false)
+  const [passwordError, setPasswordError] = useState("")
+  const [passwordSuccess, setPasswordSuccess] = useState("")
+  const [isSavingPassword, setIsSavingPassword] = useState(false)
 
   // Check admin session
   useEffect(() => {
@@ -129,6 +139,39 @@ export default function AdminDashboard() {
       }
     } catch (error) {
       console.error("Failed to delete user:", error)
+    }
+  }
+
+  const handleChangePassword = async (userId: string) => {
+    setPasswordError("")
+    setPasswordSuccess("")
+    setIsSavingPassword(true)
+
+    try {
+      const res = await fetch(`/api/admin/users/${userId}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ password: newUserPassword }),
+      })
+
+      const data = await res.json()
+
+      if (!res.ok) {
+        setPasswordError(data.error)
+        return
+      }
+
+      setPasswordSuccess("Password updated successfully.")
+      setNewUserPassword("")
+      setTimeout(() => {
+        setChangingPasswordFor(null)
+        setPasswordSuccess("")
+        setShowNewPassword(false)
+      }, 1500)
+    } catch {
+      setPasswordError("Failed to update password.")
+    } finally {
+      setIsSavingPassword(false)
     }
   }
 
@@ -318,53 +361,109 @@ export default function AdminDashboard() {
               {users.map((user) => (
                 <div
                   key={user._id}
-                  className="flex items-center justify-between bg-white border border-[#63403A]/10 rounded-sm px-5 py-4"
+                  className="bg-white border border-[#63403A]/10 rounded-sm"
                 >
-                  <div className="flex items-center gap-4 min-w-0">
-                    <div
-                      className={`h-2 w-2 rounded-full flex-shrink-0 ${
-                        user.isActive ? "bg-emerald-500" : "bg-red-400"
-                      }`}
-                    />
-                    <div className="min-w-0">
-                      <p className="text-sm font-medium text-[#63403A] truncate">
-                        {user.name}
-                      </p>
-                      <p className="text-xs text-[#63403A]/40 truncate">{user.email}</p>
+                  <div className="flex items-center justify-between px-5 py-4">
+                    <div className="flex items-center gap-4 min-w-0">
+                      <div
+                        className={`h-2 w-2 rounded-full flex-shrink-0 ${
+                          user.isActive ? "bg-emerald-500" : "bg-red-400"
+                        }`}
+                      />
+                      <div className="min-w-0">
+                        <p className="text-sm font-medium text-[#63403A] truncate">
+                          {user.name}
+                        </p>
+                        <p className="text-xs text-[#63403A]/40 truncate">{user.email}</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-2 flex-shrink-0">
+                      <span
+                        className={`text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-sm ${
+                          user.isActive
+                            ? "bg-emerald-50 text-emerald-600"
+                            : "bg-red-50 text-red-500"
+                        }`}
+                      >
+                        {user.isActive ? "Active" : "Inactive"}
+                      </span>
+
+                      <button
+                        onClick={() => {
+                          setChangingPasswordFor(changingPasswordFor === user._id ? null : user._id)
+                          setNewUserPassword("")
+                          setPasswordError("")
+                          setPasswordSuccess("")
+                          setShowNewPassword(false)
+                        }}
+                        className={`p-2 transition-colors ${changingPasswordFor === user._id ? "text-[#BF8B45]" : "text-[#63403A]/20 hover:text-[#63403A]/60"}`}
+                        title="Change password"
+                      >
+                        <KeyRound className="h-4 w-4" />
+                      </button>
+
+                      <button
+                        onClick={() => handleToggleActive(user._id, user.isActive)}
+                        className="p-2 transition-colors"
+                        title={user.isActive ? "Deactivate user" : "Activate user"}
+                      >
+                        {user.isActive ? (
+                          <ToggleRight className="h-5 w-5 text-emerald-500" />
+                        ) : (
+                          <ToggleLeft className="h-5 w-5 text-red-400" />
+                        )}
+                      </button>
+
+                      <button
+                        onClick={() => handleDeleteUser(user._id, user.name)}
+                        className="p-2 text-[#63403A]/20 hover:text-red-500 transition-colors"
+                        title="Delete user"
+                      >
+                        <Trash2 className="h-4 w-4" />
+                      </button>
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-2 flex-shrink-0">
-                    <span
-                      className={`text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-sm ${
-                        user.isActive
-                          ? "bg-emerald-50 text-emerald-600"
-                          : "bg-red-50 text-red-500"
-                      }`}
-                    >
-                      {user.isActive ? "Active" : "Inactive"}
-                    </span>
-
-                    <button
-                      onClick={() => handleToggleActive(user._id, user.isActive)}
-                      className="p-2 transition-colors"
-                      title={user.isActive ? "Deactivate user" : "Activate user"}
-                    >
-                      {user.isActive ? (
-                        <ToggleRight className="h-5 w-5 text-emerald-500" />
-                      ) : (
-                        <ToggleLeft className="h-5 w-5 text-red-400" />
+                  {changingPasswordFor === user._id && (
+                    <div className="border-t border-[#63403A]/10 px-5 py-4 bg-[#f0efe2]/50">
+                      <p className="text-[10px] uppercase tracking-[0.15em] text-[#63403A]/50 mb-2">
+                        Set New Password for {user.name}
+                      </p>
+                      <div className="flex gap-3 items-start">
+                        <div className="relative flex-1">
+                          <input
+                            type={showNewPassword ? "text" : "password"}
+                            value={newUserPassword}
+                            onChange={(e) => setNewUserPassword(e.target.value)}
+                            placeholder="New password (min 6 chars)"
+                            minLength={6}
+                            className="w-full bg-white border border-[#63403A]/15 rounded-sm px-3 py-2 text-sm text-[#63403A] placeholder:text-[#63403A]/25 focus:outline-none focus:border-[#63403A]/40 transition-colors pr-10"
+                          />
+                          <button
+                            type="button"
+                            onClick={() => setShowNewPassword(!showNewPassword)}
+                            className="absolute right-3 top-1/2 -translate-y-1/2 text-[#63403A]/30 hover:text-[#63403A]/60 transition-colors"
+                          >
+                            {showNewPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                          </button>
+                        </div>
+                        <button
+                          onClick={() => handleChangePassword(user._id)}
+                          disabled={isSavingPassword || newUserPassword.length < 6}
+                          className="bg-[#63403A] text-[#f0efe2] px-4 py-2 text-xs uppercase tracking-wider rounded-sm font-medium hover:bg-[#63403A]/90 transition-colors disabled:opacity-50 flex items-center gap-1.5"
+                        >
+                          {isSavingPassword ? "Saving..." : <><Check className="h-3.5 w-3.5" /> Save</>}
+                        </button>
+                      </div>
+                      {passwordError && (
+                        <p className="text-xs text-red-600 mt-2">{passwordError}</p>
                       )}
-                    </button>
-
-                    <button
-                      onClick={() => handleDeleteUser(user._id, user.name)}
-                      className="p-2 text-[#63403A]/20 hover:text-red-500 transition-colors"
-                      title="Delete user"
-                    >
-                      <Trash2 className="h-4 w-4" />
-                    </button>
-                  </div>
+                      {passwordSuccess && (
+                        <p className="text-xs text-emerald-600 mt-2">{passwordSuccess}</p>
+                      )}
+                    </div>
+                  )}
                 </div>
               ))}
             </div>

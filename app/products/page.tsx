@@ -301,6 +301,7 @@ export default function ProductsPage() {
         onClear={handleClearInquiry}
         isOpen={isCartOpen}
         onOpenChange={setIsCartOpen}
+        userEmail={user?.email}
       />
     </div>
   )

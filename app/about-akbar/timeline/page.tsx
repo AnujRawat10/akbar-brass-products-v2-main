@@ -1,13 +1,7 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useState } from "react"
 import { CheckCircle } from "lucide-react"
-import gsap from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
-
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger)
-}
 
 const moodColors = [
   { bg: "#F0EFE2", card: "#FFFFFF", text: "#63403A" },
@@ -22,8 +16,6 @@ const moodColors = [
 ]
 
 export default function TimelinePage() {
-  const heroRef = useRef<HTMLDivElement>(null)
-  const timelineRef = useRef<HTMLDivElement>(null)
   const [activePeriod, setActivePeriod] = useState(0)
 
   const periods = [
@@ -33,50 +25,6 @@ export default function TimelinePage() {
     { label: "2021-2024", startIdx: 6, endIdx: 7 },
     { label: "Present", startIdx: 8, endIdx: 8 },
   ]
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      if (heroRef.current) {
-        gsap.fromTo(
-          heroRef.current.children,
-          { opacity: 0, y: 30 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            stagger: 0.15,
-            ease: "power3.out",
-            immediateRender: false,
-          }
-        )
-      }
-
-      if (timelineRef.current) {
-        const items = timelineRef.current.querySelectorAll(".timeline-item")
-
-        items.forEach((item) => {
-          gsap.fromTo(
-            item,
-            { opacity: 0, y: 40 },
-            {
-              opacity: 1,
-              y: 0,
-              duration: 0.9,
-              ease: "power2.out",
-              immediateRender: false,
-              scrollTrigger: {
-                trigger: item,
-                start: "top 85%",
-                once: true,
-              },
-            }
-          )
-        })
-      }
-    })
-
-    return () => ctx.revert()
-  }, [])
 
   const milestones = [
     {
@@ -160,7 +108,7 @@ export default function TimelinePage() {
         </div>
 
         {/* Hero Content */}
-        <div ref={heroRef} className="relative z-10 text-center px-6">
+        <div className="relative z-10 text-center px-6">
           <h1 className="font-serif text-4xl md:text-5xl xl:text-6xl text-white mb-0 tracking-[0.2em] uppercase">
             Our Timeline
           </h1>
@@ -263,7 +211,7 @@ export default function TimelinePage() {
         style={{ backgroundColor: moodColors[0].bg }}
       >
         <div className="max-w-5xl mx-auto px-6">
-          <div ref={timelineRef} className="relative">
+          <div className="relative">
             {/* Timeline Line */}
             <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-[#63403A]/30" />
 

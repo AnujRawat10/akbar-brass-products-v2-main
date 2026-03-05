@@ -2,6 +2,7 @@ import { NextResponse } from "next/server"
 import bcrypt from "bcryptjs"
 import { connectDB } from "@/lib/mongodb"
 import { User } from "@/lib/models/user"
+import { createShopifyCustomer } from "@/lib/shopify"
 
 // GET all users
 export async function GET() {
@@ -52,6 +53,14 @@ export async function POST(request: Request) {
       name: name.trim(),
       isActive: true,
     })
+
+    // Create customer in Shopify (non-blocking — don't fail user creation if this errors)
+    const nameParts = name.trim().split(/\s+/)
+    createShopifyCustomer({
+      first_name: nameParts[0],
+      last_name: nameParts.slice(1).join(" ") || "",
+      email: email.toLowerCase().trim(),
+    }).catch((err) => console.error("Shopify customer creation failed:", err))
 
     return NextResponse.json({
       user: {

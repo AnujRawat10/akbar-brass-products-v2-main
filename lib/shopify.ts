@@ -211,6 +211,34 @@ export async function getProductByHandle(
   return mapShopifyProduct(data.productByHandle)
 }
 
+// --- Customer Creation ---
+
+export async function createShopifyCustomer(input: {
+  first_name: string
+  last_name: string
+  email: string
+}) {
+  const body = {
+    customer: {
+      first_name: input.first_name,
+      last_name: input.last_name,
+      email: input.email,
+      verified_email: true,
+      send_email_invite: false,
+    },
+  }
+
+  try {
+    const result = await adminFetch("customers.json", body)
+    return result.customer
+  } catch (error) {
+    // If customer already exists (422), ignore
+    const msg = String(error)
+    if (msg.includes("422")) return null
+    throw error
+  }
+}
+
 // --- Draft Order Creation ---
 
 export interface DraftOrderLineItem {

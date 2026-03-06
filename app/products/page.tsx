@@ -159,6 +159,7 @@ export default function ProductsPage() {
   const [collections, setCollections] = useState<ShopifyCollection[]>([])
   const [activeCollection, setActiveCollection] = useState<string | null>(null)
   const [isLoading, setIsLoading] = useState(true)
+  const [visibleCount, setVisibleCount] = useState(40)
 
   useEffect(() => {
     if (!isAuthenticated) {
@@ -186,6 +187,7 @@ export default function ProductsPage() {
 
   const handleCollectionFilter = async (handle: string | null) => {
     setActiveCollection(handle)
+    setVisibleCount(40)
     setIsLoading(true)
     try {
       const data = handle
@@ -336,16 +338,28 @@ export default function ProductsPage() {
           {isLoading ? (
             <LoadingSkeleton />
           ) : (
-            <div className="grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 md:grid-cols-3 lg:grid-cols-4">
-              {allProducts.map((product) => (
-                <ProductCard
-                  key={product.id}
-                  product={product}
-                  onAdd={handleAddToInquiry}
-                  isAdded={isProductAdded(product.id)}
-                />
-              ))}
-            </div>
+            <>
+              <div className="grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 md:grid-cols-3 lg:grid-cols-4">
+                {allProducts.slice(0, visibleCount).map((product) => (
+                  <ProductCard
+                    key={product.id}
+                    product={product}
+                    onAdd={handleAddToInquiry}
+                    isAdded={isProductAdded(product.id)}
+                  />
+                ))}
+              </div>
+              {visibleCount < allProducts.length && (
+                <div className="mt-12 flex justify-center">
+                  <button
+                    onClick={() => setVisibleCount((prev) => prev + 40)}
+                    className="border border-[#63403A]/20 text-[#63403A]/70 hover:border-[#63403A] hover:text-[#63403A] px-8 py-3 text-xs uppercase tracking-[0.15em] rounded-sm transition-all duration-200"
+                  >
+                    Load More ({allProducts.length - visibleCount} remaining)
+                  </button>
+                </div>
+              )}
+            </>
           )}
         </div>
       </section>

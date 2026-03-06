@@ -28,3 +28,4 @@ export async function fetchProductsByCollection(
 ): Promise<ShopifyProduct[]> {
   return getProductsByCollection(handle)
 }
+

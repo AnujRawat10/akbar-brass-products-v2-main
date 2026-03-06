@@ -101,12 +101,16 @@ const PRODUCT_FIELDS = `
 `
 
 const PRODUCTS_QUERY = `
-  query GetProducts($first: Int!) {
-    products(first: $first) {
+  query GetProducts($first: Int!, $after: String) {
+    products(first: $first, after: $after) {
       edges {
         node {
           ${PRODUCT_FIELDS}
         }
+      }
+      pageInfo {
+        hasNextPage
+        endCursor
       }
     }
   }
@@ -154,6 +158,10 @@ interface ProductsResponse {
     edges: Array<{
       node: ShopifyProductNode
     }>
+    pageInfo: {
+      hasNextPage: boolean
+      endCursor: string | null
+    }
   }
 }
 
@@ -187,13 +195,23 @@ function mapShopifyProduct(node: ShopifyProductNode): ShopifyProduct {
   }
 }
 
-export async function getProducts(
-  count: number = 50
-): Promise<ShopifyProduct[]> {
-  const data = await storefrontFetch<ProductsResponse>(PRODUCTS_QUERY, {
-    first: count,
-  })
-  return data.products.edges.map((edge) => mapShopifyProduct(edge.node))
+export async function getProducts(): Promise<ShopifyProduct[]> {
+  const allProducts: ShopifyProduct[] = []
+  let hasNextPage = true
+  let cursor: string | null = null
+
+  while (hasNextPage) {
+    const data: ProductsResponse = await storefrontFetch<ProductsResponse>(PRODUCTS_QUERY, {
+      first: 250,
+      after: cursor,
+    })
+    const products = data.products.edges.map((edge: { node: ShopifyProductNode }) => mapShopifyProduct(edge.node))
+    allProducts.push(...products)
+    hasNextPage = data.products.pageInfo.hasNextPage
+    cursor = data.products.pageInfo.endCursor
+  }
+
+  return allProducts
 }
 
 interface ProductByHandleResponse {
@@ -220,8 +238,8 @@ export interface ShopifyCollection {
 }
 
 const COLLECTIONS_QUERY = `
-  query GetCollections($first: Int!) {
-    collections(first: $first) {
+  query GetCollections($first: Int!, $after: String) {
+    collections(first: $first, after: $after) {
       edges {
         node {
           id
@@ -229,18 +247,26 @@ const COLLECTIONS_QUERY = `
           title
         }
       }
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
     }
   }
 `
 
 const COLLECTION_PRODUCTS_QUERY = `
-  query GetCollectionProducts($handle: String!, $first: Int!) {
+  query GetCollectionProducts($handle: String!, $first: Int!, $after: String) {
     collectionByHandle(handle: $handle) {
-      products(first: $first) {
+      products(first: $first, after: $after) {
         edges {
           node {
             ${PRODUCT_FIELDS}
           }
+        }
+        pageInfo {
+          hasNextPage
+          endCursor
         }
       }
     }
@@ -256,6 +282,10 @@ interface CollectionsResponse {
         title: string
       }
     }>
+    pageInfo: {
+      hasNextPage: boolean
+      endCursor: string | null
+    }
   }
 }
 
@@ -265,29 +295,54 @@ interface CollectionProductsResponse {
       edges: Array<{
         node: ShopifyProductNode
       }>
+      pageInfo: {
+        hasNextPage: boolean
+        endCursor: string | null
+      }
     }
   } | null
 }
 
-export async function getCollections(count: number = 50): Promise<ShopifyCollection[]> {
-  const data = await storefrontFetch<CollectionsResponse>(COLLECTIONS_QUERY, {
-    first: count,
-  })
-  return data.collections.edges.map((edge) => edge.node)
+export async function getCollections(): Promise<ShopifyCollection[]> {
+  const allCollections: ShopifyCollection[] = []
+  let hasNextPage = true
+  let cursor: string | null = null
+
+  while (hasNextPage) {
+    const data: CollectionsResponse = await storefrontFetch<CollectionsResponse>(COLLECTIONS_QUERY, {
+      first: 250,
+      after: cursor,
+    })
+    allCollections.push(...data.collections.edges.map((edge: { node: ShopifyCollection }) => edge.node))
+    hasNextPage = data.collections.pageInfo.hasNextPage
+    cursor = data.collections.pageInfo.endCursor
+  }
+
+  return allCollections
 }
 
 export async function getProductsByCollection(
-  handle: string,
-  count: number = 50
+  handle: string
 ): Promise<ShopifyProduct[]> {
-  const data = await storefrontFetch<CollectionProductsResponse>(
-    COLLECTION_PRODUCTS_QUERY,
-    { handle, first: count }
-  )
-  if (!data.collectionByHandle) return []
-  return data.collectionByHandle.products.edges.map((edge) =>
-    mapShopifyProduct(edge.node)
-  )
+  const allProducts: ShopifyProduct[] = []
+  let hasNextPage = true
+  let cursor: string | null = null
+
+  while (hasNextPage) {
+    const data: CollectionProductsResponse = await storefrontFetch<CollectionProductsResponse>(
+      COLLECTION_PRODUCTS_QUERY,
+      { handle, first: 250, after: cursor }
+    )
+    if (!data.collectionByHandle) return []
+    const products = data.collectionByHandle.products.edges.map(
+      (edge: { node: ShopifyProductNode }) => mapShopifyProduct(edge.node)
+    )
+    allProducts.push(...products)
+    hasNextPage = data.collectionByHandle.products.pageInfo.hasNextPage
+    cursor = data.collectionByHandle.products.pageInfo.endCursor
+  }
+
+  return allProducts
 }
 
 // --- Customer Creation ---

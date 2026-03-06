@@ -211,6 +211,85 @@ export async function getProductByHandle(
   return mapShopifyProduct(data.productByHandle)
 }
 
+// --- Collections ---
+
+export interface ShopifyCollection {
+  id: string
+  handle: string
+  title: string
+}
+
+const COLLECTIONS_QUERY = `
+  query GetCollections($first: Int!) {
+    collections(first: $first) {
+      edges {
+        node {
+          id
+          handle
+          title
+        }
+      }
+    }
+  }
+`
+
+const COLLECTION_PRODUCTS_QUERY = `
+  query GetCollectionProducts($handle: String!, $first: Int!) {
+    collectionByHandle(handle: $handle) {
+      products(first: $first) {
+        edges {
+          node {
+            ${PRODUCT_FIELDS}
+          }
+        }
+      }
+    }
+  }
+`
+
+interface CollectionsResponse {
+  collections: {
+    edges: Array<{
+      node: {
+        id: string
+        handle: string
+        title: string
+      }
+    }>
+  }
+}
+
+interface CollectionProductsResponse {
+  collectionByHandle: {
+    products: {
+      edges: Array<{
+        node: ShopifyProductNode
+      }>
+    }
+  } | null
+}
+
+export async function getCollections(count: number = 50): Promise<ShopifyCollection[]> {
+  const data = await storefrontFetch<CollectionsResponse>(COLLECTIONS_QUERY, {
+    first: count,
+  })
+  return data.collections.edges.map((edge) => edge.node)
+}
+
+export async function getProductsByCollection(
+  handle: string,
+  count: number = 50
+): Promise<ShopifyProduct[]> {
+  const data = await storefrontFetch<CollectionProductsResponse>(
+    COLLECTION_PRODUCTS_QUERY,
+    { handle, first: count }
+  )
+  if (!data.collectionByHandle) return []
+  return data.collectionByHandle.products.edges.map((edge) =>
+    mapShopifyProduct(edge.node)
+  )
+}
+
 // --- Customer Creation ---
 
 export async function createShopifyCustomer(input: {

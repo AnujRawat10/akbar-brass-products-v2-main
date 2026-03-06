@@ -9,8 +9,8 @@ import { useAuth } from "@/components/auth-provider"
 import { Header } from "@/components/header"
 import { LogOut, ChevronLeft, ChevronRight, Plus, Check, ArrowRight } from "lucide-react"
 import { InquiryCart, type InquiryProduct } from "@/components/inquiry-cart"
-import { fetchProducts } from "./actions"
-import type { ShopifyProduct } from "@/lib/shopify"
+import { fetchProducts, fetchCollections, fetchProductsByCollection } from "./actions"
+import type { ShopifyProduct, ShopifyCollection } from "@/lib/shopify"
 
 function ProductCard({
   product,
@@ -156,6 +156,8 @@ export default function ProductsPage() {
   const [inquiryItems, setInquiryItems] = useState<InquiryProduct[]>([])
   const [isCartOpen, setIsCartOpen] = useState(false)
   const [products, setProducts] = useState<ShopifyProduct[]>([])
+  const [collections, setCollections] = useState<ShopifyCollection[]>([])
+  const [activeCollection, setActiveCollection] = useState<string | null>(null)
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
@@ -165,18 +167,37 @@ export default function ProductsPage() {
   }, [isAuthenticated, router])
 
   useEffect(() => {
-    async function loadProducts() {
+    async function loadInitialData() {
       try {
-        const data = await fetchProducts()
-        setProducts(data)
+        const [productsData, collectionsData] = await Promise.all([
+          fetchProducts(),
+          fetchCollections(),
+        ])
+        setProducts(productsData)
+        setCollections(collectionsData)
       } catch (error) {
-        console.error("Failed to fetch products:", error)
+        console.error("Failed to fetch data:", error)
       } finally {
         setIsLoading(false)
       }
     }
-    loadProducts()
+    loadInitialData()
   }, [])
+
+  const handleCollectionFilter = async (handle: string | null) => {
+    setActiveCollection(handle)
+    setIsLoading(true)
+    try {
+      const data = handle
+        ? await fetchProductsByCollection(handle)
+        : await fetchProducts()
+      setProducts(data)
+    } catch (error) {
+      console.error("Failed to fetch products:", error)
+    } finally {
+      setIsLoading(false)
+    }
+  }
 
   const handleAddToInquiry = (product: ShopifyProduct) => {
     const newItem: InquiryProduct = {
@@ -242,8 +263,41 @@ export default function ProductsPage() {
         <div className="h-px bg-[#63403A]/15" />
       </div>
 
+      {/* Collection Filters */}
+      {collections.length > 0 && (
+        <section className="px-6 pt-8 md:pt-10">
+          <div className="mx-auto max-w-6xl">
+            <div className="flex flex-wrap gap-2">
+              <button
+                onClick={() => handleCollectionFilter(null)}
+                className={`px-4 py-2 text-[11px] uppercase tracking-[0.15em] rounded-sm border transition-all duration-200 ${
+                  activeCollection === null
+                    ? "bg-[#63403A] text-[#f0efe2] border-[#63403A]"
+                    : "border-[#63403A]/20 text-[#63403A]/60 hover:border-[#63403A]/50 hover:text-[#63403A]"
+                }`}
+              >
+                All
+              </button>
+              {collections.map((collection) => (
+                <button
+                  key={collection.id}
+                  onClick={() => handleCollectionFilter(collection.handle)}
+                  className={`px-4 py-2 text-[11px] uppercase tracking-[0.15em] rounded-sm border transition-all duration-200 ${
+                    activeCollection === collection.handle
+                      ? "bg-[#63403A] text-[#f0efe2] border-[#63403A]"
+                      : "border-[#63403A]/20 text-[#63403A]/60 hover:border-[#63403A]/50 hover:text-[#63403A]"
+                  }`}
+                >
+                  {collection.title}
+                </button>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Featured */}
-      {featuredProducts.length > 0 && (
+      {!activeCollection && featuredProducts.length > 0 && (
         <section className="px-6 py-12 md:py-16">
           <div className="mx-auto max-w-6xl">
             <p className="mb-8 text-xs uppercase tracking-[0.2em] text-[#63403A]/50">
@@ -268,7 +322,9 @@ export default function ProductsPage() {
         <div className="mx-auto max-w-6xl">
           <div className="mb-8 flex items-end justify-between">
             <p className="text-xs uppercase tracking-[0.2em] text-[#63403A]/50">
-              All Products
+              {activeCollection
+                ? collections.find((c) => c.handle === activeCollection)?.title || "Products"
+                : "All Products"}
             </p>
             {!isLoading && (
               <p className="text-xs text-[#63403A]/40">

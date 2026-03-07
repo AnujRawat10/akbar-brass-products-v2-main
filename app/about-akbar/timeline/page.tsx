@@ -99,7 +99,7 @@ export default function TimelinePage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src="/timeline.jpeg"
+            src="/WhatsApp Image 2026-03-07 at 16.18.16.jpeg"
             alt="Our Journey"
             className="w-full h-full object-cover"
           />

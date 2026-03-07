@@ -136,21 +136,17 @@ export function InquiryCart({ items, onRemove, onClear, isOpen: externalIsOpen, 
 
           {/* Scrollable Content */}
           <div className="flex-1 overflow-y-auto p-4 sm:p-6">
-            <div className="mb-6 space-y-3">
+            <div className="mb-6 grid grid-cols-2 gap-3">
               {items.map((item) => (
-                <div key={item.id} className="flex gap-3 rounded-lg border border-[#63403A]/20 bg-white p-3 shadow-sm">
+                <div key={item.id} className="relative rounded-lg border border-[#63403A]/20 bg-white p-2 shadow-sm">
                   <img
                     src={item.image || "/placeholder.svg"}
                     alt={item.name}
-                    className="h-16 w-16 rounded-md object-cover"
+                    className="w-full h-auto rounded-md object-contain"
                   />
-                  <div className="flex-1">
-                    <h3 className="text-sm font-semibold text-[#63403A]">{item.name}</h3>
-                    <p className="font-serif text-base font-bold text-[#63403A]/80">{item.price}</p>
-                  </div>
                   <button
                     onClick={() => onRemove(item.id)}
-                    className="self-start rounded-full p-1.5 transition-colors hover:bg-[#63403A]/10"
+                    className="absolute top-3 right-3 rounded-full bg-white/90 p-1.5 transition-colors hover:bg-red-50"
                     aria-label={`Remove ${item.name}`}
                   >
                     <X className="h-4 w-4 text-[#63403A]/70" />

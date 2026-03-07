@@ -74,6 +74,7 @@ export default function ProductPage() {
       <Header
         cartItemCount={inquiryItems.length}
         onCartClick={() => setIsCartOpen(true)}
+        forceWhite
       />
 
       {/* Back link */}

@@ -8,9 +8,10 @@ import gsap from "gsap"
 interface HeaderProps {
   cartItemCount?: number
   onCartClick?: () => void
+  forceWhite?: boolean
 }
 
-export function Header({ cartItemCount = 0, onCartClick }: HeaderProps = {}) {
+export function Header({ cartItemCount = 0, onCartClick, forceWhite = false }: HeaderProps = {}) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isAboutOpen, setIsAboutOpen] = useState(false)
   const [isCapabilitiesOpen, setIsCapabilitiesOpen] = useState(false)
@@ -90,7 +91,7 @@ export function Header({ cartItemCount = 0, onCartClick }: HeaderProps = {}) {
       <header
         data-products={onCartClick ? "" : undefined}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
+          scrolled || forceWhite
             ? "bg-white/95 backdrop-blur-md shadow-sm"
             : "bg-gradient-to-b from-black/20 to-transparent"
         }`}
@@ -103,7 +104,7 @@ export function Header({ cartItemCount = 0, onCartClick }: HeaderProps = {}) {
               onClick={() => setIsMenuOpen(true)}
               aria-label="Open menu"
               className={`transition-transform duration-200 hover:scale-110 ${
-                scrolled ? "text-black" : "text-[#f0efe2]"
+                scrolled || forceWhite ? "text-black" : "text-[#f0efe2]"
               }`}
             >
               <Menu className="h-6 w-6 lg:h-7 lg:w-7" />
@@ -114,11 +115,11 @@ export function Header({ cartItemCount = 0, onCartClick }: HeaderProps = {}) {
           <div className="flex justify-center">
             <Link href="/">
               <img
-                src={scrolled ? "/logo black text.png" : "/logo white text.png"}
+                src={scrolled || forceWhite ? "/logo black text.png" : "/logo white text.png"}
                 alt="Akbar Brass Products"
                 className={`transition-all duration-300 hover:scale-105 ${
-                  scrolled 
-                    ? "h-11 sm:h-12 md:h-14 lg:h-16" 
+                  scrolled || forceWhite
+                    ? "h-11 sm:h-12 md:h-14 lg:h-16"
                     : "h-12 sm:h-14 md:h-16 lg:h-18"
                 }`}
               />
@@ -135,7 +136,7 @@ export function Header({ cartItemCount = 0, onCartClick }: HeaderProps = {}) {
                 className={`
                   relative
                   p-2.5 rounded-full border transition-all
-                  ${scrolled
+                  ${scrolled || forceWhite
                     ? "border-[#63403A] text-[#63403A] hover:bg-[#63403A] hover:text-white"
                     : "border-[#f0efe2] text-[#f0efe2] hover:bg-[#f0efe2]/20"
                   }
@@ -145,7 +146,7 @@ export function Header({ cartItemCount = 0, onCartClick }: HeaderProps = {}) {
                 <ShoppingBag className="h-5 w-5" />
                 {cartItemCount > 0 && (
                   <span className={`absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full text-xs font-bold ${
-                    scrolled ? "bg-[#63403A] text-white" : "bg-[#f0efe2] text-[#63403A]"
+                    scrolled || forceWhite ? "bg-[#63403A] text-white" : "bg-[#f0efe2] text-[#63403A]"
                   }`}>
                     {cartItemCount}
                   </span>
@@ -159,7 +160,7 @@ export function Header({ cartItemCount = 0, onCartClick }: HeaderProps = {}) {
               className={`
                 sm:hidden
                 p-2.5 rounded-full border transition-all
-                ${scrolled
+                ${scrolled || forceWhite
                   ? "border-[#63403A] text-[#63403A] hover:bg-[#63403A] hover:text-white"
                   : "border-[#f0efe2] text-[#f0efe2] hover:bg-[#f0efe2]/20"
                 }
@@ -192,7 +193,7 @@ export function Header({ cartItemCount = 0, onCartClick }: HeaderProps = {}) {
                 text-xs sm:text-sm
                 uppercase tracking-wider
                 border transition-all duration-300
-                ${scrolled
+                ${scrolled || forceWhite
                   ? "border-[#63403A] text-[#63403A] hover:bg-[#63403A] hover:text-white"
                   : "border-[#f0efe2] text-[#f0efe2] hover:bg-[#f0efe2] hover:text-[#63403A]"
                 }

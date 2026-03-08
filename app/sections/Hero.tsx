@@ -168,7 +168,7 @@ export default function Hero() {
           {/* CTA */}
           <div className="mt-12 flex justify-center">
             <Link href="/capabilities/materials">
-              <button className="group relative px-12 py-4 bg-white text-black overflow-hidden transition-all duration-500 uppercase tracking-wider font-medium text-sm md:text-base shadow-2xl hover:shadow-[#BF8B45]/50 transform hover:scale-105">
+              <button className="group relative px-6 sm:px-8 md:px-12 py-2.5 sm:py-3 md:py-4 bg-white text-black overflow-hidden transition-all duration-500 uppercase tracking-wider font-medium text-xs sm:text-sm md:text-base shadow-2xl hover:shadow-[#BF8B45]/50 transform hover:scale-105">
                 {/* Button hover effect */}
                 <span className="absolute inset-0 bg-[#BF8B45] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
                 <span className="relative z-10 group-hover:text-white transition-colors duration-500">

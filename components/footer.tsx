@@ -13,10 +13,9 @@ export function Footer() {
         rel="noopener noreferrer"
         className="
           fixed bottom-6 right-6
-          shadow-xl
           flex items-center justify-center
           hover:scale-110 transition-all duration-200
-          z-50
+          z-50 drop-shadow-lg
         "
         aria-label="Chat on WhatsApp"
       >

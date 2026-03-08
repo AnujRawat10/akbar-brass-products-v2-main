@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import {
@@ -11,6 +12,12 @@ import {
   Droplet
 } from "lucide-react"
 import Link from "next/link"
+
+export const metadata: Metadata = {
+  title: "Product Portfolio",
+  description:
+    "Explore our multi-category product range — furniture, home décor, kitchenware, lighting, outdoor and festive collections crafted in metal, marble, wood and mixed materials.",
+}
 
 export default function PortfolioPage() {
   return (

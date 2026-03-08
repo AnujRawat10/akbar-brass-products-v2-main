@@ -1,7 +1,14 @@
+import type { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Briefcase, Mail } from 'lucide-react'
 import Link from "next/link"
+
+export const metadata: Metadata = {
+  title: "Careers",
+  description:
+    "Join Akbar Brass Products — explore current job openings in production, quality control and manufacturing at our Moradabad facility.",
+}
 
 export default function CareersPage() {
   const jobOpenings = [

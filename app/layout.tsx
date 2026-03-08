@@ -16,9 +16,47 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-  title: "Akbar Brass Products - Curated Home Decor",
+  metadataBase: new URL("https://www.akbarbrass.com"),
+  title: {
+    default: "Akbar Brass Products — Integrated Multi-Material Manufacturing Since 1974",
+    template: "%s | Akbar Brass Products",
+  },
   description:
-    "Transform your space with our collection of artisanal brass pieces and timeless designs",
+    "Over five decades of integrated multi-material manufacturing excellence in metal, marble, wood and mixed-material products for global markets. Based in Moradabad, India.",
+  keywords: [
+    "brass products manufacturer",
+    "metal home decor",
+    "Moradabad brass",
+    "multi-material manufacturing",
+    "brass furniture",
+    "marble products",
+    "wood products",
+    "home decor manufacturer India",
+    "export quality brass",
+    "Akbar Brass Products",
+  ],
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    siteName: "Akbar Brass Products",
+    title: "Akbar Brass Products — Integrated Multi-Material Manufacturing Since 1974",
+    description:
+      "Over five decades of integrated multi-material manufacturing excellence in metal, marble, wood and mixed-material products for global markets.",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Akbar Brass Products" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Akbar Brass Products — Multi-Material Manufacturing Since 1974",
+    description:
+      "Over five decades of integrated multi-material manufacturing excellence for global markets.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://www.akbarbrass.com",
+  },
 }
 
 export default function RootLayout({
@@ -28,6 +66,36 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={montserrat.variable}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Akbar Brass Products",
+              url: "https://www.akbarbrass.com",
+              logo: "https://www.akbarbrass.com/logo.png",
+              foundingDate: "1974",
+              description:
+                "Integrated multi-material manufacturing excellence in metal, marble, wood and mixed-material products for global markets.",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "Village Dhanupura, Delhi Road",
+                addressLocality: "Moradabad",
+                postalCode: "244001",
+                addressCountry: "IN",
+              },
+              contactPoint: {
+                "@type": "ContactPoint",
+                telephone: "+91-591-2414263",
+                email: "hello@akbarbrass.com",
+                contactType: "sales",
+              },
+            }),
+          }}
+        />
+      </head>
       <body className="font-sans antialiased">
 
         {/* PRELOADER */}

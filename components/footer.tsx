@@ -117,8 +117,10 @@ export function Footer() {
               </ul>
 
               <div className="mt-6 text-xs text-[#63403A]/70 leading-relaxed">
-                Village Dhanupura, Delhi Road<br />
-                Moradabad – 244001, India<br /><br />
+                <a href="https://maps.app.goo.gl/inm6KTRfkGJmytbWA" target="_blank" rel="noopener noreferrer" className="hover:text-[#63403A]">
+                  Village Dhanupura, Delhi Road<br />
+                  Moradabad – 244001, India
+                </a><br /><br />
                 <a href="tel:+915912414263" className="hover:text-[#63403A]">
                   +91-591-2414263
                 </a><br />

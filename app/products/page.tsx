@@ -133,12 +133,17 @@ export default function ProductsPage() {
       price: product.price,
       image: product.images[0],
       variantId: product.variantId,
+      quantity: 30,
     }
     setInquiryItems((prev) => [...prev, newItem])
   }
 
   const handleRemoveFromInquiry = (id: string) => {
     setInquiryItems((prev) => prev.filter((item) => item.id !== id))
+  }
+
+  const handleUpdateQuantity = (id: string, quantity: number) => {
+    setInquiryItems((prev) => prev.map((item) => item.id === id ? { ...item, quantity } : item))
   }
 
   const handleClearInquiry = () => {
@@ -295,6 +300,7 @@ export default function ProductsPage() {
         items={inquiryItems}
         onRemove={handleRemoveFromInquiry}
         onClear={handleClearInquiry}
+        onUpdateQuantity={handleUpdateQuantity}
         isOpen={isCartOpen}
         onOpenChange={setIsCartOpen}
         userEmail={user?.email}

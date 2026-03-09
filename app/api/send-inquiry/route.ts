@@ -7,6 +7,7 @@ interface InquiryProduct {
   price: string
   image: string
   variantId: string
+  quantity: number
 }
 
 interface InquiryRequest {
@@ -42,11 +43,11 @@ export async function POST(request: Request) {
     // Build line items from cart products
     const lineItems = body.products.map((p) => ({
       variant_id: parseInt(p.variantId, 10),
-      quantity: 1,
+      quantity: p.quantity || 30,
     }))
 
     // Build note with customer message + product list for store owner
-    const productList = body.products.map((p) => `• ${p.name}`).join("\n")
+    const productList = body.products.map((p) => `• ${p.name} — Qty: ${p.quantity || 30}`).join("\n")
     const note = [
       body.message ? `Customer Message: ${body.message}` : "",
       `Products Inquired:\n${productList}`,

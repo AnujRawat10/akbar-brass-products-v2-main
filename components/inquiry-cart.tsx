@@ -3,7 +3,7 @@
 import type React from "react"
 
 import { useState, useEffect } from "react"
-import { X, Send, ShoppingBag } from 'lucide-react'
+import { X, Send, ShoppingBag, Minus, Plus } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -14,18 +14,22 @@ export interface InquiryProduct {
   price: string
   image: string
   variantId: string
+  quantity: number
 }
 
 interface InquiryCartProps {
   items: InquiryProduct[]
   onRemove: (id: string) => void
   onClear: () => void
+  onUpdateQuantity: (id: string, quantity: number) => void
   isOpen?: boolean
   onOpenChange?: (open: boolean) => void
   userEmail?: string
 }
 
-export function InquiryCart({ items, onRemove, onClear, isOpen: externalIsOpen, onOpenChange, userEmail }: InquiryCartProps) {
+const MIN_QTY = 30
+
+export function InquiryCart({ items, onRemove, onClear, onUpdateQuantity, isOpen: externalIsOpen, onOpenChange, userEmail }: InquiryCartProps) {
   const [internalIsOpen, setInternalIsOpen] = useState(false)
   const isOpen = externalIsOpen !== undefined ? externalIsOpen : internalIsOpen
   const setIsOpen = onOpenChange || setInternalIsOpen
@@ -136,20 +140,52 @@ export function InquiryCart({ items, onRemove, onClear, isOpen: externalIsOpen, 
 
           {/* Scrollable Content */}
           <div className="flex-1 overflow-y-auto p-4 sm:p-6">
-            <div className="mb-6 grid grid-cols-2 gap-3">
+            <div className="mb-6 space-y-3">
               {items.map((item) => (
-                <div key={item.id} className="relative rounded-lg border border-[#63403A]/20 bg-white p-2 shadow-sm">
+                <div key={item.id} className="relative flex gap-3 rounded-lg border border-[#63403A]/20 bg-white p-2 shadow-sm">
                   <img
                     src={item.image || "/placeholder.svg"}
                     alt={item.name}
-                    className="w-full h-auto rounded-md object-contain"
+                    className="w-20 h-20 rounded-md object-contain flex-shrink-0"
                   />
+                  <div className="flex flex-col justify-between flex-1 min-w-0 py-1">
+                    <p className="text-xs text-[#63403A]/70 truncate">{item.name}</p>
+                    <div className="flex items-center gap-2">
+                      <span className="text-[10px] uppercase tracking-wider text-[#63403A]/40">Qty</span>
+                      <div className="flex items-center border border-[#63403A]/20 rounded">
+                        <button
+                          onClick={() => onUpdateQuantity(item.id, Math.max(MIN_QTY, item.quantity - 10))}
+                          className="px-2 py-1 text-[#63403A]/60 hover:text-[#63403A] hover:bg-[#63403A]/5 transition-colors"
+                          aria-label="Decrease quantity"
+                        >
+                          <Minus className="h-3 w-3" />
+                        </button>
+                        <input
+                          type="number"
+                          min={MIN_QTY}
+                          value={item.quantity}
+                          onChange={(e) => {
+                            const val = parseInt(e.target.value, 10)
+                            if (!isNaN(val)) onUpdateQuantity(item.id, Math.max(MIN_QTY, val))
+                          }}
+                          className="w-14 text-center text-sm font-semibold text-[#63403A] border-x border-[#63403A]/20 py-1 bg-transparent focus:outline-none"
+                        />
+                        <button
+                          onClick={() => onUpdateQuantity(item.id, item.quantity + 10)}
+                          className="px-2 py-1 text-[#63403A]/60 hover:text-[#63403A] hover:bg-[#63403A]/5 transition-colors"
+                          aria-label="Increase quantity"
+                        >
+                          <Plus className="h-3 w-3" />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                   <button
                     onClick={() => onRemove(item.id)}
-                    className="absolute top-3 right-3 rounded-full bg-white/90 p-1.5 transition-colors hover:bg-red-50"
+                    className="absolute top-2 right-2 rounded-full bg-white/90 p-1 transition-colors hover:bg-red-50"
                     aria-label={`Remove ${item.name}`}
                   >
-                    <X className="h-4 w-4 text-[#63403A]/70" />
+                    <X className="h-3.5 w-3.5 text-[#63403A]/70" />
                   </button>
                 </div>
               ))}

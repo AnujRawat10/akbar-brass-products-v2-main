@@ -154,7 +154,7 @@ export function InquiryCart({ items, onRemove, onClear, onUpdateQuantity, isOpen
                       <span className="text-[10px] uppercase tracking-wider text-[#63403A]/40">Qty</span>
                       <div className="flex items-center border border-[#63403A]/20 rounded">
                         <button
-                          onClick={() => onUpdateQuantity(item.id, Math.max(MIN_QTY, item.quantity - 10))}
+                          onClick={() => onUpdateQuantity(item.id, Math.max(MIN_QTY, item.quantity - 1))}
                           className="px-2 py-1 text-[#63403A]/60 hover:text-[#63403A] hover:bg-[#63403A]/5 transition-colors"
                           aria-label="Decrease quantity"
                         >
@@ -172,7 +172,7 @@ export function InquiryCart({ items, onRemove, onClear, onUpdateQuantity, isOpen
                           className="w-14 text-center text-sm font-semibold text-[#63403A] border-x border-[#63403A]/20 py-1 bg-transparent focus:outline-none"
                         />
                         <button
-                          onClick={() => onUpdateQuantity(item.id, item.quantity + 10)}
+                          onClick={() => onUpdateQuantity(item.id, item.quantity + 1)}
                           className="px-2 py-1 text-[#63403A]/60 hover:text-[#63403A] hover:bg-[#63403A]/5 transition-colors"
                           aria-label="Increase quantity"
                         >

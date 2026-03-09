@@ -373,33 +373,36 @@ export async function createShopifyCustomer(input: {
   }
 }
 
-// --- Draft Order Creation ---
+// --- Order Creation ---
 
-export interface DraftOrderLineItem {
+export interface OrderLineItem {
   variant_id: number
   quantity: number
 }
 
-export interface DraftOrderCustomer {
+export interface OrderCustomer {
   first_name: string
   last_name: string
   email: string
   phone?: string
 }
 
-export interface CreateDraftOrderInput {
-  lineItems: DraftOrderLineItem[]
-  customer: DraftOrderCustomer
+export interface CreateOrderInput {
+  lineItems: OrderLineItem[]
+  customer: OrderCustomer
   note?: string
 }
 
-export async function createDraftOrder(input: CreateDraftOrderInput) {
+export async function createOrder(input: CreateOrderInput) {
   const body = {
-    draft_order: {
+    order: {
       line_items: input.lineItems,
       email: input.customer.email,
       phone: input.customer.phone || undefined,
       note: input.note || undefined,
+      financial_status: "pending",
+      send_receipt: true,
+      send_fulfillment_receipt: false,
       shipping_address: {
         first_name: input.customer.first_name,
         last_name: input.customer.last_name,
@@ -411,17 +414,21 @@ export async function createDraftOrder(input: CreateDraftOrderInput) {
     },
   }
 
-  const result = await adminFetch("draft_orders.json", body)
-  const draftOrder = result.draft_order
+  const result = await adminFetch("orders.json", body)
+  const order = result.order
 
-  // Send invoice email to customer
-  await adminFetch(`draft_orders/${draftOrder.id}/send_invoice.json`, {
-    draft_order_invoice: {
-      to: input.customer.email,
-      subject: "Your Inquiry — Akbar Brass Products",
-      custom_message: "Thank you for your interest in our products. Please find your inquiry details below.",
-    },
-  })
+  // Send notification email to store owner
+  try {
+    await adminFetch(`orders/${order.id}/events.json`, {
+      event: {
+        subject_type: "Order",
+        verb: "confirmation",
+        body: `New inquiry from ${input.customer.first_name} ${input.customer.last_name} (${input.customer.email})`,
+      },
+    })
+  } catch {
+    // Event creation is non-critical, don't block the order
+  }
 
-  return draftOrder
+  return order
 }

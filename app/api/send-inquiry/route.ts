@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server"
-import { createDraftOrder } from "@/lib/shopify"
+import { createOrder } from "@/lib/shopify"
 
 interface InquiryProduct {
   id: string
@@ -15,6 +15,8 @@ interface InquiryRequest {
   message?: string
   products: InquiryProduct[]
 }
+
+const STORE_OWNER_EMAIL = "hello@akbarbrass.com"
 
 export async function POST(request: Request) {
   try {
@@ -43,24 +45,88 @@ export async function POST(request: Request) {
       quantity: 1,
     }))
 
-    // Create draft order in Shopify
-    const draftOrder = await createDraftOrder({
+    // Build note with customer message + product list for store owner
+    const productList = body.products.map((p) => `• ${p.name}`).join("\n")
+    const note = [
+      body.message ? `Customer Message: ${body.message}` : "",
+      `Products Inquired:\n${productList}`,
+      `Customer: ${body.name} (${body.email})`,
+    ]
+      .filter(Boolean)
+      .join("\n\n")
+
+    // Create order in Shopify (sends receipt to customer automatically via send_receipt: true)
+    const order = await createOrder({
       lineItems,
       customer: {
         first_name: firstName,
         last_name: lastName,
         email: body.email,
       },
-      note: body.message || undefined,
+      note,
     })
+
+    // Send notification email to store owner
+    try {
+      const domain = process.env.SHOPIFY_STORE_DOMAIN!
+      const adminAccessToken = process.env.SHOPIFY_ADMIN_ACCESS_TOKEN!
+
+      await fetch(
+        `https://${domain}/admin/api/2024-01/draft_orders.json`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "X-Shopify-Access-Token": adminAccessToken,
+          },
+          body: JSON.stringify({
+            draft_order: {
+              line_items: lineItems,
+              email: STORE_OWNER_EMAIL,
+              note: `[STORE COPY] Inquiry from ${body.name} (${body.email})\n\n${body.message || "No message"}\n\nOriginal Order: ${order.name}`,
+              shipping_address: {
+                first_name: "Store",
+                last_name: "Notification",
+              },
+            },
+          }),
+        }
+      ).then(async (res) => {
+        if (res.ok) {
+          const result = await res.json()
+          const draftId = result.draft_order.id
+          // Send the draft order invoice to store owner
+          await fetch(
+            `https://${domain}/admin/api/2024-01/draft_orders/${draftId}/send_invoice.json`,
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                "X-Shopify-Access-Token": adminAccessToken,
+              },
+              body: JSON.stringify({
+                draft_order_invoice: {
+                  to: STORE_OWNER_EMAIL,
+                  subject: `New Inquiry from ${body.name} — Order ${order.name}`,
+                  custom_message: `New inquiry received from ${body.name} (${body.email}).\n\n${body.message || "No additional message."}\n\nProducts: ${body.products.map((p) => p.name).join(", ")}`,
+                },
+              }),
+            }
+          )
+        }
+      })
+    } catch {
+      // Store owner notification is non-critical
+      console.error("Failed to send store owner notification")
+    }
 
     return NextResponse.json({
       success: true,
-      orderId: draftOrder.id,
-      orderName: draftOrder.name,
+      orderId: order.id,
+      orderName: order.name,
     })
   } catch (error) {
-    console.error("Failed to create draft order:", error)
+    console.error("Failed to create order:", error)
     return NextResponse.json(
       { error: "Failed to submit your inquiry. Please try again." },
       { status: 500 }

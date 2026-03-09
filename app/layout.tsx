@@ -18,37 +18,37 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.akbarbrass.com"),
   title: {
-    default: "Akbar Brass Products — Integrated Multi-Material Manufacturing Since 1974",
+    default: "Akbar Brass Products | Furniture & Home Décor Manufacturer Since 1974",
     template: "%s | Akbar Brass Products",
   },
   description:
-    "Over five decades of integrated multi-material manufacturing excellence in metal, marble, wood and mixed-material products for global markets. Based in Moradabad, India.",
+    "Akbar Brass Products is a trusted export manufacturer of furniture and home décor since 1974. Discover our collection of artisanal metal, marble and wood furniture and decorative accessories crafted for global markets.",
   keywords: [
-    "brass products manufacturer",
-    "metal home decor",
+    "furniture manufacturer",
+    "home décor manufacturer",
+    "metal furniture",
+    "marble furniture",
+    "wood furniture",
+    "decorative accessories",
+    "export manufacturer India",
+    "artisanal furniture",
     "Moradabad brass",
-    "multi-material manufacturing",
-    "brass furniture",
-    "marble products",
-    "wood products",
-    "home decor manufacturer India",
-    "export quality brass",
     "Akbar Brass Products",
   ],
   openGraph: {
     type: "website",
     locale: "en_US",
     siteName: "Akbar Brass Products",
-    title: "Akbar Brass Products — Integrated Multi-Material Manufacturing Since 1974",
+    title: "Akbar Brass Products | Furniture & Home Décor Manufacturer Since 1974",
     description:
-      "Over five decades of integrated multi-material manufacturing excellence in metal, marble, wood and mixed-material products for global markets.",
+      "Akbar Brass Products is a trusted export manufacturer of furniture and home décor since 1974. Discover our collection of artisanal metal, marble and wood furniture and decorative accessories crafted for global markets.",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Akbar Brass Products" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Akbar Brass Products — Multi-Material Manufacturing Since 1974",
+    title: "Akbar Brass Products | Furniture & Home Décor Manufacturer Since 1974",
     description:
-      "Over five decades of integrated multi-material manufacturing excellence for global markets.",
+      "Akbar Brass Products is a trusted export manufacturer of furniture and home décor since 1974. Discover our collection of artisanal metal, marble and wood furniture and decorative accessories crafted for global markets.",
   },
   robots: {
     index: true,

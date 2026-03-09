@@ -161,8 +161,9 @@ export function InquiryCart({ items, onRemove, onClear, onUpdateQuantity, isOpen
                           <Minus className="h-3 w-3" />
                         </button>
                         <input
-                          type="number"
-                          min={MIN_QTY}
+                          type="text"
+                          inputMode="numeric"
+                          pattern="[0-9]*"
                           value={item.quantity}
                           onChange={(e) => {
                             const val = parseInt(e.target.value, 10)

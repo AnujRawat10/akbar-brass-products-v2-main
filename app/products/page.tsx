@@ -69,13 +69,22 @@ function LoadingSkeleton() {
 export default function ProductsPage() {
   const { isAuthenticated, user, logout } = useAuth()
   const router = useRouter()
-  const [inquiryItems, setInquiryItems] = useState<InquiryProduct[]>([])
+  const [inquiryItems, setInquiryItems] = useState<InquiryProduct[]>(() => {
+    if (typeof window !== "undefined") {
+      try { return JSON.parse(localStorage.getItem("inquiryCart") || "[]") } catch { return [] }
+    }
+    return []
+  })
   const [isCartOpen, setIsCartOpen] = useState(false)
   const [products, setProducts] = useState<ShopifyProduct[]>([])
   const [collections, setCollections] = useState<ShopifyCollection[]>([])
   const [activeCollection, setActiveCollection] = useState<string | null>(null)
   const [isLoading, setIsLoading] = useState(true)
   const [visibleCount, setVisibleCount] = useState(30)
+
+  useEffect(() => {
+    localStorage.setItem("inquiryCart", JSON.stringify(inquiryItems))
+  }, [inquiryItems])
 
   useEffect(() => {
     if (!isAuthenticated) {

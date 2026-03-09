@@ -18,8 +18,17 @@ export default function ProductPage() {
   const [product, setProduct] = useState<ShopifyProduct | null>(null)
   const [isLoading, setIsLoading] = useState(true)
   const [selectedImage, setSelectedImage] = useState(0)
-  const [inquiryItems, setInquiryItems] = useState<InquiryProduct[]>([])
+  const [inquiryItems, setInquiryItems] = useState<InquiryProduct[]>(() => {
+    if (typeof window !== "undefined") {
+      try { return JSON.parse(localStorage.getItem("inquiryCart") || "[]") } catch { return [] }
+    }
+    return []
+  })
   const [isCartOpen, setIsCartOpen] = useState(false)
+
+  useEffect(() => {
+    localStorage.setItem("inquiryCart", JSON.stringify(inquiryItems))
+  }, [inquiryItems])
 
   useEffect(() => {
     if (!isAuthenticated) {

@@ -377,10 +377,10 @@ export default function AdminDashboard() {
                           {user.name}
                         </p>
                         <p className="text-xs text-[#63403A]/40 truncate">{user.email}</p>
-                        <p className="text-[10px] text-[#63403A]/30 flex items-center gap-1 mt-0.5">
+                        <p className="text-[10px] text-[#63403A]/30 flex items-center gap-1 mt-0.5" suppressHydrationWarning>
                           <Clock className="h-2.5 w-2.5" />
                           {user.lastLogin
-                            ? `Last login: ${new Date(user.lastLogin).toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short" })}`
+                            ? `Last login: ${new Date(user.lastLogin).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })} ${new Date(user.lastLogin).toLocaleTimeString("en-IN", { hour: "2-digit", minute: "2-digit" })}`
                             : "Never logged in"}
                         </p>
                       </div>

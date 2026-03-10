@@ -15,6 +15,7 @@ import {
   EyeOff,
   KeyRound,
   Check,
+  Clock,
 } from "lucide-react"
 
 interface UserRecord {
@@ -22,6 +23,7 @@ interface UserRecord {
   email: string
   name: string
   isActive: boolean
+  lastLogin: string | null
   createdAt: string
 }
 
@@ -375,6 +377,12 @@ export default function AdminDashboard() {
                           {user.name}
                         </p>
                         <p className="text-xs text-[#63403A]/40 truncate">{user.email}</p>
+                        <p className="text-[10px] text-[#63403A]/30 flex items-center gap-1 mt-0.5">
+                          <Clock className="h-2.5 w-2.5" />
+                          {user.lastLogin
+                            ? `Last login: ${new Date(user.lastLogin).toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short" })}`
+                            : "Never logged in"}
+                        </p>
                       </div>
                     </div>
 

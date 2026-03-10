@@ -55,6 +55,10 @@ export async function POST(request: Request) {
       )
     }
 
+    // Update last login timestamp
+    user.lastLogin = new Date()
+    await user.save()
+
     return NextResponse.json({
       role: "user",
       user: {

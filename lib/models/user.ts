@@ -5,6 +5,7 @@ export interface IUser extends Document {
   password: string
   name: string
   isActive: boolean
+  lastLogin: Date | null
   createdAt: Date
   updatedAt: Date
 }
@@ -15,6 +16,7 @@ const UserSchema = new Schema<IUser>(
     password: { type: String, required: true },
     name: { type: String, required: true, trim: true },
     isActive: { type: Boolean, default: true },
+    lastLogin: { type: Date, default: null },
   },
   { timestamps: true }
 )

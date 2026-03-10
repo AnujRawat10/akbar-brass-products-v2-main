@@ -17,8 +17,6 @@ interface InquiryRequest {
   products: InquiryProduct[]
 }
 
-const STORE_OWNER_EMAIL = "hello@akbarbrass.com"
-
 export async function POST(request: Request) {
   try {
     const body: InquiryRequest = await request.json()
@@ -66,60 +64,6 @@ export async function POST(request: Request) {
       },
       note,
     })
-
-    // Send notification email to store owner
-    try {
-      const domain = process.env.SHOPIFY_STORE_DOMAIN!
-      const adminAccessToken = process.env.SHOPIFY_ADMIN_ACCESS_TOKEN!
-
-      await fetch(
-        `https://${domain}/admin/api/2024-01/draft_orders.json`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "X-Shopify-Access-Token": adminAccessToken,
-          },
-          body: JSON.stringify({
-            draft_order: {
-              line_items: lineItems,
-              email: STORE_OWNER_EMAIL,
-              note: `[STORE COPY] Inquiry from ${body.name} (${body.email})\n\n${body.message || "No message"}\n\nOriginal Order: ${order.name}`,
-              shipping_address: {
-                first_name: "Store",
-                last_name: "Notification",
-              },
-            },
-          }),
-        }
-      ).then(async (res) => {
-        if (res.ok) {
-          const result = await res.json()
-          const draftId = result.draft_order.id
-          // Send the draft order invoice to store owner
-          await fetch(
-            `https://${domain}/admin/api/2024-01/draft_orders/${draftId}/send_invoice.json`,
-            {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-                "X-Shopify-Access-Token": adminAccessToken,
-              },
-              body: JSON.stringify({
-                draft_order_invoice: {
-                  to: STORE_OWNER_EMAIL,
-                  subject: `New Inquiry from ${body.name} — Order ${order.name}`,
-                  custom_message: `New inquiry received from ${body.name} (${body.email}).\n\n${body.message || "No additional message."}\n\nProducts: ${body.products.map((p) => p.name).join(", ")}`,
-                },
-              }),
-            }
-          )
-        }
-      })
-    } catch {
-      // Store owner notification is non-critical
-      console.error("Failed to send store owner notification")
-    }
 
     return NextResponse.json({
       success: true,
